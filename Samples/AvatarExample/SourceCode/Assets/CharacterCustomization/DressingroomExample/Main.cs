@@ -5,6 +5,8 @@ using System.Threading;
 using System.Net;
 using System.Security.Cryptography.X509Certificates;
 using System.Net.Security;
+using ATT_MSSDK;
+using ATT_MSSDK.Speechv1;
 using System.IO;
 using System;
 
@@ -41,6 +43,9 @@ class Main : MonoBehaviour
 	const int fontSize = 20;
 	const int buttonHeight = 45;
 
+    OAuthToken clientToken = null;
+    string accessTokenFilePath = string.Empty;
+
     // Initializes the CharacterGenerator and load a saved config if any.
     IEnumerator Start()
     {
@@ -50,7 +55,8 @@ class Main : MonoBehaviour
         else
             generator = CharacterGenerator.CreateWithRandomConfig("Female");
 
-        Setup("http://wmssp.research.att.com/gdc/asr");
+        // Replace apiKey & secretKey with the keys generated for your app on http://developer.att.com/
+        Setup("https://api.att.com", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", "xxxxxxxxxxxxxxxx");
 
         //Set up propertyTitles
         propertyTitles.Add("face", "Head");
@@ -59,7 +65,9 @@ class Main : MonoBehaviour
         propertyTitles.Add("top", "Shirt");
         propertyTitles.Add("pants", "Pants");
         propertyTitles.Add("shoes", "Shoes");
-        
+
+        accessTokenFilePath = Application.dataPath + "/token.txt";
+        Debug.Log("Accesstoken filepath: " + accessTokenFilePath);
     }
 
     public static bool Validator(object sender, X509Certificate certificate, X509Chain chain,
@@ -68,9 +76,23 @@ class Main : MonoBehaviour
         return true;
     }
 
-    public void Setup(string endpoint)
+    private string endpoint;
+    private string apiKey;
+    private string secretKey;
+
+    public void Setup(string endpoint, string apiKey, string secretKey)
     {
         ServicePointManager.ServerCertificateValidationCallback = Validator;
+        this.endpoint = endpoint;
+        this.apiKey = apiKey;
+        this.secretKey = secretKey;
+    }
+
+    private RequestFactory BuildRequestFactory(RequestFactory.ScopeTypes scope)
+    {
+        List<RequestFactory.ScopeTypes> scopes = new List<RequestFactory.ScopeTypes>();
+        scopes.Add(scope);
+        return new RequestFactory(endpoint, apiKey, secretKey, scopes, null, null);
     }
 
     public void RequestSpeech(AudioClip audio, GameObject receiver, string callback)
@@ -90,9 +112,25 @@ class Main : MonoBehaviour
 
                 Debug.Log("Request Start time: " + DateTime.Now.ToLongTimeString());
 
-                speechOutput = new SpeechService().ConvertToSpeech(filename);
+                RequestFactory factory = BuildRequestFactory(RequestFactory.ScopeTypes.Speech);
 
-                Debug.Log("Response = " + speechOutput);
+                if (clientToken ==  null)
+                {
+                    clientToken = GetAccessToken();
+                }
+
+                if (null != clientToken)
+                {
+                    factory.ClientCredential = clientToken;
+                }
+
+                SpeechResponse response = factory.SpeechToText(filename, XSpeechContext.Generic);
+                speechOutput = response.Recognition.NBest[0].ResultText;
+                if (clientToken == null)
+                {
+                    clientToken = factory.ClientCredential;
+                    SaveAccessToken();
+                }
 
                 Debug.Log("Response received time: " + DateTime.Now.ToLongTimeString());
                 showProcess = false;
@@ -104,6 +142,83 @@ class Main : MonoBehaviour
                 Debug.LogError(e);
             }
         }).Start();
+    }
+
+    private void SaveAccessToken()
+    {
+        FileStream fileStream = null;
+        StreamWriter streamWriter = null;
+        try
+        {
+            fileStream = new FileStream(accessTokenFilePath, FileMode.OpenOrCreate, FileAccess.Write);
+            streamWriter = new StreamWriter(fileStream);
+
+            double expiresIn = clientToken.CreationTime.Subtract(clientToken.Expiration).TotalSeconds;
+
+            streamWriter.WriteLine(clientToken.AccessToken);
+            streamWriter.WriteLine(clientToken.RefreshToken);
+            streamWriter.WriteLine(expiresIn.ToString());
+        }
+        catch (Exception ex)
+        {
+            Debug.LogException(ex);
+        }
+        finally
+        {
+            if (null != streamWriter)
+            {
+                streamWriter.Close();
+            }
+
+            if (null != fileStream)
+            {
+                fileStream.Close();
+            }
+        }
+    }
+
+    private OAuthToken GetAccessToken()
+    {
+        FileStream fileStream = null;
+        StreamReader streamReader = null;       
+        
+        Debug.Log("Filepath: " + accessTokenFilePath);
+
+        try
+        {
+            if (System.IO.File.Exists(accessTokenFilePath))
+            {
+                fileStream = new FileStream(accessTokenFilePath, FileMode.OpenOrCreate, FileAccess.Read);
+                streamReader = new StreamReader(fileStream);
+                string accessToken = streamReader.ReadLine();
+                string refreshToken = streamReader.ReadLine();
+                string expiresIn = streamReader.ReadLine();
+
+                if (!string.IsNullOrEmpty(accessToken))
+                {
+                    clientToken = new OAuthToken(accessToken, refreshToken, expiresIn);
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Debug.LogException(ex);
+        }
+        finally
+        {
+            if (null != streamReader)
+            {
+                streamReader.Close();
+            }
+
+            if (null != fileStream)
+            {
+                fileStream.Close();
+            }
+        }
+
+        return clientToken;
+
     }
 
     private string GetTempFileName()
@@ -318,16 +433,11 @@ class Main : MonoBehaviour
         }
         else if (displayChangeCharacterPrompt)
         {
-            //GUI.Window(2, windowRec, CharacterChangeConfirmationWindow, "Change Character?");
-            ChangeCharacter(true);
-            ClearPopups();
+            GUI.Window(2, windowRec, CharacterChangeConfirmationWindow, "Change Character?");
         }
         else if (propertiesToChange != null)
         {
-            generator.ChangeElements(propertiesToChange);
-            usingLatestConfig = false;
-            ClearPopups();
-            //GUI.Window(3, windowRec, TraitConfirmationWindow, "Trait Changes");
+            GUI.Window(3, windowRec, TraitConfirmationWindow, "Trait Changes");
         }
 
         // Show download progress or indicate assets are being loaded.

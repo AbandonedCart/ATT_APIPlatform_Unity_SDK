@@ -20,14 +20,3 @@ C:\Users\User\Documents\CharacterCustomizationv2\Temp\bin\Debug\ICSharpCode.NRef
 C:\Users\User\Documents\CharacterCustomizationv2\obj\Debug\Assembly-CSharp-firstpass-vs.csprojResolveAssemblyReference.cache
 C:\Users\User\Documents\CharacterCustomizationv2\obj\Debug\Assembly-CSharp-firstpass.dll
 C:\Users\User\Documents\CharacterCustomizationv2\obj\Debug\Assembly-CSharp-firstpass.pdb
-D:\AvatarExample v3\SourceCode\Temp\bin\Debug\Assembly-CSharp-firstpass.dll
-D:\AvatarExample v3\SourceCode\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
-D:\AvatarExample v3\SourceCode\Temp\bin\Debug\UnityEditor.dll
-D:\AvatarExample v3\SourceCode\Temp\bin\Debug\UnityEngine.dll
-D:\AvatarExample v3\SourceCode\Temp\bin\Debug\Mono.Cecil.dll
-D:\AvatarExample v3\SourceCode\Temp\bin\Debug\nunit.framework.dll
-D:\AvatarExample v3\SourceCode\Temp\bin\Debug\ICSharpCode.NRefactory.dll
-D:\AvatarExample v3\SourceCode\obj\Debug\Assembly-CSharp-firstpass.dll
-D:\AvatarExample v3\SourceCode\obj\Debug\Assembly-CSharp-firstpass.pdb
-D:\AvatarExample v3\SourceCode\Temp\bin\Debug\ATTSpeechSDK.dll
-D:\AvatarExample v3\SourceCode\obj\Debug\Assembly-CSharp-firstpass-vs.csprojResolveAssemblyReference.cache
