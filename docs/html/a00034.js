@@ -1,5 +1,5 @@
 var a00034 =
 [
-    [ "DeviceId", "a00034.html#af464bf31de1c7dbc4459b30d8a98f154", null ],
-    [ "TypeAllocationCode", "a00034.html#a5ecb4e00782072da3ba21dfcd279befa", null ]
+    [ "GetMessageDeltaResponse", "a00034.html#a19a3fdd481d10de87bab7b212bd03fab", null ],
+    [ "DeltaResponse", "a00034.html#a1ec49c003f82acfb41951309ba776dc9", null ]
 ];

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.Speechv3.Program Class Reference</title>
+<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.OAuthToken Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -100,258 +100,266 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#properties">Properties</a>  </div>
   <div class="headertitle">
-<div class="title">ATT_MSSDK.Speechv3.Program Class Reference</div>  </div>
+<div class="title">ATT_MSSDK.OAuthToken Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Encapsulates <a class="el" href="a00070.html" title="Encapsulates Program data returned in speech to text response.">Program</a> data returned in speech to text response.  
+<p>Encapsulates OAuth token data and parsing.  
  <a href="a00070.html#details">More...</a></p>
 
-<p><a href="a00321.html">List of all members.</a></p>
+<p><a href="a00255.html">List of all members.</a></p>
 <table class="memberdecls">
+<tr><td colspan="2"><h2><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><b>OAuthTokenRaw</b></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal class used for JSON de-serialization. <br/></td></tr>
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:aaa82dab217c90da5be8df83c6fc7fa62"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#aaa82dab217c90da5be8df83c6fc7fa62">OAuthToken</a> ()</td></tr>
+<tr class="memdesc:aaa82dab217c90da5be8df83c6fc7fa62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="a00070.html" title="Encapsulates OAuth token data and parsing.">OAuthToken</a> class.  <a href="#aaa82dab217c90da5be8df83c6fc7fa62"></a><br/></td></tr>
+<tr class="memitem:a15340c26c978a125f44704c313ab293e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#a15340c26c978a125f44704c313ab293e">OAuthToken</a> (string accessToken, string refreshToken, string expiresIn, string createdTime=null)</td></tr>
+<tr class="memdesc:a15340c26c978a125f44704c313ab293e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="a00070.html" title="Encapsulates OAuth token data and parsing.">OAuthToken</a> class.  <a href="#a15340c26c978a125f44704c313ab293e"></a><br/></td></tr>
+<tr class="memitem:ad54a3413fcd1fdd99d347d300ebcab34"><td class="memItemLeft" align="right" valign="top">override string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#ad54a3413fcd1fdd99d347d300ebcab34">ToString</a> ()</td></tr>
+<tr class="memdesc:ad54a3413fcd1fdd99d347d300ebcab34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the string version of the <a class="el" href="a00070.html" title="Encapsulates OAuth token data and parsing.">OAuthToken</a> object.  <a href="#ad54a3413fcd1fdd99d347d300ebcab34"></a><br/></td></tr>
+<tr class="memitem:a55b4bbb3fadaba8290ab60fc922e0692"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#a55b4bbb3fadaba8290ab60fc922e0692">IsExpired</a> ()</td></tr>
+<tr class="memdesc:a55b4bbb3fadaba8290ab60fc922e0692"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks the access token for expiration.  <a href="#a55b4bbb3fadaba8290ab60fc922e0692"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a15436e016666cbcb6dd4a8509e7e862b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00070.html">OAuthToken</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#a15436e016666cbcb6dd4a8509e7e862b">ParseJSON</a> (string jsonInput)</td></tr>
+<tr class="memdesc:a15436e016666cbcb6dd4a8509e7e862b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="a00070.html" title="Encapsulates OAuth token data and parsing.">OAuthToken</a> from a JSON string.  <a href="#a15436e016666cbcb6dd4a8509e7e862b"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:aa4558256140f892c9c3aedecdc753ebd"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#aa4558256140f892c9c3aedecdc753ebd">Cast</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aa4558256140f892c9c3aedecdc753ebd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets cast.  <a href="#aa4558256140f892c9c3aedecdc753ebd"></a><br/></td></tr>
-<tr class="memitem:aa8dbbb45eb8d5294cde97f4f8d1d627a"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#aa8dbbb45eb8d5294cde97f4f8d1d627a">Category</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aa8dbbb45eb8d5294cde97f4f8d1d627a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets category.  <a href="#aa8dbbb45eb8d5294cde97f4f8d1d627a"></a><br/></td></tr>
-<tr class="memitem:a72fd9bfd00c9253aac77aa973a018ca5"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#a72fd9bfd00c9253aac77aa973a018ca5">Description</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a72fd9bfd00c9253aac77aa973a018ca5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets description.  <a href="#a72fd9bfd00c9253aac77aa973a018ca5"></a><br/></td></tr>
-<tr class="memitem:a5f7d5201de36f7514830911cb19ed733"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#a5f7d5201de36f7514830911cb19ed733">Director</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a5f7d5201de36f7514830911cb19ed733"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets director.  <a href="#a5f7d5201de36f7514830911cb19ed733"></a><br/></td></tr>
-<tr class="memitem:ac8a927e28fafadcf1bf1755d92201cb0"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#ac8a927e28fafadcf1bf1755d92201cb0">Language</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ac8a927e28fafadcf1bf1755d92201cb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets language.  <a href="#ac8a927e28fafadcf1bf1755d92201cb0"></a><br/></td></tr>
-<tr class="memitem:aff3f199cbc9941eef17018f8f2666609"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#aff3f199cbc9941eef17018f8f2666609">MpaaRating</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aff3f199cbc9941eef17018f8f2666609"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets mpaaRating.  <a href="#aff3f199cbc9941eef17018f8f2666609"></a><br/></td></tr>
-<tr class="memitem:ab982b0440ca7fe64f908c2dcaea45926"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#ab982b0440ca7fe64f908c2dcaea45926">OriginalAirDate</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ab982b0440ca7fe64f908c2dcaea45926"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets originalAirDate.  <a href="#ab982b0440ca7fe64f908c2dcaea45926"></a><br/></td></tr>
-<tr class="memitem:a2bacf0f50839e3392f9e5ed3074c76e3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#a2bacf0f50839e3392f9e5ed3074c76e3">Pid</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a2bacf0f50839e3392f9e5ed3074c76e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets pid.  <a href="#a2bacf0f50839e3392f9e5ed3074c76e3"></a><br/></td></tr>
-<tr class="memitem:ac8534c121a04d86d9830ce866195debc"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#ac8534c121a04d86d9830ce866195debc">RunTime</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ac8534c121a04d86d9830ce866195debc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets runTime.  <a href="#ac8534c121a04d86d9830ce866195debc"></a><br/></td></tr>
-<tr class="memitem:ac705ee3c1a42cf2592f04b4a05237562"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#ac705ee3c1a42cf2592f04b4a05237562">ShowType</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ac705ee3c1a42cf2592f04b4a05237562"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets showType.  <a href="#ac705ee3c1a42cf2592f04b4a05237562"></a><br/></td></tr>
-<tr class="memitem:a32293c0bdafd3d40008d40037c5b3a3a"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#a32293c0bdafd3d40008d40037c5b3a3a">StarRating</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a32293c0bdafd3d40008d40037c5b3a3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets starRating.  <a href="#a32293c0bdafd3d40008d40037c5b3a3a"></a><br/></td></tr>
-<tr class="memitem:ae434f72653882dab5a1dc0a0458ccf08"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#ae434f72653882dab5a1dc0a0458ccf08">Subtitle</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ae434f72653882dab5a1dc0a0458ccf08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets subtitle.  <a href="#ae434f72653882dab5a1dc0a0458ccf08"></a><br/></td></tr>
-<tr class="memitem:a1513d5ef11a2f4016bfb0a13c6c18f37"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#a1513d5ef11a2f4016bfb0a13c6c18f37">Title</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a1513d5ef11a2f4016bfb0a13c6c18f37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets title.  <a href="#a1513d5ef11a2f4016bfb0a13c6c18f37"></a><br/></td></tr>
-<tr class="memitem:aa7e97bd7791a91b873597cdf0952fd21"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#aa7e97bd7791a91b873597cdf0952fd21">Year</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aa7e97bd7791a91b873597cdf0952fd21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets year.  <a href="#aa7e97bd7791a91b873597cdf0952fd21"></a><br/></td></tr>
+<tr class="memitem:a72267dcf27ece9e20c4ff37fa9b0986c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#a72267dcf27ece9e20c4ff37fa9b0986c">AccessToken</a><code> [get]</code></td></tr>
+<tr class="memdesc:a72267dcf27ece9e20c4ff37fa9b0986c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the access token value.  <a href="#a72267dcf27ece9e20c4ff37fa9b0986c"></a><br/></td></tr>
+<tr class="memitem:ab922be04d1147f61e4f2ae462cd4e9a5"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#ab922be04d1147f61e4f2ae462cd4e9a5">RefreshToken</a><code> [get]</code></td></tr>
+<tr class="memdesc:ab922be04d1147f61e4f2ae462cd4e9a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the refresh token value.  <a href="#ab922be04d1147f61e4f2ae462cd4e9a5"></a><br/></td></tr>
+<tr class="memitem:a14400849daee1344560959bfaa6dcfa8"><td class="memItemLeft" align="right" valign="top">DateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#a14400849daee1344560959bfaa6dcfa8">Expiration</a><code> [get]</code></td></tr>
+<tr class="memdesc:a14400849daee1344560959bfaa6dcfa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the expiration time of this access token.  <a href="#a14400849daee1344560959bfaa6dcfa8"></a><br/></td></tr>
+<tr class="memitem:aa28de4ddc03170b571e189b92d0bda6d"><td class="memItemLeft" align="right" valign="top">DateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#aa28de4ddc03170b571e189b92d0bda6d">CreationTime</a><code> [get]</code></td></tr>
+<tr class="memdesc:aa28de4ddc03170b571e189b92d0bda6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the creation time of this access token.  <a href="#aa28de4ddc03170b571e189b92d0bda6d"></a><br/></td></tr>
+<tr class="memitem:afe45ccf2e6cafba89138ae26f1e45d57"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00070.html#afe45ccf2e6cafba89138ae26f1e45d57">ExpiresIn</a><code> [get]</code></td></tr>
+<tr class="memdesc:afe45ccf2e6cafba89138ae26f1e45d57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of seconds until the access token expires.  <a href="#afe45ccf2e6cafba89138ae26f1e45d57"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Encapsulates <a class="el" href="a00070.html" title="Encapsulates Program data returned in speech to text response.">Program</a> data returned in speech to text response. </p>
-</div><hr/><h2>Property Documentation</h2>
-<a class="anchor" id="aa4558256140f892c9c3aedecdc753ebd"></a>
+<div class="textblock"><p>Encapsulates OAuth token data and parsing. </p>
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="aaa82dab217c90da5be8df83c6fc7fa62"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="a00070.html#aa4558256140f892c9c3aedecdc753ebd">ATT_MSSDK.Speechv3.Program.Cast</a><code> [get, set]</code></td>
+          <td class="memname"><a class="el" href="a00070.html#aaa82dab217c90da5be8df83c6fc7fa62">ATT_MSSDK.OAuthToken.OAuthToken</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets cast. </p>
+<p>Initializes a new instance of the <a class="el" href="a00070.html" title="Encapsulates OAuth token data and parsing.">OAuthToken</a> class. </p>
 
 </div>
 </div>
-<a class="anchor" id="aa8dbbb45eb8d5294cde97f4f8d1d627a"></a>
+<a class="anchor" id="a15340c26c978a125f44704c313ab293e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="a00070.html#aa8dbbb45eb8d5294cde97f4f8d1d627a">ATT_MSSDK.Speechv3.Program.Category</a><code> [get, set]</code></td>
+          <td class="memname"><a class="el" href="a00070.html#aaa82dab217c90da5be8df83c6fc7fa62">ATT_MSSDK.OAuthToken.OAuthToken</a> </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>accessToken</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>refreshToken</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>expiresIn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>createdTime</em> = <code>null</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets category. </p>
+<p>Initializes a new instance of the <a class="el" href="a00070.html" title="Encapsulates OAuth token data and parsing.">OAuthToken</a> class. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">accessToken</td><td>Access token value returned by the server.</td></tr>
+    <tr><td class="paramname">refreshToken</td><td>Refresh token value returned by the server.</td></tr>
+    <tr><td class="paramname">expiresIn</td><td>Number of seconds until the access token expires.</td></tr>
+    <tr><td class="paramname">createdTime</td><td>The initial creation time of access token in earlier requests.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt><b>Exceptions:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ArgumentException</td><td>Thrown if headers are null, empty, or invalid.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a class="anchor" id="a72fd9bfd00c9253aac77aa973a018ca5"></a>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a55b4bbb3fadaba8290ab60fc922e0692"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="a00070.html#a72fd9bfd00c9253aac77aa973a018ca5">ATT_MSSDK.Speechv3.Program.Description</a><code> [get, set]</code></td>
+          <td class="memname">bool <a class="el" href="a00070.html#a55b4bbb3fadaba8290ab60fc922e0692">ATT_MSSDK.OAuthToken.IsExpired</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets description. </p>
+<p>Checks the access token for expiration. </p>
+<dl class="section return"><dt>Returns:</dt><dd>true if the access token has expired.</dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a5f7d5201de36f7514830911cb19ed733"></a>
+<a class="anchor" id="a15436e016666cbcb6dd4a8509e7e862b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="a00070.html#a5f7d5201de36f7514830911cb19ed733">ATT_MSSDK.Speechv3.Program.Director</a><code> [get, set]</code></td>
+          <td class="memname">static <a class="el" href="a00070.html">OAuthToken</a> <a class="el" href="a00070.html#a15436e016666cbcb6dd4a8509e7e862b">ATT_MSSDK.OAuthToken.ParseJSON</a> </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>jsonInput</em></td><td>)</td>
+          <td><code> [static]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets director. </p>
+<p>Creates an <a class="el" href="a00070.html" title="Encapsulates OAuth token data and parsing.">OAuthToken</a> from a JSON string. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">jsonInput</td><td>The JSON string to parse.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns:</dt><dd>An <a class="el" href="a00070.html" title="Encapsulates OAuth token data and parsing.">OAuthToken</a>.</dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ac8a927e28fafadcf1bf1755d92201cb0"></a>
+<a class="anchor" id="ad54a3413fcd1fdd99d347d300ebcab34"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="a00070.html#ac8a927e28fafadcf1bf1755d92201cb0">ATT_MSSDK.Speechv3.Program.Language</a><code> [get, set]</code></td>
+          <td class="memname">override string <a class="el" href="a00070.html#ad54a3413fcd1fdd99d347d300ebcab34">ATT_MSSDK.OAuthToken.ToString</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets language. </p>
+<p>Returns the string version of the <a class="el" href="a00070.html" title="Encapsulates OAuth token data and parsing.">OAuthToken</a> object. </p>
+<dl class="section return"><dt>Returns:</dt><dd>Formatted AuthToken</dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="aff3f199cbc9941eef17018f8f2666609"></a>
+<hr/><h2>Property Documentation</h2>
+<a class="anchor" id="a72267dcf27ece9e20c4ff37fa9b0986c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="a00070.html#aff3f199cbc9941eef17018f8f2666609">ATT_MSSDK.Speechv3.Program.MpaaRating</a><code> [get, set]</code></td>
+          <td class="memname">string <a class="el" href="a00070.html#a72267dcf27ece9e20c4ff37fa9b0986c">ATT_MSSDK.OAuthToken.AccessToken</a><code> [get]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets mpaaRating. </p>
+<p>Gets the access token value. </p>
 
 </div>
 </div>
-<a class="anchor" id="ab982b0440ca7fe64f908c2dcaea45926"></a>
+<a class="anchor" id="aa28de4ddc03170b571e189b92d0bda6d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="a00070.html#ab982b0440ca7fe64f908c2dcaea45926">ATT_MSSDK.Speechv3.Program.OriginalAirDate</a><code> [get, set]</code></td>
+          <td class="memname">DateTime <a class="el" href="a00070.html#aa28de4ddc03170b571e189b92d0bda6d">ATT_MSSDK.OAuthToken.CreationTime</a><code> [get]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets originalAirDate. </p>
+<p>Gets the creation time of this access token. </p>
 
 </div>
 </div>
-<a class="anchor" id="a2bacf0f50839e3392f9e5ed3074c76e3"></a>
+<a class="anchor" id="a14400849daee1344560959bfaa6dcfa8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="a00070.html#a2bacf0f50839e3392f9e5ed3074c76e3">ATT_MSSDK.Speechv3.Program.Pid</a><code> [get, set]</code></td>
+          <td class="memname">DateTime <a class="el" href="a00070.html#a14400849daee1344560959bfaa6dcfa8">ATT_MSSDK.OAuthToken.Expiration</a><code> [get]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets pid. </p>
+<p>Gets the expiration time of this access token. </p>
 
 </div>
 </div>
-<a class="anchor" id="ac8534c121a04d86d9830ce866195debc"></a>
+<a class="anchor" id="afe45ccf2e6cafba89138ae26f1e45d57"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="a00070.html#ac8534c121a04d86d9830ce866195debc">ATT_MSSDK.Speechv3.Program.RunTime</a><code> [get, set]</code></td>
+          <td class="memname">long <a class="el" href="a00070.html#afe45ccf2e6cafba89138ae26f1e45d57">ATT_MSSDK.OAuthToken.ExpiresIn</a><code> [get]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets runTime. </p>
+<p>Gets the number of seconds until the access token expires. </p>
 
 </div>
 </div>
-<a class="anchor" id="ac705ee3c1a42cf2592f04b4a05237562"></a>
+<a class="anchor" id="ab922be04d1147f61e4f2ae462cd4e9a5"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="a00070.html#ac705ee3c1a42cf2592f04b4a05237562">ATT_MSSDK.Speechv3.Program.ShowType</a><code> [get, set]</code></td>
+          <td class="memname">string <a class="el" href="a00070.html#ab922be04d1147f61e4f2ae462cd4e9a5">ATT_MSSDK.OAuthToken.RefreshToken</a><code> [get]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets showType. </p>
-
-</div>
-</div>
-<a class="anchor" id="a32293c0bdafd3d40008d40037c5b3a3a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00070.html#a32293c0bdafd3d40008d40037c5b3a3a">ATT_MSSDK.Speechv3.Program.StarRating</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets starRating. </p>
-
-</div>
-</div>
-<a class="anchor" id="ae434f72653882dab5a1dc0a0458ccf08"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00070.html#ae434f72653882dab5a1dc0a0458ccf08">ATT_MSSDK.Speechv3.Program.Subtitle</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets subtitle. </p>
-
-</div>
-</div>
-<a class="anchor" id="a1513d5ef11a2f4016bfb0a13c6c18f37"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00070.html#a1513d5ef11a2f4016bfb0a13c6c18f37">ATT_MSSDK.Speechv3.Program.Title</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets title. </p>
-
-</div>
-</div>
-<a class="anchor" id="aa7e97bd7791a91b873597cdf0952fd21"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00070.html#aa7e97bd7791a91b873597cdf0952fd21">ATT_MSSDK.Speechv3.Program.Year</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets year. </p>
+<p>Gets the refresh token value. </p>
 
 </div>
 </div>
@@ -359,13 +367,13 @@ Properties</h2></td></tr>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="a00201.html">ATT_MSSDK</a>      </li>
-      <li class="navelem"><a class="el" href="a00212.html">Speechv3</a>      </li>
-      <li class="navelem"><a class="el" href="a00070.html">Program</a>      </li>
+      <li class="navelem"><a class="el" href="a00209.html">ATT_MSSDK</a>      </li>
+      <li class="navelem"><a class="el" href="a00070.html">OAuthToken</a>      </li>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:11 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

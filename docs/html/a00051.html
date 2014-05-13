@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.MIMv1.MessageHeadersListData Class Reference</title>
+<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.InAppMessaging.MessageDelta Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -100,95 +100,54 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#properties">Properties</a>  </div>
   <div class="headertitle">
-<div class="title">ATT_MSSDK.MIMv1.MessageHeadersListData Class Reference</div>  </div>
+<div class="title">ATT_MSSDK.InAppMessaging.MessageDelta Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Message Header List.  
+<p>Container for <a class="el" href="a00050.html" title="Container for message.">Message</a> <a class="el" href="a00026.html" title="A container that lists the updates based on message type TEXT, MMS.">Delta</a> <a class="el" href="a00084.html" title="Abstract base class for all Response objects.">Response</a>.  
  <a href="a00051.html#details">More...</a></p>
 
-<p><a href="a00271.html">List of all members.</a></p>
+<p><a href="a00277.html">List of all members.</a></p>
 <table class="memberdecls">
-<tr><td colspan="2"><h2><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:acd0dc6d3830e541d71cd57b629be367b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00051.html#acd0dc6d3830e541d71cd57b629be367b">MessageHeadersListData</a> ()</td></tr>
-<tr class="memdesc:acd0dc6d3830e541d71cd57b629be367b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="a00051.html" title="Message Header List.">MessageHeadersListData</a> class.  <a href="#acd0dc6d3830e541d71cd57b629be367b"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:ad4271887892f2717b0687811f2d984b0"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="a00040.html">HeadersData</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00051.html#ad4271887892f2717b0687811f2d984b0">Headers</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ad4271887892f2717b0687811f2d984b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the object containing a List of Messages Headers.  <a href="#ad4271887892f2717b0687811f2d984b0"></a><br/></td></tr>
-<tr class="memitem:a8db3fab80093a6e1b0b6975f05a3e921"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00051.html#a8db3fab80093a6e1b0b6975f05a3e921">IndexCursor</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a8db3fab80093a6e1b0b6975f05a3e921"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the IndexCursor. A string which defines the start of the next block of messages for the current request.  <a href="#a8db3fab80093a6e1b0b6975f05a3e921"></a><br/></td></tr>
-<tr class="memitem:a298a2adcd780e53ddb6bf3260c35c5fb"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00051.html#a298a2adcd780e53ddb6bf3260c35c5fb">HeaderCount</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a298a2adcd780e53ddb6bf3260c35c5fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the HeaderCount. A number representing the number of headers returned for this request.  <a href="#a298a2adcd780e53ddb6bf3260c35c5fb"></a><br/></td></tr>
+<tr class="memitem:ae4542e3b5c348522f92807088ee216a4"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00051.html#ae4542e3b5c348522f92807088ee216a4">State</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ae4542e3b5c348522f92807088ee216a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of State. This is a opaque string that denotes the current state of the mailbox in the platform.  <a href="#ae4542e3b5c348522f92807088ee216a4"></a><br/></td></tr>
+<tr class="memitem:aa6c29479a756b3c4787f09102fa25ba8"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="a00026.html">Delta</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00051.html#aa6c29479a756b3c4787f09102fa25ba8">Delta</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:aa6c29479a756b3c4787f09102fa25ba8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of <a class="el" href="a00026.html" title="A container that lists the updates based on message type TEXT, MMS.">Delta</a>. A container that lists the updates based on message type TEXT, MMS.  <a href="#aa6c29479a756b3c4787f09102fa25ba8"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Message Header List. </p>
-</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="acd0dc6d3830e541d71cd57b629be367b"></a>
+<div class="textblock"><p>Container for <a class="el" href="a00050.html" title="Container for message.">Message</a> <a class="el" href="a00026.html" title="A container that lists the updates based on message type TEXT, MMS.">Delta</a> <a class="el" href="a00084.html" title="Abstract base class for all Response objects.">Response</a>. </p>
+</div><hr/><h2>Property Documentation</h2>
+<a class="anchor" id="aa6c29479a756b3c4787f09102fa25ba8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00051.html#acd0dc6d3830e541d71cd57b629be367b">ATT_MSSDK.MIMv1.MessageHeadersListData.MessageHeadersListData</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">List&lt;<a class="el" href="a00026.html">Delta</a>&gt; <a class="el" href="a00051.html#aa6c29479a756b3c4787f09102fa25ba8">ATT_MSSDK.InAppMessaging.MessageDelta.Delta</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Initializes a new instance of the <a class="el" href="a00051.html" title="Message Header List.">MessageHeadersListData</a> class. </p>
+<p>Gets or sets the value of <a class="el" href="a00026.html" title="A container that lists the updates based on message type TEXT, MMS.">Delta</a>. A container that lists the updates based on message type TEXT, MMS. </p>
 
 </div>
 </div>
-<hr/><h2>Property Documentation</h2>
-<a class="anchor" id="a298a2adcd780e53ddb6bf3260c35c5fb"></a>
+<a class="anchor" id="ae4542e3b5c348522f92807088ee216a4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="a00051.html#a298a2adcd780e53ddb6bf3260c35c5fb">ATT_MSSDK.MIMv1.MessageHeadersListData.HeaderCount</a><code> [get, set]</code></td>
+          <td class="memname">string <a class="el" href="a00051.html#ae4542e3b5c348522f92807088ee216a4">ATT_MSSDK.InAppMessaging.MessageDelta.State</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets the HeaderCount. A number representing the number of headers returned for this request. </p>
-
-</div>
-</div>
-<a class="anchor" id="ad4271887892f2717b0687811f2d984b0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">List&lt;<a class="el" href="a00040.html">HeadersData</a>&gt; <a class="el" href="a00051.html#ad4271887892f2717b0687811f2d984b0">ATT_MSSDK.MIMv1.MessageHeadersListData.Headers</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the object containing a List of Messages Headers. </p>
-
-</div>
-</div>
-<a class="anchor" id="a8db3fab80093a6e1b0b6975f05a3e921"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00051.html#a8db3fab80093a6e1b0b6975f05a3e921">ATT_MSSDK.MIMv1.MessageHeadersListData.IndexCursor</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the IndexCursor. A string which defines the start of the next block of messages for the current request. </p>
+<p>Gets or sets the value of State. This is a opaque string that denotes the current state of the mailbox in the platform. </p>
 
 </div>
 </div>
@@ -196,13 +155,14 @@ Properties</h2></td></tr>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="a00201.html">ATT_MSSDK</a>      </li>
-      <li class="navelem"><a class="el" href="a00206.html">MIMv1</a>      </li>
-      <li class="navelem"><a class="el" href="a00051.html">MessageHeadersListData</a>      </li>
+      <li class="navelem"><a class="el" href="a00209.html">ATT_MSSDK</a>      </li>
+      <li class="navelem"><a class="el" href="a00213.html">InAppMessaging</a>      </li>
+      <li class="navelem"><a class="el" href="a00051.html">MessageDelta</a>      </li>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:10 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

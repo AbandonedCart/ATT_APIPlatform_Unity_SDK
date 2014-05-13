@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: In-application Messaging From Mobile Number Methods</title>
+<title>AT&amp;T API Platform SDK for Microsoft: Advertisement Methods</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -103,45 +103,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">In-application Messaging From Mobile Number Methods</div>  </div>
+<div class="title">Advertisement Methods</div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00074.html">ATT_MSSDK.RequestFactory</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The RequestFactory manages the connections and calls to the AT&amp;T API Platform.  <a href="a00074.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00081.html">ATT_MSSDK.RequestFactory</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The RequestFactory manages the connections and calls to the AT&amp;T API Platform.  <a href="a00081.html#details">More...</a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga1b1a1638dc70c3fae0ef9540cc5dfd96"><td class="memItemLeft" align="right" valign="top">GetMessageHeadersResponse&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00238.html#ga1b1a1638dc70c3fae0ef9540cc5dfd96">ATT_MSSDK.RequestFactory.GetMessageHeaders</a> (int headerCount, string indexCursor=null)</td></tr>
-<tr class="memdesc:ga1b1a1638dc70c3fae0ef9540cc5dfd96"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method gets meta-data for one or more Subscriber Messages from the AT&amp;T Messages environment.  <a href="#ga1b1a1638dc70c3fae0ef9540cc5dfd96"></a><br/></td></tr>
-<tr class="memitem:ga77743b46dfa77b32e5f5530bc79497aa"><td class="memItemLeft" align="right" valign="top">GetMessageContentResponse&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00238.html#ga77743b46dfa77b32e5f5530bc79497aa">ATT_MSSDK.RequestFactory.GetMessage</a> (string messageId, string partNumber)</td></tr>
-<tr class="memdesc:ga77743b46dfa77b32e5f5530bc79497aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method gets one or more subscriber messages from the AT&amp;T Messages environment.  <a href="#ga77743b46dfa77b32e5f5530bc79497aa"></a><br/></td></tr>
-<tr class="memitem:ga123ffbb5c51547e1f79d9c2d63151486"><td class="memItemLeft" align="right" valign="top">SendMessageResponse&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00238.html#ga123ffbb5c51547e1f79d9c2d63151486">ATT_MSSDK.RequestFactory.SendMessage</a> (string address, string text, string subject=null, bool group=false, int maxAddressCount=10)</td></tr>
-<tr class="memdesc:ga123ffbb5c51547e1f79d9c2d63151486"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a message to the specified address.  <a href="#ga123ffbb5c51547e1f79d9c2d63151486"></a><br/></td></tr>
-<tr class="memitem:gaf25459127d1c383034a64b9c7fc3c6d9"><td class="memItemLeft" align="right" valign="top">SendMessageResponse&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00238.html#gaf25459127d1c383034a64b9c7fc3c6d9">ATT_MSSDK.RequestFactory.SendMessage</a> (List&lt; string &gt; addresses, string text, string subject=null, bool group=false, int maxAddressCount=10)</td></tr>
-<tr class="memdesc:gaf25459127d1c383034a64b9c7fc3c6d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a message to the specified address list.  <a href="#gaf25459127d1c383034a64b9c7fc3c6d9"></a><br/></td></tr>
-<tr class="memitem:ga2210b8d34711c26c711cca2a0a940c32"><td class="memItemLeft" align="right" valign="top">SendMessageResponse&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00238.html#ga2210b8d34711c26c711cca2a0a940c32">ATT_MSSDK.RequestFactory.SendMessage</a> (string address, List&lt; string &gt; attachments, string text, string subject=null, bool group=false, int maxAddressCount=10)</td></tr>
-<tr class="memdesc:ga2210b8d34711c26c711cca2a0a940c32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a message to the specified address.  <a href="#ga2210b8d34711c26c711cca2a0a940c32"></a><br/></td></tr>
-<tr class="memitem:ga52ecf0d5f7f21df73e969bc466ae437a"><td class="memItemLeft" align="right" valign="top">SendMessageResponse&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00238.html#ga52ecf0d5f7f21df73e969bc466ae437a">ATT_MSSDK.RequestFactory.SendMessage</a> (List&lt; string &gt; addresses, List&lt; string &gt; attachments, string text, string subject=null, bool group=false, int maxAddressCount=10)</td></tr>
-<tr class="memdesc:ga52ecf0d5f7f21df73e969bc466ae437a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a message to the specified address list.  <a href="#ga52ecf0d5f7f21df73e969bc466ae437a"></a><br/></td></tr>
+<tr class="memitem:ga6ef9072dc4aeca41031869af99a8ee20"><td class="memItemLeft" align="right" valign="top">AdResponse&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00238.html#ga6ef9072dc4aeca41031869af99a8ee20">ATT_MSSDK.RequestFactory.GetAdvertisement</a> (AdRequest adsRequest, string udid=null)</td></tr>
+<tr class="memdesc:ga6ef9072dc4aeca41031869af99a8ee20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets Advertisement details This method gets client credentials and issues the API request. Once the response is received, the response will be parsed into an AdResponse object.  <a href="#ga6ef9072dc4aeca41031869af99a8ee20"></a><br/></td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
-<a class="anchor" id="ga77743b46dfa77b32e5f5530bc79497aa"></a>
+<a class="anchor" id="ga6ef9072dc4aeca41031869af99a8ee20"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">GetMessageContentResponse <a class="el" href="a00238.html#ga77743b46dfa77b32e5f5530bc79497aa">ATT_MSSDK.RequestFactory.GetMessage</a> </td>
+          <td class="memname">AdResponse <a class="el" href="a00238.html#ga6ef9072dc4aeca41031869af99a8ee20">ATT_MSSDK.RequestFactory.GetAdvertisement</a> </td>
           <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>messageId</em>, </td>
+          <td class="paramtype"><a class="el" href="a00017.html">AdRequest</a>&#160;</td>
+          <td class="paramname"><em>adsRequest</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>partNumber</em>&#160;</td>
+          <td class="paramname"><em>udid</em> = <code>null</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -152,330 +142,23 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>This method gets one or more subscriber messages from the AT&amp;T Messages environment. </p>
+<p>Gets Advertisement details This method gets client credentials and issues the API request. Once the response is received, the response will be parsed into an AdResponse object. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">messageId</td><td>A MessageId representing a Subscriber Message in the AT&amp;T Messages environment.</td></tr>
-    <tr><td class="paramname">partNumber</td><td>A content identifier representing an attachment in the referenced Subscriber Message.</td></tr>
+    <tr><td class="paramname">adsRequest</td><td>AdRequest object that contains Ad parameters.</td></tr>
+    <tr><td class="paramname">udid</td><td>The UDID Parameter is used for ad tracking purpose and should be at least 30 characters. If not specified, default value of Guid() will be passed.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns:</dt><dd>GetMessageContentResponse object.</dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga1b1a1638dc70c3fae0ef9540cc5dfd96"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">GetMessageHeadersResponse <a class="el" href="a00238.html#ga1b1a1638dc70c3fae0ef9540cc5dfd96">ATT_MSSDK.RequestFactory.GetMessageHeaders</a> </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>headerCount</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>indexCursor</em> = <code>null</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>This method gets meta-data for one or more Subscriber Messages from the AT&amp;T Messages environment. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">headerCount</td><td>The number of Headers to be returned: Valid Range: Min = 1, Max = 500 HeaderCount will be relative to the most recent Subscriber message. </td></tr>
-    <tr><td class="paramname">indexCursor</td><td>An index value, for which HeaderCount will start.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns:</dt><dd>GetMessageHeadersResponse object containing the results.</dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga123ffbb5c51547e1f79d9c2d63151486"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">SendMessageResponse <a class="el" href="a00238.html#ga123ffbb5c51547e1f79d9c2d63151486">ATT_MSSDK.RequestFactory.SendMessage</a> </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>address</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>text</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>subject</em> = <code>null</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>group</em> = <code>false</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>maxAddressCount</em> = <code>10</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Send a message to the specified address. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">address</td><td>Address to send message.</td></tr>
-    <tr><td class="paramname">text</td><td>The text to send.</td></tr>
-    <tr><td class="paramname">subject</td><td>The subject to send</td></tr>
-    <tr><td class="paramname">group</td><td>Flag to send as broadcast or group</td></tr>
-    <tr><td class="paramname">maxAddressCount</td><td>Maximum number of addresses. Its default to 10, but, if APIPlatform changes the value, use the new value as argument</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns:</dt><dd><a class="el" href="a00080.html" title="The response to a Send Message request.">ATT_MSSDK.MOBOv1.SendMessageResponse</a>An SmsResponse object containing the results.</dd></dl>
 <dl class="exception"><dt><b>Exceptions:</b></dt><dd>
   <table class="exception">
-    <tr><td class="paramname">ArgumentException</td><td>Thrown if an argument is invalid.</td></tr>
-    <tr><td class="paramname"><a class="el" href="a00050.html" title="Exception returned if the RequestFactory does not include the scope necessary for this call...">InvalidScopeException</a></td><td>Thrown if the Request Factory scope does not include SMS.</td></tr>
-    <tr><td class="paramname"><a class="el" href="a00049.html" title="Exception returned if there is an error returned by the server or a connection failure.">InvalidResponseException</a></td><td>Thrown if the server returns an error or there is a connection failure.</td></tr>
+    <tr><td class="paramname">ArgumentNullException</td><td>Thrown if AdRequest object is null or Ads Category is null</td></tr>
+    <tr><td class="paramname">ArgumentException</td><td>Thrown if any invalid value is given for AdRequest object.</td></tr>
+    <tr><td class="paramname"><a class="el" href="a00047.html" title="Exception returned if there is an error returned by the server or a connection failure.">InvalidResponseException</a></td><td>Thrown if the server returns an error.</td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a class="anchor" id="gaf25459127d1c383034a64b9c7fc3c6d9"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">SendMessageResponse <a class="el" href="a00238.html#ga123ffbb5c51547e1f79d9c2d63151486">ATT_MSSDK.RequestFactory.SendMessage</a> </td>
-          <td>(</td>
-          <td class="paramtype">List&lt; string &gt;&#160;</td>
-          <td class="paramname"><em>addresses</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>text</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>subject</em> = <code>null</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>group</em> = <code>false</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>maxAddressCount</em> = <code>10</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Send a message to the specified address list. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">addresses</td><td>Address List</td></tr>
-    <tr><td class="paramname">text</td><td>The text to send.</td></tr>
-    <tr><td class="paramname">subject</td><td>The subject to send</td></tr>
-    <tr><td class="paramname">group</td><td>Flag to send as broadcast or group</td></tr>
-    <tr><td class="paramname">maxAddressCount</td><td>Maximum number of addresses. Its default to 10, but, if APIPlatform changes the value, use the new value as argument</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns:</dt><dd><a class="el" href="a00080.html" title="The response to a Send Message request.">ATT_MSSDK.MOBOv1.SendMessageResponse</a>An SmsResponse object containing the results.</dd></dl>
-<dl class="exception"><dt><b>Exceptions:</b></dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">ArgumentException</td><td>Thrown if an argument is invalid.</td></tr>
-    <tr><td class="paramname"><a class="el" href="a00050.html" title="Exception returned if the RequestFactory does not include the scope necessary for this call...">InvalidScopeException</a></td><td>Thrown if the Request Factory scope does not include SMS.</td></tr>
-    <tr><td class="paramname"><a class="el" href="a00049.html" title="Exception returned if there is an error returned by the server or a connection failure.">InvalidResponseException</a></td><td>Thrown if the server returns an error or there is a connection failure.</td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="ga2210b8d34711c26c711cca2a0a940c32"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">SendMessageResponse <a class="el" href="a00238.html#ga123ffbb5c51547e1f79d9c2d63151486">ATT_MSSDK.RequestFactory.SendMessage</a> </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>address</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">List&lt; string &gt;&#160;</td>
-          <td class="paramname"><em>attachments</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>text</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>subject</em> = <code>null</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>group</em> = <code>false</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>maxAddressCount</em> = <code>10</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Send a message to the specified address. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">address</td><td>Address to send message</td></tr>
-    <tr><td class="paramname">attachments</td><td>List of attachments</td></tr>
-    <tr><td class="paramname">text</td><td>The text to send.</td></tr>
-    <tr><td class="paramname">subject</td><td>The subject to send</td></tr>
-    <tr><td class="paramname">group</td><td>Flag to send as broadcast or group</td></tr>
-    <tr><td class="paramname">maxAddressCount</td><td>Maximum number of addresses. Its default to 10, but, if APIPlatform changes the value, use the new value as argument</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns:</dt><dd><a class="el" href="a00080.html" title="The response to a Send Message request.">ATT_MSSDK.MOBOv1.SendMessageResponse</a>An SmsResponse object containing the results.</dd></dl>
-<dl class="exception"><dt><b>Exceptions:</b></dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">ArgumentException</td><td>Thrown if an argument is invalid.</td></tr>
-    <tr><td class="paramname"><a class="el" href="a00050.html" title="Exception returned if the RequestFactory does not include the scope necessary for this call...">InvalidScopeException</a></td><td>Thrown if the Request Factory scope does not include SMS.</td></tr>
-    <tr><td class="paramname"><a class="el" href="a00049.html" title="Exception returned if there is an error returned by the server or a connection failure.">InvalidResponseException</a></td><td>Thrown if the server returns an error or there is a connection failure.</td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="ga52ecf0d5f7f21df73e969bc466ae437a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">SendMessageResponse <a class="el" href="a00238.html#ga123ffbb5c51547e1f79d9c2d63151486">ATT_MSSDK.RequestFactory.SendMessage</a> </td>
-          <td>(</td>
-          <td class="paramtype">List&lt; string &gt;&#160;</td>
-          <td class="paramname"><em>addresses</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">List&lt; string &gt;&#160;</td>
-          <td class="paramname"><em>attachments</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>text</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>subject</em> = <code>null</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>group</em> = <code>false</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>maxAddressCount</em> = <code>10</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Send a message to the specified address list. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">addresses</td><td>Address List</td></tr>
-    <tr><td class="paramname">attachments</td><td>List of attachments</td></tr>
-    <tr><td class="paramname">text</td><td>The text to send.</td></tr>
-    <tr><td class="paramname">subject</td><td>The subject to send</td></tr>
-    <tr><td class="paramname">group</td><td>Flag to send as broadcast or group</td></tr>
-    <tr><td class="paramname">maxAddressCount</td><td>Maximum number of addresses. Its default to 10, but, if APIPlatform changes the value, use the new value as argument</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns:</dt><dd><a class="el" href="a00080.html" title="The response to a Send Message request.">ATT_MSSDK.MOBOv1.SendMessageResponse</a>An SmsResponse object containing the results.</dd></dl>
-<dl class="exception"><dt><b>Exceptions:</b></dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">ArgumentException</td><td>Thrown if an argument is invalid.</td></tr>
-    <tr><td class="paramname"><a class="el" href="a00050.html" title="Exception returned if the RequestFactory does not include the scope necessary for this call...">InvalidScopeException</a></td><td>Thrown if the Request Factory scope does not include SMS.</td></tr>
-    <tr><td class="paramname"><a class="el" href="a00049.html" title="Exception returned if there is an error returned by the server or a connection failure.">InvalidResponseException</a></td><td>Thrown if the server returns an error or there is a connection failure.</td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section return"><dt>Returns:</dt><dd><a class="el" href="a00018.html" title="High level container structure for AdsResponse.">ATT_MSSDK.Advertisementv1.AdResponse</a> An AdResponse object containing the results.</dd></dl>
 
 </div>
 </div>
@@ -483,10 +166,11 @@ Functions</h2></td></tr>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:10 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

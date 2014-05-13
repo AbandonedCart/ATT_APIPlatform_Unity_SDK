@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.Paymentv3.SubscriptionStatus Class Reference</title>
+<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.SMSv3.SmsDeliveryResponse Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -100,416 +100,99 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#properties">Properties</a>  </div>
   <div class="headertitle">
-<div class="title">ATT_MSSDK.Paymentv3.SubscriptionStatus Class Reference</div>  </div>
+<div class="title">ATT_MSSDK.SMSv3.SmsDeliveryResponse Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Encapsulates return values from the SubscriptionRaw Status API.  
+<p>Contains the results of the SmsDelivery request.  
  <a href="a00093.html#details">More...</a></p>
+<div class="dynheader">
+Inheritance diagram for ATT_MSSDK.SMSv3.SmsDeliveryResponse:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="a00093.png" usemap="#ATT_MSSDK.SMSv3.SmsDeliveryResponse_map" alt=""/>
+  <map id="ATT_MSSDK.SMSv3.SmsDeliveryResponse_map" name="ATT_MSSDK.SMSv3.SmsDeliveryResponse_map">
+<area href="a00084.html" title="Abstract base class for all Response objects." alt="ATT_MSSDK.Response" shape="rect" coords="0,0,261,24"/>
+</map>
+ </div></div>
 
-<p><a href="a00298.html">List of all members.</a></p>
+<p><a href="a00318.html">List of all members.</a></p>
 <table class="memberdecls">
-<tr><td colspan="2"><h2><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a010028fb0fb93a4c8b6f0ce5619804ed"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00093.html#a010028fb0fb93a4c8b6f0ce5619804ed">SubscriptionStatus</a> ()</td></tr>
-<tr class="memdesc:a010028fb0fb93a4c8b6f0ce5619804ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="a00093.html" title="Encapsulates return values from the SubscriptionRaw Status API.">SubscriptionStatus</a> class.  <a href="#a010028fb0fb93a4c8b6f0ce5619804ed"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><b>DeliveryInfoListRoot</b></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aa29fad94c9c1cbdbfecb7f224bc8c4d0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00093.html">SubscriptionStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00093.html#aa29fad94c9c1cbdbfecb7f224bc8c4d0">ParseXML</a> (string xmlInput)</td></tr>
-<tr class="memdesc:aa29fad94c9c1cbdbfecb7f224bc8c4d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse an XML document and create a <a class="el" href="a00093.html" title="Encapsulates return values from the SubscriptionRaw Status API.">SubscriptionStatus</a> object.  <a href="#aa29fad94c9c1cbdbfecb7f224bc8c4d0"></a><br/></td></tr>
+<tr class="memitem:adeb582b1595598043ff751423cf6d46f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00093.html">SmsDeliveryResponse</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00093.html#adeb582b1595598043ff751423cf6d46f">ParseJSON</a> (string jsonInput)</td></tr>
+<tr class="memdesc:adeb582b1595598043ff751423cf6d46f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a string containing a JSON object to a <a class="el" href="a00093.html" title="Contains the results of the SmsDelivery request.">SmsDeliveryResponse</a> object.  <a href="#adeb582b1595598043ff751423cf6d46f"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a8c5f4d5234f5d9fc6ff1ab0256192be0"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00093.html#a8c5f4d5234f5d9fc6ff1ab0256192be0">Id</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a8c5f4d5234f5d9fc6ff1ab0256192be0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Id of the <a class="el" href="a00093.html" title="Encapsulates return values from the SubscriptionRaw Status API.">SubscriptionStatus</a> object.  <a href="#a8c5f4d5234f5d9fc6ff1ab0256192be0"></a><br/></td></tr>
-<tr class="memitem:a39c1b40919d4d427894084d4df584f22"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00093.html#a39c1b40919d4d427894084d4df584f22">Status</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a39c1b40919d4d427894084d4df584f22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Status of the <a class="el" href="a00093.html" title="Encapsulates return values from the SubscriptionRaw Status API.">SubscriptionStatus</a> object.  <a href="#a39c1b40919d4d427894084d4df584f22"></a><br/></td></tr>
-<tr class="memitem:aa9dff6125d02cec1a06207f34dd22fdc"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00093.html#aa9dff6125d02cec1a06207f34dd22fdc">Type</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aa9dff6125d02cec1a06207f34dd22fdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Type of the <a class="el" href="a00093.html" title="Encapsulates return values from the SubscriptionRaw Status API.">SubscriptionStatus</a> object.  <a href="#aa9dff6125d02cec1a06207f34dd22fdc"></a><br/></td></tr>
-<tr class="memitem:ab8a37ee34981eece92f97489678775f4"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00093.html#ab8a37ee34981eece92f97489678775f4">ConsumerId</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ab8a37ee34981eece92f97489678775f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Unique Consumer Id.  <a href="#ab8a37ee34981eece92f97489678775f4"></a><br/></td></tr>
-<tr class="memitem:a3768354f5f26401eccc33e220fc6e2f9"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00093.html#a3768354f5f26401eccc33e220fc6e2f9">MerchantTransactionId</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a3768354f5f26401eccc33e220fc6e2f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the MerchantTransactionId of the <a class="el" href="a00093.html" title="Encapsulates return values from the SubscriptionRaw Status API.">SubscriptionStatus</a> object.  <a href="#a3768354f5f26401eccc33e220fc6e2f9"></a><br/></td></tr>
-<tr class="memitem:aab2f10d663cb331a7cad8bb20c66281b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00093.html#aab2f10d663cb331a7cad8bb20c66281b">MerchantSubscriptionId</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aab2f10d663cb331a7cad8bb20c66281b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Subscription ID that is being created/used, if transaction was a subscription. This field will only appear after the transaction has been authorized (status = AUTHORIZED).  <a href="#aab2f10d663cb331a7cad8bb20c66281b"></a><br/></td></tr>
-<tr class="memitem:afbc0cce1fddf4da4187134afaa9f53c9"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00093.html#afbc0cce1fddf4da4187134afaa9f53c9">Description</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:afbc0cce1fddf4da4187134afaa9f53c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Short description of the product that is being sold.  <a href="#afbc0cce1fddf4da4187134afaa9f53c9"></a><br/></td></tr>
-<tr class="memitem:a7ce2e1018cc02eeca6df5f9385354f73"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00093.html#a7ce2e1018cc02eeca6df5f9385354f73">Amount</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a7ce2e1018cc02eeca6df5f9385354f73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Amount of transaction with a maximum of 2 decimal places. Examples: 0.99 to 2.99.  <a href="#a7ce2e1018cc02eeca6df5f9385354f73"></a><br/></td></tr>
-<tr class="memitem:a85cd420313551c8d6abe89730af6e469"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00093.html#a85cd420313551c8d6abe89730af6e469">ContentCategory</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a85cd420313551c8d6abe89730af6e469"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Content Category from a predefined list.  <a href="#a85cd420313551c8d6abe89730af6e469"></a><br/></td></tr>
-<tr class="memitem:ac9fe0c5e41c7790aea561545d291a91c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00093.html#ac9fe0c5e41c7790aea561545d291a91c">MerchantProductId</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ac9fe0c5e41c7790aea561545d291a91c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Purchased Product ID in the merchant's system.  <a href="#ac9fe0c5e41c7790aea561545d291a91c"></a><br/></td></tr>
-<tr class="memitem:af02c4b054bbb1bbbfcd86accf1ebc15b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00093.html#af02c4b054bbb1bbbfcd86accf1ebc15b">MerchantApplicationId</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:af02c4b054bbb1bbbfcd86accf1ebc15b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Merchant application identifier that initiated the payment transaction.  <a href="#af02c4b054bbb1bbbfcd86accf1ebc15b"></a><br/></td></tr>
-<tr class="memitem:a235c7a4b047bebfe71c913656fa9fa71"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00093.html#a235c7a4b047bebfe71c913656fa9fa71">MerchantId</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a235c7a4b047bebfe71c913656fa9fa71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Merchant identifier in the external system.  <a href="#a235c7a4b047bebfe71c913656fa9fa71"></a><br/></td></tr>
-<tr class="memitem:a7e8d1c13c269ac36e7386ba232621b36"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00093.html#a7e8d1c13c269ac36e7386ba232621b36">IsSuccess</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a7e8d1c13c269ac36e7386ba232621b36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets a Boolean flag indicating the status of the request.  <a href="#a7e8d1c13c269ac36e7386ba232621b36"></a><br/></td></tr>
-<tr class="memitem:af7261182613319ae9d70e3a125de197f"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00093.html#af7261182613319ae9d70e3a125de197f">Version</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:af7261182613319ae9d70e3a125de197f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Version of the API signature.  <a href="#af7261182613319ae9d70e3a125de197f"></a><br/></td></tr>
-<tr class="memitem:a88fad5390afa1d38602fac0cf21dca46"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00093.html#a88fad5390afa1d38602fac0cf21dca46">IsAutoCommitted</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a88fad5390afa1d38602fac0cf21dca46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the True in R2. Read only parameter.  <a href="#a88fad5390afa1d38602fac0cf21dca46"></a><br/></td></tr>
-<tr class="memitem:a3d84b93356bbf8d86f2d7cc898dbea9e"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00093.html#a3d84b93356bbf8d86f2d7cc898dbea9e">Channel</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a3d84b93356bbf8d86f2d7cc898dbea9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Merchant UI channel. Must be set to MOBILE_WEB in Release R1.  <a href="#a3d84b93356bbf8d86f2d7cc898dbea9e"></a><br/></td></tr>
-<tr class="memitem:ab57ce1e419703b1ce63d1fab754b61a1"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00093.html#ab57ce1e419703b1ce63d1fab754b61a1">Currency</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ab57ce1e419703b1ce63d1fab754b61a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets as USD.  <a href="#ab57ce1e419703b1ce63d1fab754b61a1"></a><br/></td></tr>
-<tr class="memitem:af32a9b6d27bce57fffe91b7592dbbfa0"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00093.html#af32a9b6d27bce57fffe91b7592dbbfa0">SubscriptionPeriod</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:af32a9b6d27bce57fffe91b7592dbbfa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of period. The interval at which the subscription will be charged.  <a href="#af32a9b6d27bce57fffe91b7592dbbfa0"></a><br/></td></tr>
-<tr class="memitem:a35b0900de0824fe6ed4c394bdd6a9ea9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00093.html#a35b0900de0824fe6ed4c394bdd6a9ea9">PeriodAmount</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a35b0900de0824fe6ed4c394bdd6a9ea9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the number of periods that pass between the renewals.  <a href="#a35b0900de0824fe6ed4c394bdd6a9ea9"></a><br/></td></tr>
-<tr class="memitem:a786c8f0d337dc497a5bf82499b62e92b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00093.html#a786c8f0d337dc497a5bf82499b62e92b">Recurrences</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a786c8f0d337dc497a5bf82499b62e92b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the number of times the subscription will be renewed.  <a href="#a786c8f0d337dc497a5bf82499b62e92b"></a><br/></td></tr>
+<tr class="memitem:a1ea7acf282d921f9ea3159d56755f01e"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00093.html#a1ea7acf282d921f9ea3159d56755f01e">ResourceURL</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a1ea7acf282d921f9ea3159d56755f01e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the ResourceURL. The endpoint URI that served this request.  <a href="#a1ea7acf282d921f9ea3159d56755f01e"></a><br/></td></tr>
+<tr class="memitem:a80d7bb21b36a6a44cf6c067c60fcfaf0"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="a00021.html">DeliveryInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00093.html#a80d7bb21b36a6a44cf6c067c60fcfaf0">DeliveryInfo</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a80d7bb21b36a6a44cf6c067c60fcfaf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the <a class="el" href="a00021.html" title="Encapsulates the delivery info returned by the server for SMS messages.">DeliveryInfo</a> list. Object contained in '<a class="el" href="a00023.html" title="Contains the information returned by the server for delivery responses.">DeliveryInfoList</a>'. It contains three strings i-e Id, Address and DeliveryStatus.  <a href="#a80d7bb21b36a6a44cf6c067c60fcfaf0"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Encapsulates return values from the SubscriptionRaw Status API. </p>
-</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a010028fb0fb93a4c8b6f0ce5619804ed"></a>
+<div class="textblock"><p>Contains the results of the SmsDelivery request. </p>
+</div><hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="adeb582b1595598043ff751423cf6d46f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00093.html#a010028fb0fb93a4c8b6f0ce5619804ed">ATT_MSSDK.Paymentv3.SubscriptionStatus.SubscriptionStatus</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Initializes a new instance of the <a class="el" href="a00093.html" title="Encapsulates return values from the SubscriptionRaw Status API.">SubscriptionStatus</a> class. </p>
-
-</div>
-</div>
-<hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="aa29fad94c9c1cbdbfecb7f224bc8c4d0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="a00093.html">SubscriptionStatus</a> <a class="el" href="a00093.html#aa29fad94c9c1cbdbfecb7f224bc8c4d0">ATT_MSSDK.Paymentv3.SubscriptionStatus.ParseXML</a> </td>
+          <td class="memname">static <a class="el" href="a00093.html">SmsDeliveryResponse</a> <a class="el" href="a00093.html#adeb582b1595598043ff751423cf6d46f">ATT_MSSDK.SMSv3.SmsDeliveryResponse.ParseJSON</a> </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>xmlInput</em></td><td>)</td>
+          <td class="paramname"><em>jsonInput</em></td><td>)</td>
           <td><code> [static]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Parse an XML document and create a <a class="el" href="a00093.html" title="Encapsulates return values from the SubscriptionRaw Status API.">SubscriptionStatus</a> object. </p>
+<p>Converts a string containing a JSON object to a <a class="el" href="a00093.html" title="Contains the results of the SmsDelivery request.">SmsDeliveryResponse</a> object. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">xmlInput</td><td>The XML document to parse</td></tr>
+    <tr><td class="paramname">jsonInput</td><td>The string containing the JSON input.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns:</dt><dd>The <a class="el" href="a00093.html" title="Encapsulates return values from the SubscriptionRaw Status API.">SubscriptionStatus</a> values returned.</dd></dl>
+<dl class="section return"><dt>Returns:</dt><dd>The <a class="el" href="a00093.html" title="Contains the results of the SmsDelivery request.">SmsDeliveryResponse</a> object.</dd></dl>
 
 </div>
 </div>
 <hr/><h2>Property Documentation</h2>
-<a class="anchor" id="a7ce2e1018cc02eeca6df5f9385354f73"></a>
+<a class="anchor" id="a80d7bb21b36a6a44cf6c067c60fcfaf0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double <a class="el" href="a00093.html#a7ce2e1018cc02eeca6df5f9385354f73">ATT_MSSDK.Paymentv3.SubscriptionStatus.Amount</a><code> [get, set]</code></td>
+          <td class="memname">List&lt;<a class="el" href="a00021.html">DeliveryInfo</a>&gt; <a class="el" href="a00093.html#a80d7bb21b36a6a44cf6c067c60fcfaf0">ATT_MSSDK.SMSv3.SmsDeliveryResponse.DeliveryInfo</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets the Amount of transaction with a maximum of 2 decimal places. Examples: 0.99 to 2.99. </p>
+<p>Gets or sets the <a class="el" href="a00021.html" title="Encapsulates the delivery info returned by the server for SMS messages.">DeliveryInfo</a> list. Object contained in '<a class="el" href="a00023.html" title="Contains the information returned by the server for delivery responses.">DeliveryInfoList</a>'. It contains three strings i-e Id, Address and DeliveryStatus. </p>
 
 </div>
 </div>
-<a class="anchor" id="a3d84b93356bbf8d86f2d7cc898dbea9e"></a>
+<a class="anchor" id="a1ea7acf282d921f9ea3159d56755f01e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="a00093.html#a3d84b93356bbf8d86f2d7cc898dbea9e">ATT_MSSDK.Paymentv3.SubscriptionStatus.Channel</a><code> [get, set]</code></td>
+          <td class="memname">string <a class="el" href="a00093.html#a1ea7acf282d921f9ea3159d56755f01e">ATT_MSSDK.SMSv3.SmsDeliveryResponse.ResourceURL</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets the Merchant UI channel. Must be set to MOBILE_WEB in Release R1. </p>
-
-</div>
-</div>
-<a class="anchor" id="ab8a37ee34981eece92f97489678775f4"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00093.html#ab8a37ee34981eece92f97489678775f4">ATT_MSSDK.Paymentv3.SubscriptionStatus.ConsumerId</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the Unique Consumer Id. </p>
-
-</div>
-</div>
-<a class="anchor" id="a85cd420313551c8d6abe89730af6e469"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00093.html#a85cd420313551c8d6abe89730af6e469">ATT_MSSDK.Paymentv3.SubscriptionStatus.ContentCategory</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the Content Category from a predefined list. </p>
-
-</div>
-</div>
-<a class="anchor" id="ab57ce1e419703b1ce63d1fab754b61a1"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00093.html#ab57ce1e419703b1ce63d1fab754b61a1">ATT_MSSDK.Paymentv3.SubscriptionStatus.Currency</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets as USD. </p>
-
-</div>
-</div>
-<a class="anchor" id="afbc0cce1fddf4da4187134afaa9f53c9"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00093.html#afbc0cce1fddf4da4187134afaa9f53c9">ATT_MSSDK.Paymentv3.SubscriptionStatus.Description</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the Short description of the product that is being sold. </p>
-
-</div>
-</div>
-<a class="anchor" id="a8c5f4d5234f5d9fc6ff1ab0256192be0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00093.html#a8c5f4d5234f5d9fc6ff1ab0256192be0">ATT_MSSDK.Paymentv3.SubscriptionStatus.Id</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the Id of the <a class="el" href="a00093.html" title="Encapsulates return values from the SubscriptionRaw Status API.">SubscriptionStatus</a> object. </p>
-
-</div>
-</div>
-<a class="anchor" id="a88fad5390afa1d38602fac0cf21dca46"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00093.html#a88fad5390afa1d38602fac0cf21dca46">ATT_MSSDK.Paymentv3.SubscriptionStatus.IsAutoCommitted</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the True in R2. Read only parameter. </p>
-
-</div>
-</div>
-<a class="anchor" id="a7e8d1c13c269ac36e7386ba232621b36"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="a00093.html#a7e8d1c13c269ac36e7386ba232621b36">ATT_MSSDK.Paymentv3.SubscriptionStatus.IsSuccess</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets a Boolean flag indicating the status of the request. </p>
-
-</div>
-</div>
-<a class="anchor" id="af02c4b054bbb1bbbfcd86accf1ebc15b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00093.html#af02c4b054bbb1bbbfcd86accf1ebc15b">ATT_MSSDK.Paymentv3.SubscriptionStatus.MerchantApplicationId</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the Merchant application identifier that initiated the payment transaction. </p>
-
-</div>
-</div>
-<a class="anchor" id="a235c7a4b047bebfe71c913656fa9fa71"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00093.html#a235c7a4b047bebfe71c913656fa9fa71">ATT_MSSDK.Paymentv3.SubscriptionStatus.MerchantId</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the Merchant identifier in the external system. </p>
-
-</div>
-</div>
-<a class="anchor" id="ac9fe0c5e41c7790aea561545d291a91c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00093.html#ac9fe0c5e41c7790aea561545d291a91c">ATT_MSSDK.Paymentv3.SubscriptionStatus.MerchantProductId</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the Purchased Product ID in the merchant's system. </p>
-
-</div>
-</div>
-<a class="anchor" id="aab2f10d663cb331a7cad8bb20c66281b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00093.html#aab2f10d663cb331a7cad8bb20c66281b">ATT_MSSDK.Paymentv3.SubscriptionStatus.MerchantSubscriptionId</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the Subscription ID that is being created/used, if transaction was a subscription. This field will only appear after the transaction has been authorized (status = AUTHORIZED). </p>
-
-</div>
-</div>
-<a class="anchor" id="a3768354f5f26401eccc33e220fc6e2f9"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00093.html#a3768354f5f26401eccc33e220fc6e2f9">ATT_MSSDK.Paymentv3.SubscriptionStatus.MerchantTransactionId</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the MerchantTransactionId of the <a class="el" href="a00093.html" title="Encapsulates return values from the SubscriptionRaw Status API.">SubscriptionStatus</a> object. </p>
-
-</div>
-</div>
-<a class="anchor" id="a35b0900de0824fe6ed4c394bdd6a9ea9"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="a00093.html#a35b0900de0824fe6ed4c394bdd6a9ea9">ATT_MSSDK.Paymentv3.SubscriptionStatus.PeriodAmount</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the number of periods that pass between the renewals. </p>
-
-</div>
-</div>
-<a class="anchor" id="a786c8f0d337dc497a5bf82499b62e92b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00093.html#a786c8f0d337dc497a5bf82499b62e92b">ATT_MSSDK.Paymentv3.SubscriptionStatus.Recurrences</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the number of times the subscription will be renewed. </p>
-
-</div>
-</div>
-<a class="anchor" id="a39c1b40919d4d427894084d4df584f22"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00093.html#a39c1b40919d4d427894084d4df584f22">ATT_MSSDK.Paymentv3.SubscriptionStatus.Status</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the Status of the <a class="el" href="a00093.html" title="Encapsulates return values from the SubscriptionRaw Status API.">SubscriptionStatus</a> object. </p>
-
-</div>
-</div>
-<a class="anchor" id="af32a9b6d27bce57fffe91b7592dbbfa0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00093.html#af32a9b6d27bce57fffe91b7592dbbfa0">ATT_MSSDK.Paymentv3.SubscriptionStatus.SubscriptionPeriod</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the value of period. The interval at which the subscription will be charged. </p>
-
-</div>
-</div>
-<a class="anchor" id="aa9dff6125d02cec1a06207f34dd22fdc"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00093.html#aa9dff6125d02cec1a06207f34dd22fdc">ATT_MSSDK.Paymentv3.SubscriptionStatus.Type</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the Type of the <a class="el" href="a00093.html" title="Encapsulates return values from the SubscriptionRaw Status API.">SubscriptionStatus</a> object. </p>
-
-</div>
-</div>
-<a class="anchor" id="af7261182613319ae9d70e3a125de197f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00093.html#af7261182613319ae9d70e3a125de197f">ATT_MSSDK.Paymentv3.SubscriptionStatus.Version</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the Version of the API signature. </p>
+<p>Gets or sets the ResourceURL. The endpoint URI that served this request. </p>
 
 </div>
 </div>
@@ -517,13 +200,14 @@ Properties</h2></td></tr>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="a00201.html">ATT_MSSDK</a>      </li>
-      <li class="navelem"><a class="el" href="a00210.html">Paymentv3</a>      </li>
-      <li class="navelem"><a class="el" href="a00093.html">SubscriptionStatus</a>      </li>
+      <li class="navelem"><a class="el" href="a00209.html">ATT_MSSDK</a>      </li>
+      <li class="navelem"><a class="el" href="a00217.html">SMSv3</a>      </li>
+      <li class="navelem"><a class="el" href="a00093.html">SmsDeliveryResponse</a>      </li>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:11 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.Paymentv3.CommitTransactionResponse Class Reference</title>
+<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.SMSv3.DeliveryInfoNotification Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -101,46 +101,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#properties">Properties</a>  </div>
   <div class="headertitle">
-<div class="title">ATT_MSSDK.Paymentv3.CommitTransactionResponse Class Reference</div>  </div>
+<div class="title">ATT_MSSDK.SMSv3.DeliveryInfoNotification Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Encapsulates the values returned by the CommitTransaction API.  
+<p>Encapsulates the delivery status for a given destination address.  
  <a href="a00025.html#details">More...</a></p>
 
-<p><a href="a00288.html">List of all members.</a></p>
+<p><a href="a00310.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0e78003de362c1e3d75eadd87d287470"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00025.html#a0e78003de362c1e3d75eadd87d287470">CommitTransactionResponse</a> ()</td></tr>
-<tr class="memdesc:a0e78003de362c1e3d75eadd87d287470"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="a00025.html" title="Encapsulates the values returned by the CommitTransaction API.">CommitTransactionResponse</a> class.  <a href="#a0e78003de362c1e3d75eadd87d287470"></a><br/></td></tr>
-<tr><td colspan="2"><h2><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a1bf88d6431b6f683d84855259e6906a1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00025.html">CommitTransactionResponse</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00025.html#a1bf88d6431b6f683d84855259e6906a1">ParseXML</a> (string xmlInput)</td></tr>
-<tr class="memdesc:a1bf88d6431b6f683d84855259e6906a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses commit transaction response of xml type.  <a href="#a1bf88d6431b6f683d84855259e6906a1"></a><br/></td></tr>
+<tr class="memitem:a3c5385bb4dd8f5cb877622a2c2fc38a0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00025.html#a3c5385bb4dd8f5cb877622a2c2fc38a0">DeliveryInfoNotification</a> ()</td></tr>
+<tr class="memdesc:a3c5385bb4dd8f5cb877622a2c2fc38a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of DeliveryInfoNotification.  <a href="#a3c5385bb4dd8f5cb877622a2c2fc38a0"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a4ecb0b94e602368b7a31025d0fc4d3d8"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00025.html#a4ecb0b94e602368b7a31025d0fc4d3d8">TransactionId</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a4ecb0b94e602368b7a31025d0fc4d3d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the transaction ID for the refund.  <a href="#a4ecb0b94e602368b7a31025d0fc4d3d8"></a><br/></td></tr>
-<tr class="memitem:a4008c444409fa7899306a68042a3bd4d"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00025.html#a4008c444409fa7899306a68042a3bd4d">TransactionStatus</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a4008c444409fa7899306a68042a3bd4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Current status of the transaction. Only transactions with status as “SUCCESSFUL” are completed successfully. All other statuses indicate that the transaction is not successful.  <a href="#a4008c444409fa7899306a68042a3bd4d"></a><br/></td></tr>
-<tr class="memitem:a05aad45322221400e56fd1138b3eb7b5"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00025.html#a05aad45322221400e56fd1138b3eb7b5">IsSuccess</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a05aad45322221400e56fd1138b3eb7b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Boolean indicating the status of request.  <a href="#a05aad45322221400e56fd1138b3eb7b5"></a><br/></td></tr>
-<tr class="memitem:aef524a40b9e49980a3d03640a6c95b05"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00025.html#aef524a40b9e49980a3d03640a6c95b05">Version</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aef524a40b9e49980a3d03640a6c95b05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Version of API signature.  <a href="#aef524a40b9e49980a3d03640a6c95b05"></a><br/></td></tr>
+<tr class="memitem:a5bf55d0a688294e3342467c1752b138d"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00025.html#a5bf55d0a688294e3342467c1752b138d">MessageId</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a5bf55d0a688294e3342467c1752b138d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets MessageId This is the unique Id of the message returned by the AT&amp;T API Gateway in response to the SendSMS method request.  <a href="#a5bf55d0a688294e3342467c1752b138d"></a><br/></td></tr>
+<tr class="memitem:a015e5d892b80a87dad3f5f747f11177f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00021.html">DeliveryInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00025.html#a015e5d892b80a87dad3f5f747f11177f">DeliveryInfo</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a015e5d892b80a87dad3f5f747f11177f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets DeliveryInfo object. Object that contain the delivery status pair that indicates the delivery status for the given destination address.  <a href="#a015e5d892b80a87dad3f5f747f11177f"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Encapsulates the values returned by the CommitTransaction API. </p>
+<div class="textblock"><p>Encapsulates the delivery status for a given destination address. </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a0e78003de362c1e3d75eadd87d287470"></a>
+<a class="anchor" id="a3c5385bb4dd8f5cb877622a2c2fc38a0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00025.html#a0e78003de362c1e3d75eadd87d287470">ATT_MSSDK.Paymentv3.CommitTransactionResponse.CommitTransactionResponse</a> </td>
+          <td class="memname"><a class="el" href="a00025.html#a3c5385bb4dd8f5cb877622a2c2fc38a0">ATT_MSSDK.SMSv3.DeliveryInfoNotification.DeliveryInfoNotification</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -149,95 +140,38 @@ Properties</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Initializes a new instance of the <a class="el" href="a00025.html" title="Encapsulates the values returned by the CommitTransaction API.">CommitTransactionResponse</a> class. </p>
-
-</div>
-</div>
-<hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a1bf88d6431b6f683d84855259e6906a1"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="a00025.html">CommitTransactionResponse</a> <a class="el" href="a00025.html#a1bf88d6431b6f683d84855259e6906a1">ATT_MSSDK.Paymentv3.CommitTransactionResponse.ParseXML</a> </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>xmlInput</em></td><td>)</td>
-          <td><code> [static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Parses commit transaction response of xml type. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">xmlInput</td><td>commit transaction response xml data</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns:</dt><dd><a class="el" href="a00025.html" title="Encapsulates the values returned by the CommitTransaction API.">CommitTransactionResponse</a> values returned.</dd></dl>
+<p>Initializes a new instance of DeliveryInfoNotification. </p>
 
 </div>
 </div>
 <hr/><h2>Property Documentation</h2>
-<a class="anchor" id="a05aad45322221400e56fd1138b3eb7b5"></a>
+<a class="anchor" id="a015e5d892b80a87dad3f5f747f11177f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="a00025.html#a05aad45322221400e56fd1138b3eb7b5">ATT_MSSDK.Paymentv3.CommitTransactionResponse.IsSuccess</a><code> [get, set]</code></td>
+          <td class="memname"><a class="el" href="a00021.html">DeliveryInfo</a> <a class="el" href="a00025.html#a015e5d892b80a87dad3f5f747f11177f">ATT_MSSDK.SMSv3.DeliveryInfoNotification.DeliveryInfo</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets the Boolean indicating the status of request. </p>
+<p>Gets or sets DeliveryInfo object. Object that contain the delivery status pair that indicates the delivery status for the given destination address. </p>
 
 </div>
 </div>
-<a class="anchor" id="a4ecb0b94e602368b7a31025d0fc4d3d8"></a>
+<a class="anchor" id="a5bf55d0a688294e3342467c1752b138d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="a00025.html#a4ecb0b94e602368b7a31025d0fc4d3d8">ATT_MSSDK.Paymentv3.CommitTransactionResponse.TransactionId</a><code> [get, set]</code></td>
+          <td class="memname">string <a class="el" href="a00025.html#a5bf55d0a688294e3342467c1752b138d">ATT_MSSDK.SMSv3.DeliveryInfoNotification.MessageId</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets the transaction ID for the refund. </p>
-
-</div>
-</div>
-<a class="anchor" id="a4008c444409fa7899306a68042a3bd4d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00025.html#a4008c444409fa7899306a68042a3bd4d">ATT_MSSDK.Paymentv3.CommitTransactionResponse.TransactionStatus</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the Current status of the transaction. Only transactions with status as “SUCCESSFUL” are completed successfully. All other statuses indicate that the transaction is not successful. </p>
-
-</div>
-</div>
-<a class="anchor" id="aef524a40b9e49980a3d03640a6c95b05"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00025.html#aef524a40b9e49980a3d03640a6c95b05">ATT_MSSDK.Paymentv3.CommitTransactionResponse.Version</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the Version of API signature. </p>
+<p>Gets or sets MessageId This is the unique Id of the message returned by the AT&amp;T API Gateway in response to the SendSMS method request. </p>
 
 </div>
 </div>
@@ -245,13 +179,14 @@ Properties</h2></td></tr>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="a00201.html">ATT_MSSDK</a>      </li>
-      <li class="navelem"><a class="el" href="a00210.html">Paymentv3</a>      </li>
-      <li class="navelem"><a class="el" href="a00025.html">CommitTransactionResponse</a>      </li>
+      <li class="navelem"><a class="el" href="a00209.html">ATT_MSSDK</a>      </li>
+      <li class="navelem"><a class="el" href="a00217.html">SMSv3</a>      </li>
+      <li class="navelem"><a class="el" href="a00025.html">DeliveryInfoNotification</a>      </li>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:10 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

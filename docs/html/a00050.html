@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.InvalidScopeException Class Reference</title>
+<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.InAppMessaging.Message Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -100,105 +100,224 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#properties">Properties</a>  </div>
   <div class="headertitle">
-<div class="title">ATT_MSSDK.InvalidScopeException Class Reference</div>  </div>
+<div class="title">ATT_MSSDK.InAppMessaging.Message Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Exception returned if the RequestFactory does not include the scope necessary for this call.  
+<p>Container for message.  
  <a href="a00050.html#details">More...</a></p>
 
-<p><a href="a00251.html">List of all members.</a></p>
+<p><a href="a00276.html">List of all members.</a></p>
 <table class="memberdecls">
-<tr><td colspan="2"><h2><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:abf4f88d6b6da27e045692581e1ed1dd0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00050.html#abf4f88d6b6da27e045692581e1ed1dd0">InvalidScopeException</a> ()</td></tr>
-<tr class="memdesc:abf4f88d6b6da27e045692581e1ed1dd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="a00050.html" title="Exception returned if the RequestFactory does not include the scope necessary for this call...">InvalidScopeException</a> class.  <a href="#abf4f88d6b6da27e045692581e1ed1dd0"></a><br/></td></tr>
-<tr class="memitem:a9cb55de39d5c564d3198ccb4624dbe6f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00050.html#a9cb55de39d5c564d3198ccb4624dbe6f">InvalidScopeException</a> (string message)</td></tr>
-<tr class="memdesc:a9cb55de39d5c564d3198ccb4624dbe6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="a00050.html" title="Exception returned if the RequestFactory does not include the scope necessary for this call...">InvalidScopeException</a> class.  <a href="#a9cb55de39d5c564d3198ccb4624dbe6f"></a><br/></td></tr>
-<tr class="memitem:a26773e848ac104260f887aff1b48cd28"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00050.html#a26773e848ac104260f887aff1b48cd28">InvalidScopeException</a> (string message, Exception ex)</td></tr>
-<tr class="memdesc:a26773e848ac104260f887aff1b48cd28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="a00050.html" title="Exception returned if the RequestFactory does not include the scope necessary for this call...">InvalidScopeException</a> class.  <a href="#a26773e848ac104260f887aff1b48cd28"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:a6cc3f40b463798a373dabfdd85b1d14b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00050.html#a6cc3f40b463798a373dabfdd85b1d14b">MessageId</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a6cc3f40b463798a373dabfdd85b1d14b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of Unique <a class="el" href="a00050.html" title="Container for message.">Message</a> Identifier.  <a href="#a6cc3f40b463798a373dabfdd85b1d14b"></a><br/></td></tr>
+<tr class="memitem:a21230eccdd778d09ed4ab34bf3529c16"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00031.html">From</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00050.html#a21230eccdd778d09ed4ab34bf3529c16">From</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a21230eccdd778d09ed4ab34bf3529c16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of message sender.  <a href="#a21230eccdd778d09ed4ab34bf3529c16"></a><br/></td></tr>
+<tr class="memitem:a3503887841fc31e08e87b645604e0fcd"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="a00079.html">Recipient</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00050.html#a3503887841fc31e08e87b645604e0fcd">Recipients</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a3503887841fc31e08e87b645604e0fcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of recipients. If group message, this will contain muliple addresses.  <a href="#a3503887841fc31e08e87b645604e0fcd"></a><br/></td></tr>
+<tr class="memitem:ae2bb00196219a03db85a5385cb46d491"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00050.html#ae2bb00196219a03db85a5385cb46d491">TimeStamp</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ae2bb00196219a03db85a5385cb46d491"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of time when the message was stored in the cloud.  <a href="#ae2bb00196219a03db85a5385cb46d491"></a><br/></td></tr>
+<tr class="memitem:a7b4b72173b7d91b7c0ea51dd4ab1d46e"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00050.html#a7b4b72173b7d91b7c0ea51dd4ab1d46e">Text</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a7b4b72173b7d91b7c0ea51dd4ab1d46e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of message text.  <a href="#a7b4b72173b7d91b7c0ea51dd4ab1d46e"></a><br/></td></tr>
+<tr class="memitem:ab659440f656f162e653aac5916ea375f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00050.html#ab659440f656f162e653aac5916ea375f">IsFavorite</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ab659440f656f162e653aac5916ea375f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value if the message is a favorite.  <a href="#ab659440f656f162e653aac5916ea375f"></a><br/></td></tr>
+<tr class="memitem:a55b9ccd7d3e2b1e406d9095a5215a2f0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00050.html#a55b9ccd7d3e2b1e406d9095a5215a2f0">IsUnread</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a55b9ccd7d3e2b1e406d9095a5215a2f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value if message is unread.  <a href="#a55b9ccd7d3e2b1e406d9095a5215a2f0"></a><br/></td></tr>
+<tr class="memitem:a646db983e18dd8865c5f50fb007e947c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00050.html#a646db983e18dd8865c5f50fb007e947c">Type</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a646db983e18dd8865c5f50fb007e947c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the type of message. TEXT or MMS.  <a href="#a646db983e18dd8865c5f50fb007e947c"></a><br/></td></tr>
+<tr class="memitem:ac1f5f6fd4577900dce972dd41d3d4556"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00101.html">TypeMetaData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00050.html#ac1f5f6fd4577900dce972dd41d3d4556">TypeMetaData</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ac1f5f6fd4577900dce972dd41d3d4556"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of <a class="el" href="a00101.html" title="Container for message specific data fields.">TypeMetaData</a>.  <a href="#ac1f5f6fd4577900dce972dd41d3d4556"></a><br/></td></tr>
+<tr class="memitem:a7444bd8e05602e0368b0bcb0a5dccf89"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00050.html#a7444bd8e05602e0368b0bcb0a5dccf89">IsIncoming</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a7444bd8e05602e0368b0bcb0a5dccf89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value if the message is incoming or outgoing. The possible values are true or false.  <a href="#a7444bd8e05602e0368b0bcb0a5dccf89"></a><br/></td></tr>
+<tr class="memitem:a619ea31161c188661b619b45e6770436"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00050.html#a619ea31161c188661b619b45e6770436">Subject</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a619ea31161c188661b619b45e6770436"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of message subject.  <a href="#a619ea31161c188661b619b45e6770436"></a><br/></td></tr>
+<tr class="memitem:a9df5a1abfb7c10671f47d351926da2c1"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="a00061.html">MmsContent</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00050.html#a9df5a1abfb7c10671f47d351926da2c1">MmsContent</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a9df5a1abfb7c10671f47d351926da2c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sest the value of message part description.  <a href="#a9df5a1abfb7c10671f47d351926da2c1"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Exception returned if the RequestFactory does not include the scope necessary for this call. </p>
-</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="abf4f88d6b6da27e045692581e1ed1dd0"></a>
+<div class="textblock"><p>Container for message. </p>
+</div><hr/><h2>Property Documentation</h2>
+<a class="anchor" id="a21230eccdd778d09ed4ab34bf3529c16"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00050.html#abf4f88d6b6da27e045692581e1ed1dd0">ATT_MSSDK.InvalidScopeException.InvalidScopeException</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname"><a class="el" href="a00031.html">From</a> <a class="el" href="a00050.html#a21230eccdd778d09ed4ab34bf3529c16">ATT_MSSDK.InAppMessaging.Message.From</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Initializes a new instance of the <a class="el" href="a00050.html" title="Exception returned if the RequestFactory does not include the scope necessary for this call...">InvalidScopeException</a> class. </p>
+<p>Gets or sets the value of message sender. </p>
 
 </div>
 </div>
-<a class="anchor" id="a9cb55de39d5c564d3198ccb4624dbe6f"></a>
+<a class="anchor" id="ab659440f656f162e653aac5916ea375f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00050.html#abf4f88d6b6da27e045692581e1ed1dd0">ATT_MSSDK.InvalidScopeException.InvalidScopeException</a> </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>message</em></td><td>)</td>
-          <td></td>
+          <td class="memname">bool <a class="el" href="a00050.html#ab659440f656f162e653aac5916ea375f">ATT_MSSDK.InAppMessaging.Message.IsFavorite</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Initializes a new instance of the <a class="el" href="a00050.html" title="Exception returned if the RequestFactory does not include the scope necessary for this call...">InvalidScopeException</a> class. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">message</td><td>String message describing the exception.</td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Gets or sets the value if the message is a favorite. </p>
 
 </div>
 </div>
-<a class="anchor" id="a26773e848ac104260f887aff1b48cd28"></a>
+<a class="anchor" id="a7444bd8e05602e0368b0bcb0a5dccf89"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00050.html#abf4f88d6b6da27e045692581e1ed1dd0">ATT_MSSDK.InvalidScopeException.InvalidScopeException</a> </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>message</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Exception&#160;</td>
-          <td class="paramname"><em>ex</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="memname">string <a class="el" href="a00050.html#a7444bd8e05602e0368b0bcb0a5dccf89">ATT_MSSDK.InAppMessaging.Message.IsIncoming</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Initializes a new instance of the <a class="el" href="a00050.html" title="Exception returned if the RequestFactory does not include the scope necessary for this call...">InvalidScopeException</a> class. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">message</td><td>String message describing the exception.</td></tr>
-    <tr><td class="paramname">ex</td><td>The nested exception.</td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Gets or sets the value if the message is incoming or outgoing. The possible values are true or false. </p>
+
+</div>
+</div>
+<a class="anchor" id="a55b9ccd7d3e2b1e406d9095a5215a2f0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="a00050.html#a55b9ccd7d3e2b1e406d9095a5215a2f0">ATT_MSSDK.InAppMessaging.Message.IsUnread</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the value if message is unread. </p>
+
+</div>
+</div>
+<a class="anchor" id="a6cc3f40b463798a373dabfdd85b1d14b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string <a class="el" href="a00050.html#a6cc3f40b463798a373dabfdd85b1d14b">ATT_MSSDK.InAppMessaging.Message.MessageId</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the value of Unique <a class="el" href="a00050.html" title="Container for message.">Message</a> Identifier. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9df5a1abfb7c10671f47d351926da2c1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;<a class="el" href="a00061.html">MmsContent</a>&gt; <a class="el" href="a00050.html#a9df5a1abfb7c10671f47d351926da2c1">ATT_MSSDK.InAppMessaging.Message.MmsContent</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sest the value of message part description. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3503887841fc31e08e87b645604e0fcd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;<a class="el" href="a00079.html">Recipient</a>&gt; <a class="el" href="a00050.html#a3503887841fc31e08e87b645604e0fcd">ATT_MSSDK.InAppMessaging.Message.Recipients</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the value of recipients. If group message, this will contain muliple addresses. </p>
+
+</div>
+</div>
+<a class="anchor" id="a619ea31161c188661b619b45e6770436"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string <a class="el" href="a00050.html#a619ea31161c188661b619b45e6770436">ATT_MSSDK.InAppMessaging.Message.Subject</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the value of message subject. </p>
+
+</div>
+</div>
+<a class="anchor" id="a7b4b72173b7d91b7c0ea51dd4ab1d46e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string <a class="el" href="a00050.html#a7b4b72173b7d91b7c0ea51dd4ab1d46e">ATT_MSSDK.InAppMessaging.Message.Text</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the value of message text. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae2bb00196219a03db85a5385cb46d491"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string <a class="el" href="a00050.html#ae2bb00196219a03db85a5385cb46d491">ATT_MSSDK.InAppMessaging.Message.TimeStamp</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the value of time when the message was stored in the cloud. </p>
+
+</div>
+</div>
+<a class="anchor" id="a646db983e18dd8865c5f50fb007e947c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string <a class="el" href="a00050.html#a646db983e18dd8865c5f50fb007e947c">ATT_MSSDK.InAppMessaging.Message.Type</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the type of message. TEXT or MMS. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac1f5f6fd4577900dce972dd41d3d4556"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00101.html">TypeMetaData</a> <a class="el" href="a00050.html#ac1f5f6fd4577900dce972dd41d3d4556">ATT_MSSDK.InAppMessaging.Message.TypeMetaData</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the value of <a class="el" href="a00101.html" title="Container for message specific data fields.">TypeMetaData</a>. </p>
 
 </div>
 </div>
@@ -206,12 +325,14 @@ Public Member Functions</h2></td></tr>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="a00201.html">ATT_MSSDK</a>      </li>
-      <li class="navelem"><a class="el" href="a00050.html">InvalidScopeException</a>      </li>
+      <li class="navelem"><a class="el" href="a00209.html">ATT_MSSDK</a>      </li>
+      <li class="navelem"><a class="el" href="a00213.html">InAppMessaging</a>      </li>
+      <li class="navelem"><a class="el" href="a00050.html">Message</a>      </li>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:10 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

@@ -1,9 +1,10 @@
 var a00047 =
 [
-    [ "ActionType", "a00047.html#add0580076badbd38dec99ed9f77d2bd9", null ],
-    [ "Interpretation", "a00047.html#ad32d2f2f27451caddee091c10591196e", null ],
-    [ "Metrics", "a00047.html#a8567a66fc529ac7c6732c0b5f95eb47c", null ],
-    [ "Recognized", "a00047.html#abe58d8b00ce8f18f478d8caa587f7f0b", null ],
-    [ "Search", "a00047.html#acd5a93ecafcd3809d7fa9f2bdf4c762d", null ],
-    [ "Version", "a00047.html#adf736ee196d5df7a767e487429fc4e2f", null ]
+    [ "InvalidResponseException", "a00047.html#a8f337ae831c43415aa8dafaabec80443", null ],
+    [ "InvalidResponseException", "a00047.html#a1789a226b29fea3d6366ba6d24897c4e", null ],
+    [ "InvalidResponseException", "a00047.html#afe90d8d691c542c366e8728605780a0e", null ],
+    [ "InvalidResponseException", "a00047.html#a60e1aad3daf6e4830967f6ebdfbfc8a1", null ],
+    [ "Body", "a00047.html#a449fd1a7660770e013177bd57fac4faa", null ],
+    [ "ErrorResponseObject", "a00047.html#ad9d10886020227c4c2fe4388b17cb09b", null ],
+    [ "Status", "a00047.html#a07b41db75f14e9f47dff9a4e902772c9", null ]
 ];

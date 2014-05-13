@@ -1,6 +1,7 @@
 var a00095 =
 [
-    [ "ContentLength", "a00095.html#ac7ccf22bb0f41c8f9fcfb1a8e89ecaa2", null ],
-    [ "ContentType", "a00095.html#a519cd2631316bba46c63a342dd12608b", null ],
-    [ "SpeechContent", "a00095.html#a24aa6f593efb6f532539258b37f19f7d", null ]
+    [ "SmsResponse", "a00095.html#ac8645fe7e6069316d744bed0d41326db", null ],
+    [ "Parse", "a00095.html#a704f1d96e0dda3b7c783fa573f669623", null ],
+    [ "MessageId", "a00095.html#aa407959f1c3cfa95e76a5a2c8ff5c67e", null ],
+    [ "ResourceURL", "a00095.html#aad27ed3ba5054820fb93ead03e06887e", null ]
 ];

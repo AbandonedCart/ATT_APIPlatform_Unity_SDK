@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.MMSv3.InboundMmsAttachmentDetails Class Reference</title>
+<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.SMSv3.InboundSms Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -100,78 +100,52 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#properties">Properties</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a>  </div>
   <div class="headertitle">
-<div class="title">ATT_MSSDK.MMSv3.InboundMmsAttachmentDetails Class Reference</div>  </div>
+<div class="title">ATT_MSSDK.SMSv3.InboundSms Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Encapsulation of InboundMmsAttachment.  
+<p>The InboundSmsMessage list class contains the SMS messages sent to the application short code.  
  <a href="a00042.html#details">More...</a></p>
 
-<p><a href="a00276.html">List of all members.</a></p>
+<p><a href="a00311.html">List of all members.</a></p>
 <table class="memberdecls">
-<tr><td colspan="2"><h2><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a01c533cbaba7a66f784db5b2e2697e2b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00042.html#a01c533cbaba7a66f784db5b2e2697e2b">InboundMmsAttachmentDetails</a> ()</td></tr>
-<tr class="memdesc:a01c533cbaba7a66f784db5b2e2697e2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="a00042.html" title="Encapsulation of InboundMmsAttachment.">InboundMmsAttachmentDetails</a> class.  <a href="#a01c533cbaba7a66f784db5b2e2697e2b"></a><br/></td></tr>
-<tr><td colspan="2"><h2><a name="properties"></a>
-Properties</h2></td></tr>
-<tr class="memitem:ac155f5639ab20b9b1c7fff10aa6b4fdf"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00042.html#ac155f5639ab20b9b1c7fff10aa6b4fdf">MmsImagePath</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ac155f5639ab20b9b1c7fff10aa6b4fdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the MmsImagePath.  <a href="#ac155f5639ab20b9b1c7fff10aa6b4fdf"></a><br/></td></tr>
-<tr class="memitem:a9ab644d8332a0f29f38db3db64a9f6da"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00042.html#a9ab644d8332a0f29f38db3db64a9f6da">MmsImageContentType</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a9ab644d8332a0f29f38db3db64a9f6da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the MmsImageContentType.  <a href="#a9ab644d8332a0f29f38db3db64a9f6da"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><b>InboundSmsMessageListRoot</b></td></tr>
+<tr><td colspan="2"><h2><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a46f7141a2ac2da27a7cbfb4b2675729a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00044.html">InboundSmsMessageList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00042.html#a46f7141a2ac2da27a7cbfb4b2675729a">ParseJSON</a> (string jsonInput)</td></tr>
+<tr class="memdesc:a46f7141a2ac2da27a7cbfb4b2675729a"><td class="mdescLeft">&#160;</td><td class="mdescRight">ParseJSON the JSON and create an <a class="el" href="a00044.html" title="Response from server to InboundSms request.">InboundSmsMessageList</a> object with that data.  <a href="#a46f7141a2ac2da27a7cbfb4b2675729a"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Encapsulation of InboundMmsAttachment. </p>
-</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a01c533cbaba7a66f784db5b2e2697e2b"></a>
+<div class="textblock"><p>The InboundSmsMessage list class contains the SMS messages sent to the application short code. </p>
+</div><hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a46f7141a2ac2da27a7cbfb4b2675729a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00042.html#a01c533cbaba7a66f784db5b2e2697e2b">ATT_MSSDK.MMSv3.InboundMmsAttachmentDetails.InboundMmsAttachmentDetails</a> </td>
+          <td class="memname">static <a class="el" href="a00044.html">InboundSmsMessageList</a> <a class="el" href="a00042.html#a46f7141a2ac2da27a7cbfb4b2675729a">ATT_MSSDK.SMSv3.InboundSms.ParseJSON</a> </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>jsonInput</em></td><td>)</td>
+          <td><code> [static]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Initializes a new instance of the <a class="el" href="a00042.html" title="Encapsulation of InboundMmsAttachment.">InboundMmsAttachmentDetails</a> class. </p>
-
-</div>
-</div>
-<hr/><h2>Property Documentation</h2>
-<a class="anchor" id="a9ab644d8332a0f29f38db3db64a9f6da"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00042.html#a9ab644d8332a0f29f38db3db64a9f6da">ATT_MSSDK.MMSv3.InboundMmsAttachmentDetails.MmsImageContentType</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the MmsImageContentType. </p>
-
-</div>
-</div>
-<a class="anchor" id="ac155f5639ab20b9b1c7fff10aa6b4fdf"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00042.html#ac155f5639ab20b9b1c7fff10aa6b4fdf">ATT_MSSDK.MMSv3.InboundMmsAttachmentDetails.MmsImagePath</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the MmsImagePath. </p>
+<p>ParseJSON the JSON and create an <a class="el" href="a00044.html" title="Response from server to InboundSms request.">InboundSmsMessageList</a> object with that data. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">jsonInput</td><td>JSON response from the server</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns:</dt><dd><a class="el" href="a00044.html" title="Response from server to InboundSms request.">InboundSmsMessageList</a>The parsed response.</dd></dl>
 
 </div>
 </div>
@@ -179,13 +153,14 @@ Properties</h2></td></tr>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="a00201.html">ATT_MSSDK</a>      </li>
-      <li class="navelem"><a class="el" href="a00207.html">MMSv3</a>      </li>
-      <li class="navelem"><a class="el" href="a00042.html">InboundMmsAttachmentDetails</a>      </li>
+      <li class="navelem"><a class="el" href="a00209.html">ATT_MSSDK</a>      </li>
+      <li class="navelem"><a class="el" href="a00217.html">SMSv3</a>      </li>
+      <li class="navelem"><a class="el" href="a00042.html">InboundSms</a>      </li>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:10 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

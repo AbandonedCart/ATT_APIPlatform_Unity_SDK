@@ -1,12 +1,8 @@
 var a00058 =
 [
-    [ "NBest", "a00058.html#a6f1d1a292e136b36eeb79df0968e579a", null ],
-    [ "Confidence", "a00058.html#aa884a1f73356fec15060496435d1d798", null ],
-    [ "Grade", "a00058.html#a1864511c579b09dded6922d13c14ed18", null ],
-    [ "Hypothesis", "a00058.html#aa94bbabfd40fe6a8461672474beb9779", null ],
-    [ "LanguageId", "a00058.html#ac03bc03f194281f951f41b127f6abc22", null ],
-    [ "NluHypothesis", "a00058.html#a4a6d62f42be9b405cec7cc0d18d9c467", null ],
-    [ "ResultText", "a00058.html#a2ba07647b7beaa8428705856bb621449", null ],
-    [ "Words", "a00058.html#a7f7fc21a78b0c0fcf9066d3d4aac2cb0", null ],
-    [ "WordScores", "a00058.html#a7c19c5bacaba07afa1524d50fadeeb9f", null ]
+    [ "Addresses", "a00058.html#a87e24abf1cd339d5e600b1eafd061a0d", null ],
+    [ "Attachments", "a00058.html#ae59a6029d734a46d50028f57e4edad5e", null ],
+    [ "IsGroup", "a00058.html#a659ea7ada3103513c7f521f5be23d3af", null ],
+    [ "Subject", "a00058.html#a6fe02f2b2df834d8e1d3253357be0410", null ],
+    [ "Text", "a00058.html#a33b6f928de8d2ab6f49a676456aa32f7", null ]
 ];

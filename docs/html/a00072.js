@@ -1,8 +1,7 @@
 var a00072 =
 [
-    [ "Recognition", "a00072.html#a00487cad6748baa72e5759ac83dc1dd3", null ],
-    [ "Info", "a00072.html#a20fca7d3523463ab666d876dd75bb02f", null ],
-    [ "NBest", "a00072.html#ab170e54b5504628fbf98fe0776333be5", null ],
-    [ "Responseid", "a00072.html#af96691bbf2ba99e9f10bde8e0788fd5b", null ],
-    [ "Status", "a00072.html#a34e4e62a78de3cff21e02a5c4ca557e7", null ]
+    [ "OutboundSMSRequest", "a00072.html#aab7c562b723c3be0642cb8d6cbcd7f07", null ],
+    [ "address", "a00072.html#a8c018fbb971d98b056ae5ca919153bf8", null ],
+    [ "message", "a00072.html#aca07589b7f4a1f7fc606641dcab48ee0", null ],
+    [ "notifyDeliveryStatus", "a00072.html#aa512c5ea61a39a0ed1677fb140feb86c", null ]
 ];

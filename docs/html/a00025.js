@@ -1,9 +1,6 @@
 var a00025 =
 [
-    [ "CommitTransactionResponse", "a00025.html#a0e78003de362c1e3d75eadd87d287470", null ],
-    [ "ParseXML", "a00025.html#a1bf88d6431b6f683d84855259e6906a1", null ],
-    [ "IsSuccess", "a00025.html#a05aad45322221400e56fd1138b3eb7b5", null ],
-    [ "TransactionId", "a00025.html#a4ecb0b94e602368b7a31025d0fc4d3d8", null ],
-    [ "TransactionStatus", "a00025.html#a4008c444409fa7899306a68042a3bd4d", null ],
-    [ "Version", "a00025.html#aef524a40b9e49980a3d03640a6c95b05", null ]
+    [ "DeliveryInfoNotification", "a00025.html#a3c5385bb4dd8f5cb877622a2c2fc38a0", null ],
+    [ "DeliveryInfo", "a00025.html#a015e5d892b80a87dad3f5f747f11177f", null ],
+    [ "MessageId", "a00025.html#a5bf55d0a688294e3342467c1752b138d", null ]
 ];

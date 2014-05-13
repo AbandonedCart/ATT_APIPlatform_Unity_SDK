@@ -1,5 +1,25 @@
 var a00213 =
 [
-    [ "TextToSpeechResponse", "a00095.html", null ],
-    [ "XArgs", "a00100.html", null ]
+    [ "Delta", "a00026.html", null ],
+    [ "From", "a00031.html", null ],
+    [ "GetMessageContentResponse", "a00033.html", null ],
+    [ "GetMessageDeltaResponse", "a00034.html", null ],
+    [ "GetMessageListResponse", "a00036.html", null ],
+    [ "GetMessageResponse", "a00037.html", null ],
+    [ "Message", "a00050.html", null ],
+    [ "MessageDelta", "a00051.html", null ],
+    [ "MessageIndexInfo", "a00053.html", null ],
+    [ "MessageIndexInfoResponse", "a00054.html", null ],
+    [ "MessageList", "a00055.html", null ],
+    [ "MessageListRequest", "a00056.html", null ],
+    [ "MessageMetadata", "a00057.html", null ],
+    [ "MessageRequest", "a00058.html", null ],
+    [ "MmsContent", "a00061.html", null ],
+    [ "NotificationConnectionDetails", "a00068.html", null ],
+    [ "NotificationConnectionResponse", "a00069.html", null ],
+    [ "Queues", "a00077.html", null ],
+    [ "Recipient", "a00079.html", null ],
+    [ "SegmentationDetails", "a00086.html", null ],
+    [ "SendMessageResponse", "a00087.html", null ],
+    [ "TypeMetaData", "a00101.html", null ]
 ];

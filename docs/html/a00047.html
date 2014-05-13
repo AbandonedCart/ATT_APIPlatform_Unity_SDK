@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.Speechv3.Info Class Reference</title>
+<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.InvalidResponseException Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -100,122 +100,212 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#properties">Properties</a>  </div>
   <div class="headertitle">
-<div class="title">ATT_MSSDK.Speechv3.Info Class Reference</div>  </div>
+<div class="title">ATT_MSSDK.InvalidResponseException Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Encapsulates Info data returned in speect to text response.  
+<p>Exception returned if there is an error returned by the server or a connection failure.  
  <a href="a00047.html#details">More...</a></p>
 
-<p><a href="a00314.html">List of all members.</a></p>
+<p><a href="a00252.html">List of all members.</a></p>
 <table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a8f337ae831c43415aa8dafaabec80443"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00047.html#a8f337ae831c43415aa8dafaabec80443">InvalidResponseException</a> ()</td></tr>
+<tr class="memdesc:a8f337ae831c43415aa8dafaabec80443"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="a00047.html" title="Exception returned if there is an error returned by the server or a connection failure.">InvalidResponseException</a> class.  <a href="#a8f337ae831c43415aa8dafaabec80443"></a><br/></td></tr>
+<tr class="memitem:a1789a226b29fea3d6366ba6d24897c4e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00047.html#a1789a226b29fea3d6366ba6d24897c4e">InvalidResponseException</a> (string message)</td></tr>
+<tr class="memdesc:a1789a226b29fea3d6366ba6d24897c4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="a00047.html" title="Exception returned if there is an error returned by the server or a connection failure.">InvalidResponseException</a> class.  <a href="#a1789a226b29fea3d6366ba6d24897c4e"></a><br/></td></tr>
+<tr class="memitem:afe90d8d691c542c366e8728605780a0e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00047.html#afe90d8d691c542c366e8728605780a0e">InvalidResponseException</a> (string message, Exception ex)</td></tr>
+<tr class="memdesc:afe90d8d691c542c366e8728605780a0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="a00047.html" title="Exception returned if there is an error returned by the server or a connection failure.">InvalidResponseException</a> class.  <a href="#afe90d8d691c542c366e8728605780a0e"></a><br/></td></tr>
+<tr class="memitem:a60e1aad3daf6e4830967f6ebdfbfc8a1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00047.html#a60e1aad3daf6e4830967f6ebdfbfc8a1">InvalidResponseException</a> (string message, Exception ex, HttpStatusCode status, string body)</td></tr>
+<tr class="memdesc:a60e1aad3daf6e4830967f6ebdfbfc8a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="a00047.html" title="Exception returned if there is an error returned by the server or a connection failure.">InvalidResponseException</a> class.  <a href="#a60e1aad3daf6e4830967f6ebdfbfc8a1"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:add0580076badbd38dec99ed9f77d2bd9"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00047.html#add0580076badbd38dec99ed9f77d2bd9">ActionType</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:add0580076badbd38dec99ed9f77d2bd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets actionType It is a string with either “EPG” or “COMMAND” indicating the high level action to be associated with the result.  <a href="#add0580076badbd38dec99ed9f77d2bd9"></a><br/></td></tr>
-<tr class="memitem:ad32d2f2f27451caddee091c10591196e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00048.html">Interpretation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00047.html#ad32d2f2f27451caddee091c10591196e">Interpretation</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ad32d2f2f27451caddee091c10591196e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets interpretation It is a dictionary containing slots that provide semantic meaning to the recognized utterances. This dictionary will normally be derived from the top n-best nluHypothesis dictionary. Slots used are: “cast”,“title”, “station.name”, “genre.id”, “genre.words”, and “station.number.  <a href="#ad32d2f2f27451caddee091c10591196e"></a><br/></td></tr>
-<tr class="memitem:a8567a66fc529ac7c6732c0b5f95eb47c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00053.html">Metrics</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00047.html#a8567a66fc529ac7c6732c0b5f95eb47c">Metrics</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a8567a66fc529ac7c6732c0b5f95eb47c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets metrics. <a class="el" href="a00053.html" title="Encapsulates Metrics data returned in speect to text response.">Metrics</a> is a dictionary with items that show metric-information about the received audio-file, namely: audioTime and audioBytes.  <a href="#a8567a66fc529ac7c6732c0b5f95eb47c"></a><br/></td></tr>
-<tr class="memitem:abe58d8b00ce8f18f478d8caa587f7f0b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00047.html#abe58d8b00ce8f18f478d8caa587f7f0b">Recognized</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:abe58d8b00ce8f18f478d8caa587f7f0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets recognized the recognition result used to produce the search results- usually the same as the top n-best resultText string.  <a href="#abe58d8b00ce8f18f478d8caa587f7f0b"></a><br/></td></tr>
-<tr class="memitem:acd5a93ecafcd3809d7fa9f2bdf4c762d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00079.html">Search</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00047.html#acd5a93ecafcd3809d7fa9f2bdf4c762d">Search</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:acd5a93ecafcd3809d7fa9f2bdf4c762d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets search the search dictionary contains the results of the search on the EPG database for the requested lineup (market ID). If the search feature has been disabled, the “search” field will not be present.  <a href="#acd5a93ecafcd3809d7fa9f2bdf4c762d"></a><br/></td></tr>
-<tr class="memitem:adf736ee196d5df7a767e487429fc4e2f"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00047.html#adf736ee196d5df7a767e487429fc4e2f">Version</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:adf736ee196d5df7a767e487429fc4e2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets version. Version is a string indicating the version of the processor providing the response.  <a href="#adf736ee196d5df7a767e487429fc4e2f"></a><br/></td></tr>
+<tr class="memitem:a07b41db75f14e9f47dff9a4e902772c9"><td class="memItemLeft" align="right" valign="top">HttpStatusCode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00047.html#a07b41db75f14e9f47dff9a4e902772c9">Status</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a07b41db75f14e9f47dff9a4e902772c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the HTTP status code of the invalid response message.  <a href="#a07b41db75f14e9f47dff9a4e902772c9"></a><br/></td></tr>
+<tr class="memitem:a449fd1a7660770e013177bd57fac4faa"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00047.html#a449fd1a7660770e013177bd57fac4faa">Body</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a449fd1a7660770e013177bd57fac4faa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the formatData of the invalid response message.  <a href="#a449fd1a7660770e013177bd57fac4faa"></a><br/></td></tr>
+<tr class="memitem:ad9d10886020227c4c2fe4388b17cb09b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00029.html">ErrorResponse</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00047.html#ad9d10886020227c4c2fe4388b17cb09b">ErrorResponseObject</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ad9d10886020227c4c2fe4388b17cb09b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the error response for invalid response message.  <a href="#ad9d10886020227c4c2fe4388b17cb09b"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Encapsulates Info data returned in speect to text response. </p>
-</div><hr/><h2>Property Documentation</h2>
-<a class="anchor" id="add0580076badbd38dec99ed9f77d2bd9"></a>
+<div class="textblock"><p>Exception returned if there is an error returned by the server or a connection failure. </p>
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a8f337ae831c43415aa8dafaabec80443"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="a00047.html#add0580076badbd38dec99ed9f77d2bd9">ATT_MSSDK.Speechv3.Info.ActionType</a><code> [get, set]</code></td>
+          <td class="memname"><a class="el" href="a00047.html#a8f337ae831c43415aa8dafaabec80443">ATT_MSSDK.InvalidResponseException.InvalidResponseException</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets actionType It is a string with either “EPG” or “COMMAND” indicating the high level action to be associated with the result. </p>
+<p>Initializes a new instance of the <a class="el" href="a00047.html" title="Exception returned if there is an error returned by the server or a connection failure.">InvalidResponseException</a> class. </p>
 
 </div>
 </div>
-<a class="anchor" id="ad32d2f2f27451caddee091c10591196e"></a>
+<a class="anchor" id="a1789a226b29fea3d6366ba6d24897c4e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00048.html">Interpretation</a> <a class="el" href="a00047.html#ad32d2f2f27451caddee091c10591196e">ATT_MSSDK.Speechv3.Info.Interpretation</a><code> [get, set]</code></td>
+          <td class="memname"><a class="el" href="a00047.html#a8f337ae831c43415aa8dafaabec80443">ATT_MSSDK.InvalidResponseException.InvalidResponseException</a> </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>message</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets interpretation It is a dictionary containing slots that provide semantic meaning to the recognized utterances. This dictionary will normally be derived from the top n-best nluHypothesis dictionary. Slots used are: “cast”,“title”, “station.name”, “genre.id”, “genre.words”, and “station.number. </p>
+<p>Initializes a new instance of the <a class="el" href="a00047.html" title="Exception returned if there is an error returned by the server or a connection failure.">InvalidResponseException</a> class. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>A string used to describe the exception.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a class="anchor" id="a8567a66fc529ac7c6732c0b5f95eb47c"></a>
+<a class="anchor" id="afe90d8d691c542c366e8728605780a0e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00053.html">Metrics</a> <a class="el" href="a00047.html#a8567a66fc529ac7c6732c0b5f95eb47c">ATT_MSSDK.Speechv3.Info.Metrics</a><code> [get, set]</code></td>
+          <td class="memname"><a class="el" href="a00047.html#a8f337ae831c43415aa8dafaabec80443">ATT_MSSDK.InvalidResponseException.InvalidResponseException</a> </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Exception&#160;</td>
+          <td class="paramname"><em>ex</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets metrics. <a class="el" href="a00053.html" title="Encapsulates Metrics data returned in speect to text response.">Metrics</a> is a dictionary with items that show metric-information about the received audio-file, namely: audioTime and audioBytes. </p>
+<p>Initializes a new instance of the <a class="el" href="a00047.html" title="Exception returned if there is an error returned by the server or a connection failure.">InvalidResponseException</a> class. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>A string used to describe the exception.</td></tr>
+    <tr><td class="paramname">ex</td><td>The nested exception.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a class="anchor" id="abe58d8b00ce8f18f478d8caa587f7f0b"></a>
+<a class="anchor" id="a60e1aad3daf6e4830967f6ebdfbfc8a1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="a00047.html#abe58d8b00ce8f18f478d8caa587f7f0b">ATT_MSSDK.Speechv3.Info.Recognized</a><code> [get, set]</code></td>
+          <td class="memname"><a class="el" href="a00047.html#a8f337ae831c43415aa8dafaabec80443">ATT_MSSDK.InvalidResponseException.InvalidResponseException</a> </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Exception&#160;</td>
+          <td class="paramname"><em>ex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">HttpStatusCode&#160;</td>
+          <td class="paramname"><em>status</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>body</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets recognized the recognition result used to produce the search results- usually the same as the top n-best resultText string. </p>
+<p>Initializes a new instance of the <a class="el" href="a00047.html" title="Exception returned if there is an error returned by the server or a connection failure.">InvalidResponseException</a> class. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>A string used to describe the exception.</td></tr>
+    <tr><td class="paramname">ex</td><td>The nested exception.</td></tr>
+    <tr><td class="paramname">status</td><td>The HTTP status code returned by the server.</td></tr>
+    <tr><td class="paramname">body</td><td>The body of the response returned by the server.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a class="anchor" id="acd5a93ecafcd3809d7fa9f2bdf4c762d"></a>
+<hr/><h2>Property Documentation</h2>
+<a class="anchor" id="a449fd1a7660770e013177bd57fac4faa"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00079.html">Search</a> <a class="el" href="a00047.html#acd5a93ecafcd3809d7fa9f2bdf4c762d">ATT_MSSDK.Speechv3.Info.Search</a><code> [get, set]</code></td>
+          <td class="memname">string <a class="el" href="a00047.html#a449fd1a7660770e013177bd57fac4faa">ATT_MSSDK.InvalidResponseException.Body</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets search the search dictionary contains the results of the search on the EPG database for the requested lineup (market ID). If the search feature has been disabled, the “search” field will not be present. </p>
+<p>Gets or sets the formatData of the invalid response message. </p>
 
 </div>
 </div>
-<a class="anchor" id="adf736ee196d5df7a767e487429fc4e2f"></a>
+<a class="anchor" id="ad9d10886020227c4c2fe4388b17cb09b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="a00047.html#adf736ee196d5df7a767e487429fc4e2f">ATT_MSSDK.Speechv3.Info.Version</a><code> [get, set]</code></td>
+          <td class="memname"><a class="el" href="a00029.html">ErrorResponse</a> <a class="el" href="a00047.html#ad9d10886020227c4c2fe4388b17cb09b">ATT_MSSDK.InvalidResponseException.ErrorResponseObject</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets version. Version is a string indicating the version of the processor providing the response. </p>
+<p>Gets or sets the error response for invalid response message. </p>
+
+</div>
+</div>
+<a class="anchor" id="a07b41db75f14e9f47dff9a4e902772c9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HttpStatusCode <a class="el" href="a00047.html#a07b41db75f14e9f47dff9a4e902772c9">ATT_MSSDK.InvalidResponseException.Status</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the HTTP status code of the invalid response message. </p>
 
 </div>
 </div>
@@ -223,13 +313,13 @@ Properties</h2></td></tr>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="a00201.html">ATT_MSSDK</a>      </li>
-      <li class="navelem"><a class="el" href="a00212.html">Speechv3</a>      </li>
-      <li class="navelem"><a class="el" href="a00047.html">Info</a>      </li>
+      <li class="navelem"><a class="el" href="a00209.html">ATT_MSSDK</a>      </li>
+      <li class="navelem"><a class="el" href="a00047.html">InvalidResponseException</a>      </li>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:11 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

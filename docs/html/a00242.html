@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: SpeechToTextCustom Methods</title>
+<title>AT&amp;T API Platform SDK for Microsoft: SMS Methods</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -103,58 +103,185 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">SpeechToTextCustom Methods</div>  </div>
+<div class="title">SMS Methods</div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00074.html">ATT_MSSDK.RequestFactory</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The RequestFactory manages the connections and calls to the AT&amp;T API Platform.  <a href="a00074.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00081.html">ATT_MSSDK.RequestFactory</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The RequestFactory manages the connections and calls to the AT&amp;T API Platform.  <a href="a00081.html#details">More...</a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga57ca516306f59b7b607e0ab9010b04ff"><td class="memItemLeft" align="right" valign="top">SpeechResponse&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00242.html#ga57ca516306f59b7b607e0ab9010b04ff">ATT_MSSDK.RequestFactory.SpeechToTextCustom</a> (string audioFilePath, string dictionaryFilePath, string grammarFilePath, XSpeechCustomContext speechCustomContext, string xArgs=null, string audioContentType=null)</td></tr>
+<tr class="memitem:gaeefbb66a9e2f543fa2bd5ff9b51d4925"><td class="memItemLeft" align="right" valign="top">SmsResponse&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00242.html#gaeefbb66a9e2f543fa2bd5ff9b51d4925">ATT_MSSDK.RequestFactory.SendSms</a> (string address, string message, bool?notifyDeliveryStatus=null)</td></tr>
+<tr class="memdesc:gaeefbb66a9e2f543fa2bd5ff9b51d4925"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method sends an SMS message to one Mobile Network device.  <a href="#gaeefbb66a9e2f543fa2bd5ff9b51d4925"></a><br/></td></tr>
+<tr class="memitem:ga821b8e766101a6c6396c4692c0784794"><td class="memItemLeft" align="right" valign="top">SmsResponse&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00242.html#ga821b8e766101a6c6396c4692c0784794">ATT_MSSDK.RequestFactory.SendSms</a> (List&lt; string &gt; addresses, string message, bool?notifyDeliveryStatus=null)</td></tr>
+<tr class="memdesc:ga821b8e766101a6c6396c4692c0784794"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send an SMS message to the specified addresses.  <a href="#ga821b8e766101a6c6396c4692c0784794"></a><br/></td></tr>
+<tr class="memitem:ga461da3af5f8afed2d10a7e8da2811505"><td class="memItemLeft" align="right" valign="top">SmsDeliveryResponse&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00242.html#ga461da3af5f8afed2d10a7e8da2811505">ATT_MSSDK.RequestFactory.GetSmsDeliveryResponse</a> (string deliveryId)</td></tr>
+<tr class="memdesc:ga461da3af5f8afed2d10a7e8da2811505"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method gets the status of a previous SMS delivery request that was successfully accepted by the AT&amp;T Network for delivery to the destination mobile device. The identifier returned in the response of the corresponding SendSMS operation must be provided in the GetSmsDeliveryStatus operation request.  <a href="#ga461da3af5f8afed2d10a7e8da2811505"></a><br/></td></tr>
+<tr class="memitem:ga37778162faae77dec6b51b70d84ee8f5"><td class="memItemLeft" align="right" valign="top">InboundSmsMessageList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00242.html#ga37778162faae77dec6b51b70d84ee8f5">ATT_MSSDK.RequestFactory.ReceiveSms</a> (string shortCode)</td></tr>
+<tr class="memdesc:ga37778162faae77dec6b51b70d84ee8f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method retrieves all SMS messages received on its short code resource via polling mechanism.  <a href="#ga37778162faae77dec6b51b70d84ee8f5"></a><br/></td></tr>
+<tr class="memitem:gafcc6cfc901e326fac48b99ee2a416795"><td class="memItemLeft" align="right" valign="top">static ReceivedSMS&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00242.html#gafcc6cfc901e326fac48b99ee2a416795">ATT_MSSDK.RequestFactory.GetSMS</a> (System.IO.Stream inputStream)</td></tr>
+<tr class="memdesc:gafcc6cfc901e326fac48b99ee2a416795"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses given stream and returns <a class="el" href="a00078.html" title="SMS Message structure of callback SMS.">ATT_MSSDK.SMSv3.ReceivedSMS</a> object.  <a href="#gafcc6cfc901e326fac48b99ee2a416795"></a><br/></td></tr>
+<tr class="memitem:gacd6a38a75219d8545d27cecb6d76999f"><td class="memItemLeft" align="right" valign="top">static SmsDeliveryStatus&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00242.html#gacd6a38a75219d8545d27cecb6d76999f">ATT_MSSDK.RequestFactory.GetSMSDeliveryStatus</a> (System.IO.Stream inputStream)</td></tr>
+<tr class="memdesc:gacd6a38a75219d8545d27cecb6d76999f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses given stream and returns <a class="el" href="a00094.html" title="SMS Delivery Status structure.">ATT_MSSDK.SMSv3.SmsDeliveryStatus</a> object.  <a href="#gacd6a38a75219d8545d27cecb6d76999f"></a><br/></td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
-<a class="anchor" id="ga57ca516306f59b7b607e0ab9010b04ff"></a>
+<a class="anchor" id="gafcc6cfc901e326fac48b99ee2a416795"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">SpeechResponse <a class="el" href="a00242.html#ga57ca516306f59b7b607e0ab9010b04ff">ATT_MSSDK.RequestFactory.SpeechToTextCustom</a> </td>
+          <td class="memname">static ReceivedSMS <a class="el" href="a00242.html#gafcc6cfc901e326fac48b99ee2a416795">ATT_MSSDK.RequestFactory.GetSMS</a> </td>
+          <td>(</td>
+          <td class="paramtype">System.IO.Stream&#160;</td>
+          <td class="paramname"><em>inputStream</em></td><td>)</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Parses given stream and returns <a class="el" href="a00078.html" title="SMS Message structure of callback SMS.">ATT_MSSDK.SMSv3.ReceivedSMS</a> object. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inputStream</td><td>input stream</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns:</dt><dd>The <a class="el" href="a00078.html" title="SMS Message structure of callback SMS.">ATT_MSSDK.SMSv3.ReceivedSMS</a> object.</dd></dl>
+<dl class="exception"><dt><b>Exceptions:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">System.ArgumentNullException</td><td>Thrown when inputStream is null</td></tr>
+    <tr><td class="paramname"><a class="el" href="a00047.html" title="Exception returned if there is an error returned by the server or a connection failure.">InvalidResponseException</a></td><td>Thrown when unable to parse given stream</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga461da3af5f8afed2d10a7e8da2811505"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmsDeliveryResponse <a class="el" href="a00242.html#ga461da3af5f8afed2d10a7e8da2811505">ATT_MSSDK.RequestFactory.GetSmsDeliveryResponse</a> </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>audioFilePath</em>, </td>
+          <td class="paramname"><em>deliveryId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>This method gets the status of a previous SMS delivery request that was successfully accepted by the AT&amp;T Network for delivery to the destination mobile device. The identifier returned in the response of the corresponding SendSMS operation must be provided in the GetSmsDeliveryStatus operation request. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">deliveryId</td><td>A value returned from a previous SendSms call.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns:</dt><dd>The <a class="el" href="a00093.html" title="Contains the results of the SmsDelivery request.">ATT_MSSDK.SMSv3.SmsDeliveryResponse</a> returned by the server.</dd></dl>
+<dl class="exception"><dt><b>Exceptions:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ArgumentException</td><td>Thrown if an argument is invalid.</td></tr>
+    <tr><td class="paramname"><a class="el" href="a00048.html" title="Exception returned if the RequestFactory does not include the scope necessary for this call...">InvalidScopeException</a></td><td>Thrown if the Request Factory scope does not include SMS.</td></tr>
+    <tr><td class="paramname"><a class="el" href="a00047.html" title="Exception returned if there is an error returned by the server or a connection failure.">InvalidResponseException</a></td><td>Thrown if the server returns an error or there is a connection failure.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gacd6a38a75219d8545d27cecb6d76999f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static SmsDeliveryStatus <a class="el" href="a00242.html#gacd6a38a75219d8545d27cecb6d76999f">ATT_MSSDK.RequestFactory.GetSMSDeliveryStatus</a> </td>
+          <td>(</td>
+          <td class="paramtype">System.IO.Stream&#160;</td>
+          <td class="paramname"><em>inputStream</em></td><td>)</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Parses given stream and returns <a class="el" href="a00094.html" title="SMS Delivery Status structure.">ATT_MSSDK.SMSv3.SmsDeliveryStatus</a> object. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inputStream</td><td>input stream</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns:</dt><dd>The <a class="el" href="a00094.html" title="SMS Delivery Status structure.">ATT_MSSDK.SMSv3.SmsDeliveryStatus</a> object.</dd></dl>
+<dl class="exception"><dt><b>Exceptions:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">System.ArgumentNullException</td><td>Thrown when inputStream is null</td></tr>
+    <tr><td class="paramname"><a class="el" href="a00047.html" title="Exception returned if there is an error returned by the server or a connection failure.">InvalidResponseException</a></td><td>Thrown when unable to parse given stream</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga37778162faae77dec6b51b70d84ee8f5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">InboundSmsMessageList <a class="el" href="a00242.html#ga37778162faae77dec6b51b70d84ee8f5">ATT_MSSDK.RequestFactory.ReceiveSms</a> </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>shortCode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>This method retrieves all SMS messages received on its short code resource via polling mechanism. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">shortCode</td><td>The Short Code to check for.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns:</dt><dd>The <a class="el" href="a00044.html" title="Response from server to InboundSms request.">ATT_MSSDK.SMSv3.InboundSmsMessageList</a> object.</dd></dl>
+<dl class="exception"><dt><b>Exceptions:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ArgumentException</td><td>Thrown if an argument is invalid.</td></tr>
+    <tr><td class="paramname"><a class="el" href="a00048.html" title="Exception returned if the RequestFactory does not include the scope necessary for this call...">InvalidScopeException</a></td><td>Thrown if the Request Factory scope does not include SMS.</td></tr>
+    <tr><td class="paramname"><a class="el" href="a00047.html" title="Exception returned if there is an error returned by the server or a connection failure.">InvalidResponseException</a></td><td>Thrown if the server returns an error or there is a connection failure.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gaeefbb66a9e2f543fa2bd5ff9b51d4925"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmsResponse <a class="el" href="a00242.html#gaeefbb66a9e2f543fa2bd5ff9b51d4925">ATT_MSSDK.RequestFactory.SendSms</a> </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>address</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>dictionaryFilePath</em>, </td>
+          <td class="paramname"><em>message</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>grammarFilePath</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a00201.html#a900e2cbfc86dfab9bf71e8613c98b906">XSpeechCustomContext</a>&#160;</td>
-          <td class="paramname"><em>speechCustomContext</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>xArgs</em> = <code>null</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>audioContentType</em> = <code>null</code>&#160;</td>
+          <td class="paramtype">bool?&#160;</td>
+          <td class="paramname"><em>notifyDeliveryStatus</em> = <code>null</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -164,24 +291,74 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>This method converts spoken audio to text. Optional inline hints and inline grammar may be provided by the developer to get more accurate results with a known data set.</p>
+
+<p>This method sends an SMS message to one Mobile Network device. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">audioFilePath</td><td>Audio file path</td></tr>
-    <tr><td class="paramname">dictionaryFilePath</td><td>Inline hint file path</td></tr>
-    <tr><td class="paramname">grammarFilePath</td><td>Inline grammar file path</td></tr>
-    <tr><td class="paramname">speechCustomContext</td><td>XSpeechCustomContext </td></tr>
-    <tr><td class="paramname">xArgs</td><td>String having name/value pairs separated by comma, used to populate X-Arg header field is a meta parameter </td></tr>
-    <tr><td class="paramname">audioContentType</td><td>Specifies the content type of the audio submitted.</td></tr>
+    <tr><td class="paramname">address</td><td>Address, which is mobile destination number of the message.</td></tr>
+    <tr><td class="paramname">message</td><td>The message text to send.</td></tr>
+    <tr><td class="paramname">notifyDeliveryStatus</td><td>It is a Boolean flag that could contain either “True” or “False” (case insensitive) to denote the gateway whether delivery status notification is expected by the application or not.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns:</dt><dd><a class="el" href="a00089.html" title="The response to a Speech To Text request.">ATT_MSSDK.Speechv3.SpeechResponse</a> An Speech response object containing the results.</dd></dl>
+<dl class="section return"><dt>Returns:</dt><dd><a class="el" href="a00095.html" title="This class encapsulates the response of Send SMS request.">ATT_MSSDK.SMSv3.SmsResponse</a> An SmsResponse object containing the results.</dd></dl>
 <dl class="exception"><dt><b>Exceptions:</b></dt><dd>
   <table class="exception">
     <tr><td class="paramname">ArgumentException</td><td>Thrown if an argument is invalid.</td></tr>
-    <tr><td class="paramname"><a class="el" href="a00050.html" title="Exception returned if the RequestFactory does not include the scope necessary for this call...">InvalidScopeException</a></td><td>Thrown if the Request Factory scope does not include SMS.</td></tr>
-    <tr><td class="paramname"><a class="el" href="a00049.html" title="Exception returned if there is an error returned by the server or a connection failure.">InvalidResponseException</a></td><td>Thrown if the server returns an error or there is a connection failure.</td></tr>
+    <tr><td class="paramname"><a class="el" href="a00048.html" title="Exception returned if the RequestFactory does not include the scope necessary for this call...">InvalidScopeException</a></td><td>Thrown if the Request Factory scope does not include SMS.</td></tr>
+    <tr><td class="paramname"><a class="el" href="a00047.html" title="Exception returned if there is an error returned by the server or a connection failure.">InvalidResponseException</a></td><td>Thrown if the server returns an error or there is a connection failure.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga821b8e766101a6c6396c4692c0784794"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmsResponse <a class="el" href="a00242.html#gaeefbb66a9e2f543fa2bd5ff9b51d4925">ATT_MSSDK.RequestFactory.SendSms</a> </td>
+          <td>(</td>
+          <td class="paramtype">List&lt; string &gt;&#160;</td>
+          <td class="paramname"><em>addresses</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool?&#160;</td>
+          <td class="paramname"><em>notifyDeliveryStatus</em> = <code>null</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Send an SMS message to the specified addresses. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">addresses</td><td>A list of addresses, mobile destination numbers of the message.</td></tr>
+    <tr><td class="paramname">message</td><td>The message to send.</td></tr>
+    <tr><td class="paramname">notifyDeliveryStatus</td><td>It is a Boolean flag that could contain either “True” or “False” (case insensitive) to denote the gateway whether delivery status notification is expected by the application or not.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns:</dt><dd><a class="el" href="a00095.html" title="This class encapsulates the response of Send SMS request.">ATT_MSSDK.SMSv3.SmsResponse</a> An SmsResponse object containing the results.</dd></dl>
+<dl class="exception"><dt><b>Exceptions:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ArgumentException</td><td>Thrown if an argument is invalid.</td></tr>
+    <tr><td class="paramname"><a class="el" href="a00048.html" title="Exception returned if the RequestFactory does not include the scope necessary for this call...">InvalidScopeException</a></td><td>Thrown if the Request Factory scope does not include SMS.</td></tr>
+    <tr><td class="paramname"><a class="el" href="a00047.html" title="Exception returned if there is an error returned by the server or a connection failure.">InvalidResponseException</a></td><td>Thrown if the server returns an error or there is a connection failure.</td></tr>
   </table>
   </dd>
 </dl>
@@ -192,10 +369,11 @@ Functions</h2></td></tr>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:10 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

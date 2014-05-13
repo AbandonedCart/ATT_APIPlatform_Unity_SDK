@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.SMSv3.SmsDeliveryStatus Class Reference</title>
+<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.InAppMessaging.SegmentationDetails Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -102,35 +102,69 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#properties">Properties</a>  </div>
   <div class="headertitle">
-<div class="title">ATT_MSSDK.SMSv3.SmsDeliveryStatus Class Reference</div>  </div>
+<div class="title">ATT_MSSDK.InAppMessaging.SegmentationDetails Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>SMS Delivery Status structure.  
+<p>Container for Segmentation Details.  
  <a href="a00086.html#details">More...</a></p>
 
-<p><a href="a00312.html">List of all members.</a></p>
+<p><a href="a00289.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:aa9a01f9dbcbfa52e5c6161db1ae93f68"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00032.html">DeliveryInfoNotification</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00086.html#aa9a01f9dbcbfa52e5c6161db1ae93f68">DeliveryInfoNotification</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aa9a01f9dbcbfa52e5c6161db1ae93f68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of <a class="el" href="a00032.html" title="Encapsulates the delivery status for a given destination address.">DeliveryInfoNotification</a> object. This is the object that holds the delivery status for a given destination address.  <a href="#aa9a01f9dbcbfa52e5c6161db1ae93f68"></a><br/></td></tr>
+<tr class="memitem:aca081af0ae96c3f1114d7fcb2e2ad568"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00086.html#aca081af0ae96c3f1114d7fcb2e2ad568">SegmentationMsgRefNumber</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:aca081af0ae96c3f1114d7fcb2e2ad568"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of reference number for message that are part of the same segments SMS message.  <a href="#aca081af0ae96c3f1114d7fcb2e2ad568"></a><br/></td></tr>
+<tr class="memitem:a493f6fdcb42d88ff93f489d78a95a49d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00086.html#a493f6fdcb42d88ff93f489d78a95a49d">TotalNumberOfParts</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a493f6fdcb42d88ff93f489d78a95a49d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of total number for segments for this segmented SMS message.  <a href="#a493f6fdcb42d88ff93f489d78a95a49d"></a><br/></td></tr>
+<tr class="memitem:a46277e21924141f992e20eef7f6d5399"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00086.html#a46277e21924141f992e20eef7f6d5399">ThisPartNumber</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a46277e21924141f992e20eef7f6d5399"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of segmentation part number for this particular message.  <a href="#a46277e21924141f992e20eef7f6d5399"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>SMS Delivery Status structure. </p>
+<div class="textblock"><p>Container for Segmentation Details. </p>
 </div><hr/><h2>Property Documentation</h2>
-<a class="anchor" id="aa9a01f9dbcbfa52e5c6161db1ae93f68"></a>
+<a class="anchor" id="aca081af0ae96c3f1114d7fcb2e2ad568"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00032.html">DeliveryInfoNotification</a> <a class="el" href="a00086.html#aa9a01f9dbcbfa52e5c6161db1ae93f68">ATT_MSSDK.SMSv3.SmsDeliveryStatus.DeliveryInfoNotification</a><code> [get, set]</code></td>
+          <td class="memname">int <a class="el" href="a00086.html#aca081af0ae96c3f1114d7fcb2e2ad568">ATT_MSSDK.InAppMessaging.SegmentationDetails.SegmentationMsgRefNumber</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets the value of <a class="el" href="a00032.html" title="Encapsulates the delivery status for a given destination address.">DeliveryInfoNotification</a> object. This is the object that holds the delivery status for a given destination address. </p>
+<p>Gets or sets the value of reference number for message that are part of the same segments SMS message. </p>
+
+</div>
+</div>
+<a class="anchor" id="a46277e21924141f992e20eef7f6d5399"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="a00086.html#a46277e21924141f992e20eef7f6d5399">ATT_MSSDK.InAppMessaging.SegmentationDetails.ThisPartNumber</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the value of segmentation part number for this particular message. </p>
+
+</div>
+</div>
+<a class="anchor" id="a493f6fdcb42d88ff93f489d78a95a49d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="a00086.html#a493f6fdcb42d88ff93f489d78a95a49d">ATT_MSSDK.InAppMessaging.SegmentationDetails.TotalNumberOfParts</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the value of total number for segments for this segmented SMS message. </p>
 
 </div>
 </div>
@@ -138,13 +172,14 @@ Properties</h2></td></tr>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="a00201.html">ATT_MSSDK</a>      </li>
-      <li class="navelem"><a class="el" href="a00211.html">SMSv3</a>      </li>
-      <li class="navelem"><a class="el" href="a00086.html">SmsDeliveryStatus</a>      </li>
+      <li class="navelem"><a class="el" href="a00209.html">ATT_MSSDK</a>      </li>
+      <li class="navelem"><a class="el" href="a00213.html">InAppMessaging</a>      </li>
+      <li class="navelem"><a class="el" href="a00086.html">SegmentationDetails</a>      </li>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:11 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

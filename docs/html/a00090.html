@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.Paymentv3.StopSubscriptionNotificationObject Class Reference</title>
+<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.ServiceErrorObject Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -100,223 +100,71 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#properties">Properties</a>  </div>
   <div class="headertitle">
-<div class="title">ATT_MSSDK.Paymentv3.StopSubscriptionNotificationObject Class Reference</div>  </div>
+<div class="title">ATT_MSSDK.ServiceErrorObject Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Stop Subscription Notification Object.  
+<p>ServiceErrorObject is returned as part of error response from platform. These errors occur when a service is unable to process a request and retrying of the request will result in a consistent failure.  
  <a href="a00090.html#details">More...</a></p>
-<div class="dynheader">
-Inheritance diagram for ATT_MSSDK.Paymentv3.StopSubscriptionNotificationObject:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="a00090.png" usemap="#ATT_MSSDK.Paymentv3.StopSubscriptionNotificationObject_map" alt=""/>
-  <map id="ATT_MSSDK.Paymentv3.StopSubscriptionNotificationObject_map" name="ATT_MSSDK.Paymentv3.StopSubscriptionNotificationObject_map">
-<area href="a00062.html" title="Base class for all Notification Objects." alt="ATT_MSSDK.Paymentv3.NotificationObject" shape="rect" coords="0,0,351,24"/>
-</map>
- </div></div>
 
-<p><a href="a00295.html">List of all members.</a></p>
+<p><a href="a00258.html">List of all members.</a></p>
 <table class="memberdecls">
-<tr><td colspan="2"><h2><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a78ae7b979a6e71e776197d6a1eee6594"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00090.html#a78ae7b979a6e71e776197d6a1eee6594">StopSubscriptionNotificationObject</a> ()</td></tr>
-<tr class="memdesc:a78ae7b979a6e71e776197d6a1eee6594"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="a00090.html" title="Stop Subscription Notification Object.">StopSubscriptionNotificationObject</a> class.  <a href="#a78ae7b979a6e71e776197d6a1eee6594"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a605161e8e0b0407286b524b0073e76e7"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00090.html#a605161e8e0b0407286b524b0073e76e7">ConsumerId</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a605161e8e0b0407286b524b0073e76e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Unique Consumer Id.  <a href="#a605161e8e0b0407286b524b0073e76e7"></a><br/></td></tr>
-<tr class="memitem:a9074833fd5c8056689e83122e19110da"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00090.html#a9074833fd5c8056689e83122e19110da">OriginalTransactionId</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a9074833fd5c8056689e83122e19110da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Original Transaction Id which is always empty.  <a href="#a9074833fd5c8056689e83122e19110da"></a><br/></td></tr>
-<tr class="memitem:a66cc523d322c61b43520541ed87b3a28"><td class="memItemLeft" align="right" valign="top">DateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00090.html#a66cc523d322c61b43520541ed87b3a28">TransactionDate</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a66cc523d322c61b43520541ed87b3a28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Date and time the refund transaction occurred.  <a href="#a66cc523d322c61b43520541ed87b3a28"></a><br/></td></tr>
-<tr class="memitem:a84e10cb2570e29ec1956f3bb44503c4b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00090.html#a84e10cb2570e29ec1956f3bb44503c4b">MerchantSubscriptionId</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a84e10cb2570e29ec1956f3bb44503c4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Merchant subscription identifier.  <a href="#a84e10cb2570e29ec1956f3bb44503c4b"></a><br/></td></tr>
-<tr class="memitem:ae76b36e24e21de10af5807dec7494178"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00090.html#ae76b36e24e21de10af5807dec7494178">SubscriptionPeriod</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ae76b36e24e21de10af5807dec7494178"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the subscription period time unit. Valid values are: DAILY, WEEKLY and MONTHLY.  <a href="#ae76b36e24e21de10af5807dec7494178"></a><br/></td></tr>
-<tr class="memitem:a991f09c4d9b40ed3bfbcde0bb222aa4a"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00090.html#a991f09c4d9b40ed3bfbcde0bb222aa4a">SubscriptionPeriodAmount</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a991f09c4d9b40ed3bfbcde0bb222aa4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the number of months – as only the monthly subscription period is supported for this release.  <a href="#a991f09c4d9b40ed3bfbcde0bb222aa4a"></a><br/></td></tr>
-<tr class="memitem:a75f50a9710143787fba6869065611b3e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00090.html#a75f50a9710143787fba6869065611b3e">SubscriptionRecurrences</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a75f50a9710143787fba6869065611b3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the number of recurrences.  <a href="#a75f50a9710143787fba6869065611b3e"></a><br/></td></tr>
-<tr class="memitem:aeb548e2291dd699a2b036ff2ddb19d08"><td class="memItemLeft" align="right" valign="top">DateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00090.html#aeb548e2291dd699a2b036ff2ddb19d08">CurrentPeriodStartDate</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aeb548e2291dd699a2b036ff2ddb19d08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Start date of current subscription period.  <a href="#aeb548e2291dd699a2b036ff2ddb19d08"></a><br/></td></tr>
-<tr class="memitem:a453e5cf5c74fa9cfd5ed60faf3069792"><td class="memItemLeft" align="right" valign="top">DateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00090.html#a453e5cf5c74fa9cfd5ed60faf3069792">CurrentPeriodEndDate</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a453e5cf5c74fa9cfd5ed60faf3069792"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the End date of current subscription period.  <a href="#a453e5cf5c74fa9cfd5ed60faf3069792"></a><br/></td></tr>
-<tr class="memitem:a69b94db41e0c36b1d7bddb1a10c4cbab"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00090.html#a69b94db41e0c36b1d7bddb1a10c4cbab">SubscriptionRemaining</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a69b94db41e0c36b1d7bddb1a10c4cbab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the remaining number of renewals.  <a href="#a69b94db41e0c36b1d7bddb1a10c4cbab"></a><br/></td></tr>
+<tr class="memitem:a4e3e6f4914a7c4aa190e3942c0402f15"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00090.html#a4e3e6f4914a7c4aa190e3942c0402f15">FaultCode</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a4e3e6f4914a7c4aa190e3942c0402f15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of FaultCode.  <a href="#a4e3e6f4914a7c4aa190e3942c0402f15"></a><br/></td></tr>
+<tr class="memitem:a55747145e64583673ff14a33776bdd26"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00090.html#a55747145e64583673ff14a33776bdd26">FaultMessage</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a55747145e64583673ff14a33776bdd26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of FaultMessage.  <a href="#a55747145e64583673ff14a33776bdd26"></a><br/></td></tr>
+<tr class="memitem:a394b13e799157ee83a6e6b8781478bc7"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00090.html#a394b13e799157ee83a6e6b8781478bc7">FaultDescription</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a394b13e799157ee83a6e6b8781478bc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of FaultDescription.  <a href="#a394b13e799157ee83a6e6b8781478bc7"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Stop Subscription Notification Object. </p>
-</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a78ae7b979a6e71e776197d6a1eee6594"></a>
+<div class="textblock"><p>ServiceErrorObject is returned as part of error response from platform. These errors occur when a service is unable to process a request and retrying of the request will result in a consistent failure. </p>
+</div><hr/><h2>Property Documentation</h2>
+<a class="anchor" id="a4e3e6f4914a7c4aa190e3942c0402f15"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00090.html#a78ae7b979a6e71e776197d6a1eee6594">ATT_MSSDK.Paymentv3.StopSubscriptionNotificationObject.StopSubscriptionNotificationObject</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">string <a class="el" href="a00090.html#a4e3e6f4914a7c4aa190e3942c0402f15">ATT_MSSDK.ServiceErrorObject.FaultCode</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Initializes a new instance of the <a class="el" href="a00090.html" title="Stop Subscription Notification Object.">StopSubscriptionNotificationObject</a> class. </p>
+<p>Gets or sets the value of FaultCode. </p>
 
 </div>
 </div>
-<hr/><h2>Property Documentation</h2>
-<a class="anchor" id="a605161e8e0b0407286b524b0073e76e7"></a>
+<a class="anchor" id="a394b13e799157ee83a6e6b8781478bc7"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="a00090.html#a605161e8e0b0407286b524b0073e76e7">ATT_MSSDK.Paymentv3.StopSubscriptionNotificationObject.ConsumerId</a><code> [get, set]</code></td>
+          <td class="memname">string <a class="el" href="a00090.html#a394b13e799157ee83a6e6b8781478bc7">ATT_MSSDK.ServiceErrorObject.FaultDescription</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets the Unique Consumer Id. </p>
+<p>Gets or sets the value of FaultDescription. </p>
 
 </div>
 </div>
-<a class="anchor" id="a453e5cf5c74fa9cfd5ed60faf3069792"></a>
+<a class="anchor" id="a55747145e64583673ff14a33776bdd26"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">DateTime <a class="el" href="a00090.html#a453e5cf5c74fa9cfd5ed60faf3069792">ATT_MSSDK.Paymentv3.StopSubscriptionNotificationObject.CurrentPeriodEndDate</a><code> [get, set]</code></td>
+          <td class="memname">string <a class="el" href="a00090.html#a55747145e64583673ff14a33776bdd26">ATT_MSSDK.ServiceErrorObject.FaultMessage</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets the End date of current subscription period. </p>
-
-</div>
-</div>
-<a class="anchor" id="aeb548e2291dd699a2b036ff2ddb19d08"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">DateTime <a class="el" href="a00090.html#aeb548e2291dd699a2b036ff2ddb19d08">ATT_MSSDK.Paymentv3.StopSubscriptionNotificationObject.CurrentPeriodStartDate</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the Start date of current subscription period. </p>
-
-</div>
-</div>
-<a class="anchor" id="a84e10cb2570e29ec1956f3bb44503c4b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00090.html#a84e10cb2570e29ec1956f3bb44503c4b">ATT_MSSDK.Paymentv3.StopSubscriptionNotificationObject.MerchantSubscriptionId</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the Merchant subscription identifier. </p>
-
-</div>
-</div>
-<a class="anchor" id="a9074833fd5c8056689e83122e19110da"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00090.html#a9074833fd5c8056689e83122e19110da">ATT_MSSDK.Paymentv3.StopSubscriptionNotificationObject.OriginalTransactionId</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the Original Transaction Id which is always empty. </p>
-
-</div>
-</div>
-<a class="anchor" id="ae76b36e24e21de10af5807dec7494178"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00090.html#ae76b36e24e21de10af5807dec7494178">ATT_MSSDK.Paymentv3.StopSubscriptionNotificationObject.SubscriptionPeriod</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the subscription period time unit. Valid values are: DAILY, WEEKLY and MONTHLY. </p>
-
-</div>
-</div>
-<a class="anchor" id="a991f09c4d9b40ed3bfbcde0bb222aa4a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00090.html#a991f09c4d9b40ed3bfbcde0bb222aa4a">ATT_MSSDK.Paymentv3.StopSubscriptionNotificationObject.SubscriptionPeriodAmount</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the number of months – as only the monthly subscription period is supported for this release. </p>
-
-</div>
-</div>
-<a class="anchor" id="a75f50a9710143787fba6869065611b3e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="a00090.html#a75f50a9710143787fba6869065611b3e">ATT_MSSDK.Paymentv3.StopSubscriptionNotificationObject.SubscriptionRecurrences</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the number of recurrences. </p>
-
-</div>
-</div>
-<a class="anchor" id="a69b94db41e0c36b1d7bddb1a10c4cbab"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="a00090.html#a69b94db41e0c36b1d7bddb1a10c4cbab">ATT_MSSDK.Paymentv3.StopSubscriptionNotificationObject.SubscriptionRemaining</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the remaining number of renewals. </p>
-
-</div>
-</div>
-<a class="anchor" id="a66cc523d322c61b43520541ed87b3a28"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">DateTime <a class="el" href="a00090.html#a66cc523d322c61b43520541ed87b3a28">ATT_MSSDK.Paymentv3.StopSubscriptionNotificationObject.TransactionDate</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the Date and time the refund transaction occurred. </p>
+<p>Gets or sets the value of FaultMessage. </p>
 
 </div>
 </div>
@@ -324,13 +172,13 @@ Properties</h2></td></tr>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="a00201.html">ATT_MSSDK</a>      </li>
-      <li class="navelem"><a class="el" href="a00210.html">Paymentv3</a>      </li>
-      <li class="navelem"><a class="el" href="a00090.html">StopSubscriptionNotificationObject</a>      </li>
+      <li class="navelem"><a class="el" href="a00209.html">ATT_MSSDK</a>      </li>
+      <li class="navelem"><a class="el" href="a00090.html">ServiceErrorObject</a>      </li>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:11 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

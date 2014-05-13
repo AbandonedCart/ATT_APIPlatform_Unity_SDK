@@ -1,6 +1,9 @@
 var a00041 =
 [
-    [ "ImageUrl", "a00041.html#a3c64e262bdb43a25a534edab3b5e15a6", null ],
-    [ "Image", "a00041.html#a8255f65c1b46b86d98a9c4d21cc58b8e", null ],
-    [ "Track", "a00041.html#a9037c93ffdf5676acebf15be4740bfaa", null ]
+    [ "InboundMmsMessage", "a00041.html#aca3ac697ddd6a4e231bf1eaeffc762eb", null ],
+    [ "InboundMmsAttachmentDetailsList", "a00041.html#a4d139cfed6e4446f02d87bf4603b882d", null ],
+    [ "Priority", "a00041.html#a52fd01715d4fd93c7fff592860cdd5a8", null ],
+    [ "ReceivedTimeDate", "a00041.html#a3f4123c8f757d1a068b89c1c209ecc8b", null ],
+    [ "SenderAddress", "a00041.html#a9b08e4e2c0d1d4281c1f67b978524cc6", null ],
+    [ "Subject", "a00041.html#ab050de47627e1d3ee3350af388f44b9c", null ]
 ];

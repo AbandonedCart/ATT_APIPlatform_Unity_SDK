@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.SMSv3.SmsDeliveryResponse Class Reference</title>
+<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.Speechv3.Search Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -100,99 +100,71 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#properties">Properties</a>  </div>
   <div class="headertitle">
-<div class="title">ATT_MSSDK.SMSv3.SmsDeliveryResponse Class Reference</div>  </div>
+<div class="title">ATT_MSSDK.Speechv3.Search Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Contains the results of the SmsDelivery request.  
+<p>Encapsulates <a class="el" href="a00085.html" title="Encapsulates Search data returned in speech to text response.">Search</a> data returned in speech to text response.  
  <a href="a00085.html#details">More...</a></p>
-<div class="dynheader">
-Inheritance diagram for ATT_MSSDK.SMSv3.SmsDeliveryResponse:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="a00085.png" usemap="#ATT_MSSDK.SMSv3.SmsDeliveryResponse_map" alt=""/>
-  <map id="ATT_MSSDK.SMSv3.SmsDeliveryResponse_map" name="ATT_MSSDK.SMSv3.SmsDeliveryResponse_map">
-<area href="a00077.html" title="Abstract base class for all Response objects." alt="ATT_MSSDK.Response" shape="rect" coords="0,0,261,24"/>
-</map>
- </div></div>
 
-<p><a href="a00311.html">List of all members.</a></p>
+<p><a href="a00330.html">List of all members.</a></p>
 <table class="memberdecls">
-<tr><td colspan="2"><h2><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><b>DeliveryInfoListRoot</b></td></tr>
-<tr><td colspan="2"><h2><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:adeb582b1595598043ff751423cf6d46f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00085.html">SmsDeliveryResponse</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00085.html#adeb582b1595598043ff751423cf6d46f">ParseJSON</a> (string jsonInput)</td></tr>
-<tr class="memdesc:adeb582b1595598043ff751423cf6d46f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a string containing a JSON object to a <a class="el" href="a00085.html" title="Contains the results of the SmsDelivery request.">SmsDeliveryResponse</a> object.  <a href="#adeb582b1595598043ff751423cf6d46f"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a1ea7acf282d921f9ea3159d56755f01e"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00085.html#a1ea7acf282d921f9ea3159d56755f01e">ResourceURL</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a1ea7acf282d921f9ea3159d56755f01e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the ResourceURL. The endpoint URI that served this request.  <a href="#a1ea7acf282d921f9ea3159d56755f01e"></a><br/></td></tr>
-<tr class="memitem:a80d7bb21b36a6a44cf6c067c60fcfaf0"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="a00028.html">DeliveryInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00085.html#a80d7bb21b36a6a44cf6c067c60fcfaf0">DeliveryInfo</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a80d7bb21b36a6a44cf6c067c60fcfaf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the <a class="el" href="a00028.html" title="Encapsulates the delivery info returned by the server for SMS messages.">DeliveryInfo</a> list. Object contained in '<a class="el" href="a00030.html" title="Contains the information returned by the server for delivery responses.">DeliveryInfoList</a>'. It contains three strings i-e Id, Address and DeliveryStatus.  <a href="#a80d7bb21b36a6a44cf6c067c60fcfaf0"></a><br/></td></tr>
+<tr class="memitem:a2b5da0d0ff97bb5a91a4ad15cc49eef9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00059.html">Meta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00085.html#a2b5da0d0ff97bb5a91a4ad15cc49eef9">Meta</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a2b5da0d0ff97bb5a91a4ad15cc49eef9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets meta A dictionary of informational fields related to the search and the results returned.  <a href="#a2b5da0d0ff97bb5a91a4ad15cc49eef9"></a><br/></td></tr>
+<tr class="memitem:aaac75ddcf76bc34da66815ada59af5a0"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="a00076.html">Program</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00085.html#aaac75ddcf76bc34da66815ada59af5a0">Programs</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:aaac75ddcf76bc34da66815ada59af5a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets programs, a list of programs describing a TV show or movie in the results.  <a href="#aaac75ddcf76bc34da66815ada59af5a0"></a><br/></td></tr>
+<tr class="memitem:a94af63a116b7ab86efbff32f062bb986"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="a00092.html">Showtime</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00085.html#a94af63a116b7ab86efbff32f062bb986">Showtimes</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a94af63a116b7ab86efbff32f062bb986"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets showtimes a list of show timings of the above programs, indicating start-time and channel.  <a href="#a94af63a116b7ab86efbff32f062bb986"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Contains the results of the SmsDelivery request. </p>
-</div><hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="adeb582b1595598043ff751423cf6d46f"></a>
+<div class="textblock"><p>Encapsulates <a class="el" href="a00085.html" title="Encapsulates Search data returned in speech to text response.">Search</a> data returned in speech to text response. </p>
+</div><hr/><h2>Property Documentation</h2>
+<a class="anchor" id="a2b5da0d0ff97bb5a91a4ad15cc49eef9"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="a00085.html">SmsDeliveryResponse</a> <a class="el" href="a00085.html#adeb582b1595598043ff751423cf6d46f">ATT_MSSDK.SMSv3.SmsDeliveryResponse.ParseJSON</a> </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>jsonInput</em></td><td>)</td>
-          <td><code> [static]</code></td>
+          <td class="memname"><a class="el" href="a00059.html">Meta</a> <a class="el" href="a00085.html#a2b5da0d0ff97bb5a91a4ad15cc49eef9">ATT_MSSDK.Speechv3.Search.Meta</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Converts a string containing a JSON object to a <a class="el" href="a00085.html" title="Contains the results of the SmsDelivery request.">SmsDeliveryResponse</a> object. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">jsonInput</td><td>The string containing the JSON input.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns:</dt><dd>The <a class="el" href="a00085.html" title="Contains the results of the SmsDelivery request.">SmsDeliveryResponse</a> object.</dd></dl>
+<p>Gets or sets meta A dictionary of informational fields related to the search and the results returned. </p>
 
 </div>
 </div>
-<hr/><h2>Property Documentation</h2>
-<a class="anchor" id="a80d7bb21b36a6a44cf6c067c60fcfaf0"></a>
+<a class="anchor" id="aaac75ddcf76bc34da66815ada59af5a0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">List&lt;<a class="el" href="a00028.html">DeliveryInfo</a>&gt; <a class="el" href="a00085.html#a80d7bb21b36a6a44cf6c067c60fcfaf0">ATT_MSSDK.SMSv3.SmsDeliveryResponse.DeliveryInfo</a><code> [get, set]</code></td>
+          <td class="memname">List&lt;<a class="el" href="a00076.html">Program</a>&gt; <a class="el" href="a00085.html#aaac75ddcf76bc34da66815ada59af5a0">ATT_MSSDK.Speechv3.Search.Programs</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets the <a class="el" href="a00028.html" title="Encapsulates the delivery info returned by the server for SMS messages.">DeliveryInfo</a> list. Object contained in '<a class="el" href="a00030.html" title="Contains the information returned by the server for delivery responses.">DeliveryInfoList</a>'. It contains three strings i-e Id, Address and DeliveryStatus. </p>
+<p>Gets or sets programs, a list of programs describing a TV show or movie in the results. </p>
 
 </div>
 </div>
-<a class="anchor" id="a1ea7acf282d921f9ea3159d56755f01e"></a>
+<a class="anchor" id="a94af63a116b7ab86efbff32f062bb986"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="a00085.html#a1ea7acf282d921f9ea3159d56755f01e">ATT_MSSDK.SMSv3.SmsDeliveryResponse.ResourceURL</a><code> [get, set]</code></td>
+          <td class="memname">List&lt;<a class="el" href="a00092.html">Showtime</a>&gt; <a class="el" href="a00085.html#a94af63a116b7ab86efbff32f062bb986">ATT_MSSDK.Speechv3.Search.Showtimes</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets the ResourceURL. The endpoint URI that served this request. </p>
+<p>Gets or sets showtimes a list of show timings of the above programs, indicating start-time and channel. </p>
 
 </div>
 </div>
@@ -200,13 +172,14 @@ Properties</h2></td></tr>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="a00201.html">ATT_MSSDK</a>      </li>
-      <li class="navelem"><a class="el" href="a00211.html">SMSv3</a>      </li>
-      <li class="navelem"><a class="el" href="a00085.html">SmsDeliveryResponse</a>      </li>
+      <li class="navelem"><a class="el" href="a00209.html">ATT_MSSDK</a>      </li>
+      <li class="navelem"><a class="el" href="a00218.html">Speechv3</a>      </li>
+      <li class="navelem"><a class="el" href="a00085.html">Search</a>      </li>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:11 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

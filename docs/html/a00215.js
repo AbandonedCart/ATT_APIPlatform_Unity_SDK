@@ -1,16 +1,14 @@
 var a00215 =
 [
-    [ "DeliveryInfo", "a00029.html", null ],
-    [ "DeliveryInfoList", "a00031.html", null ],
-    [ "DeliveryInfoNotification", "a00033.html", null ],
-    [ "InboundSms", "a00045.html", null ],
-    [ "InboundSmsMessage", "a00046.html", null ],
-    [ "InboundSmsMessageList", "a00047.html", null ],
-    [ "OutboundSMSRequest", "a00067.html", null ],
-    [ "OutboundSMSResponse", "a00068.html", null ],
-    [ "ReceivedSMS", "a00072.html", null ],
-    [ "ResourceReference", "a00077.html", null ],
-    [ "SmsDeliveryResponse", "a00086.html", null ],
-    [ "SmsDeliveryStatus", "a00087.html", null ],
-    [ "SmsResponse", "a00088.html", null ]
+    [ "DeliveryInfo", "a00020.html", null ],
+    [ "DeliveryInfoList", "a00022.html", null ],
+    [ "DeliveryInfoNotification", "a00024.html", null ],
+    [ "InboundMmsAttachmentDetails", "a00040.html", null ],
+    [ "InboundMmsMessage", "a00041.html", null ],
+    [ "MmsDeliveryResponse", "a00063.html", null ],
+    [ "MmsDeliveryStatus", "a00064.html", null ],
+    [ "MmsResponse", "a00065.html", null ],
+    [ "OutboundMessageResponse", "a00071.html", null ],
+    [ "ResourceReference", "a00082.html", null ],
+    [ "MmsPriority", "a00215.html#a6d7c6aba9d2a6536a2a65704cb9f3d9f", null ]
 ];

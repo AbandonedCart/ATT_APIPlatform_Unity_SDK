@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: Getting Started</title>
+<title>AT&amp;T API Platform SDK for Microsoft: Short Message Service Cookbook</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -100,152 +100,91 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Getting Started </div>  </div>
+<div class="title">Short Message Service Cookbook </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><table  id="one" style="background-color: #EF9E20; margin: 1em 0px; width: 100%; height: 33px;">
-<tr valign="center">
-<td style="BACKGROUND-COLOR: #EF9E20; font-weight:bold !important; PADDING-LEFT: 10px; WIDTH: 192px; font-family:Verdana, Geneva, Arial, Helvetica, sans-serif; COLOR: white; FONT-SIZE: 12pt">Introduction  </td></tr>
-</table>
-<table  style="width: 100%;font-size: 7.5pt;color:#666666;font-family:Verdana, Geneva, Arial, Helvetica, sans-serif">
-<tr>
-<td>The AT&amp;T API Platform SDK for Microsoft&reg; leverages the power of the Microsoft&reg; .NET platform and AT&amp;T services so that developers can quickly bring robust C# and Visual Basic applications to market. This SDK includes a Wrapper library, full API documentation, guides to installation and setup, and working code samples. The SDK Wrapper library significantly reduces the complexity of building applications that use the AT&amp;T Platform services. <br/>
- The SDK Wrapper library provides access to the following AT&amp;T API Platform APIs: <ul>
+<div class="textblock"><h2><a class="anchor" id="sms_overview"></a>
+Overview</h2>
+<p>This cookbook shows you how to develop a Short Message Service (SMS) application using the Platform SDK for Microsoft. <br/>
+ The Platform SDK for Microsoft provides the following methods: </p>
+<ul>
 <li>
-Device Capabilities API  </li>
+Send SMS  </li>
 <li>
-SMS API  </li>
+Get SMS Delivery Response  </li>
 <li>
-MMS API  </li>
+Get SMS  </li>
 <li>
-Location API  </li>
+Receive SMS  </li>
 <li>
-Notary API  </li>
-<li>
-Payment API  </li>
-<li>
-Speech API  </li>
-<li>
-Call Management API (Beta)  </li>
-<li>
-In-application Messaging From Mobile Number API </li>
-<li>
-Advertisement API </li>
-<li>
-Text To Speech API </li>
-<li>
-Speech To Text Custom API </li>
+Receive SMS Delivery Status  </li>
 </ul>
-The complete documentation for the AT&amp;T API Platform can be found at <a href="http://developer.att.com">http://developer.att.com.</a>   </td></tr>
-</table>
-<table  id="one" style="background-color: #EF9E20; margin: 1em 0px; width: 100%; height: 33px;">
-<tr valign="center">
-<td style="BACKGROUND-COLOR: #EF9E20; font-weight:bold !important; PADDING-LEFT: 10px; WIDTH: 192px; font-family:Verdana, Geneva, Arial, Helvetica, sans-serif; COLOR: white; FONT-SIZE: 12pt">SDK Overview  </td></tr>
-</table>
-<table  style="width: 100%;font-size: 7.5pt;color:#666666;font-family:Verdana, Geneva, Arial, Helvetica, sans-serif">
-<tr>
-<td>The AT&amp;T API Platform SDK for Microsoft&reg; architecture consists of three layers: <ul>
+<p>To use these methods in an application, perform the following steps: </p>
+<ol type="1">
+<li>Add a reference to the SDK as shown in the <a class="el" href="a00008.html">About the Cookbooks </a> section and import the <a class="el" href="a00217.html" title="Core namespace for Short Message Service Version 2.">ATT_MSSDK.SMSv3</a> namespace. <br/>
+</li>
+<li>Create an instance of <a class="el" href="a00081.html">RequestFactory </a> with the scope type RequestFactory.ScopeTypes.SMS, as shown in the <a class="el" href="a00008.html">About the Cookbooks </a> section. <br/>
+</li>
+<li>Invoke the Short Message Service methods using the <a class="el" href="a00081.html">RequestFactory </a> instance. </li>
+</ol>
+<h2><a class="anchor" id="send_sms"></a>
+Sending an SMS Message</h2>
+<p>To send an SMS message, invoke the <a class="el" href="a00242.html#gaeefbb66a9e2f543fa2bd5ff9b51d4925">SendSms </a> method using the <a class="el" href="a00081.html">RequestFactory </a> instance by passing the destination address (mobile number), and the message text as arguments. This method sends an SMS message to the mobile device, as shown in the following code example. </p>
+<div class="fragment"><pre class="fragment"> <span class="keywordtype">string</span> phonenumber = <span class="stringliteral">&quot;xxxxxxxxxx&quot;</span>;
+ <span class="keywordtype">string</span> message = <span class="stringliteral">&quot;xxxxx&quot;</span>;
+  <span class="comment">// If true the application expects a delivery status notification.</span>
+ <span class="comment">// The default value is null.</span>
+ <span class="keywordtype">bool</span> notifyDeliveryStatus = <span class="keyword">true</span>;
+ SmsResponse resp = this.requestFactory.SendSms(phonenumber, message, notifyDeliveryStatus);
+</pre></div> <h2><a class="anchor" id="sms_status"></a>
+Getting an SMS Delivery Response</h2>
+<p>To get the status of an SMS delivery request, invoke the <a class="el" href="a00242.html#ga461da3af5f8afed2d10a7e8da2811505">GetSmsDeliveryResponse </a> method using the <a class="el" href="a00081.html">RequestFactory </a> instance, as shown in the following code example. This method enables applications to retrieve the status of a previously submitted SMS delivery request that was accepted by the AT&amp;T Network for delivery to the destination mobile device. The identifier returned in the response of the corresponding call to the <a class="el" href="a00242.html#gaeefbb66a9e2f543fa2bd5ff9b51d4925">SendSms </a> method must be provided as a parameter to the <a class="el" href="a00242.html#ga461da3af5f8afed2d10a7e8da2811505">GetSmsDeliveryResponse </a> method. </p>
+<div class="fragment"><pre class="fragment"> <span class="keywordtype">string</span> smsId = <span class="stringliteral">&quot;xxxxxxxxxxxxxxx&quot;</span>;
+ SmsDeliveryResponse resp = this.requestFactory.GetSmsDeliveryResponse(smsId);
+</pre></div> <h2><a class="anchor" id="sms_receive"></a>
+Receive SMS</h2>
+<p>When you register an application with the AT&amp;T Developer Program at <a href="https://developer.att.com,">https://developer.att.com,</a> you get a short code that identifies the application on the AT&amp;T Mobile Network. Messages, such as SMS, that are sent to your application over the network are sent to this short code. To process these messages in your application, you must retrieve them from the platform using the application short code. <br/>
+ <br/>
+ There are two different techniques for retrieving the messages sent to your application: </p>
+<ul>
 <li>
-<b>Client / Browser</b> - This layer contains the application code that interacts with the end user. Application developers will find it much easier to develop C# and Visual Basic applications using the SDK Wrapper library. </li>
+Poll for received messages and retrieve them in a batch. </li>
 <li>
-<b>SDK Wrapper library</b> - This layer provides a wrapper library to give application developers an easy way to develop C# and Visual Basic applications. The SDK Wrapper library (ATT_MSSDK.dll) contains a set of wrapper functions that provide uniform and easy to use interfaces for addressing the AT&amp;T REST APIs. </li>
-<li>
-<b>AT&amp;T API Platform</b> - This layer consists of APIs exposing the suite of AT&amp;T services that the applications will consume.  </li>
+Create a callback listener mechanism to have the messages forwarded from the platform to your application as they are received. <ul>
 </ul>
-</td></tr>
-<tr>
-<td align="center"><div class="image">
-<img src="images/SDK_Block_Diagram.png"  height="50%" width="50%"/>
-</div>
-<br/>
-   </td></tr>
-</table>
-<table  style="width: 100%;font-size: 7.5pt;color:#666666;font-family:Verdana, Geneva, Arial, Helvetica, sans-serif">
-<tr>
-<td>The SDK Wrapper library consists of two types of classes that are used to address the AT&amp;T REST APIs: <ul>
-<li>
-<b><a class="el" href="a00074.html" title="The RequestFactory manages the connections and calls to the AT&amp;T API Platform.">RequestFactory</a> class</b> - The <a class="el" href="a00074.html" title="The RequestFactory manages the connections and calls to the AT&amp;T API Platform.">RequestFactory</a> class provides wrapper functions around AT&amp;T Platform services like SMS, MMS, WAP PUSH, Location, Speech, In App Messaging from Mobile Number, Device Capabilities, Call Management, Notary, and Payment. An application creates an instance of the Request Factory class by passing the API Key, Secret Key, scope (a list of services to address), and a redirect URL. When the wrapper functions in the <a class="el" href="a00074.html" title="The RequestFactory manages the connections and calls to the AT&amp;T API Platform.">RequestFactory</a> are invoked by the application, an instance of the corresponding <a class="el" href="a00077.html" title="Abstract base class for all Response objects.">Response</a> class is returned.  </li>
-<li>
-<b><a class="el" href="a00077.html" title="Abstract base class for all Response objects.">Response</a> class</b> - The <a class="el" href="a00077.html" title="Abstract base class for all Response objects.">Response</a> classes provide wrappers for de-serializing the responses returned by the AT&amp;T Platform services. </li>
+</li>
 </ul>
-</td></tr>
-</table>
-<table  id="one" style="background-color: #EF9E20; margin: 1em 0px; width: 100%; height: 33px;">
-<tr valign="center">
-<td style="BACKGROUND-COLOR: #EF9E20; font-weight:bold !important; PADDING-LEFT: 10px; WIDTH: 192px; font-family:Verdana, Geneva, Arial, Helvetica, sans-serif; COLOR: white; FONT-SIZE: 12pt"><p class="starttd">SDK and Sample Apps Packaging </p>
-<p class="endtd"></p>
-</td></tr>
-</table>
-<table  style="width: 100%;font-size: 7.5pt;color:#666666;font-family:Verdana, Geneva, Arial, Helvetica, sans-serif">
-<tr>
-<td>The AT&amp;T API Platform SDK for Microsoft&reg; package contains the SDK Wrapper library, licensing terms, and the SDK documentation.<br/>
- The SDK package has the following file and directory structure: <ul>
-<li>
-<em><b>license.txt</b></em> - A file containing the licensing terms for using the SDK Wrapper classes and sample applications. </li>
-<li>
-<em><b>bin</b></em> - A directory containing the SDK Wrapper class library ATT_MSSDK.DLL. </li>
-<li>
-<em><b>docs</b></em> - A directory containing SDK documentation, including the Getting Started guide, Installation guide, and Cookbooks for using the SDK Wrapper library.  </li>
-</ul>
-</td></tr>
-</table>
-<table  style="width: 100%;font-size: 7.5pt;color:#666666;font-family:Verdana, Geneva, Arial, Helvetica, sans-serif">
-<tr>
-<td>The Sample Apps package contains sample applications for both the C# and VB.NET languages that showcase the usage of the SDK Wrapper library.<br/>
- The Sample Apps package has the following directory structure: <ul>
-<li>
-<em><b>csharp</b></em> - C# sample applications. </li>
-<li>
-<em><b>vb</b></em> - VB.NET sample applications. </li>
-</ul>
-</td></tr>
-<tr>
-<td>Sample applications are provided in the following directories: <ul>
-<li>
-<em><b>\sms\app1</b></em>- The SMS sample application. </li>
-<li>
-<em><b>\sms\app2</b></em>- The SMS voting application receiving inbound SMS messages. </li>
-<li>
-<em><b>\mms\app1</b></em>- The MMS sample application. </li>
-<li>
-<em><b>\mms\app2</b></em>- The MMS Coupon application. </li>
-<li>
-<em><b>\mms\app3</b></em>- The MMS sample application for receiving inbound MMS messages. </li>
-<li>
-<em><b>\tl\app1</b></em>- The Terminal location sample application. </li>
-<li>
-<em><b>\notary\app1</b></em>- The Notary sample application. </li>
-<li>
-<em><b>\payment\app1</b></em>- The Payment sample applications for single payment transaction. </li>
-<li>
-<em><b>\payment\app2</b></em>- The Payment sample applications for subscription. </li>
-<li>
-<em><b>\speech\app1</b></em>- The Speech sample application. </li>
-<li>
-<em><b>\immn\app1</b></em>- The In App Messaging From Mobile Number, send message sample application. </li>
-<li>
-<em><b>\mim\app1</b></em>- The In App Messaging From Mobile Number, get message (MIM, Message Inbox Management) sample application.. </li>
-<li>
-<em><b>\dc\app1</b></em>- The Device Capabilities sample application. </li>
-<li>
-<em><b>\cms\app1</b></em>- The Call Management sample application. </li>
-<li>
-<em><b>\ads\app1</b></em>- The Advertisement sample application. </li>
-<li>
-<em><b>\texttospeech\app1</b></em>- The Text to Speech sample application. </li>
-<li>
-<em><b>\speechCustom\app1</b></em> - The Speech to Text Custom sample application. </li>
-</ul>
-</td></tr>
-</table>
-</div></div><!-- contents -->
+<h3><a class="anchor" id="receivesms_technique_1"></a>
+Polling for Messages</h3>
+<p>To poll for messages in your application, invoke the ReceiveSms method using the <a class="el" href="a00081.html">RequestFactory </a> instance as shown in the following code example. This method lets you receive multiple SMS messages that were sent to your application short-code from the AT&amp;T Mobile Network. </p>
+<div class="fragment"><pre class="fragment"> <span class="keywordtype">string</span> shortCode = <span class="stringliteral">&quot;xxxxxxxxxxx&quot;</span>;
+ InboundSmsMessageList message = this.requestFactory.ReceiveSms(shortCode);
+</pre></div> <h3><a class="anchor" id="receivesms_technique_2"></a>
+Receiving Messages Using a Callback Listener</h3>
+<p>To receive Mobile Originated SMS messages that were sent to your application short code instantaneously, register a callback listener application URL with the AT&amp;T Developer Program at <a href="https://developer.att.com">https://developer.att.com</a>. The URL that you register is used by the AT&amp;T Platform to forward the received messages to your application. <br/>
+ <br/>
+ To receive SMS messages, invoke the GetSMS method using the <a class="el" href="a00081.html">RequestFactory </a> class by passing a System.IO.Stream object as an argument to the method, as shown in the following code example. </p>
+<div class="fragment"><pre class="fragment"> <span class="comment">// .NET Framework Request.InputStream </span>
+ <span class="comment">// gets the contents of the incoming http entity body.</span>
+ System.IO.Stream stream = Request.InputStream; 
+ ReceivedSMS message = RequestFactory.GetSMS(stream);
+</pre></div> <h2><a class="anchor" id="sms_receive_status"></a>
+Getting the Delivery Status of a Sent SMS Message</h2>
+<p>To get the final delivery status of the SMS messages sent by your application, register a listener endpoint with the AT&amp;T system during the application registration process or add a listener endpoint to the application profile during an update of the application. The endpoint is then associated with the short code assigned to the application. Your application must set the notifyDeliveryStatus parameter to true in the sendSms call to get delivery notifications. <br/>
+ *To receive SMS Delivery Status, invoke the GetSmsDeliveryStatus method using the <a class="el" href="a00081.html">RequestFactory </a> class by passing a System.IO.Stream as an argument to the method, as shown in the following code example. </p>
+<div class="fragment"><pre class="fragment"> <span class="comment">// .NET Framework Request.InputStream </span>
+ <span class="comment">// gets the contents of the incoming http entity body.</span>
+ System.IO.Stream stream = Request.InputStream;
+ SmsDeliveryStatus smsDeliveryStatus = RequestFactory.GetSmsDeliveryStatus(stream);
+</pre></div> </div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:10 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

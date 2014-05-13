@@ -1,6 +1,7 @@
 var a00033 =
 [
-    [ "DeviceCapabilities", "a00033.html#af99d8098d7d14f3c59f0b49c62119407", null ],
-    [ "capabilities", "a00033.html#ac21723d94d6a7d10f3187226252da057", null ],
-    [ "deviceId", "a00033.html#aa12959eea8056a6a7d77f1ae64b084a0", null ]
+    [ "GetMessageContentResponse", "a00033.html#a3c26b4b07eb71d64b3f7c5e29d91115d", null ],
+    [ "MessageContent", "a00033.html#ac6405d94bd7b850cddc962cae383d635", null ],
+    [ "MessageLength", "a00033.html#a1e135ee86bee7d75dc10138aa6cefbb6", null ],
+    [ "MessageType", "a00033.html#a370028933006ec9ba93a78b5a0602060", null ]
 ];

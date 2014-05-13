@@ -1,7 +1,6 @@
 var a00054 =
 [
-    [ "MMSContentData", "a00054.html#add0248552df6e8c22cc170b981fa68eb", null ],
-    [ "ContentName", "a00054.html#ab91b4335fb659a37b64782fb0fd92a46", null ],
-    [ "ContentType", "a00054.html#a083fc3bcc1e333bd0af6ad984aba784f", null ],
-    [ "PartNumber", "a00054.html#abcdfea95a7696a84a37ffb942414fd26", null ]
+    [ "MessageIndexInfoResponse", "a00054.html#a8ebed5d5363e7a4764f5f67583c8159b", null ],
+    [ "ParseJSON", "a00054.html#a61e7428bfc9d328c24c4965d680f99ff", null ],
+    [ "MessageIndexInfo", "a00054.html#a5e6362bcefbe909f0dd22ba54d62be4f", null ]
 ];

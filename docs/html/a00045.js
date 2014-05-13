@@ -1,8 +1,9 @@
 var a00045 =
 [
-    [ "InboundSmsMessage", "a00045.html#a87b583df0af4cd39823c02a340596b47", null ],
-    [ "ToString", "a00045.html#a4199ef4625be4a1ab06ace6d43986a36", null ],
-    [ "Message", "a00045.html#a7bfe75c0bdf75f88ed441d32a28e9478", null ],
-    [ "MessageId", "a00045.html#af34b694a2cf50d3cbf65074d43e4049d", null ],
-    [ "SenderAddress", "a00045.html#a5362b8d5402b7c95546165e769fe903a", null ]
+    [ "ActionType", "a00045.html#add0580076badbd38dec99ed9f77d2bd9", null ],
+    [ "Interpretation", "a00045.html#ad32d2f2f27451caddee091c10591196e", null ],
+    [ "Metrics", "a00045.html#a8567a66fc529ac7c6732c0b5f95eb47c", null ],
+    [ "Recognized", "a00045.html#abe58d8b00ce8f18f478d8caa587f7f0b", null ],
+    [ "Search", "a00045.html#acd5a93ecafcd3809d7fa9f2bdf4c762d", null ],
+    [ "Version", "a00045.html#adf736ee196d5df7a767e487429fc4e2f", null ]
 ];

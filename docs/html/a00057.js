@@ -1,5 +1,6 @@
 var a00057 =
 [
-    [ "MessageId", "a00057.html#a55e63eedcf52e0daa94306cfbb829641", null ],
-    [ "ResourceURL", "a00057.html#a98d5012713606b3bb34bf07fdf7fe376", null ]
+    [ "IsFavorite", "a00057.html#a358c5c2b94b4bbe13b5fd69720299aa0", null ],
+    [ "IsUnread", "a00057.html#a34cb80e416baec1b4f1bc4df459f938a", null ],
+    [ "MessageId", "a00057.html#a551e45c8f1000254d22ff5ff3496755a", null ]
 ];

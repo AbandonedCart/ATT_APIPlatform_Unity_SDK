@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: Device Capabilities Service Cookbook</title>
+<title>AT&amp;T API Platform SDK for Microsoft: In-App Messaging Service Cookbook</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -100,37 +100,155 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Device Capabilities Service Cookbook </div>  </div>
+<div class="title">In-App Messaging Service Cookbook </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h2><a class="anchor" id="dc_overview"></a>
+<div class="textblock"><h2><a class="anchor" id="iam_overview"></a>
 Overview</h2>
-<p>This cookbook shows you how to develop a Device Capabilities Service application using the Platform SDK for Microsoft. <br/>
+<p>This cookbook shows you how to develop an In App Messaging Service application using the Platform SDK for Microsoft. <br/>
  The Platform SDK for Microsoft provides the following methods: </p>
 <ul>
 <li>
-Get Device Capabilities  </li>
+Create Message Index  </li>
+<li>
+Send a Message  </li>
+<li>
+Get Message List  </li>
+<li>
+Get a Specific Message  </li>
+<li>
+Get Message Content  </li>
+<li>
+Get Message Delta  </li>
+<li>
+Update a Collection of Messages  </li>
+<li>
+Update a Specific Message  </li>
+<li>
+Delete a Collection of Messages  </li>
+<li>
+Delete a Specific Message  </li>
+<li>
+Get Message Index Info Details  </li>
+<li>
+Get Notification Connection Details  </li>
 </ul>
 <p>To use these methods in an application, perform the following steps: </p>
 <ol type="1">
-<li>Add a reference to the SDK as shown in the <a class="el" href="a00011.html">About the Cookbooks </a> section and import the <a class="el" href="a00204.html" title="Core namespace for Device Capabilities Service Version 2.">ATT_MSSDK.DeviceCapabilitiesv2</a> namespace. <br/>
+<li>Add a reference to the SDK as shown in the <a class="el" href="a00008.html">About the Cookbooks </a> section and import the <a class="el" href="a00213.html" title="Core namespace for In-App Messaging Service for sending and fetching messages.">ATT_MSSDK.InAppMessaging</a> namespace. <br/>
 </li>
-<li>Create an instance of RequestFactory with the scope type RequestFactory.ScopeTypes.DC, as shown in the <a class="el" href="a00011.html">About the Cookbooks </a> section. <br/>
+<li>Create an instance of <a class="el" href="a00081.html">RequestFactory </a> with the scope type RequestFactory.ScopeTypes.IMMN, as shown in the <a class="el" href="a00008.html">About the Cookbooks </a> section. <br/>
 </li>
-<li>Invoke the Device Capabilities Service methods using the <a class="el" href="a00074.html">RequestFactory </a> instance. </li>
+<li>Invoke the 'In-App Messaging' Service methods using the <a class="el" href="a00081.html">RequestFactory </a> instance. </li>
 </ol>
-<h2><a class="anchor" id="dc_send"></a>
-Getting Device Capabilities</h2>
-<p>To get the Device Capabilities information from a given AT&amp;T wireless number, invoke the <a class="el" href="a00236.html#gadeb8c63e1e9fb690d37617c6e9e519dd">GetDeviceCapabilities </a> method using the <a class="el" href="a00074.html">RequestFactory </a> instance as shown in the following code example. </p>
-<div class="fragment"><pre class="fragment"> DeviceCapabilities response = this.requestFactory.GetDeviceCapabilities();
+<h2><a class="anchor" id="iam_createmessageindex"></a>
+Creating Message Index</h2>
+<p>To create message index, invoke the <a class="el" href="a00240.html#gabcffa7fbb66103506476649191d0e00e">CreateMessageIndex </a> method using the <a class="el" href="a00081.html">RequestFactory </a> instance. In order to accommodate advanced filtering options, an index cache is used on the enabler. In order for this to work properly, the developer will need to initiate a Create Message Index operation before any of the other operations are used. In addition, if a message index is inactive for 30 or more days, then the developer will need to execute the Create Message Index operation again. </p>
+<div class="fragment"><pre class="fragment"> <span class="keywordtype">bool</span> messageIndexCreated = this.requestFactory.CreateMessageIndex();
+</pre></div> <h2><a class="anchor" id="iam_sendmessage"></a>
+Sending a Message</h2>
+<p>To send Short Message Service (SMS) or Multimedia Messaging Service (MMS) on behalf of subscribers, invoke the <a class="el" href="a00240.html#gadbbaef59dc4772050a4e063d0b2aa9ac">SendMessage </a> method using the <a class="el" href="a00081.html">RequestFactory </a> instance by passing an instance of <a class="el" href="">MessageRequest </a>. The AT&amp;T Platform will retrieve the MSISDN of the subscribers from the consent mechanism and then append it as the source address in the request. The recipients (maximum of ten) can be email address, short code or mobile numbers or combination of email address, short code or/and mobile numbers. Application will make a single API call and the AT&amp;T Platform will figure out if the message is SMS or MMS based on the content and then select the correct transport mechanism accordingly. </p>
+<div class="fragment"><pre class="fragment"> MessageRequest messageRequest = <span class="keyword">new</span> MessageRequest();
+ messageRequest.Addresses = <span class="keyword">new</span> List&lt;string&gt;();
+ messageRequest.Addresses.Add(<span class="stringliteral">&quot;Phone Number&quot;</span>);
+ messageRequest.Attachments = <span class="keyword">new</span> List&lt;string&gt;();
+ messageRequest.Attachments.Add(<span class="stringliteral">&quot;attachment_path&quot;</span>);
+ messageRequest.Text = <span class="stringliteral">&quot;message_text&quot;</span>;
+ messageRequest.Subject = <span class="stringliteral">&quot;subject of message&quot;</span>;
+ <span class="keywordtype">int</span> maxAddressCount = 5;
+ SendMessageResponse sendMessageResponse = this.requestFactory.SendMessage(messageRequest, maxAddressCount);
+ <span class="keywordtype">string</span> messageId = sendMessageResponse.Id;
+</pre></div> <h2><a class="anchor" id="iam_getmessagelist"></a>
+Getting Message List</h2>
+<p>To request a block of subscriber messages from the AT&amp;T Platform, invoke the <a class="el" href="a00240.html#gae266b573cc3531b1bbb6387d92ed6c1c">GetMessageList </a> method using the <a class="el" href="a00081.html">RequestFactory </a> instance by passing an instance of <a class="el" href="">MessageListRequest </a> as shown in the following code example. </p>
+<div class="fragment"><pre class="fragment"> MessageListRequest messageListRequest = <span class="keyword">new</span> MessageListRequest();
+ <span class="comment">// Limit specifies the number of messages to be returned.</span>
+ messageListRequest.Limit = 50;
+ <span class="comment">// Offset specifies the value of offset from the beginning of the ordered set of messages. Can be null.</span>
+ messageListRequest.Offset = 0;
+ <span class="comment">// IsUnread is a filter to specify if the API need to fetch Unread or Read messages. Can be null.</span>
+ messageListRequest.IsUnread = <span class="keyword">true</span>;
+ <span class="comment">// Type specifies the message type filter.</span>
+ messageListRequest.Type = <span class="stringliteral">&quot;SMS,MMS&quot;</span>;
+ <span class="comment">// Keywords specify the filter criteria for messages.</span>
+ messageListRequest.Keyword = <span class="stringliteral">&quot;message_keywords&quot;</span>;
+ <span class="comment">// IsIncoming filters messages based on Incoming or Outgoing.</span>
+ messageListRequest.IsIncoming = <span class="keyword">true</span>;
+ GetMessageListResponse getMessageListResponse = this.requestFactory.GetMessageList(messageListRequest);
+ <span class="keywordflow">if</span>(null != getMessageListResponse.MessageList)
+ {
+      <span class="comment">// MessageList contains the list of messages from the API.</span>
+ }
+</pre></div> <h2><a class="anchor" id="iam_getmessage"></a>
+Getting a Specific Message</h2>
+<p>To request details of a specific message from the AT&amp;T Platform, invoke the <a class="el" href="a00240.html#ga3313375aa2ba266b5eb1655209ab646f">GetMessageDetails </a> method using the <a class="el" href="a00081.html">RequestFactory </a> instance by passing a message identifier. </p>
+<div class="fragment"><pre class="fragment"> <span class="comment">// messageId - A message identifier representing a Subscriber Message in the AT&amp;T Messages environment.</span>
+ <span class="keywordtype">string</span> messageId = <span class="stringliteral">&quot;message_id&quot;</span>;
+ GetMessageResponse getMessageResponse = this.requestFactory.GetMessageDetails(messageId);
+ <span class="keywordflow">if</span>(null != getMessageResponse)
+ {
+  <span class="comment">// getMessageResponse.Message contains the details of message.</span>
+ }
+</pre></div> <h2><a class="anchor" id="iam_getmessagecontent"></a>
+Getting Message Content</h2>
+<p>To request message content from the AT&amp;T Platform, invoke the <a class="el" href="a00240.html#gaa25024639b9fdb526dd9b77efc3bf77a">GetMessageContent </a> method using the <a class="el" href="a00081.html">RequestFactory </a> instance by passing a content identifier and an associated message identifier. The GetMessage method uses the information returned by the GetMessageHeaders method to fetch one or more subscriber messages from the AT&amp;T Platform. </p>
+<div class="fragment"><pre class="fragment"> GetMessageContentResponse messageContentResponse = this.requestFactory.GetMessageContent(<span class="stringliteral">&quot;message_id&quot;</span>,<span class="stringliteral">&quot;part_number&quot;</span>);
+</pre></div> <h2><a class="anchor" id="iam_getmessagedelta"></a>
+Getting Message Delta</h2>
+<p>To check for updates in subscriber's message state, invoke the <a class="el" href="a00240.html#gadeecd850bca21e9b7240bfe9d74c61bb">GetMessageDelta </a> method using the <a class="el" href="a00081.html">RequestFactory </a> instance by passing the value of state returned either from GetMessageIndexInfo request or GetMessageList request. </p>
+<div class="fragment"><pre class="fragment"> GetMessageDeltaResponse messageDeltaResponse = this.requestFactory.GetMessageDelta(<span class="stringliteral">&quot;state&quot;</span>);
+</pre></div> <h2><a class="anchor" id="iam_updatemessages"></a>
+Updating a Collection of Messages</h2>
+<p>To update the flags that are associated with a collection of messages, invoke the <a class="el" href="a00240.html#ga08924273d58ab7b8b6def5878ef3c492">UpdateMessages </a> method using the <a class="el" href="a00081.html">RequestFactory </a> instance by passing a list of MessageMetadata objects. </p>
+<div class="fragment"><pre class="fragment"> List&lt;MessageMetadata&gt; updateMessageList = <span class="keyword">new</span> List&lt;MessageMetadata&gt;();
+ MessageMetadata messageMetadata = <span class="keyword">new</span> MessageMetadata();
+ <span class="comment">// messageId - unique identifier for a message.</span>
+ messageMetadata.messageId = <span class="stringliteral">&quot;message_id&quot;</span>;
+ <span class="comment">// isUnread - flag that provides capability to set a message unread or read status.</span>
+ messageMetadata.isUnread = <span class="keyword">true</span>;
+ <span class="keywordtype">bool</span> messagesUpdated = this.requestFactory.UpdateMessages(updateMessageList);
+</pre></div> <h2><a class="anchor" id="iam_updatemessage"></a>
+Updating a Specific Message</h2>
+<p>To update the flags that are associated with a specific message, invoke the <a class="el" href="a00240.html#gaf0c8998b4a41b177af12ed739d6fd4b1">UpdateMessage </a> method using the <a class="el" href="a00081.html">RequestFactory </a> instance by passing message identier, read or unread status. </p>
+<div class="fragment"><pre class="fragment"> <span class="keywordtype">bool</span> messageUpdated = this.requestFactory.UpdateMessage(<span class="stringliteral">&quot;message_id&quot;</span>, is_unread, is_favorite);
+</pre></div> <h2><a class="anchor" id="iam_deletemessages"></a>
+Deleting a Collection of Messages</h2>
+<p>To delete messages in an inbox, invoke the <a class="el" href="a00240.html#gaef778b254ed27dcb6c1f168ab9f82db2">DeleteMessages </a> method using the <a class="el" href="a00081.html">RequestFactory </a> instance by passing a list of message identifiers. </p>
+<div class="fragment"><pre class="fragment"> List&lt;string&gt; messageIds = <span class="keyword">new</span> List&lt;string&gt;();
+ messageIds.Add(<span class="stringliteral">&quot;message_id1&quot;</span>);
+ messageIds.Add(<span class="stringliteral">&quot;message_id2&quot;</span>);
+ <span class="keywordtype">bool</span> messagesDeleted = this.requestFactory.DeleteMessages(messageIds);
+</pre></div> <h2><a class="anchor" id="iam_deletemessage"></a>
+Deleting a Specific Message</h2>
+<p>To delete a specific message in an inbox, invoke the <a class="el" href="a00240.html#gab259bfb7bda92e40e538866de4ebbdad">DeleteMessage </a> method using the <a class="el" href="a00081.html">RequestFactory </a> instance by passing the message identifier. </p>
+<div class="fragment"><pre class="fragment"> <span class="keywordtype">bool</span> messageDeleted = this.requestFactory.DeleteMessages(messageId);
+</pre></div> <h2><a class="anchor" id="iam_getmessageindexinfo"></a>
+Getting Message Index Info Details</h2>
+<p>To get the state, status and message count of the index cache for the subscriber's inbox, invoke the <a class="el" href="a00240.html#ga02ef1fb443057716ddda51d31f35b33c">GetMessageIndexInfo </a> method using the <a class="el" href="a00081.html">RequestFactory </a> instance. </p>
+<div class="fragment"><pre class="fragment"> MessageIndexInfoResponse messageIndexInfoResponse = this.requestFactory.GetMessageIndexInfo();
+ <span class="keywordflow">if</span>(null != messageIndexInfoResponse)
+ {
+  <span class="comment">// messageIndexInfoResponse.MessageIndexInfo contains the details of index cache.</span>
+ }
+</pre></div> <h2><a class="anchor" id="iam_getnotificationconnection"></a>
+Getting Notification Connection Details</h2>
+<p>To setup out of band connection to the notification server, get the notification connection details by invoking the <a class="el" href="a00240.html#ga463696affb684113c4f30a5d4e0d88a9">GetNotificationConnectionDetails </a> method using the <a class="el" href="a00081.html">RequestFactory </a> instance by passing the name of the resouse the client is interested in. </p>
+<div class="fragment"><pre class="fragment"> <span class="comment">// queues - the name of the resource the client is interested in subscribing for notifications.</span>
+ <span class="keywordtype">string</span> queues = <span class="stringliteral">&quot;TEXT&quot;</span>;
+ NotificationConnectionResponse notificationConnectionResponse = this.requestFactory.GetNotificationConnectionDetails();
+ <span class="keywordflow">if</span>(null != notificationConnectionResponse)
+ {
+  <span class="comment">// notificationConnectionResponse.NotificationConnectionDetails contains the details of Notification Connection.</span>
+ }
 </pre></div> </div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:10 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

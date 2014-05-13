@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: Package ATT_MSSDK.TLv1</title>
+<title>AT&amp;T API Platform SDK for Microsoft: Package ATT_MSSDK.Speechv3</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.2</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -100,53 +100,61 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#enum-members">Enumerations</a>  </div>
+<a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle">
-<div class="title">Package ATT_MSSDK.TLv1</div>  </div>
+<div class="title">Package ATT_MSSDK.Speechv3</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Core namespace for Terminal Location Service Version 1.  
+<p>Core namespace for Speech Service Version 3.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00036.html">DeviceLocation</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the Device Location attributes, which include accuracy, latitude, longitude, and the time stamp.  <a href="a00036.html#details">More...</a><br/></td></tr>
-<tr><td colspan="2"><h2><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:a7d23b309efc32ae07506ff8ec9412f69"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00218.html#a7d23b309efc32ae07506ff8ec9412f69">TerminalLocationTolerance</a> </td></tr>
-<tr class="memdesc:a7d23b309efc32ae07506ff8ec9412f69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Terminal Location Tolerance.  <a href="a00218.html#a7d23b309efc32ae07506ff8ec9412f69">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00045.html">Info</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encapsulates Info data returned in speect to text response.  <a href="a00045.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00046.html">Interpretation</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encapsulates Interpretation info returned in speech to text response.  <a href="a00046.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00059.html">Meta</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encapsulates the <a class="el" href="a00059.html" title="Encapsulates the Meta info retuned in speech to text response.">Meta</a> info retuned in speech to text response.  <a href="a00059.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00060.html">Metrics</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encapsulates <a class="el" href="a00060.html" title="Encapsulates Metrics data returned in speect to text response.">Metrics</a> data returned in speect to text response.  <a href="a00060.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00066.html">NBest</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">NBest returned by speech to text response. NBest is a complex structure that holds the results of the transcription. Supports multiple transcriptions.  <a href="a00066.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00067.html">NluHypothesis</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encapsulates <a class="el" href="a00067.html" title="Encapsulates NluHypothesis data retuned in speech to text response.">NluHypothesis</a> data retuned in speech to text response.  <a href="a00067.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00074.html">OutComposite</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encapsulates <a class="el" href="a00074.html" title="Encapsulates OutComposite data retuned in speech to text response.">OutComposite</a> data retuned in speech to text response.  <a href="a00074.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00076.html">Program</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encapsulates <a class="el" href="a00076.html" title="Encapsulates Program data returned in speech to text response.">Program</a> data returned in speech to text response.  <a href="a00076.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00080.html">Recognition</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recognition returned by the server for Speech to text request. Recognition is a complex structure for all the other parameters of the response.  <a href="a00080.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00085.html">Search</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encapsulates <a class="el" href="a00085.html" title="Encapsulates Search data returned in speech to text response.">Search</a> data returned in speech to text response.  <a href="a00085.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00092.html">Showtime</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encapsulates <a class="el" href="a00092.html" title="Encapsulates Showtime data retuned in speech to text response.">Showtime</a> data retuned in speech to text response.  <a href="a00092.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00097.html">SpeechResponse</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The response to a Speech To Text request.  <a href="a00097.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00103.html">XArgs</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">XArgs structure. The X-Arg header is a meta parameter that can be used to define multiple parameter name/value pairs.  <a href="a00103.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00100.html">TVXArgs</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class contains the parameters specific to TV Context.  <a href="a00100.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00096.html">SocialMediaXArgs</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class contains the parameters specific to Gaming Chat sub context.  <a href="a00096.html#details">More...</a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Core namespace for Terminal Location Service Version 1. </p>
-</div><hr/><h2>Enumeration Type Documentation</h2>
-<a class="anchor" id="a7d23b309efc32ae07506ff8ec9412f69"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="a00218.html#a7d23b309efc32ae07506ff8ec9412f69">ATT_MSSDK.TLv1.TerminalLocationTolerance</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Terminal Location Tolerance. </p>
-
-</div>
-</div>
-</div><!-- contents -->
+<div class="textblock"><p>Core namespace for Speech Service Version 3. </p>
+</div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="a00205.html">ATT_MSSDK</a>      </li>
-      <li class="navelem"><a class="el" href="a00218.html">TLv1</a>      </li>
+      <li class="navelem"><a class="el" href="a00209.html">ATT_MSSDK</a>      </li>
+      <li class="navelem"><a class="el" href="a00218.html">Speechv3</a>      </li>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Mon Jun 10 2013 10:34:47 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

@@ -1,10 +1,15 @@
 var a00241 =
 [
-    [ "RequestFactory", "a00074.html", null ],
-    [ "GetSMS", "a00241.html#gafcc6cfc901e326fac48b99ee2a416795", null ],
-    [ "GetSmsDeliveryResponse", "a00241.html#ga461da3af5f8afed2d10a7e8da2811505", null ],
-    [ "GetSMSDeliveryStatus", "a00241.html#gacd6a38a75219d8545d27cecb6d76999f", null ],
-    [ "ReceiveSms", "a00241.html#ga37778162faae77dec6b51b70d84ee8f5", null ],
-    [ "SendSms", "a00241.html#gaeefbb66a9e2f543fa2bd5ff9b51d4925", null ],
-    [ "SendSms", "a00241.html#ga821b8e766101a6c6396c4692c0784794", null ]
+    [ "RequestFactory", "a00081.html", null ],
+    [ "GetMms", "a00241.html#gaec48eed43908975e9875cec9280033de", null ],
+    [ "GetMmsDeliveryResponse", "a00241.html#ga0010e9d3ac860a2ece6584fbd724978a", null ],
+    [ "GetMMSDeliveryStatus", "a00241.html#ga3f18a840c6d44e477b39c50c2294af1c", null ],
+    [ "JoinTwoByteArrays", "a00241.html#gaef77c274d098d3474427c0f45d375723", null ],
+    [ "MapContentTypeFromExtension", "a00241.html#ga9e2c73fedd2bbe29d743088ea8a1ea7a", null ],
+    [ "MapExtensionFromContentType", "a00241.html#ga271d5991675f56cc333aaae69d6e9aa8", null ],
+    [ "SendMms", "a00241.html#ga3519213e8cbb27bb1bfdf5a46a7d1f08", null ],
+    [ "SendMms", "a00241.html#gaec1db14c9bdd98c9b4450a705af62300", null ],
+    [ "SendMms", "a00241.html#ga6062cedbf459b70bbacd10d300aa06aa", null ],
+    [ "SendMms", "a00241.html#ga06a6b5dbd57f5d117bc4a7d51453a891", null ],
+    [ "SendMms", "a00241.html#gac9f0427608614dc7d3a47a000d7443a7", null ]
 ];

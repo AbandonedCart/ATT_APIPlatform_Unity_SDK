@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: Speech Service Cookbook</title>
+<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.Advertisementv1.Ad Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -99,40 +99,138 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#properties">Properties</a>  </div>
   <div class="headertitle">
-<div class="title">Speech Service Cookbook </div>  </div>
+<div class="title">ATT_MSSDK.Advertisementv1.Ad Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h2><a class="anchor" id="speech_overview"></a>
-Overview</h2>
-<p>This cookbook shows you how to develop a Speech Service application using the Platform SDK for Microsoft. <br/>
- The Platform SDK for Microsoft provides the following methods: </p>
-<ul>
-<li>
-SpeechToText  </li>
-</ul>
-<p>To use these methods in an application, perform the following steps: </p>
-<ol type="1">
-<li>Add a reference to the SDK as shown in the <a class="el" href="a00011.html">About the Cookbooks </a> section and import the <a class="el" href="a00212.html" title="Core namespace for Speech Service Version 3.">ATT_MSSDK.Speechv3</a> namespace. <br/>
-</li>
-<li>Create an instance of <a class="el" href="a00074.html">RequestFactory </a> with the scope type RequestFactory.ScopeTypes.Speech, as shown in the <a class="el" href="a00011.html">About the Cookbooks </a> section. <br/>
-</li>
-<li>Invoke the Speech Service methods using the <a class="el" href="a00074.html">RequestFactory </a> instance. </li>
-</ol>
-<h2><a class="anchor" id="speech_send"></a>
-Converting Spoken Audio to Text</h2>
-<p>To convert the spoken audio to text, invoke the <a class="el" href="a00243.html#ga7cd72f1ae03a20bf18ad108bdaf721ee">SpeechToText </a> method using the <a class="el" href="a00074.html">RequestFactory </a> instance by passing an audio file name and the context to be applied for Speech to Text conversion as shown in the following code example. </p>
-<div class="fragment"><pre class="fragment"> <span class="comment">// Path of the audio file which needs to convert to text</span>
- <span class="keywordtype">string</span> fileToUpload = <span class="stringliteral">&quot;xxxxxxxxx\\xxxxxxxx\\xxxxx&quot;</span>; 
- SpeechResponse response = this.requestFactory.SpeechToText(fileToUpload, <a class="code" href="a00201.html#a0819fd63a02e491c703c42c89f4e797a" title="X-Speech Context, the speech context to be applied to the transcribed text. X-Speech Context Enum has...">XSpeechContext</a>.Generic);
-</pre></div> </div></div><!-- contents -->
+
+<p>Container structure for the advertisement details.  
+ <a href="a00016.html#details">More...</a></p>
+
+<p><a href="a00262.html">List of all members.</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:adc624cc7bc041b83e65cefc3009f1f63"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00016.html#adc624cc7bc041b83e65cefc3009f1f63">Type</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:adc624cc7bc041b83e65cefc3009f1f63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the type of advertisement.  <a href="#adc624cc7bc041b83e65cefc3009f1f63"></a><br/></td></tr>
+<tr class="memitem:ac9309e33e4ae8a4fc69b819f63f731bd"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00016.html#ac9309e33e4ae8a4fc69b819f63f731bd">ClickUrl</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ac9309e33e4ae8a4fc69b819f63f731bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of ClickUrl. This parameter contains the click URLs. It returns all the possible sizes available. For SMS ads, the URL is shortened to 35-40 characters.  <a href="#ac9309e33e4ae8a4fc69b819f63f731bd"></a><br/></td></tr>
+<tr class="memitem:a61703376868dcb9f3d71f629733f6505"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00039.html">ImageUrl</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00016.html#a61703376868dcb9f3d71f629733f6505">ImageUrl</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a61703376868dcb9f3d71f629733f6505"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of <a class="el" href="a00039.html" title="Object that contains the link to the image of the advertisement and tracking Url.">ImageUrl</a>. This parameter returns the link to the image of the advertisement.  <a href="#a61703376868dcb9f3d71f629733f6505"></a><br/></td></tr>
+<tr class="memitem:a3cce4511c929513de742904456ef6f0d"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00016.html#a3cce4511c929513de742904456ef6f0d">Text</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a3cce4511c929513de742904456ef6f0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of Text. Any ad text(either independent or below the ad)  <a href="#a3cce4511c929513de742904456ef6f0d"></a><br/></td></tr>
+<tr class="memitem:a08f9d96e42d69e79aadbd57bfa7853dd"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00016.html#a08f9d96e42d69e79aadbd57bfa7853dd">TrackUrl</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a08f9d96e42d69e79aadbd57bfa7853dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of TrackUrl. This parameter contains the pixel tracking URL.  <a href="#a08f9d96e42d69e79aadbd57bfa7853dd"></a><br/></td></tr>
+<tr class="memitem:a314f7fc36df70bc3d8c643d59052793f"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00016.html#a314f7fc36df70bc3d8c643d59052793f">Content</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a314f7fc36df70bc3d8c643d59052793f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of Content All of the ad content is placed in this node as is from 3rd party.  <a href="#a314f7fc36df70bc3d8c643d59052793f"></a><br/></td></tr>
+</table>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>Container structure for the advertisement details. </p>
+</div><hr/><h2>Property Documentation</h2>
+<a class="anchor" id="ac9309e33e4ae8a4fc69b819f63f731bd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string <a class="el" href="a00016.html#ac9309e33e4ae8a4fc69b819f63f731bd">ATT_MSSDK.Advertisementv1.Ad.ClickUrl</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the value of ClickUrl. This parameter contains the click URLs. It returns all the possible sizes available. For SMS ads, the URL is shortened to 35-40 characters. </p>
+
+</div>
+</div>
+<a class="anchor" id="a314f7fc36df70bc3d8c643d59052793f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string <a class="el" href="a00016.html#a314f7fc36df70bc3d8c643d59052793f">ATT_MSSDK.Advertisementv1.Ad.Content</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the value of Content All of the ad content is placed in this node as is from 3rd party. </p>
+
+</div>
+</div>
+<a class="anchor" id="a61703376868dcb9f3d71f629733f6505"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00039.html">ImageUrl</a> <a class="el" href="a00016.html#a61703376868dcb9f3d71f629733f6505">ATT_MSSDK.Advertisementv1.Ad.ImageUrl</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the value of <a class="el" href="a00039.html" title="Object that contains the link to the image of the advertisement and tracking Url.">ImageUrl</a>. This parameter returns the link to the image of the advertisement. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3cce4511c929513de742904456ef6f0d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string <a class="el" href="a00016.html#a3cce4511c929513de742904456ef6f0d">ATT_MSSDK.Advertisementv1.Ad.Text</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the value of Text. Any ad text(either independent or below the ad) </p>
+
+</div>
+</div>
+<a class="anchor" id="a08f9d96e42d69e79aadbd57bfa7853dd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string <a class="el" href="a00016.html#a08f9d96e42d69e79aadbd57bfa7853dd">ATT_MSSDK.Advertisementv1.Ad.TrackUrl</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the value of TrackUrl. This parameter contains the pixel tracking URL. </p>
+
+</div>
+</div>
+<a class="anchor" id="adc624cc7bc041b83e65cefc3009f1f63"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string <a class="el" href="a00016.html#adc624cc7bc041b83e65cefc3009f1f63">ATT_MSSDK.Advertisementv1.Ad.Type</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the type of advertisement. </p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>
+      <li class="navelem"><a class="el" href="a00209.html">ATT_MSSDK</a>      </li>
+      <li class="navelem"><a class="el" href="a00210.html">Advertisementv1</a>      </li>
+      <li class="navelem"><a class="el" href="a00016.html">Ad</a>      </li>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:10 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

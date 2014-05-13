@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.MMSv3.DeliveryInfoList Class Reference</title>
+<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.ErrorResponse Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -100,78 +100,54 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#properties">Properties</a>  </div>
   <div class="headertitle">
-<div class="title">ATT_MSSDK.MMSv3.DeliveryInfoList Class Reference</div>  </div>
+<div class="title">ATT_MSSDK.ErrorResponse Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Contains the information returned by the server for delivery responses.  
+<p>The ErrorResponse contains the value of ErrorType and ErrorObject.  
  <a href="a00029.html#details">More...</a></p>
 
-<p><a href="a00274.html">List of all members.</a></p>
+<p><a href="a00250.html">List of all members.</a></p>
 <table class="memberdecls">
-<tr><td colspan="2"><h2><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a04a6aea17937e254ac4f3261d55866e0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00029.html#a04a6aea17937e254ac4f3261d55866e0">DeliveryInfoList</a> ()</td></tr>
-<tr class="memdesc:a04a6aea17937e254ac4f3261d55866e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="a00029.html" title="Contains the information returned by the server for delivery responses.">DeliveryInfoList</a> class.  <a href="#a04a6aea17937e254ac4f3261d55866e0"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a07713065df9fdbeb91496b3fab2acf37"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="a00027.html">DeliveryInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00029.html#a07713065df9fdbeb91496b3fab2acf37">DeliveryInfo</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a07713065df9fdbeb91496b3fab2acf37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the list of <a class="el" href="a00027.html" title="Encapsulates the delivery info returned by the server for MMS messages.">DeliveryInfo</a> objects returned by the server.  <a href="#a07713065df9fdbeb91496b3fab2acf37"></a><br/></td></tr>
-<tr class="memitem:af4fef3e8e9af246e5fe2fa735acbe695"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00029.html#af4fef3e8e9af246e5fe2fa735acbe695">ResourceUrl</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:af4fef3e8e9af246e5fe2fa735acbe695"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the ResourceURL returned by the server.  <a href="#af4fef3e8e9af246e5fe2fa735acbe695"></a><br/></td></tr>
+<tr class="memitem:a9623fb7149977b0143691a4a4d5ca993"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00029.html#a9623fb7149977b0143691a4a4d5ca993">ErrorType</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a9623fb7149977b0143691a4a4d5ca993"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of error type. Possible error types include service error, policy exception and service exception.  <a href="#a9623fb7149977b0143691a4a4d5ca993"></a><br/></td></tr>
+<tr class="memitem:a68369c6f2a4b81453c4fbe3277204f67"><td class="memItemLeft" align="right" valign="top">ErrorObjectRaw&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00029.html#a68369c6f2a4b81453c4fbe3277204f67">ErrorObject</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a68369c6f2a4b81453c4fbe3277204f67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of error object, which contains the error information.  <a href="#a68369c6f2a4b81453c4fbe3277204f67"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Contains the information returned by the server for delivery responses. </p>
-</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a04a6aea17937e254ac4f3261d55866e0"></a>
+<div class="textblock"><p>The ErrorResponse contains the value of ErrorType and ErrorObject. </p>
+</div><hr/><h2>Property Documentation</h2>
+<a class="anchor" id="a68369c6f2a4b81453c4fbe3277204f67"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00029.html#a04a6aea17937e254ac4f3261d55866e0">ATT_MSSDK.MMSv3.DeliveryInfoList.DeliveryInfoList</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">ErrorObjectRaw <a class="el" href="a00029.html#a68369c6f2a4b81453c4fbe3277204f67">ATT_MSSDK.ErrorResponse.ErrorObject</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Initializes a new instance of the <a class="el" href="a00029.html" title="Contains the information returned by the server for delivery responses.">DeliveryInfoList</a> class. </p>
+<p>Gets or sets the value of error object, which contains the error information. </p>
 
 </div>
 </div>
-<hr/><h2>Property Documentation</h2>
-<a class="anchor" id="a07713065df9fdbeb91496b3fab2acf37"></a>
+<a class="anchor" id="a9623fb7149977b0143691a4a4d5ca993"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">List&lt;<a class="el" href="a00027.html">DeliveryInfo</a>&gt; <a class="el" href="a00029.html#a07713065df9fdbeb91496b3fab2acf37">ATT_MSSDK.MMSv3.DeliveryInfoList.DeliveryInfo</a><code> [get, set]</code></td>
+          <td class="memname">string <a class="el" href="a00029.html#a9623fb7149977b0143691a4a4d5ca993">ATT_MSSDK.ErrorResponse.ErrorType</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets the list of <a class="el" href="a00027.html" title="Encapsulates the delivery info returned by the server for MMS messages.">DeliveryInfo</a> objects returned by the server. </p>
-
-</div>
-</div>
-<a class="anchor" id="af4fef3e8e9af246e5fe2fa735acbe695"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00029.html#af4fef3e8e9af246e5fe2fa735acbe695">ATT_MSSDK.MMSv3.DeliveryInfoList.ResourceUrl</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the ResourceURL returned by the server. </p>
+<p>Gets or sets the value of error type. Possible error types include service error, policy exception and service exception. </p>
 
 </div>
 </div>
@@ -179,13 +155,13 @@ Properties</h2></td></tr>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="a00201.html">ATT_MSSDK</a>      </li>
-      <li class="navelem"><a class="el" href="a00207.html">MMSv3</a>      </li>
-      <li class="navelem"><a class="el" href="a00029.html">DeliveryInfoList</a>      </li>
+      <li class="navelem"><a class="el" href="a00209.html">ATT_MSSDK</a>      </li>
+      <li class="navelem"><a class="el" href="a00029.html">ErrorResponse</a>      </li>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:10 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

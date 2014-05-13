@@ -1,9 +1,9 @@
 var NAVTREE =
 [
   [ "AT&T API Platform SDK for Microsoft", "index.html", [
-    [ "Overview", "a00008.html", "a00008" ],
-    [ "Server Guide", "a00009.html", "a00009" ],
-    [ "Cookbooks", "a00010.html", "a00010" ],
+    [ "Overview", "a00005.html", "a00005" ],
+    [ "Server Guide", "a00006.html", "a00006" ],
+    [ "Cookbooks", "a00007.html", "a00007" ],
     [ "Modules", "modules.html", "modules" ],
     [ "Packages", null, [
       [ "Packages", "namespaces.html", "namespaces" ],

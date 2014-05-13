@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.MOBOv1.SendMessageResponse Class Reference</title>
+<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.Speechv3.Recognition Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -100,46 +100,112 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#properties">Properties</a>  </div>
   <div class="headertitle">
-<div class="title">ATT_MSSDK.MOBOv1.SendMessageResponse Class Reference</div>  </div>
+<div class="title">ATT_MSSDK.Speechv3.Recognition Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>The response to a Send Message request.  
+<p>Recognition returned by the server for Speech to text request. Recognition is a complex structure for all the other parameters of the response.  
  <a href="a00080.html#details">More...</a></p>
-<div class="dynheader">
-Inheritance diagram for ATT_MSSDK.MOBOv1.SendMessageResponse:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="a00080.png" usemap="#ATT_MSSDK.MOBOv1.SendMessageResponse_map" alt=""/>
-  <map id="ATT_MSSDK.MOBOv1.SendMessageResponse_map" name="ATT_MSSDK.MOBOv1.SendMessageResponse_map">
-<area href="a00077.html" title="Abstract base class for all Response objects." alt="ATT_MSSDK.Response" shape="rect" coords="0,0,282,24"/>
-</map>
- </div></div>
 
-<p><a href="a00283.html">List of all members.</a></p>
+<p><a href="a00329.html">List of all members.</a></p>
 <table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a00487cad6748baa72e5759ac83dc1dd3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00080.html#a00487cad6748baa72e5759ac83dc1dd3">Recognition</a> ()</td></tr>
+<tr class="memdesc:a00487cad6748baa72e5759ac83dc1dd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="a00080.html" title="Recognition returned by the server for Speech to text request. Recognition is a complex structure for...">Recognition</a> class.  <a href="#a00487cad6748baa72e5759ac83dc1dd3"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a3d248a6842cb2ec0721e3200b04f70eb"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00080.html#a3d248a6842cb2ec0721e3200b04f70eb">Id</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a3d248a6842cb2ec0721e3200b04f70eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Id value returned by the server.  <a href="#a3d248a6842cb2ec0721e3200b04f70eb"></a><br/></td></tr>
+<tr class="memitem:af96691bbf2ba99e9f10bde8e0788fd5b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00080.html#af96691bbf2ba99e9f10bde8e0788fd5b">Responseid</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:af96691bbf2ba99e9f10bde8e0788fd5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the id value assigned by the server to the speech to text response. A unique string that identifies this particular transcription.  <a href="#af96691bbf2ba99e9f10bde8e0788fd5b"></a><br/></td></tr>
+<tr class="memitem:ab170e54b5504628fbf98fe0776333be5"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="a00066.html">NBest</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00080.html#ab170e54b5504628fbf98fe0776333be5">NBest</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ab170e54b5504628fbf98fe0776333be5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the <a class="el" href="a00066.html" title="NBest returned by speech to text response. NBest is a complex structure that holds the results of the...">NBest</a> object. <a class="el" href="a00066.html" title="NBest returned by speech to text response. NBest is a complex structure that holds the results of the...">NBest</a> is a complex structure that holds the results of the transcription.  <a href="#ab170e54b5504628fbf98fe0776333be5"></a><br/></td></tr>
+<tr class="memitem:a34e4e62a78de3cff21e02a5c4ca557e7"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00080.html#a34e4e62a78de3cff21e02a5c4ca557e7">Status</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a34e4e62a78de3cff21e02a5c4ca557e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the status of the request Result of the particular transcription.  <a href="#a34e4e62a78de3cff21e02a5c4ca557e7"></a><br/></td></tr>
+<tr class="memitem:a20fca7d3523463ab666d876dd75bb02f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00045.html">Info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00080.html#a20fca7d3523463ab666d876dd75bb02f">Info</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a20fca7d3523463ab666d876dd75bb02f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of <a class="el" href="a00045.html" title="Encapsulates Info data returned in speect to text response.">Info</a> object.  <a href="#a20fca7d3523463ab666d876dd75bb02f"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>The response to a Send Message request. </p>
-</div><hr/><h2>Property Documentation</h2>
-<a class="anchor" id="a3d248a6842cb2ec0721e3200b04f70eb"></a>
+<div class="textblock"><p>Recognition returned by the server for Speech to text request. Recognition is a complex structure for all the other parameters of the response. </p>
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a00487cad6748baa72e5759ac83dc1dd3"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="a00080.html#a3d248a6842cb2ec0721e3200b04f70eb">ATT_MSSDK.MOBOv1.SendMessageResponse.Id</a><code> [get, set]</code></td>
+          <td class="memname"><a class="el" href="a00080.html#a00487cad6748baa72e5759ac83dc1dd3">ATT_MSSDK.Speechv3.Recognition.Recognition</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets the Id value returned by the server. </p>
+<p>Initializes a new instance of the <a class="el" href="a00080.html" title="Recognition returned by the server for Speech to text request. Recognition is a complex structure for...">Recognition</a> class. </p>
+
+</div>
+</div>
+<hr/><h2>Property Documentation</h2>
+<a class="anchor" id="a20fca7d3523463ab666d876dd75bb02f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00045.html">Info</a> <a class="el" href="a00080.html#a20fca7d3523463ab666d876dd75bb02f">ATT_MSSDK.Speechv3.Recognition.Info</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the value of <a class="el" href="a00045.html" title="Encapsulates Info data returned in speect to text response.">Info</a> object. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab170e54b5504628fbf98fe0776333be5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;<a class="el" href="a00066.html">NBest</a>&gt; <a class="el" href="a00080.html#ab170e54b5504628fbf98fe0776333be5">ATT_MSSDK.Speechv3.Recognition.NBest</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the <a class="el" href="a00066.html" title="NBest returned by speech to text response. NBest is a complex structure that holds the results of the...">NBest</a> object. <a class="el" href="a00066.html" title="NBest returned by speech to text response. NBest is a complex structure that holds the results of the...">NBest</a> is a complex structure that holds the results of the transcription. </p>
+
+</div>
+</div>
+<a class="anchor" id="af96691bbf2ba99e9f10bde8e0788fd5b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string <a class="el" href="a00080.html#af96691bbf2ba99e9f10bde8e0788fd5b">ATT_MSSDK.Speechv3.Recognition.Responseid</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the id value assigned by the server to the speech to text response. A unique string that identifies this particular transcription. </p>
+
+</div>
+</div>
+<a class="anchor" id="a34e4e62a78de3cff21e02a5c4ca557e7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string <a class="el" href="a00080.html#a34e4e62a78de3cff21e02a5c4ca557e7">ATT_MSSDK.Speechv3.Recognition.Status</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the status of the request Result of the particular transcription. </p>
 
 </div>
 </div>
@@ -147,13 +213,14 @@ Properties</h2></td></tr>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="a00201.html">ATT_MSSDK</a>      </li>
-      <li class="navelem"><a class="el" href="a00208.html">MOBOv1</a>      </li>
-      <li class="navelem"><a class="el" href="a00080.html">SendMessageResponse</a>      </li>
+      <li class="navelem"><a class="el" href="a00209.html">ATT_MSSDK</a>      </li>
+      <li class="navelem"><a class="el" href="a00218.html">Speechv3</a>      </li>
+      <li class="navelem"><a class="el" href="a00080.html">Recognition</a>      </li>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:10 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

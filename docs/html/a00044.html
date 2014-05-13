@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.SMSv3.InboundSms Class Reference</title>
+<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.SMSv3.InboundSmsMessageList Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -100,52 +100,112 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#properties">Properties</a>  </div>
   <div class="headertitle">
-<div class="title">ATT_MSSDK.SMSv3.InboundSms Class Reference</div>  </div>
+<div class="title">ATT_MSSDK.SMSv3.InboundSmsMessageList Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>The InboundSmsMessage list class contains the SMS messages sent to the application short code.  
+<p>Response from server to InboundSms request.  
  <a href="a00044.html#details">More...</a></p>
 
-<p><a href="a00304.html">List of all members.</a></p>
+<p><a href="a00313.html">List of all members.</a></p>
 <table class="memberdecls">
-<tr><td colspan="2"><h2><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><b>InboundSmsMessageListRoot</b></td></tr>
-<tr><td colspan="2"><h2><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a46f7141a2ac2da27a7cbfb4b2675729a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00046.html">InboundSmsMessageList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044.html#a46f7141a2ac2da27a7cbfb4b2675729a">ParseJSON</a> (string jsonInput)</td></tr>
-<tr class="memdesc:a46f7141a2ac2da27a7cbfb4b2675729a"><td class="mdescLeft">&#160;</td><td class="mdescRight">ParseJSON the JSON and create an <a class="el" href="a00046.html" title="Response from server to InboundSms request.">InboundSmsMessageList</a> object with that data.  <a href="#a46f7141a2ac2da27a7cbfb4b2675729a"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ab10e08fcd6b1f8ea595fd5479e392b67"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044.html#ab10e08fcd6b1f8ea595fd5479e392b67">InboundSmsMessageList</a> ()</td></tr>
+<tr class="memdesc:ab10e08fcd6b1f8ea595fd5479e392b67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="a00044.html" title="Response from server to InboundSms request.">InboundSmsMessageList</a> class.  <a href="#ab10e08fcd6b1f8ea595fd5479e392b67"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:a026ada433e4e6e82a576c2a822a161f4"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="a00043.html">InboundSmsMessage</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044.html#a026ada433e4e6e82a576c2a822a161f4">InboundSmsMessage</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a026ada433e4e6e82a576c2a822a161f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the list of inbound SMS messages. Object containing SMS message.  <a href="#a026ada433e4e6e82a576c2a822a161f4"></a><br/></td></tr>
+<tr class="memitem:ac6e5fbfd99479f0ea7a068f68c09fe4d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044.html#ac6e5fbfd99479f0ea7a068f68c09fe4d">NumberOfMessagesInThisBatch</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ac6e5fbfd99479f0ea7a068f68c09fe4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the number of messages in this batch. Number of messages that was sent in this (batch) response.  <a href="#ac6e5fbfd99479f0ea7a068f68c09fe4d"></a><br/></td></tr>
+<tr class="memitem:a78fc64259fb69c360b4dd98712799fdc"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044.html#a78fc64259fb69c360b4dd98712799fdc">ResourceUrl</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a78fc64259fb69c360b4dd98712799fdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the resource URL. The endpoint URL that served this request.  <a href="#a78fc64259fb69c360b4dd98712799fdc"></a><br/></td></tr>
+<tr class="memitem:abdebc62012e7e726c564bd5a0771c7b6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044.html#abdebc62012e7e726c564bd5a0771c7b6">TotalNumberOfPendingMessages</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:abdebc62012e7e726c564bd5a0771c7b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the total number of pending messages. Total number of messages pending that are yet to be retrieved from the server for the given registrationId (short code).  <a href="#abdebc62012e7e726c564bd5a0771c7b6"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>The InboundSmsMessage list class contains the SMS messages sent to the application short code. </p>
-</div><hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a46f7141a2ac2da27a7cbfb4b2675729a"></a>
+<div class="textblock"><p>Response from server to InboundSms request. </p>
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ab10e08fcd6b1f8ea595fd5479e392b67"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="a00046.html">InboundSmsMessageList</a> <a class="el" href="a00044.html#a46f7141a2ac2da27a7cbfb4b2675729a">ATT_MSSDK.SMSv3.InboundSms.ParseJSON</a> </td>
+          <td class="memname"><a class="el" href="a00044.html#ab10e08fcd6b1f8ea595fd5479e392b67">ATT_MSSDK.SMSv3.InboundSmsMessageList.InboundSmsMessageList</a> </td>
           <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>jsonInput</em></td><td>)</td>
-          <td><code> [static]</code></td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>ParseJSON the JSON and create an <a class="el" href="a00046.html" title="Response from server to InboundSms request.">InboundSmsMessageList</a> object with that data. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">jsonInput</td><td>JSON response from the server</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns:</dt><dd><a class="el" href="a00046.html" title="Response from server to InboundSms request.">InboundSmsMessageList</a>The parsed response.</dd></dl>
+<p>Initializes a new instance of the <a class="el" href="a00044.html" title="Response from server to InboundSms request.">InboundSmsMessageList</a> class. </p>
+
+</div>
+</div>
+<hr/><h2>Property Documentation</h2>
+<a class="anchor" id="a026ada433e4e6e82a576c2a822a161f4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;<a class="el" href="a00043.html">InboundSmsMessage</a>&gt; <a class="el" href="a00044.html#a026ada433e4e6e82a576c2a822a161f4">ATT_MSSDK.SMSv3.InboundSmsMessageList.InboundSmsMessage</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the list of inbound SMS messages. Object containing SMS message. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac6e5fbfd99479f0ea7a068f68c09fe4d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="a00044.html#ac6e5fbfd99479f0ea7a068f68c09fe4d">ATT_MSSDK.SMSv3.InboundSmsMessageList.NumberOfMessagesInThisBatch</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the number of messages in this batch. Number of messages that was sent in this (batch) response. </p>
+
+</div>
+</div>
+<a class="anchor" id="a78fc64259fb69c360b4dd98712799fdc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string <a class="el" href="a00044.html#a78fc64259fb69c360b4dd98712799fdc">ATT_MSSDK.SMSv3.InboundSmsMessageList.ResourceUrl</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the resource URL. The endpoint URL that served this request. </p>
+
+</div>
+</div>
+<a class="anchor" id="abdebc62012e7e726c564bd5a0771c7b6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="a00044.html#abdebc62012e7e726c564bd5a0771c7b6">ATT_MSSDK.SMSv3.InboundSmsMessageList.TotalNumberOfPendingMessages</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the total number of pending messages. Total number of messages pending that are yet to be retrieved from the server for the given registrationId (short code). </p>
 
 </div>
 </div>
@@ -153,13 +213,14 @@ Static Public Member Functions</h2></td></tr>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="a00201.html">ATT_MSSDK</a>      </li>
-      <li class="navelem"><a class="el" href="a00211.html">SMSv3</a>      </li>
-      <li class="navelem"><a class="el" href="a00044.html">InboundSms</a>      </li>
+      <li class="navelem"><a class="el" href="a00209.html">ATT_MSSDK</a>      </li>
+      <li class="navelem"><a class="el" href="a00217.html">SMSv3</a>      </li>
+      <li class="navelem"><a class="el" href="a00044.html">InboundSmsMessageList</a>      </li>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:11 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

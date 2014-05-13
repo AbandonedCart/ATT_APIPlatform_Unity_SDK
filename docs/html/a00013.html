@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: Installation Guide</title>
+<title>AT&amp;T API Platform SDK for Microsoft: Speech To Text Custom Service Cookbook</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -100,153 +100,42 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Installation Guide </div>  </div>
+<div class="title">Speech To Text Custom Service Cookbook </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><table  id="one" style="background-color: #EF9E20; margin: 1em 0px; width: 100%; height: 33px;">
-<tr valign="center">
-<td style="BACKGROUND-COLOR: #EF9E20; font-weight:bold !important; PADDING-LEFT: 10px; WIDTH: 192px; font-family:Verdana, Geneva, Arial, Helvetica, sans-serif; COLOR: white; FONT-SIZE: 12pt">Installation prerequisites  </td></tr>
-</table>
-<table  style="width: 100%;font-size: 7.5pt;color:#666666;font-family:Verdana, Geneva, Arial, Helvetica, sans-serif">
-<tr>
-<td><ul>
+<div class="textblock"><h2><a class="anchor" id="CustomSpeech_overview"></a>
+Overview</h2>
+<p>This cookbook shows you how to develop a Custom Speech Service application using the Platform SDK for Microsoft. <br/>
+ The Platform SDK for Microsoft provides the following methods: </p>
+<ul>
 <li>
-For deployment: <ul>
-<li>
-Microsoft&reg; Windows Server 2008 R2 is needed.</li>
+SpeechToTextCustom  </li>
 </ul>
-<br/>
-  </li>
-<li>
-For development: <ul>
-<li>
-.NET Framework 3.5 or greater should be installed. </li>
-<li>
-Microsoft Visual Studio version 2008 or greater can be used as an IDE.</li>
-</ul>
+<p>To use these methods in an application, perform the following steps: </p>
+<ol type="1">
+<li>Add a reference to the SDK as shown in the <a class="el" href="a00008.html">About the Cookbooks </a> section and import the <a class="el" href="a00218.html" title="Core namespace for Speech Service Version 3.">ATT_MSSDK.Speechv3</a> namespace. <br/>
 </li>
-</ul>
-</td></tr>
-</table>
-<table  id="one" style="background-color: #EF9E20; margin: 1em 0px; width: 100%; height: 33px;">
-<tr valign="center">
-<td style="BACKGROUND-COLOR: #EF9E20; font-weight:bold !important; PADDING-LEFT: 10px; WIDTH: 192px; font-family:Verdana, Geneva, Arial, Helvetica, sans-serif; COLOR: white; FONT-SIZE: 12pt">Installation process  </td></tr>
-</table>
-<table  style="width: 100%;font-size: 7.5pt;color:#666666;font-family:Verdana, Geneva, Arial, Helvetica, sans-serif">
-<tr>
-<td><b> Installing the SDK Wrapper library </b><br/>
- To install the SDK Wrapper library, do the following: <ol>
-<li>
-Download the SDK package from AT&amp;T developer portal.<br/>
-  </li>
-<li>
-Unzip the SDK package.  </li>
-<li>
-Copy ATT_MSSDK.dll from the bin folder in the SDK package to a bin directory in the web root of your web domain in IIS server. </li>
+<li>Create an instance of <a class="el" href="a00081.html">RequestFactory </a> with the scope type RequestFactory.ScopeTypes.STTC, as shown in the <a class="el" href="a00008.html">About the Cookbooks </a> section. <br/>
+</li>
+<li>Invoke the Speech Service methods using the <a class="el" href="a00081.html">RequestFactory </a> instance. </li>
 </ol>
-</td></tr>
-</table>
-<table  style="width: 100%;font-size: 7.5pt;color:#666666;font-family:Verdana, Geneva, Arial, Helvetica, sans-serif">
-<tr>
-<td><b>Installing the SDK Sample Applications</b><br/>
- The AT&amp;T API Platform SDK for Microsoft contains sample applications that showcase the usage of the APIs in the SDK. <br/>
- To install the sample applications, do the following: <ol>
-<li>
-Download the sample application package from AT&amp;T developer portal.<br/>
-  </li>
-<li>
-Unzip the contents of the sample application package.  </li>
-<li>
-Refer to the README in the sample application package for instructions on installation, configuration, and startup of the sample applications. </li>
-</ol>
-</td></tr>
-</table>
-<table  id="one" style="background-color: #EF9E20; margin: 1em 0px; width: 100%; height: 33px;">
-<tr valign="center">
-<td style="BACKGROUND-COLOR: #EF9E20; font-weight:bold !important; PADDING-LEFT: 10px; WIDTH: 192px; font-family:Verdana, Geneva, Arial, Helvetica, sans-serif; COLOR: white; FONT-SIZE: 12pt">Environment setup for C# apps  </td></tr>
-</table>
-<table  style="width: 100%;font-size: 7.5pt;color:#666666;font-family:Verdana, Geneva, Arial, Helvetica, sans-serif">
-<tr>
-<td>To setup your development environment for building a C# app that includes the SDK Wrapper library, you need to first create a new Web site project, and then add the SDK Wrapper library as a reference in that project. <br/>
-<br/>
- The following steps describe how to create a new C# Web site project using Microsoft Visual Studio as the IDE: <ol>
-<li>
-Open Microsoft Visual Studio. </li>
-<li>
-On the File menu, click New Web Site. This opens the New Web Site dialog box.  </li>
-<li>
-In the New Web Site dialog box, under Visual Studio installed templates, select ASP.NET Web Site. </li>
-<li>
-In the web Location box, select File System from the dropdown menu and enter the name of the folder where you want to keep the pages of your Web site. <br/>
- For example: C:\BasicWebSite.  </li>
-<li>
-In the Language list, click Visual C#. </li>
-<li>
-Click OK. The folder and a new page named Default.aspx application development are created. </li>
-</ol>
-</td></tr>
-</table>
-<table  style="width: 100%;font-size: 7.5pt;color:#666666;font-family:Verdana, Geneva, Arial, Helvetica, sans-serif">
-<tr>
-<td>The following steps describe how to add the SDK Wrapper library as a reference in the Visual Studio Web site project created above. <ol>
-<li>
-In Solution Explorer, right click on Project and select Add Reference from the dropdown menu. This will open the Add Reference dialog box. </li>
-<li>
-In the Add Reference dialog box, select the Browse tab and then select the file ATT_MSSDK.DLL. </li>
-<li>
-Click OK. A bin directory will be created under your project that contains ATT_MSSDK.DLL along with support files. </li>
-<li>
-The APIs in the SDK Wrapper library can now be referenced in your project. </li>
-</ol>
-</td></tr>
-</table>
-<table  id="one" style="background-color: #EF9E20; margin: 1em 0px; width: 100%; height: 33px;">
-<tr valign="center">
-<td style="BACKGROUND-COLOR: #EF9E20; font-weight:bold !important; PADDING-LEFT: 10px; WIDTH: 192px; font-family:Verdana, Geneva, Arial, Helvetica, sans-serif; COLOR: white; FONT-SIZE: 12pt">Environment setup for VB apps  </td></tr>
-</table>
-<table  style="width: 100%;font-size: 7.5pt;color:#666666;font-family:Verdana, Geneva, Arial, Helvetica, sans-serif">
-<tr>
-<td>To setup your development environment for building a VB app that includes the SDK Wrapper library, you need to first create a new Web site project, and then add the SDK Wrapper library as a reference in that project.<br/>
-<br/>
- The following steps describe how to create a new Visual Basic Web site project using Microsoft Visual Studio as the IDE: <ol>
-<li>
-Open Microsoft Visual Studio. </li>
-<li>
-On the File menu, click New Web Site. This opens the New Web Site dialog box. </li>
-<li>
-In the New Web Site dialog box, under Visual Studio installed templates, click ASP.NET Web Site. </li>
-<li>
-In the web Location box, select File System from the dropdown menu and enter the name of the folder where you want to keep the pages of your Web site. <br/>
-For example: C:\BasicWebSite. </li>
-<li>
-In the Language list, click Visual Basic. </li>
-<li>
-Click OK. A folder and a new page named Default.aspx application development are created. </li>
-</ol>
-</td></tr>
-</table>
-<table  style="width: 100%;font-size: 7.5pt;color:#666666;font-family:Verdana, Geneva, Arial, Helvetica, sans-serif">
-<tr>
-<td>The following steps describe how to add the SDK Wrapper library as a reference in the Visual Studio Web site project created above. <ol>
-<li>
-In Solution Explorer, right-click on Project and select Add Reference from the dropdown menu. This will open the Add Reference dialog box. </li>
-<li>
-In the Add Reference dialog box, select the Browse tab and then select the file <a class="el" href="a00201.html" title="Core namespace for ATT MSSDK.">ATT_MSSDK</a> DLL. </li>
-<li>
-Click OK. A bin directory will be created under your project that contains <a class="el" href="a00201.html" title="Core namespace for ATT MSSDK.">ATT_MSSDK</a> DLL along with support files. </li>
-<li>
-The APIs in the SDK Wrapper library can now be referenced in your project. </li>
-</ol>
-</td></tr>
-</table>
-</div></div><!-- contents -->
+<h2><a class="anchor" id="customSpeech_send"></a>
+Converting Spoken Audio to Text</h2>
+<p>To convert the spoken audio to text, invoke the <a class="el" href="a00243.html#ga57ca516306f59b7b607e0ab9010b04ff">ATT_MSSDK.RequestFactory.SpeechToTextCustom</a> method using the <a class="el" href="a00081.html">RequestFactory </a> instance by passing an audio file location and the context to be applied for Speech to Text conversion along with optional dictionary and grammar file paths as shown in the following code example. </p>
+<div class="fragment"><pre class="fragment"> <span class="comment">// Path of the audio file to convert to text</span>
+ <span class="keywordtype">string</span> fileToConvert = <span class="stringliteral">&quot;xxxxxxxxx\\xxxxxxxx\\xxxxx&quot;</span>; 
+ <span class="keywordtype">string</span> xArgs = <span class="stringliteral">&quot;xxxxxxxx&quot;</span>; <span class="comment">// example ClientApp=Test</span>
+ <span class="keywordtype">string</span> audioContentType = <span class="stringliteral">&quot;xxxxxxx&quot;</span>; <span class="comment">// example &quot;audio/wav&quot;;</span>
+ SpeechResponse response = this.requestFactory.SpeechToTextCustom(fileToConvert, dictionaryFile, grammarFile, <a class="code" href="a00209.html#a0819fd63a02e491c703c42c89f4e797a" title="X-Speech Context, the speech context to be applied to the transcribed text. X-Speech Context Enum has...">XSpeechContext</a>.GenericHints);
+</pre></div> </div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:10 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

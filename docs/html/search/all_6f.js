@@ -1,18 +1,16 @@
 var searchData=
 [
-  ['oauthtoken',['OAuthToken',['../a00064.html',1,'ATT_MSSDK']]],
-  ['oauthtoken',['OAuthToken',['../a00064.html#aaa82dab217c90da5be8df83c6fc7fa62',1,'ATT_MSSDK.OAuthToken.OAuthToken()'],['../a00064.html#a5d0a56c007b15536685e45e9d00855b3',1,'ATT_MSSDK.OAuthToken.OAuthToken(string accessToken, string refreshToken, string expiresIn)']]],
-  ['orgid',['OrgId',['../a00100.html#a9754cf603083ae8a3c22b509f1f0c509',1,'ATT_MSSDK::TextToSpeechv1::XArgs']]],
-  ['originalairdate',['OriginalAirDate',['../a00070.html#ab982b0440ca7fe64f908c2dcaea45926',1,'ATT_MSSDK::Speechv3::Program']]],
-  ['originalpriceamount',['OriginalPriceAmount',['../a00073.html#a630c9220bf7c99bf0266612c3f097cc9',1,'ATT_MSSDK.Paymentv3.RefundNotificationObject.OriginalPriceAmount()'],['../a00094.html#af580de02fbcf92395d29cf501cd7a206',1,'ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationObject.OriginalPriceAmount()']]],
-  ['originalpurchaseamount',['OriginalPurchaseAmount',['../a00023.html#a1d8a7dd47fb6ae9a27c007757c782a81',1,'ATT_MSSDK::Paymentv3::CancelSubscriptionResponse']]],
-  ['originaltransactionid',['OriginalTransactionId',['../a00022.html#a37ac606354aae8c051e9ff0a898956b9',1,'ATT_MSSDK.Paymentv3.CancelSubscriptionNotificationObject.OriginalTransactionId()'],['../a00037.html#aa440a332cac11a942391bdd6a16f8330',1,'ATT_MSSDK.Paymentv3.FreePeriodConversionNotificationObject.OriginalTransactionId()'],['../a00073.html#a7910afa23fa193d607e7e65efd3c29b7',1,'ATT_MSSDK.Paymentv3.RefundNotificationObject.OriginalTransactionId()'],['../a00090.html#a9074833fd5c8056689e83122e19110da',1,'ATT_MSSDK.Paymentv3.StopSubscriptionNotificationObject.OriginalTransactionId()'],['../a00092.html#a14141374cc22d023def5c56bb97b0b66',1,'ATT_MSSDK.Paymentv3.SubscriptionRecurrenceNotificationObject.OriginalTransactionId()'],['../a00094.html#a5b51334fdf03fde30081eccddc5421ac',1,'ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationObject.OriginalTransactionId()']]],
-  ['out',['Out',['../a00068.html#ab18b7bb1f9c5d4879d44a8c811158938',1,'ATT_MSSDK::Speechv3::OutComposite']]],
-  ['outboundmessageresponse',['OutboundMessageResponse',['../a00065.html',1,'ATT_MSSDK::MMSv3']]],
-  ['outboundsmsrequest',['OutboundSMSRequest',['../a00066.html#aab7c562b723c3be0642cb8d6cbcd7f07',1,'ATT_MSSDK::SMSv3::OutboundSMSRequest']]],
-  ['outboundsmsrequest',['OutboundSMSRequest',['../a00066.html',1,'ATT_MSSDK::SMSv3']]],
-  ['outboundsmsresponse',['OutboundSMSResponse',['../a00067.html',1,'ATT_MSSDK::SMSv3']]],
-  ['outcomposite',['OutComposite',['../a00059.html#ac20479aca28495f35bfc61093d672abd',1,'ATT_MSSDK::Speechv3::NluHypothesis']]],
-  ['outcomposite',['OutComposite',['../a00068.html',1,'ATT_MSSDK::Speechv3']]],
-  ['over18content',['Over18Content',['../a00020.html#ac6a6bdf483683eefa55949c9d24bb63e',1,'ATT_MSSDK::Advertisementv1::AdRequest']]]
+  ['oauthtoken',['OAuthToken',['../a00070.html',1,'ATT_MSSDK']]],
+  ['oauthtoken',['OAuthToken',['../a00070.html#aaa82dab217c90da5be8df83c6fc7fa62',1,'ATT_MSSDK.OAuthToken.OAuthToken()'],['../a00070.html#a15340c26c978a125f44704c313ab293e',1,'ATT_MSSDK.OAuthToken.OAuthToken(string accessToken, string refreshToken, string expiresIn, string createdTime=null)']]],
+  ['offset',['Offset',['../a00055.html#a477b726c70dbb2d85bb8666a5c4994ee',1,'ATT_MSSDK.InAppMessaging.MessageList.Offset()'],['../a00056.html#a78ea028215a07ff287db7132cf0b379f',1,'ATT_MSSDK.InAppMessaging.MessageListRequest.Offset()']]],
+  ['orgid',['OrgId',['../a00104.html#a9754cf603083ae8a3c22b509f1f0c509',1,'ATT_MSSDK::TextToSpeechv1::XArgs']]],
+  ['originalairdate',['OriginalAirDate',['../a00076.html#ab982b0440ca7fe64f908c2dcaea45926',1,'ATT_MSSDK::Speechv3::Program']]],
+  ['out',['Out',['../a00074.html#ab18b7bb1f9c5d4879d44a8c811158938',1,'ATT_MSSDK::Speechv3::OutComposite']]],
+  ['outboundmessageresponse',['OutboundMessageResponse',['../a00071.html',1,'ATT_MSSDK::MMSv3']]],
+  ['outboundsmsrequest',['OutboundSMSRequest',['../a00072.html#aab7c562b723c3be0642cb8d6cbcd7f07',1,'ATT_MSSDK::SMSv3::OutboundSMSRequest']]],
+  ['outboundsmsrequest',['OutboundSMSRequest',['../a00072.html',1,'ATT_MSSDK::SMSv3']]],
+  ['outboundsmsresponse',['OutboundSMSResponse',['../a00073.html',1,'ATT_MSSDK::SMSv3']]],
+  ['outcomposite',['OutComposite',['../a00074.html',1,'ATT_MSSDK::Speechv3']]],
+  ['outcomposite',['OutComposite',['../a00067.html#ac20479aca28495f35bfc61093d672abd',1,'ATT_MSSDK::Speechv3::NluHypothesis']]],
+  ['over18content',['Over18Content',['../a00017.html#ac6a6bdf483683eefa55949c9d24bb63e',1,'ATT_MSSDK::Advertisementv1::AdRequest']]]
 ];

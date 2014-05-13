@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.MMSv3.MmsDeliveryStatus Class Reference</title>
+<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.InAppMessaging.MessageListRequest Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -100,37 +100,164 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#properties">Properties</a>  </div>
   <div class="headertitle">
-<div class="title">ATT_MSSDK.MMSv3.MmsDeliveryStatus Class Reference</div>  </div>
+<div class="title">ATT_MSSDK.InAppMessaging.MessageListRequest Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>MMS Delivery Status structure.  
+<p>Container for Get <a class="el" href="a00050.html" title="Container for message.">Message</a> List Operation Request parameters.  
  <a href="a00056.html#details">More...</a></p>
 
-<p><a href="a00279.html">List of all members.</a></p>
+<p><a href="a00281.html">List of all members.</a></p>
 <table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a0e1e36ef50462e6c598043c49c1ef14c"><td class="memItemLeft" align="right" valign="top">override string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a0e1e36ef50462e6c598043c49c1ef14c">ToString</a> ()</td></tr>
+<tr class="memdesc:a0e1e36ef50462e6c598043c49c1ef14c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the query string of all the parameters.  <a href="#a0e1e36ef50462e6c598043c49c1ef14c"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:ac3957e7971dc798a48b3528e37cde3a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00031.html">DeliveryInfoNotification</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#ac3957e7971dc798a48b3528e37cde3a5">deliveryInfoNotification</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ac3957e7971dc798a48b3528e37cde3a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of <a class="el" href="a00031.html" title="Encapsulates the delivery status for a given destination address.">DeliveryInfoNotification</a> object. This is the object that holds the delivery status for a given destination address.  <a href="#ac3957e7971dc798a48b3528e37cde3a5"></a><br/></td></tr>
+<tr class="memitem:aa904245ce73f58ebaec6fc3f6e388525"><td class="memItemLeft" align="right" valign="top">List&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#aa904245ce73f58ebaec6fc3f6e388525">MessageIds</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:aa904245ce73f58ebaec6fc3f6e388525"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the list of message Ids.  <a href="#aa904245ce73f58ebaec6fc3f6e388525"></a><br/></td></tr>
+<tr class="memitem:a8b222a9f40ff445546d1628b39238410"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a8b222a9f40ff445546d1628b39238410">Limit</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a8b222a9f40ff445546d1628b39238410"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the upper limit of the number of returned messages. Maximum value is 500.  <a href="#a8b222a9f40ff445546d1628b39238410"></a><br/></td></tr>
+<tr class="memitem:a78ea028215a07ff287db7132cf0b379f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a78ea028215a07ff287db7132cf0b379f">Offset</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a78ea028215a07ff287db7132cf0b379f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of the Offset from the beginning of the ordered set of messages.  <a href="#a78ea028215a07ff287db7132cf0b379f"></a><br/></td></tr>
+<tr class="memitem:a6851fc37b77cdcec7838342efcb0d569"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a6851fc37b77cdcec7838342efcb0d569">IsUnread</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a6851fc37b77cdcec7838342efcb0d569"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of this filter to specify if the API need to fetch Unread or Read messages.  <a href="#a6851fc37b77cdcec7838342efcb0d569"></a><br/></td></tr>
+<tr class="memitem:ad0459605bc3d53202f1998f1077245bc"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#ad0459605bc3d53202f1998f1077245bc">Type</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ad0459605bc3d53202f1998f1077245bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of <a class="el" href="a00050.html" title="Container for message.">Message</a> Type Filter. Possible values are: SMS, MMS.  <a href="#ad0459605bc3d53202f1998f1077245bc"></a><br/></td></tr>
+<tr class="memitem:a641b7d7ad413f446dde0e566607ab600"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a641b7d7ad413f446dde0e566607ab600">Keyword</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a641b7d7ad413f446dde0e566607ab600"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of Keyword. Retrieve message by passing end-point as a filter criteria. Currently supports only a single endpoint to be passed.  <a href="#a641b7d7ad413f446dde0e566607ab600"></a><br/></td></tr>
+<tr class="memitem:aeeda43920adfef71bc529d41e7b604c2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#aeeda43920adfef71bc529d41e7b604c2">IsIncoming</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:aeeda43920adfef71bc529d41e7b604c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of this filter to specify if the API need to filter messages based on Incoming or Outgoing.  <a href="#aeeda43920adfef71bc529d41e7b604c2"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>MMS Delivery Status structure. </p>
-</div><hr/><h2>Property Documentation</h2>
-<a class="anchor" id="ac3957e7971dc798a48b3528e37cde3a5"></a>
+<div class="textblock"><p>Container for Get <a class="el" href="a00050.html" title="Container for message.">Message</a> List Operation Request parameters. </p>
+</div><hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a0e1e36ef50462e6c598043c49c1ef14c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00031.html">DeliveryInfoNotification</a> <a class="el" href="a00056.html#ac3957e7971dc798a48b3528e37cde3a5">ATT_MSSDK.MMSv3.MmsDeliveryStatus.deliveryInfoNotification</a><code> [get, set]</code></td>
+          <td class="memname">override string <a class="el" href="a00056.html#a0e1e36ef50462e6c598043c49c1ef14c">ATT_MSSDK.InAppMessaging.MessageListRequest.ToString</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets the value of <a class="el" href="a00031.html" title="Encapsulates the delivery status for a given destination address.">DeliveryInfoNotification</a> object. This is the object that holds the delivery status for a given destination address. </p>
+<p>Get the query string of all the parameters. </p>
+<dl class="section return"><dt>Returns:</dt><dd>string of query string parameters.</dd></dl>
+
+</div>
+</div>
+<hr/><h2>Property Documentation</h2>
+<a class="anchor" id="aeeda43920adfef71bc529d41e7b604c2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="a00056.html#aeeda43920adfef71bc529d41e7b604c2">ATT_MSSDK.InAppMessaging.MessageListRequest.IsIncoming</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the value of this filter to specify if the API need to filter messages based on Incoming or Outgoing. </p>
+
+</div>
+</div>
+<a class="anchor" id="a6851fc37b77cdcec7838342efcb0d569"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="a00056.html#a6851fc37b77cdcec7838342efcb0d569">ATT_MSSDK.InAppMessaging.MessageListRequest.IsUnread</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the value of this filter to specify if the API need to fetch Unread or Read messages. </p>
+
+</div>
+</div>
+<a class="anchor" id="a641b7d7ad413f446dde0e566607ab600"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string <a class="el" href="a00056.html#a641b7d7ad413f446dde0e566607ab600">ATT_MSSDK.InAppMessaging.MessageListRequest.Keyword</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the value of Keyword. Retrieve message by passing end-point as a filter criteria. Currently supports only a single endpoint to be passed. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8b222a9f40ff445546d1628b39238410"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string <a class="el" href="a00056.html#a8b222a9f40ff445546d1628b39238410">ATT_MSSDK.InAppMessaging.MessageListRequest.Limit</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the upper limit of the number of returned messages. Maximum value is 500. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa904245ce73f58ebaec6fc3f6e388525"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;string&gt; <a class="el" href="a00056.html#aa904245ce73f58ebaec6fc3f6e388525">ATT_MSSDK.InAppMessaging.MessageListRequest.MessageIds</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the list of message Ids. </p>
+
+</div>
+</div>
+<a class="anchor" id="a78ea028215a07ff287db7132cf0b379f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="a00056.html#a78ea028215a07ff287db7132cf0b379f">ATT_MSSDK.InAppMessaging.MessageListRequest.Offset</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the value of the Offset from the beginning of the ordered set of messages. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad0459605bc3d53202f1998f1077245bc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string <a class="el" href="a00056.html#ad0459605bc3d53202f1998f1077245bc">ATT_MSSDK.InAppMessaging.MessageListRequest.Type</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the value of <a class="el" href="a00050.html" title="Container for message.">Message</a> Type Filter. Possible values are: SMS, MMS. </p>
 
 </div>
 </div>
@@ -138,13 +265,14 @@ Properties</h2></td></tr>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="a00201.html">ATT_MSSDK</a>      </li>
-      <li class="navelem"><a class="el" href="a00207.html">MMSv3</a>      </li>
-      <li class="navelem"><a class="el" href="a00056.html">MmsDeliveryStatus</a>      </li>
+      <li class="navelem"><a class="el" href="a00209.html">ATT_MSSDK</a>      </li>
+      <li class="navelem"><a class="el" href="a00213.html">InAppMessaging</a>      </li>
+      <li class="navelem"><a class="el" href="a00056.html">MessageListRequest</a>      </li>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:10 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

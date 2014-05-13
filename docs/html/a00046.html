@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.SMSv3.InboundSmsMessageList Class Reference</title>
+<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.Speechv3.Interpretation Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -100,112 +100,71 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#properties">Properties</a>  </div>
   <div class="headertitle">
-<div class="title">ATT_MSSDK.SMSv3.InboundSmsMessageList Class Reference</div>  </div>
+<div class="title">ATT_MSSDK.Speechv3.Interpretation Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Response from server to InboundSms request.  
+<p>Encapsulates Interpretation info returned in speech to text response.  
  <a href="a00046.html#details">More...</a></p>
 
-<p><a href="a00306.html">List of all members.</a></p>
+<p><a href="a00322.html">List of all members.</a></p>
 <table class="memberdecls">
-<tr><td colspan="2"><h2><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:ab10e08fcd6b1f8ea595fd5479e392b67"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00046.html#ab10e08fcd6b1f8ea595fd5479e392b67">InboundSmsMessageList</a> ()</td></tr>
-<tr class="memdesc:ab10e08fcd6b1f8ea595fd5479e392b67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="a00046.html" title="Response from server to InboundSms request.">InboundSmsMessageList</a> class.  <a href="#ab10e08fcd6b1f8ea595fd5479e392b67"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a026ada433e4e6e82a576c2a822a161f4"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="a00045.html">InboundSmsMessage</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00046.html#a026ada433e4e6e82a576c2a822a161f4">InboundSmsMessage</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a026ada433e4e6e82a576c2a822a161f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the list of inbound SMS messages. Object containing SMS message.  <a href="#a026ada433e4e6e82a576c2a822a161f4"></a><br/></td></tr>
-<tr class="memitem:ac6e5fbfd99479f0ea7a068f68c09fe4d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00046.html#ac6e5fbfd99479f0ea7a068f68c09fe4d">NumberOfMessagesInThisBatch</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ac6e5fbfd99479f0ea7a068f68c09fe4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the number of messages in this batch. Number of messages that was sent in this (batch) response.  <a href="#ac6e5fbfd99479f0ea7a068f68c09fe4d"></a><br/></td></tr>
-<tr class="memitem:a78fc64259fb69c360b4dd98712799fdc"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00046.html#a78fc64259fb69c360b4dd98712799fdc">ResourceUrl</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a78fc64259fb69c360b4dd98712799fdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the resource URL. The endpoint URL that served this request.  <a href="#a78fc64259fb69c360b4dd98712799fdc"></a><br/></td></tr>
-<tr class="memitem:abdebc62012e7e726c564bd5a0771c7b6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00046.html#abdebc62012e7e726c564bd5a0771c7b6">TotalNumberOfPendingMessages</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:abdebc62012e7e726c564bd5a0771c7b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the total number of pending messages. Total number of messages pending that are yet to be retrieved from the server for the given registrationId (short code).  <a href="#abdebc62012e7e726c564bd5a0771c7b6"></a><br/></td></tr>
+<tr class="memitem:a5d142292461b72a3afa2c45bacd076ca"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00046.html#a5d142292461b72a3afa2c45bacd076ca">Genre_id</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a5d142292461b72a3afa2c45bacd076ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets genre_id.  <a href="#a5d142292461b72a3afa2c45bacd076ca"></a><br/></td></tr>
+<tr class="memitem:aaa41718f2928510d0cc20bf3f5edc08c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00046.html#aaa41718f2928510d0cc20bf3f5edc08c">Genre_words</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:aaa41718f2928510d0cc20bf3f5edc08c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets genre_words.  <a href="#aaa41718f2928510d0cc20bf3f5edc08c"></a><br/></td></tr>
+<tr class="memitem:a3471ae63ab628f3e56e23b3cf71f14eb"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00046.html#a3471ae63ab628f3e56e23b3cf71f14eb">Station_name</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a3471ae63ab628f3e56e23b3cf71f14eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets station_name.  <a href="#a3471ae63ab628f3e56e23b3cf71f14eb"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Response from server to InboundSms request. </p>
-</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ab10e08fcd6b1f8ea595fd5479e392b67"></a>
+<div class="textblock"><p>Encapsulates Interpretation info returned in speech to text response. </p>
+</div><hr/><h2>Property Documentation</h2>
+<a class="anchor" id="a5d142292461b72a3afa2c45bacd076ca"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00046.html#ab10e08fcd6b1f8ea595fd5479e392b67">ATT_MSSDK.SMSv3.InboundSmsMessageList.InboundSmsMessageList</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">string <a class="el" href="a00046.html#a5d142292461b72a3afa2c45bacd076ca">ATT_MSSDK.Speechv3.Interpretation.Genre_id</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Initializes a new instance of the <a class="el" href="a00046.html" title="Response from server to InboundSms request.">InboundSmsMessageList</a> class. </p>
+<p>Gets or sets genre_id. </p>
 
 </div>
 </div>
-<hr/><h2>Property Documentation</h2>
-<a class="anchor" id="a026ada433e4e6e82a576c2a822a161f4"></a>
+<a class="anchor" id="aaa41718f2928510d0cc20bf3f5edc08c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">List&lt;<a class="el" href="a00045.html">InboundSmsMessage</a>&gt; <a class="el" href="a00046.html#a026ada433e4e6e82a576c2a822a161f4">ATT_MSSDK.SMSv3.InboundSmsMessageList.InboundSmsMessage</a><code> [get, set]</code></td>
+          <td class="memname">string <a class="el" href="a00046.html#aaa41718f2928510d0cc20bf3f5edc08c">ATT_MSSDK.Speechv3.Interpretation.Genre_words</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets the list of inbound SMS messages. Object containing SMS message. </p>
+<p>Gets or sets genre_words. </p>
 
 </div>
 </div>
-<a class="anchor" id="ac6e5fbfd99479f0ea7a068f68c09fe4d"></a>
+<a class="anchor" id="a3471ae63ab628f3e56e23b3cf71f14eb"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="a00046.html#ac6e5fbfd99479f0ea7a068f68c09fe4d">ATT_MSSDK.SMSv3.InboundSmsMessageList.NumberOfMessagesInThisBatch</a><code> [get, set]</code></td>
+          <td class="memname">string <a class="el" href="a00046.html#a3471ae63ab628f3e56e23b3cf71f14eb">ATT_MSSDK.Speechv3.Interpretation.Station_name</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets the number of messages in this batch. Number of messages that was sent in this (batch) response. </p>
-
-</div>
-</div>
-<a class="anchor" id="a78fc64259fb69c360b4dd98712799fdc"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00046.html#a78fc64259fb69c360b4dd98712799fdc">ATT_MSSDK.SMSv3.InboundSmsMessageList.ResourceUrl</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the resource URL. The endpoint URL that served this request. </p>
-
-</div>
-</div>
-<a class="anchor" id="abdebc62012e7e726c564bd5a0771c7b6"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="a00046.html#abdebc62012e7e726c564bd5a0771c7b6">ATT_MSSDK.SMSv3.InboundSmsMessageList.TotalNumberOfPendingMessages</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the total number of pending messages. Total number of messages pending that are yet to be retrieved from the server for the given registrationId (short code). </p>
+<p>Gets or sets station_name. </p>
 
 </div>
 </div>
@@ -213,13 +172,14 @@ Properties</h2></td></tr>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="a00201.html">ATT_MSSDK</a>      </li>
-      <li class="navelem"><a class="el" href="a00211.html">SMSv3</a>      </li>
-      <li class="navelem"><a class="el" href="a00046.html">InboundSmsMessageList</a>      </li>
+      <li class="navelem"><a class="el" href="a00209.html">ATT_MSSDK</a>      </li>
+      <li class="navelem"><a class="el" href="a00218.html">Speechv3</a>      </li>
+      <li class="navelem"><a class="el" href="a00046.html">Interpretation</a>      </li>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:11 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

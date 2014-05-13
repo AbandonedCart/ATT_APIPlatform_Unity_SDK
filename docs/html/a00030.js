@@ -1,6 +1,6 @@
 var a00030 =
 [
-    [ "DeliveryInfoList", "a00030.html#aef2bb225abfe73fbb582fb8645bddbf0", null ],
-    [ "DeliveryInfo", "a00030.html#a6c9cacdbde4b857b7f8a986b5e201da5", null ],
-    [ "ResourceURL", "a00030.html#a1ef3958a6837b4d9e39ce26ca12287a3", null ]
+    [ "FileRepository", "a00030.html#ae22ca0e5bf57c477c308855a7c89408e", null ],
+    [ "GetToken", "a00030.html#ac20a2ca636b78a0d25d2144047b28cc3", null ],
+    [ "SaveToken", "a00030.html#a5887778a161740d3d3d162c63213cf2f", null ]
 ];

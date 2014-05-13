@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: Short Message Service Cookbook</title>
+<title>AT&amp;T API Platform SDK for Microsoft: Speech Service Cookbook</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -100,90 +100,40 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Short Message Service Cookbook </div>  </div>
+<div class="title">Speech Service Cookbook </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h2><a class="anchor" id="sms_overview"></a>
+<div class="textblock"><h2><a class="anchor" id="speech_overview"></a>
 Overview</h2>
-<p>This cookbook shows you how to develop a Short Message Service (SMS) application using the Platform SDK for Microsoft. <br/>
+<p>This cookbook shows you how to develop a Speech Service application using the Platform SDK for Microsoft. <br/>
  The Platform SDK for Microsoft provides the following methods: </p>
 <ul>
 <li>
-Send SMS  </li>
-<li>
-Get SMS Delivery Response  </li>
-<li>
-Get SMS  </li>
-<li>
-Receive SMS  </li>
-<li>
-Receive SMS Delivery Status  </li>
+SpeechToText  </li>
 </ul>
 <p>To use these methods in an application, perform the following steps: </p>
 <ol type="1">
-<li>Add a reference to the SDK as shown in the <a class="el" href="a00011.html">About the Cookbooks </a> section and import the <a class="el" href="a00211.html" title="Core namespace for Short Message Service Version 2.">ATT_MSSDK.SMSv3</a> namespace. <br/>
+<li>Add a reference to the SDK as shown in the <a class="el" href="a00008.html">About the Cookbooks </a> section and import the <a class="el" href="a00218.html" title="Core namespace for Speech Service Version 3.">ATT_MSSDK.Speechv3</a> namespace. <br/>
 </li>
-<li>Create an instance of <a class="el" href="a00074.html">RequestFactory </a> with the scope type RequestFactory.ScopeTypes.SMS, as shown in the <a class="el" href="a00011.html">About the Cookbooks </a> section. <br/>
+<li>Create an instance of <a class="el" href="a00081.html">RequestFactory </a> with the scope type RequestFactory.ScopeTypes.Speech, as shown in the <a class="el" href="a00008.html">About the Cookbooks </a> section. <br/>
 </li>
-<li>Invoke the Short Message Service methods using the <a class="el" href="a00074.html">RequestFactory </a> instance. </li>
+<li>Invoke the Speech Service methods using the <a class="el" href="a00081.html">RequestFactory </a> instance. </li>
 </ol>
-<h2><a class="anchor" id="send_sms"></a>
-Sending an SMS Message</h2>
-<p>To send an SMS message, invoke the <a class="el" href="a00241.html#gaeefbb66a9e2f543fa2bd5ff9b51d4925">SendSms </a> method using the <a class="el" href="a00074.html">RequestFactory </a> instance by passing the destination address (mobile number), and the message text as arguments. This method sends an SMS message to the mobile device, as shown in the following code example. </p>
-<div class="fragment"><pre class="fragment"> <span class="keywordtype">string</span> phonenumber = <span class="stringliteral">&quot;xxxxxxxxxx&quot;</span>;
- <span class="keywordtype">string</span> message = <span class="stringliteral">&quot;xxxxx&quot;</span>;
-  <span class="comment">// If true the application expects a delivery status notification.</span>
- <span class="comment">// The default value is null.</span>
- <span class="keywordtype">bool</span> notifyDeliveryStatus = <span class="keyword">true</span>;
- SmsResponse resp = this.requestFactory.SendSms(phonenumber, message, notifyDeliveryStatus);
-</pre></div> <h2><a class="anchor" id="sms_status"></a>
-Getting an SMS Delivery Response</h2>
-<p>To get the status of an SMS delivery request, invoke the <a class="el" href="a00241.html#ga461da3af5f8afed2d10a7e8da2811505">GetSmsDeliveryResponse </a> method using the <a class="el" href="a00074.html">RequestFactory </a> instance, as shown in the following code example. This method enables applications to retrieve the status of a previously submitted SMS delivery request that was accepted by the AT&amp;T Network for delivery to the destination mobile device. The identifier returned in the response of the corresponding call to the <a class="el" href="a00241.html#gaeefbb66a9e2f543fa2bd5ff9b51d4925">SendSms </a> method must be provided as a parameter to the <a class="el" href="a00241.html#ga461da3af5f8afed2d10a7e8da2811505">GetSmsDeliveryResponse </a> method. </p>
-<div class="fragment"><pre class="fragment"> <span class="keywordtype">string</span> smsId = <span class="stringliteral">&quot;xxxxxxxxxxxxxxx&quot;</span>;
- SmsDeliveryResponse resp = this.requestFactory.GetSmsDeliveryResponse(smsId);
-</pre></div> <h2><a class="anchor" id="sms_receive"></a>
-Receive SMS</h2>
-<p>When you register an application with the AT&amp;T Developer Program at <a href="https://developer.att.com,">https://developer.att.com,</a> you get a short code that identifies the application on the AT&amp;T Mobile Network. Messages, such as SMS, that are sent to your application over the network are sent to this short code. To process these messages in your application, you must retrieve them from the platform using the application short code. <br/>
- <br/>
- There are two different techniques for retrieving the messages sent to your application: </p>
-<ul>
-<li>
-Poll for received messages and retrieve them in a batch. </li>
-<li>
-Create a callback listener mechanism to have the messages forwarded from the platform to your application as they are received. <ul>
-</ul>
-</li>
-</ul>
-<h3><a class="anchor" id="receivesms_technique_1"></a>
-Polling for Messages</h3>
-<p>To poll for messages in your application, invoke the ReceiveSms method using the <a class="el" href="a00074.html">RequestFactory </a> instance as shown in the following code example. This method lets you receive multiple SMS messages that were sent to your application short-code from the AT&amp;T Mobile Network. </p>
-<div class="fragment"><pre class="fragment"> <span class="keywordtype">string</span> shortCode = <span class="stringliteral">&quot;xxxxxxxxxxx&quot;</span>;
- InboundSmsMessageList message = this.requestFactory.ReceiveSms(shortCode);
-</pre></div> <h3><a class="anchor" id="receivesms_technique_2"></a>
-Receiving Messages Using a Callback Listener</h3>
-<p>To receive Mobile Originated SMS messages that were sent to your application short code instantaneously, register a callback listener application URL with the AT&amp;T Developer Program at <a href="https://developer.att.com">https://developer.att.com</a>. The URL that you register is used by the AT&amp;T Platform to forward the received messages to your application. <br/>
- <br/>
- To receive SMS messages, invoke the GetSMS method using the <a class="el" href="a00074.html">RequestFactory </a> class by passing a System.IO.Stream object as an argument to the method, as shown in the following code example. </p>
-<div class="fragment"><pre class="fragment"> <span class="comment">// .NET Framework Request.InputStream </span>
- <span class="comment">// gets the contents of the incoming http entity body.</span>
- System.IO.Stream stream = Request.InputStream; 
- ReceivedSMS message = RequestFactory.GetSMS(stream);
-</pre></div> <h2><a class="anchor" id="sms_receive_status"></a>
-Getting the Delivery Status of a Sent SMS Message</h2>
-<p>To get the final delivery status of the SMS messages sent by your application, register a listener endpoint with the AT&amp;T system during the application registration process or add a listener endpoint to the application profile during an update of the application. The endpoint is then associated with the short code assigned to the application. Your application must set the notifyDeliveryStatus parameter to true in the sendSms call to get delivery notifications. <br/>
- *To receive SMS Delivery Status, invoke the GetSmsDeliveryStatus method using the <a class="el" href="a00074.html">RequestFactory </a> class by passing a System.IO.Stream as an argument to the method, as shown in the following code example. </p>
-<div class="fragment"><pre class="fragment"> <span class="comment">// .NET Framework Request.InputStream </span>
- <span class="comment">// gets the contents of the incoming http entity body.</span>
- System.IO.Stream stream = Request.InputStream;
- SmsDeliveryStatus smsDeliveryStatus = RequestFactory.GetSmsDeliveryStatus(stream);
+<h2><a class="anchor" id="speech_send"></a>
+Converting Spoken Audio to Text</h2>
+<p>To convert the spoken audio to text, invoke the <a class="el" href="a00244.html#ga7cd72f1ae03a20bf18ad108bdaf721ee">SpeechToText </a> method using the <a class="el" href="a00081.html">RequestFactory </a> instance by passing an audio file name and the context to be applied for Speech to Text conversion as shown in the following code example. </p>
+<div class="fragment"><pre class="fragment"> <span class="comment">// Path of the audio file which needs to convert to text</span>
+ <span class="keywordtype">string</span> fileToUpload = <span class="stringliteral">&quot;xxxxxxxxx\\xxxxxxxx\\xxxxx&quot;</span>; 
+ SpeechResponse response = this.requestFactory.SpeechToText(fileToUpload, <a class="code" href="a00209.html#a0819fd63a02e491c703c42c89f4e797a" title="X-Speech Context, the speech context to be applied to the transcribed text. X-Speech Context Enum has...">XSpeechContext</a>.Generic);
 </pre></div> </div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:10 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

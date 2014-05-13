@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.SMSv3.InboundSmsMessage Class Reference</title>
+<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.Speechv3.Info Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -100,117 +100,122 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#properties">Properties</a>  </div>
   <div class="headertitle">
-<div class="title">ATT_MSSDK.SMSv3.InboundSmsMessage Class Reference</div>  </div>
+<div class="title">ATT_MSSDK.Speechv3.Info Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Encapsulation of response to an inbound SMS message.  
+<p>Encapsulates Info data returned in speect to text response.  
  <a href="a00045.html#details">More...</a></p>
 
-<p><a href="a00305.html">List of all members.</a></p>
+<p><a href="a00321.html">List of all members.</a></p>
 <table class="memberdecls">
-<tr><td colspan="2"><h2><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a87b583df0af4cd39823c02a340596b47"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00045.html#a87b583df0af4cd39823c02a340596b47">InboundSmsMessage</a> ()</td></tr>
-<tr class="memdesc:a87b583df0af4cd39823c02a340596b47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="a00045.html" title="Encapsulation of response to an inbound SMS message.">InboundSmsMessage</a> class.  <a href="#a87b583df0af4cd39823c02a340596b47"></a><br/></td></tr>
-<tr class="memitem:a4199ef4625be4a1ab06ace6d43986a36"><td class="memItemLeft" align="right" valign="top">override string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00045.html#a4199ef4625be4a1ab06ace6d43986a36">ToString</a> ()</td></tr>
-<tr class="memdesc:a4199ef4625be4a1ab06ace6d43986a36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert object a string.  <a href="#a4199ef4625be4a1ab06ace6d43986a36"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:af34b694a2cf50d3cbf65074d43e4049d"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00045.html#af34b694a2cf50d3cbf65074d43e4049d">MessageId</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:af34b694a2cf50d3cbf65074d43e4049d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the MessageId. Unique identifier of the message.  <a href="#af34b694a2cf50d3cbf65074d43e4049d"></a><br/></td></tr>
-<tr class="memitem:a7bfe75c0bdf75f88ed441d32a28e9478"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00045.html#a7bfe75c0bdf75f88ed441d32a28e9478">Message</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a7bfe75c0bdf75f88ed441d32a28e9478"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Message text.  <a href="#a7bfe75c0bdf75f88ed441d32a28e9478"></a><br/></td></tr>
-<tr class="memitem:a5362b8d5402b7c95546165e769fe903a"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00045.html#a5362b8d5402b7c95546165e769fe903a">SenderAddress</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a5362b8d5402b7c95546165e769fe903a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the SenderAddress. Mobile number of the sender.  <a href="#a5362b8d5402b7c95546165e769fe903a"></a><br/></td></tr>
+<tr class="memitem:add0580076badbd38dec99ed9f77d2bd9"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00045.html#add0580076badbd38dec99ed9f77d2bd9">ActionType</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:add0580076badbd38dec99ed9f77d2bd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets actionType It is a string with either “EPG” or “COMMAND” indicating the high level action to be associated with the result.  <a href="#add0580076badbd38dec99ed9f77d2bd9"></a><br/></td></tr>
+<tr class="memitem:ad32d2f2f27451caddee091c10591196e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00046.html">Interpretation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00045.html#ad32d2f2f27451caddee091c10591196e">Interpretation</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ad32d2f2f27451caddee091c10591196e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets interpretation It is a dictionary containing slots that provide semantic meaning to the recognized utterances. This dictionary will normally be derived from the top n-best nluHypothesis dictionary. Slots used are: “cast”,“title”, “station.name”, “genre.id”, “genre.words”, and “station.number.  <a href="#ad32d2f2f27451caddee091c10591196e"></a><br/></td></tr>
+<tr class="memitem:a8567a66fc529ac7c6732c0b5f95eb47c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00060.html">Metrics</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00045.html#a8567a66fc529ac7c6732c0b5f95eb47c">Metrics</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a8567a66fc529ac7c6732c0b5f95eb47c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets metrics. <a class="el" href="a00060.html" title="Encapsulates Metrics data returned in speect to text response.">Metrics</a> is a dictionary with items that show metric-information about the received audio-file, namely: audioTime and audioBytes.  <a href="#a8567a66fc529ac7c6732c0b5f95eb47c"></a><br/></td></tr>
+<tr class="memitem:abe58d8b00ce8f18f478d8caa587f7f0b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00045.html#abe58d8b00ce8f18f478d8caa587f7f0b">Recognized</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:abe58d8b00ce8f18f478d8caa587f7f0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets recognized the recognition result used to produce the search results- usually the same as the top n-best resultText string.  <a href="#abe58d8b00ce8f18f478d8caa587f7f0b"></a><br/></td></tr>
+<tr class="memitem:acd5a93ecafcd3809d7fa9f2bdf4c762d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00085.html">Search</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00045.html#acd5a93ecafcd3809d7fa9f2bdf4c762d">Search</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:acd5a93ecafcd3809d7fa9f2bdf4c762d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets search the search dictionary contains the results of the search on the EPG database for the requested lineup (market ID). If the search feature has been disabled, the “search” field will not be present.  <a href="#acd5a93ecafcd3809d7fa9f2bdf4c762d"></a><br/></td></tr>
+<tr class="memitem:adf736ee196d5df7a767e487429fc4e2f"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00045.html#adf736ee196d5df7a767e487429fc4e2f">Version</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:adf736ee196d5df7a767e487429fc4e2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets version. Version is a string indicating the version of the processor providing the response.  <a href="#adf736ee196d5df7a767e487429fc4e2f"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Encapsulation of response to an inbound SMS message. </p>
-</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a87b583df0af4cd39823c02a340596b47"></a>
+<div class="textblock"><p>Encapsulates Info data returned in speect to text response. </p>
+</div><hr/><h2>Property Documentation</h2>
+<a class="anchor" id="add0580076badbd38dec99ed9f77d2bd9"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00045.html#a87b583df0af4cd39823c02a340596b47">ATT_MSSDK.SMSv3.InboundSmsMessage.InboundSmsMessage</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">string <a class="el" href="a00045.html#add0580076badbd38dec99ed9f77d2bd9">ATT_MSSDK.Speechv3.Info.ActionType</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Initializes a new instance of the <a class="el" href="a00045.html" title="Encapsulation of response to an inbound SMS message.">InboundSmsMessage</a> class. </p>
+<p>Gets or sets actionType It is a string with either “EPG” or “COMMAND” indicating the high level action to be associated with the result. </p>
 
 </div>
 </div>
-<hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a4199ef4625be4a1ab06ace6d43986a36"></a>
+<a class="anchor" id="ad32d2f2f27451caddee091c10591196e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">override string <a class="el" href="a00045.html#a4199ef4625be4a1ab06ace6d43986a36">ATT_MSSDK.SMSv3.InboundSmsMessage.ToString</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname"><a class="el" href="a00046.html">Interpretation</a> <a class="el" href="a00045.html#ad32d2f2f27451caddee091c10591196e">ATT_MSSDK.Speechv3.Info.Interpretation</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Convert object a string. </p>
-<dl class="section return"><dt>Returns:</dt><dd>Returns this instance of <a class="el" href="a00045.html" title="Encapsulation of response to an inbound SMS message.">InboundSmsMessage</a> as a string</dd></dl>
+<p>Gets or sets interpretation It is a dictionary containing slots that provide semantic meaning to the recognized utterances. This dictionary will normally be derived from the top n-best nluHypothesis dictionary. Slots used are: “cast”,“title”, “station.name”, “genre.id”, “genre.words”, and “station.number. </p>
 
 </div>
 </div>
-<hr/><h2>Property Documentation</h2>
-<a class="anchor" id="a7bfe75c0bdf75f88ed441d32a28e9478"></a>
+<a class="anchor" id="a8567a66fc529ac7c6732c0b5f95eb47c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="a00045.html#a7bfe75c0bdf75f88ed441d32a28e9478">ATT_MSSDK.SMSv3.InboundSmsMessage.Message</a><code> [get, set]</code></td>
+          <td class="memname"><a class="el" href="a00060.html">Metrics</a> <a class="el" href="a00045.html#a8567a66fc529ac7c6732c0b5f95eb47c">ATT_MSSDK.Speechv3.Info.Metrics</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets the Message text. </p>
+<p>Gets or sets metrics. <a class="el" href="a00060.html" title="Encapsulates Metrics data returned in speect to text response.">Metrics</a> is a dictionary with items that show metric-information about the received audio-file, namely: audioTime and audioBytes. </p>
 
 </div>
 </div>
-<a class="anchor" id="af34b694a2cf50d3cbf65074d43e4049d"></a>
+<a class="anchor" id="abe58d8b00ce8f18f478d8caa587f7f0b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="a00045.html#af34b694a2cf50d3cbf65074d43e4049d">ATT_MSSDK.SMSv3.InboundSmsMessage.MessageId</a><code> [get, set]</code></td>
+          <td class="memname">string <a class="el" href="a00045.html#abe58d8b00ce8f18f478d8caa587f7f0b">ATT_MSSDK.Speechv3.Info.Recognized</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets the MessageId. Unique identifier of the message. </p>
+<p>Gets or sets recognized the recognition result used to produce the search results- usually the same as the top n-best resultText string. </p>
 
 </div>
 </div>
-<a class="anchor" id="a5362b8d5402b7c95546165e769fe903a"></a>
+<a class="anchor" id="acd5a93ecafcd3809d7fa9f2bdf4c762d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="a00045.html#a5362b8d5402b7c95546165e769fe903a">ATT_MSSDK.SMSv3.InboundSmsMessage.SenderAddress</a><code> [get, set]</code></td>
+          <td class="memname"><a class="el" href="a00085.html">Search</a> <a class="el" href="a00045.html#acd5a93ecafcd3809d7fa9f2bdf4c762d">ATT_MSSDK.Speechv3.Info.Search</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets the SenderAddress. Mobile number of the sender. </p>
+<p>Gets or sets search the search dictionary contains the results of the search on the EPG database for the requested lineup (market ID). If the search feature has been disabled, the “search” field will not be present. </p>
+
+</div>
+</div>
+<a class="anchor" id="adf736ee196d5df7a767e487429fc4e2f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string <a class="el" href="a00045.html#adf736ee196d5df7a767e487429fc4e2f">ATT_MSSDK.Speechv3.Info.Version</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets version. Version is a string indicating the version of the processor providing the response. </p>
 
 </div>
 </div>
@@ -218,13 +223,14 @@ Properties</h2></td></tr>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="a00201.html">ATT_MSSDK</a>      </li>
-      <li class="navelem"><a class="el" href="a00211.html">SMSv3</a>      </li>
-      <li class="navelem"><a class="el" href="a00045.html">InboundSmsMessage</a>      </li>
+      <li class="navelem"><a class="el" href="a00209.html">ATT_MSSDK</a>      </li>
+      <li class="navelem"><a class="el" href="a00218.html">Speechv3</a>      </li>
+      <li class="navelem"><a class="el" href="a00045.html">Info</a>      </li>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:11 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

@@ -1,6 +1,6 @@
 var a00099 =
 [
-    [ "UnauthorizedRequest", "a00099.html#a6c4f2736c7a91f2a05b602fb5c663463", null ],
-    [ "UnauthorizedRequest", "a00099.html#aa15e1fc584d38673089345eecdc74103", null ],
-    [ "UnauthorizedRequest", "a00099.html#ab4a3d1b2a85ba031087eb8a8e0815273", null ]
+    [ "TokenExpiredException", "a00099.html#afcf52173e1adc316a032017de1081dec", null ],
+    [ "TokenExpiredException", "a00099.html#a870b682022077b47e5ef19c13b9f5ace", null ],
+    [ "TokenExpiredException", "a00099.html#a377ff422c8fa702e57a5b79512fa1fe1", null ]
 ];

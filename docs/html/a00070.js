@@ -1,17 +1,13 @@
 var a00070 =
 [
-    [ "Cast", "a00070.html#aa4558256140f892c9c3aedecdc753ebd", null ],
-    [ "Category", "a00070.html#aa8dbbb45eb8d5294cde97f4f8d1d627a", null ],
-    [ "Description", "a00070.html#a72fd9bfd00c9253aac77aa973a018ca5", null ],
-    [ "Director", "a00070.html#a5f7d5201de36f7514830911cb19ed733", null ],
-    [ "Language", "a00070.html#ac8a927e28fafadcf1bf1755d92201cb0", null ],
-    [ "MpaaRating", "a00070.html#aff3f199cbc9941eef17018f8f2666609", null ],
-    [ "OriginalAirDate", "a00070.html#ab982b0440ca7fe64f908c2dcaea45926", null ],
-    [ "Pid", "a00070.html#a2bacf0f50839e3392f9e5ed3074c76e3", null ],
-    [ "RunTime", "a00070.html#ac8534c121a04d86d9830ce866195debc", null ],
-    [ "ShowType", "a00070.html#ac705ee3c1a42cf2592f04b4a05237562", null ],
-    [ "StarRating", "a00070.html#a32293c0bdafd3d40008d40037c5b3a3a", null ],
-    [ "Subtitle", "a00070.html#ae434f72653882dab5a1dc0a0458ccf08", null ],
-    [ "Title", "a00070.html#a1513d5ef11a2f4016bfb0a13c6c18f37", null ],
-    [ "Year", "a00070.html#aa7e97bd7791a91b873597cdf0952fd21", null ]
+    [ "OAuthToken", "a00070.html#aaa82dab217c90da5be8df83c6fc7fa62", null ],
+    [ "OAuthToken", "a00070.html#a15340c26c978a125f44704c313ab293e", null ],
+    [ "IsExpired", "a00070.html#a55b4bbb3fadaba8290ab60fc922e0692", null ],
+    [ "ParseJSON", "a00070.html#a15436e016666cbcb6dd4a8509e7e862b", null ],
+    [ "ToString", "a00070.html#ad54a3413fcd1fdd99d347d300ebcab34", null ],
+    [ "AccessToken", "a00070.html#a72267dcf27ece9e20c4ff37fa9b0986c", null ],
+    [ "CreationTime", "a00070.html#aa28de4ddc03170b571e189b92d0bda6d", null ],
+    [ "Expiration", "a00070.html#a14400849daee1344560959bfaa6dcfa8", null ],
+    [ "ExpiresIn", "a00070.html#afe45ccf2e6cafba89138ae26f1e45d57", null ],
+    [ "RefreshToken", "a00070.html#ab922be04d1147f61e4f2ae462cd4e9a5", null ]
 ];

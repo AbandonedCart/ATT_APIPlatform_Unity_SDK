@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.MMSv3.MmsResponse Class Reference</title>
+<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.InAppMessaging.MessageMetadata Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -102,61 +102,69 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#properties">Properties</a>  </div>
   <div class="headertitle">
-<div class="title">ATT_MSSDK.MMSv3.MmsResponse Class Reference</div>  </div>
+<div class="title">ATT_MSSDK.InAppMessaging.MessageMetadata Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>The response to a Send MMS request.  
+<p>Container for objects that lists the messages that have been added/deleted/updated.  
  <a href="a00057.html#details">More...</a></p>
-<div class="dynheader">
-Inheritance diagram for ATT_MSSDK.MMSv3.MmsResponse:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="a00057.png" usemap="#ATT_MSSDK.MMSv3.MmsResponse_map" alt=""/>
-  <map id="ATT_MSSDK.MMSv3.MmsResponse_map" name="ATT_MSSDK.MMSv3.MmsResponse_map">
-<area href="a00077.html" title="Abstract base class for all Response objects." alt="ATT_MSSDK.Response" shape="rect" coords="0,0,219,24"/>
-</map>
- </div></div>
 
-<p><a href="a00280.html">List of all members.</a></p>
+<p><a href="a00282.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a55e63eedcf52e0daa94306cfbb829641"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00057.html#a55e63eedcf52e0daa94306cfbb829641">MessageId</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a55e63eedcf52e0daa94306cfbb829641"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Id value returned by the server. A unique identifier for the message.  <a href="#a55e63eedcf52e0daa94306cfbb829641"></a><br/></td></tr>
-<tr class="memitem:a98d5012713606b3bb34bf07fdf7fe376"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00057.html#a98d5012713606b3bb34bf07fdf7fe376">ResourceURL</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a98d5012713606b3bb34bf07fdf7fe376"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the ResourceURL value returned by the server. The URL that can be used to provide network delivery status of the sent message.  <a href="#a98d5012713606b3bb34bf07fdf7fe376"></a><br/></td></tr>
+<tr class="memitem:a358c5c2b94b4bbe13b5fd69720299aa0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00057.html#a358c5c2b94b4bbe13b5fd69720299aa0">IsFavorite</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a358c5c2b94b4bbe13b5fd69720299aa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of IsFavorite. Favorite indicator.  <a href="#a358c5c2b94b4bbe13b5fd69720299aa0"></a><br/></td></tr>
+<tr class="memitem:a551e45c8f1000254d22ff5ff3496755a"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00057.html#a551e45c8f1000254d22ff5ff3496755a">MessageId</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a551e45c8f1000254d22ff5ff3496755a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the id of the message that has either been added, deleted or updated.  <a href="#a551e45c8f1000254d22ff5ff3496755a"></a><br/></td></tr>
+<tr class="memitem:a34cb80e416baec1b4f1bc4df459f938a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00057.html#a34cb80e416baec1b4f1bc4df459f938a">IsUnread</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a34cb80e416baec1b4f1bc4df459f938a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of IsUnread. Indicates if message is unread.  <a href="#a34cb80e416baec1b4f1bc4df459f938a"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>The response to a Send MMS request. </p>
+<div class="textblock"><p>Container for objects that lists the messages that have been added/deleted/updated. </p>
 </div><hr/><h2>Property Documentation</h2>
-<a class="anchor" id="a55e63eedcf52e0daa94306cfbb829641"></a>
+<a class="anchor" id="a358c5c2b94b4bbe13b5fd69720299aa0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="a00057.html#a55e63eedcf52e0daa94306cfbb829641">ATT_MSSDK.MMSv3.MmsResponse.MessageId</a><code> [get, set]</code></td>
+          <td class="memname">bool <a class="el" href="a00057.html#a358c5c2b94b4bbe13b5fd69720299aa0">ATT_MSSDK.InAppMessaging.MessageMetadata.IsFavorite</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets the Id value returned by the server. A unique identifier for the message. </p>
+<p>Gets or sets the value of IsFavorite. Favorite indicator. </p>
 
 </div>
 </div>
-<a class="anchor" id="a98d5012713606b3bb34bf07fdf7fe376"></a>
+<a class="anchor" id="a34cb80e416baec1b4f1bc4df459f938a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="a00057.html#a98d5012713606b3bb34bf07fdf7fe376">ATT_MSSDK.MMSv3.MmsResponse.ResourceURL</a><code> [get, set]</code></td>
+          <td class="memname">bool <a class="el" href="a00057.html#a34cb80e416baec1b4f1bc4df459f938a">ATT_MSSDK.InAppMessaging.MessageMetadata.IsUnread</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets the ResourceURL value returned by the server. The URL that can be used to provide network delivery status of the sent message. </p>
+<p>Gets or sets the value of IsUnread. Indicates if message is unread. </p>
+
+</div>
+</div>
+<a class="anchor" id="a551e45c8f1000254d22ff5ff3496755a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string <a class="el" href="a00057.html#a551e45c8f1000254d22ff5ff3496755a">ATT_MSSDK.InAppMessaging.MessageMetadata.MessageId</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the id of the message that has either been added, deleted or updated. </p>
 
 </div>
 </div>
@@ -164,13 +172,14 @@ Properties</h2></td></tr>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="a00201.html">ATT_MSSDK</a>      </li>
-      <li class="navelem"><a class="el" href="a00207.html">MMSv3</a>      </li>
-      <li class="navelem"><a class="el" href="a00057.html">MmsResponse</a>      </li>
+      <li class="navelem"><a class="el" href="a00209.html">ATT_MSSDK</a>      </li>
+      <li class="navelem"><a class="el" href="a00213.html">InAppMessaging</a>      </li>
+      <li class="navelem"><a class="el" href="a00057.html">MessageMetadata</a>      </li>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:10 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

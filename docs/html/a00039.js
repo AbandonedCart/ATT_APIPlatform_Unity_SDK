@@ -1,6 +1,6 @@
 var a00039 =
 [
-    [ "GetMessageHeadersResponse", "a00039.html#ab3427d51d25a1097872a21b7bfa622c0", null ],
-    [ "ParseJSON", "a00039.html#a33b51c156e8e1d53424ae2d9bb5acb1b", null ],
-    [ "MessageHeadersList", "a00039.html#a437c805736323afb226d4b421b72e2b0", null ]
+    [ "ImageUrl", "a00039.html#a3c64e262bdb43a25a534edab3b5e15a6", null ],
+    [ "Image", "a00039.html#a8255f65c1b46b86d98a9c4d21cc58b8e", null ],
+    [ "Track", "a00039.html#a9037c93ffdf5676acebf15be4740bfaa", null ]
 ];

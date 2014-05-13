@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: About the Cookbooks</title>
+<title>AT&amp;T API Platform SDK for Microsoft: Installation Guide</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -100,40 +100,154 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="headertitle">
-<div class="title">About the Cookbooks </div>  </div>
+<div class="title">Installation Guide </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h2><a class="anchor" id="cb_overview"></a>
-Overview</h2>
-<p>The Platform SDK for Microsoft contains a <a class="el" href="a00074.html" title="The RequestFactory manages the connections and calls to the AT&amp;T API Platform.">RequestFactory</a> class that provides methods for the AT&amp;T Platform services. Apps create an instance of <a class="el" href="a00074.html" title="The RequestFactory manages the connections and calls to the AT&amp;T API Platform.">RequestFactory</a> using parameters that identify both the application and the services the application uses. To use these methods in an application, perform the following steps: </p>
-<ol type="1">
-<li>Add a reference to the SDK <br/>
+<div class="textblock"><table  id="one" style="background-color: #EF9E20; margin: 1em 0px; width: 100%; height: 33px;">
+<tr valign="center">
+<td style="BACKGROUND-COLOR: #EF9E20; font-weight:bold !important; PADDING-LEFT: 10px; WIDTH: 192px; font-family:Verdana, Geneva, Arial, Helvetica, sans-serif; COLOR: white; FONT-SIZE: 12pt">Installation prerequisites  </td></tr>
+</table>
+<table  style="width: 100%;">
+<tr>
+<td><ul>
+<li>
+For deployment: <ul>
+<li>
+Microsoft&reg; Windows Server 2008 R2 is needed.</li>
+</ul>
+<br/>
+  </li>
+<li>
+For development: <ul>
+<li>
+.NET Framework 3.5 or greater should be installed. </li>
+<li>
+Microsoft Visual Studio version 2008 or greater can be used as an IDE.</li>
+</ul>
 </li>
-<li>Create an instance of <a class="el" href="a00074.html" title="The RequestFactory manages the connections and calls to the AT&amp;T API Platform.">RequestFactory</a> </li>
+</ul>
+</td></tr>
+</table>
+<table  id="one" style="background-color: #EF9E20; margin: 1em 0px; width: 100%; height: 33px;">
+<tr valign="center">
+<td style="BACKGROUND-COLOR: #EF9E20; font-weight:bold !important; PADDING-LEFT: 10px; WIDTH: 192px; font-family:Verdana, Geneva, Arial, Helvetica, sans-serif; COLOR: white; FONT-SIZE: 12pt">Installation process  </td></tr>
+</table>
+<table  style="width: 100%;">
+<tr>
+<td><b> Installing the SDK Wrapper library </b><br/>
+ To install the SDK Wrapper library, do the following: <ol>
+<li>
+Download the SDK package from AT&amp;T developer portal.<br/>
+  </li>
+<li>
+Unzip the SDK package.  </li>
+<li>
+Copy ATT_MSSDK.dll from the bin folder in the SDK package to a bin directory in the web root of your web domain in IIS server. </li>
 </ol>
-<p>The following section explains these steps in more detail. </p>
-<h2><a class="anchor" id="cookbook_add_reference"></a>
-Step 1. Add a reference to the SDK</h2>
-<p>Add a reference to ATT_MSSDK.dll to the project, and import the <a class="el" href="a00201.html" title="Core namespace for ATT MSSDK.">ATT_MSSDK</a> namespace. </p>
-<div class="fragment"><pre class="fragment"> <span class="keyword">using</span> ATT_MSSDK;
-</pre></div> <h2><a class="anchor" id="cookbook_requestfactory"></a>
-Step 2. Create an instance of RequestFactory</h2>
-<p>To create an instance of the <a class="el" href="a00074.html" title="The RequestFactory manages the connections and calls to the AT&amp;T API Platform.">RequestFactory</a> class that identifies your application and provides access to the services your application uses, pass the API Key and Secret Key values that were assigned to your application when you registered it with AT&amp;T and pass the appropriate scope value. For example, for SMS use RequestFactory.ScopeTypes.SMS as shown in the following code snippet. </p>
-<div class="fragment"><pre class="fragment"> <span class="keywordtype">string</span> endPoint = <span class="stringliteral">&quot;xxxxxx.xxxxx.xxx&quot;</span>;
- <span class="keywordtype">string</span> apiKey = <span class="stringliteral">&quot;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;</span>;  <span class="comment">// APPLICATION key of the application as registered at developer portal.</span>
- <span class="keywordtype">string</span> secretKey = <span class="stringliteral">&quot;xxxxxxxxxxxxxxxx&quot;</span>;  <span class="comment">//Secret Key of the application as registered at developer portal.</span>
- <span class="keywordtype">string</span> redirectURI = <span class="stringliteral">&quot;xxxxxx.xxxxxxxx.xxx&quot;</span>;
- List&lt;RequestFactory.ScopeTypes&gt; scopes = <span class="keyword">new</span> List&lt;RequestFactory.ScopeTypes&gt;();
- scopes.Add(RequestFactory.ScopeTypes.CallControl);
- RequestFactory requestFactory = <span class="keyword">new</span> RequestFactory(endPoint, apiKey, secretKey, scopes, redirectURI, null);
-</pre></div> </div></div><!-- contents -->
+</td></tr>
+</table>
+<table  style="width: 100%;">
+<tr>
+<td><b>Installing the SDK Sample Applications</b><br/>
+ The AT&amp;T API Platform SDK for Microsoft contains sample applications that showcase the usage of the APIs in the SDK. <br/>
+ To install the sample applications, do the following: <ol>
+<li>
+Download the sample application package from AT&amp;T developer portal.<br/>
+  </li>
+<li>
+Unzip the contents of the sample application package.  </li>
+<li>
+Refer to the README in the sample application package for instructions on installation, configuration, and startup of the sample applications. </li>
+</ol>
+</td></tr>
+</table>
+<table  id="one" style="background-color: #EF9E20; margin: 1em 0px; width: 100%; height: 33px;">
+<tr valign="center">
+<td style="BACKGROUND-COLOR: #EF9E20; font-weight:bold !important; PADDING-LEFT: 10px; WIDTH: 192px; font-family:Verdana, Geneva, Arial, Helvetica, sans-serif; COLOR: white; FONT-SIZE: 12pt">Environment setup for C# apps  </td></tr>
+</table>
+<table  style="width: 100%;">
+<tr>
+<td>To setup your development environment for building a C# app that includes the SDK Wrapper library, you need to first create a new Web site project, and then add the SDK Wrapper library as a reference in that project. <br/>
+<br/>
+ The following steps describe how to create a new C# Web site project using Microsoft Visual Studio as the IDE: <ol>
+<li>
+Open Microsoft Visual Studio. </li>
+<li>
+On the File menu, click New Web Site. This opens the New Web Site dialog box.  </li>
+<li>
+In the New Web Site dialog box, under Visual Studio installed templates, select ASP.NET Web Site. </li>
+<li>
+In the web Location box, select File System from the dropdown menu and enter the name of the folder where you want to keep the pages of your Web site. <br/>
+ For example: C:\BasicWebSite.  </li>
+<li>
+In the Language list, click Visual C#. </li>
+<li>
+Click OK. The folder and a new page named Default.aspx application development are created. </li>
+</ol>
+</td></tr>
+</table>
+<table  style="width: 100%;">
+<tr>
+<td>The following steps describe how to add the SDK Wrapper library as a reference in the Visual Studio Web site project created above. <ol>
+<li>
+In Solution Explorer, right click on Project and select Add Reference from the dropdown menu. This will open the Add Reference dialog box. </li>
+<li>
+In the Add Reference dialog box, select the Browse tab and then select the file ATT_MSSDK.DLL. </li>
+<li>
+Click OK. A bin directory will be created under your project that contains ATT_MSSDK.DLL along with support files. </li>
+<li>
+The APIs in the SDK Wrapper library can now be referenced in your project. </li>
+</ol>
+</td></tr>
+</table>
+<table  id="one" style="background-color: #EF9E20; margin: 1em 0px; width: 100%; height: 33px;">
+<tr valign="center">
+<td style="BACKGROUND-COLOR: #EF9E20; font-weight:bold !important; PADDING-LEFT: 10px; WIDTH: 192px; font-family:Verdana, Geneva, Arial, Helvetica, sans-serif; COLOR: white; FONT-SIZE: 12pt">Environment setup for VB apps  </td></tr>
+</table>
+<table  style="width: 100%;">
+<tr>
+<td>To setup your development environment for building a VB app that includes the SDK Wrapper library, you need to first create a new Web site project, and then add the SDK Wrapper library as a reference in that project.<br/>
+<br/>
+ The following steps describe how to create a new Visual Basic Web site project using Microsoft Visual Studio as the IDE: <ol>
+<li>
+Open Microsoft Visual Studio. </li>
+<li>
+On the File menu, click New Web Site. This opens the New Web Site dialog box. </li>
+<li>
+In the New Web Site dialog box, under Visual Studio installed templates, click ASP.NET Web Site. </li>
+<li>
+In the web Location box, select File System from the dropdown menu and enter the name of the folder where you want to keep the pages of your Web site. <br/>
+For example: C:\BasicWebSite. </li>
+<li>
+In the Language list, click Visual Basic. </li>
+<li>
+Click OK. A folder and a new page named Default.aspx application development are created. </li>
+</ol>
+</td></tr>
+</table>
+<table  style="width: 100%;">
+<tr>
+<td>The following steps describe how to add the SDK Wrapper library as a reference in the Visual Studio Web site project created above. <ol>
+<li>
+In Solution Explorer, right-click on Project and select Add Reference from the dropdown menu. This will open the Add Reference dialog box. </li>
+<li>
+In the Add Reference dialog box, select the Browse tab and then select the file <a class="el" href="a00209.html" title="Core namespace for ATT MSSDK.">ATT_MSSDK</a> DLL. </li>
+<li>
+Click OK. A bin directory will be created under your project that contains <a class="el" href="a00209.html" title="Core namespace for ATT MSSDK.">ATT_MSSDK</a> DLL along with support files. </li>
+<li>
+The APIs in the SDK Wrapper library can now be referenced in your project. </li>
+</ol>
+</td></tr>
+</table>
+</div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:10 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

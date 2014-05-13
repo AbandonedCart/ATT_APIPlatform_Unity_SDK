@@ -1,12 +1,12 @@
 var a00100 =
 [
-    [ "ToString", "a00100.html#a661d4e6be7d7958d629a648fa7d56d26", null ],
-    [ "AppId", "a00100.html#ad6f9c4bc3c0236015c6ca801fe0408aa", null ],
-    [ "ClientApp", "a00100.html#a9cc87cec5ce88ac2af0728c16672d56e", null ],
-    [ "ClientScreen", "a00100.html#a6b3cf318503379642fc278568f7ee7aa", null ],
-    [ "ClientVersion", "a00100.html#a7b3639b7ca3855124716051d3172d172", null ],
-    [ "OrgId", "a00100.html#a9754cf603083ae8a3c22b509f1f0c509", null ],
-    [ "Tempo", "a00100.html#aa2da4e182591389323622e3dd1b8ce2d", null ],
-    [ "VoiceName", "a00100.html#a56f64a2ad1daff08df59f81066f69dce", null ],
-    [ "Volume", "a00100.html#ac6f3c00b0e0697708ce12ace20f8d065", null ]
+    [ "TVXArgs", "a00100.html#a0d21908ed4d47f316cb740a6b114a415", null ],
+    [ "ToString", "a00100.html#a4fc67e86da4baf6d5ba300af5593c2a7", null ],
+    [ "DeviceId", "a00100.html#aea7a6f6a30ad025a3dac5532067418d8", null ],
+    [ "FirstResultKey", "a00100.html#a16fea868985503e86d2474fae20070b0", null ],
+    [ "LastResultKey", "a00100.html#ab943f6a0eb08d5b9ebf1fedb786a67e5", null ],
+    [ "Lineup", "a00100.html#aea360ef23990a03555f89f34b979d4f3", null ],
+    [ "NumResults", "a00100.html#ae7d8ded17b74c62bcc3cb6aad07a831b", null ],
+    [ "PageRequest", "a00100.html#adfe657930bb795369f40a8acef89945c", null ],
+    [ "Search", "a00100.html#a14feba75b09589248fae01bcdf496ffd", null ]
 ];

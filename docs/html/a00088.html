@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.Speechv3.SocialMediaXArgs Class Reference</title>
+<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.IMMNv1.SendMessageResponse Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -100,117 +100,46 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#properties">Properties</a>  </div>
   <div class="headertitle">
-<div class="title">ATT_MSSDK.Speechv3.SocialMediaXArgs Class Reference</div>  </div>
+<div class="title">ATT_MSSDK.IMMNv1.SendMessageResponse Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This class contains the parameters specific to Gaming Chat sub context.  
+<p>The response to a Send Message request.  
  <a href="a00088.html#details">More...</a></p>
+<div class="dynheader">
+Inheritance diagram for ATT_MSSDK.IMMNv1.SendMessageResponse:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="a00088.png" usemap="#ATT_MSSDK.IMMNv1.SendMessageResponse_map" alt=""/>
+  <map id="ATT_MSSDK.IMMNv1.SendMessageResponse_map" name="ATT_MSSDK.IMMNv1.SendMessageResponse_map">
+<area href="a00084.html" title="Abstract base class for all Response objects." alt="ATT_MSSDK.Response" shape="rect" coords="0,0,277,24"/>
+</map>
+ </div></div>
 
-<p><a href="a00328.html">List of all members.</a></p>
+<p><a href="a00269.html">List of all members.</a></p>
 <table class="memberdecls">
-<tr><td colspan="2"><h2><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:abf03238bb1176e98572c8a0aafac0f21"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00088.html#abf03238bb1176e98572c8a0aafac0f21">SocialMediaXArgs</a> ()</td></tr>
-<tr class="memdesc:abf03238bb1176e98572c8a0aafac0f21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of <a class="el" href="a00088.html" title="This class contains the parameters specific to Gaming Chat sub context.">SocialMediaXArgs</a>.  <a href="#abf03238bb1176e98572c8a0aafac0f21"></a><br/></td></tr>
-<tr class="memitem:a3dbe69c0840d7e2b80e7145602c8311d"><td class="memItemLeft" align="right" valign="top">override string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00088.html#a3dbe69c0840d7e2b80e7145602c8311d">ToString</a> ()</td></tr>
-<tr class="memdesc:a3dbe69c0840d7e2b80e7145602c8311d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the string format of the properties.  <a href="#a3dbe69c0840d7e2b80e7145602c8311d"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a4e14f758b1141afadedc8770ead762a8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00088.html#a4e14f758b1141afadedc8770ead762a8">CommandPrefix</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a4e14f758b1141afadedc8770ead762a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of CommandPrefix. This parameter customizes the recognition by selecting a preconfigured recognition context. For some applications, phrases may include common command-like prefixes like “update twitter” or “facebook”. If you expect end-users to include these prefixes, use the “CommandPrefix=true”. Default: false.  <a href="#a4e14f758b1141afadedc8770ead762a8"></a><br/></td></tr>
-<tr class="memitem:a4ed910495f98c769497b6fee5389e55d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00088.html#a4ed910495f98c769497b6fee5389e55d">BrevityLevel</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a4ed910495f98c769497b6fee5389e55d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of BrevityLevel Control for automatic text abbreviation behavior. This setting controls abbreviation of the output for things like “LOL”. “0” disables abbreviations. Higher numbers are more aggressive, meaning it will use less common abbreviations. Default: 0.  <a href="#a4ed910495f98c769497b6fee5389e55d"></a><br/></td></tr>
-<tr class="memitem:a990e664db1b48302492b1a9611dfc853"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00088.html#a990e664db1b48302492b1a9611dfc853">SocialSites</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a990e664db1b48302492b1a9611dfc853"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of SocialSites. Use the common names of the social media sites your application supports to provide hints for better recognition results.  <a href="#a990e664db1b48302492b1a9611dfc853"></a><br/></td></tr>
+<tr class="memitem:a876e6b0ebd7bc9a3f764e61444dfdf1b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00088.html#a876e6b0ebd7bc9a3f764e61444dfdf1b">Id</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a876e6b0ebd7bc9a3f764e61444dfdf1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Id value returned by the server.  <a href="#a876e6b0ebd7bc9a3f764e61444dfdf1b"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>This class contains the parameters specific to Gaming Chat sub context. </p>
-</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="abf03238bb1176e98572c8a0aafac0f21"></a>
+<div class="textblock"><p>The response to a Send Message request. </p>
+</div><hr/><h2>Property Documentation</h2>
+<a class="anchor" id="a876e6b0ebd7bc9a3f764e61444dfdf1b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00088.html#abf03238bb1176e98572c8a0aafac0f21">ATT_MSSDK.Speechv3.SocialMediaXArgs.SocialMediaXArgs</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">string <a class="el" href="a00088.html#a876e6b0ebd7bc9a3f764e61444dfdf1b">ATT_MSSDK.IMMNv1.SendMessageResponse.Id</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Initializes a new instance of <a class="el" href="a00088.html" title="This class contains the parameters specific to Gaming Chat sub context.">SocialMediaXArgs</a>. </p>
-
-</div>
-</div>
-<hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a3dbe69c0840d7e2b80e7145602c8311d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">override string <a class="el" href="a00088.html#a3dbe69c0840d7e2b80e7145602c8311d">ATT_MSSDK.Speechv3.SocialMediaXArgs.ToString</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Returns the string format of the properties. </p>
-<dl class="section return"><dt>Returns:</dt><dd>Returns the string format of the properties.</dd></dl>
-
-</div>
-</div>
-<hr/><h2>Property Documentation</h2>
-<a class="anchor" id="a4ed910495f98c769497b6fee5389e55d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="a00088.html#a4ed910495f98c769497b6fee5389e55d">ATT_MSSDK.Speechv3.SocialMediaXArgs.BrevityLevel</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the value of BrevityLevel Control for automatic text abbreviation behavior. This setting controls abbreviation of the output for things like “LOL”. “0” disables abbreviations. Higher numbers are more aggressive, meaning it will use less common abbreviations. Default: 0. </p>
-
-</div>
-</div>
-<a class="anchor" id="a4e14f758b1141afadedc8770ead762a8"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="a00088.html#a4e14f758b1141afadedc8770ead762a8">ATT_MSSDK.Speechv3.SocialMediaXArgs.CommandPrefix</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the value of CommandPrefix. This parameter customizes the recognition by selecting a preconfigured recognition context. For some applications, phrases may include common command-like prefixes like “update twitter” or “facebook”. If you expect end-users to include these prefixes, use the “CommandPrefix=true”. Default: false. </p>
-
-</div>
-</div>
-<a class="anchor" id="a990e664db1b48302492b1a9611dfc853"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00088.html#a990e664db1b48302492b1a9611dfc853">ATT_MSSDK.Speechv3.SocialMediaXArgs.SocialSites</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the value of SocialSites. Use the common names of the social media sites your application supports to provide hints for better recognition results. </p>
+<p>Gets or sets the Id value returned by the server. </p>
 
 </div>
 </div>
@@ -218,13 +147,14 @@ Properties</h2></td></tr>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="a00201.html">ATT_MSSDK</a>      </li>
-      <li class="navelem"><a class="el" href="a00212.html">Speechv3</a>      </li>
-      <li class="navelem"><a class="el" href="a00088.html">SocialMediaXArgs</a>      </li>
+      <li class="navelem"><a class="el" href="a00209.html">ATT_MSSDK</a>      </li>
+      <li class="navelem"><a class="el" href="a00212.html">IMMNv1</a>      </li>
+      <li class="navelem"><a class="el" href="a00088.html">SendMessageResponse</a>      </li>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:11 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

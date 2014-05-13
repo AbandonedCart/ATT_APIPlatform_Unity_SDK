@@ -1,6 +1,6 @@
 var a00069 =
 [
-    [ "MessageId", "a00069.html#a762cfb08263c82e70e46057caa981ce2", null ],
-    [ "Text", "a00069.html#ab9f893cad09df2fb52782412675042e6", null ],
-    [ "Variables", "a00069.html#ad20481a0b28f106b3cbe9f8b90d408ed", null ]
+    [ "NotificationConnectionResponse", "a00069.html#a34c622a1fde98c480b2c1db26a2df4eb", null ],
+    [ "ParseJSON", "a00069.html#a5cbd0d75c7d3508a165ecad91095934f", null ],
+    [ "NotificationConnectionDetails", "a00069.html#a42150ae12346f22c16ae1690a0084757", null ]
 ];

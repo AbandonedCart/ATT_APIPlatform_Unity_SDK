@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.SMSv3.SmsResponse Class Reference</title>
+<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.InAppMessaging.SendMessageResponse Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -101,125 +101,69 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#properties">Properties</a>  </div>
   <div class="headertitle">
-<div class="title">ATT_MSSDK.SMSv3.SmsResponse Class Reference</div>  </div>
+<div class="title">ATT_MSSDK.InAppMessaging.SendMessageResponse Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This class encapsulates the response of Send SMS request.  
+<p>The response to a Send <a class="el" href="a00050.html" title="Container for message.">Message</a> request.  
  <a href="a00087.html#details">More...</a></p>
 <div class="dynheader">
-Inheritance diagram for ATT_MSSDK.SMSv3.SmsResponse:</div>
+Inheritance diagram for ATT_MSSDK.InAppMessaging.SendMessageResponse:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="a00087.png" usemap="#ATT_MSSDK.SMSv3.SmsResponse_map" alt=""/>
-  <map id="ATT_MSSDK.SMSv3.SmsResponse_map" name="ATT_MSSDK.SMSv3.SmsResponse_map">
-<area href="a00077.html" title="Abstract base class for all Response objects." alt="ATT_MSSDK.Response" shape="rect" coords="0,0,213,24"/>
+  <img src="a00087.png" usemap="#ATT_MSSDK.InAppMessaging.SendMessageResponse_map" alt=""/>
+  <map id="ATT_MSSDK.InAppMessaging.SendMessageResponse_map" name="ATT_MSSDK.InAppMessaging.SendMessageResponse_map">
+<area href="a00084.html" title="Abstract base class for all Response objects." alt="ATT_MSSDK.Response" shape="rect" coords="0,0,323,24"/>
 </map>
  </div></div>
 
-<p><a href="a00313.html">List of all members.</a></p>
+<p><a href="a00290.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac8645fe7e6069316d744bed0d41326db"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00087.html#ac8645fe7e6069316d744bed0d41326db">SmsResponse</a> (<a class="el" href="a00067.html">OutboundSMSResponse</a> outboundSmsResponse)</td></tr>
-<tr class="memdesc:ac8645fe7e6069316d744bed0d41326db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Intializes a new instance of <a class="el" href="a00087.html" title="This class encapsulates the response of Send SMS request.">SmsResponse</a> class.  <a href="#ac8645fe7e6069316d744bed0d41326db"></a><br/></td></tr>
-<tr><td colspan="2"><h2><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a704f1d96e0dda3b7c783fa573f669623"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00087.html">SmsResponse</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00087.html#a704f1d96e0dda3b7c783fa573f669623">Parse</a> (string jsonInput)</td></tr>
-<tr class="memdesc:a704f1d96e0dda3b7c783fa573f669623"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="a00087.html" title="This class encapsulates the response of Send SMS request.">SmsResponse</a> object by parsing the JSON input.  <a href="#a704f1d96e0dda3b7c783fa573f669623"></a><br/></td></tr>
+<tr class="memitem:adff39927f8598b7dc46575f880ee063a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00087.html#adff39927f8598b7dc46575f880ee063a">SendMessageResponse</a> ()</td></tr>
+<tr class="memdesc:adff39927f8598b7dc46575f880ee063a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="a00087.html" title="The response to a Send Message request.">SendMessageResponse</a> class.  <a href="#adff39927f8598b7dc46575f880ee063a"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:aa407959f1c3cfa95e76a5a2c8ff5c67e"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00087.html#aa407959f1c3cfa95e76a5a2c8ff5c67e">MessageId</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aa407959f1c3cfa95e76a5a2c8ff5c67e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets MessageId. A unique identifier for the message.  <a href="#aa407959f1c3cfa95e76a5a2c8ff5c67e"></a><br/></td></tr>
-<tr class="memitem:aad27ed3ba5054820fb93ead03e06887e"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00087.html#aad27ed3ba5054820fb93ead03e06887e">ResourceURL</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aad27ed3ba5054820fb93ead03e06887e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets ResourceURL. This parameter actually contains the location of the created resource for checking the delivery status of the sent messages.  <a href="#aad27ed3ba5054820fb93ead03e06887e"></a><br/></td></tr>
+<tr class="memitem:aeb36f978401dc67928148686a5ae3065"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00087.html#aeb36f978401dc67928148686a5ae3065">Id</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:aeb36f978401dc67928148686a5ae3065"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Id value returned by the server.  <a href="#aeb36f978401dc67928148686a5ae3065"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>This class encapsulates the response of Send SMS request. </p>
+<div class="textblock"><p>The response to a Send <a class="el" href="a00050.html" title="Container for message.">Message</a> request. </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ac8645fe7e6069316d744bed0d41326db"></a>
+<a class="anchor" id="adff39927f8598b7dc46575f880ee063a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00087.html#ac8645fe7e6069316d744bed0d41326db">ATT_MSSDK.SMSv3.SmsResponse.SmsResponse</a> </td>
+          <td class="memname"><a class="el" href="a00087.html#adff39927f8598b7dc46575f880ee063a">ATT_MSSDK.InAppMessaging.SendMessageResponse.SendMessageResponse</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00067.html">OutboundSMSResponse</a>&#160;</td>
-          <td class="paramname"><em>outboundSmsResponse</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Intializes a new instance of <a class="el" href="a00087.html" title="This class encapsulates the response of Send SMS request.">SmsResponse</a> class. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">outboundSmsResponse</td><td>An instance of OutboundSmsResponse</td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a704f1d96e0dda3b7c783fa573f669623"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="a00087.html">SmsResponse</a> <a class="el" href="a00087.html#a704f1d96e0dda3b7c783fa573f669623">ATT_MSSDK.SMSv3.SmsResponse.Parse</a> </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>jsonInput</em></td><td>)</td>
-          <td><code> [static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Creates an <a class="el" href="a00087.html" title="This class encapsulates the response of Send SMS request.">SmsResponse</a> object by parsing the JSON input. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">jsonInput</td><td>The JSON input string to parse.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns:</dt><dd>The <a class="el" href="a00087.html" title="This class encapsulates the response of Send SMS request.">SmsResponse</a> object returned by the server.</dd></dl>
+<p>Initializes a new instance of the <a class="el" href="a00087.html" title="The response to a Send Message request.">SendMessageResponse</a> class. </p>
 
 </div>
 </div>
 <hr/><h2>Property Documentation</h2>
-<a class="anchor" id="aa407959f1c3cfa95e76a5a2c8ff5c67e"></a>
+<a class="anchor" id="aeb36f978401dc67928148686a5ae3065"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="a00087.html#aa407959f1c3cfa95e76a5a2c8ff5c67e">ATT_MSSDK.SMSv3.SmsResponse.MessageId</a><code> [get, set]</code></td>
+          <td class="memname">string <a class="el" href="a00087.html#aeb36f978401dc67928148686a5ae3065">ATT_MSSDK.InAppMessaging.SendMessageResponse.Id</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets MessageId. A unique identifier for the message. </p>
-
-</div>
-</div>
-<a class="anchor" id="aad27ed3ba5054820fb93ead03e06887e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00087.html#aad27ed3ba5054820fb93ead03e06887e">ATT_MSSDK.SMSv3.SmsResponse.ResourceURL</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets ResourceURL. This parameter actually contains the location of the created resource for checking the delivery status of the sent messages. </p>
+<p>Gets or sets the Id value returned by the server. </p>
 
 </div>
 </div>
@@ -227,13 +171,14 @@ Properties</h2></td></tr>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="a00201.html">ATT_MSSDK</a>      </li>
-      <li class="navelem"><a class="el" href="a00211.html">SMSv3</a>      </li>
-      <li class="navelem"><a class="el" href="a00087.html">SmsResponse</a>      </li>
+      <li class="navelem"><a class="el" href="a00209.html">ATT_MSSDK</a>      </li>
+      <li class="navelem"><a class="el" href="a00213.html">InAppMessaging</a>      </li>
+      <li class="navelem"><a class="el" href="a00087.html">SendMessageResponse</a>      </li>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:11 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

@@ -9,12 +9,8 @@ Speech To Text
 Speech To Text Custom
 Text To Speech
 SMS 
-MMS 
-Location 
-Notary 
-Payment 
-Call Management Beta)
-In-application Messaging From Mobile Number
+MMS  
+In-application Messaging
 Advertisement
 
 The complete documentation for the AT&T API Platform can be found at http://developer.att.com

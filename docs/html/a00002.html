@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: Call Management Service Cookbook (Beta)</title>
+<title>AT&amp;T API Platform SDK for Microsoft: Device Capabilities Service Cookbook</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -100,47 +100,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Call Management Service Cookbook (Beta) </div>  </div>
+<div class="title">Device Capabilities Service Cookbook </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h2><a class="anchor" id="callmanagement_overview"></a>
+<div class="textblock"><h2><a class="anchor" id="dc_overview"></a>
 Overview</h2>
-<p>This cookbook shows you how to develop a Call Management Service(Beta) application using the Platform SDK for Microsoft. <br/>
+<p>This cookbook shows you how to develop a Device Capabilities Service application using the Platform SDK for Microsoft. <br/>
  The Platform SDK for Microsoft provides the following methods: </p>
 <ul>
 <li>
-Create Session  </li>
-<li>
-Send Signal  </li>
+Get Device Capabilities  </li>
 </ul>
 <p>To use these methods in an application, perform the following steps: </p>
 <ol type="1">
-<li>Add a reference to the SDK as shown in the <a class="el" href="a00011.html">About the Cookbooks </a> section and import the <a class="el" href="a00203.html" title="Core namespace for Call Management Version 1 (Beta)">ATT_MSSDK.CallControlv1</a> namespace. <br/>
+<li>Add a reference to the SDK as shown in the <a class="el" href="a00008.html">About the Cookbooks </a> section and import the <a class="el" href="a00211.html" title="Core namespace for Device Capabilities Service Version 2.">ATT_MSSDK.DeviceCapabilitiesv2</a> namespace. <br/>
 </li>
-<li>Create an instance of <a class="el" href="a00074.html">RequestFactory </a> with the scope type RequestFactory.ScopeTypes.CallControl, as shown in the <a class="el" href="a00011.html">About the Cookbooks </a> section. <br/>
+<li>Create an instance of RequestFactory with the scope type RequestFactory.ScopeTypes.DC, as shown in the <a class="el" href="a00008.html">About the Cookbooks </a> section. <br/>
 </li>
-<li>Invoke the Call Management Service(Beta) methods using the <a class="el" href="a00074.html">RequestFactory </a> instance. </li>
+<li>Invoke the Device Capabilities Service methods using the <a class="el" href="a00081.html">RequestFactory </a> instance. </li>
 </ol>
-<h2><a class="anchor" id="cms_create"></a>
-Creating a Session</h2>
-<p>To create a session for for an outgoing call or message, invoke the <a class="el" href="a00235.html#ga66c591961b10e9ae9a8e37aa46d9a641">CreateSession </a> method using the <a class="el" href="a00074.html">RequestFactory </a> instance by passing the communicaiton parameters such as signal, as shown in the following code example. </p>
-<div class="fragment"><pre class="fragment"> NameValueCollection parameters = <span class="keyword">new</span> NameValueCollection();
- parameters.Add(<span class="stringliteral">&quot;signal&quot;</span>,<span class="stringliteral">&quot;exit&quot;</span>);
- CreateSessionResponse response = this.requestFactory.CreateSession(parameters);
-</pre></div> <h2><a class="anchor" id="cms_sendsignal"></a>
-Sending a Signal to an active Session</h2>
-<p>To send a signal to an active session, invoke the <a class="el" href="a00235.html#ga8876fe466497b0ebf75dcf3e0dbc24fc">SendSignal </a> method using the <a class="el" href="a00074.html">RequestFactory </a> instance, by passing the session id and signal, as shown in the following code example. </p>
-<div class="fragment"><pre class="fragment"> <span class="comment">// Active Session ID.</span>
- <span class="keywordtype">string</span> sessionId = <span class="stringliteral">&quot;xxxxxxxxxxxxxxxxxxx&quot;</span>;
- SendSignalResponse response = this.requestFactory.SendSignal(sessionId, <span class="stringliteral">&quot;exit&quot;</span>);
+<h2><a class="anchor" id="dc_send"></a>
+Getting Device Capabilities</h2>
+<p>To get the Device Capabilities information from a given AT&amp;T wireless number, invoke the <a class="el" href="a00239.html#gadeb8c63e1e9fb690d37617c6e9e519dd">GetDeviceCapabilities </a> method using the <a class="el" href="a00081.html">RequestFactory </a> instance as shown in the following code example. </p>
+<div class="fragment"><pre class="fragment"> DeviceCapabilities response = this.requestFactory.GetDeviceCapabilities();
 </pre></div> </div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:10 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

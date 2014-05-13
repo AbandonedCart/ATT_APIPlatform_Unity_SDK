@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: Cookbooks</title>
+<title>AT&amp;T API Platform SDK for Microsoft: Getting Started</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -100,30 +100,137 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Cookbooks </div>  </div>
+<div class="title">Getting Started </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><br/>
- <a class="el" href="a00011.html">About the Cookbooks</a> <br/>
- <a class="el" href="a00014.html">Short Message Service Cookbook</a> <br/>
- <a class="el" href="a00005.html">Multimedia Messaging Service Cookbook</a> <br/>
- <a class="el" href="a00002.html">Call Management Service Cookbook (Beta)</a> <br/>
- <a class="el" href="a00003.html">Device Capabilities Service Cookbook</a> <br/>
- <a class="el" href="a00004.html">Location Service Cookbook</a> <br/>
- <a class="el" href="a00006.html">In-application Messaging From Mobile Number Service Cookbook</a> <br/>
- <a class="el" href="a00007.html">Payment Service Cookbook</a> <br/>
- <a class="el" href="a00016.html">Speech Service Cookbook</a> <br/>
- <a class="el" href="a00001.html">Advertisement Service Cookbook</a> <br/>
- <a class="el" href="a00017.html">Text To Speech Service Cookbook</a> <br/>
- <a class="el" href="a00015.html">Speech To Text Custom Service Cookbook</a> </p>
+<div class="textblock"><table  id="one" style="background-color: #EF9E20; margin: 1em 0px; width: 100%; height: 33px;">
+<tr valign="center">
+<td style="BACKGROUND-COLOR: #EF9E20; font-weight:bold !important; PADDING-LEFT: 10px; WIDTH: 192px; font-family:Verdana, Geneva, Arial, Helvetica, sans-serif; COLOR: white; FONT-SIZE: 12pt">Introduction  </td></tr>
+</table>
+<table  style="width: 100%;">
+<tr>
+<td>The AT&amp;T API Platform SDK for Microsoft&reg; leverages the power of the Microsoft&reg; .NET platform and AT&amp;T services so that developers can quickly bring robust C# and Visual Basic applications to market. This SDK includes a Wrapper library, full API documentation, guides to installation and setup, and working code samples. The SDK Wrapper library significantly reduces the complexity of building applications that use the AT&amp;T Platform services. <br/>
+ The SDK Wrapper library provides access to the following AT&amp;T API Platform APIs: <ul>
+<li>
+Device Capabilities API  </li>
+<li>
+SMS API  </li>
+<li>
+MMS API  </li>
+<li>
+Speech API  </li>
+<li>
+In-App Messaging API </li>
+<li>
+Advertising API </li>
+<li>
+Text To Speech API </li>
+<li>
+Speech To Text Custom API </li>
+</ul>
+The complete documentation for the AT&amp;T API Platform can be found at <a href="http://developer.att.com">http://developer.att.com.</a>   </td></tr>
+</table>
+<table  id="one" style="background-color: #EF9E20; margin: 1em 0px; width: 100%; height: 33px;">
+<tr valign="center">
+<td style="BACKGROUND-COLOR: #EF9E20; font-weight:bold !important; PADDING-LEFT: 10px; WIDTH: 192px; font-family:Verdana, Geneva, Arial, Helvetica, sans-serif; COLOR: white; FONT-SIZE: 12pt">SDK Overview  </td></tr>
+</table>
+<table  style="width: 100%;">
+<tr>
+<td>The AT&amp;T API Platform SDK for Microsoft&reg; architecture consists of three layers: <ul>
+<li>
+<b>Client / Browser</b> - This layer contains the application code that interacts with the end user. Application developers will find it much easier to develop C# and Visual Basic applications using the SDK Wrapper library. </li>
+<li>
+<b>SDK Wrapper library</b> - This layer provides a wrapper library to give application developers an easy way to develop C# and Visual Basic applications. The SDK Wrapper library (ATT_MSSDK.dll) contains a set of wrapper functions that provide uniform and easy to use interfaces for addressing the AT&amp;T REST APIs. </li>
+<li>
+<b>AT&amp;T API Platform</b> - This layer consists of APIs exposing the suite of AT&amp;T services that the applications will consume.  </li>
+</ul>
+</td></tr>
+<tr>
+<td align="center"><div class="image">
+<img src="images/SDK_Block_Diagram.png"  height="50%" width="50%"/>
+</div>
+<br/>
+   </td></tr>
+</table>
+<table  style="width: 100%;">
+<tr>
+<td>The SDK Wrapper library consists of two types of classes that are used to address the AT&amp;T REST APIs: <ul>
+<li>
+<b><a class="el" href="a00081.html" title="The RequestFactory manages the connections and calls to the AT&amp;T API Platform.">RequestFactory</a> class</b> - The <a class="el" href="a00081.html" title="The RequestFactory manages the connections and calls to the AT&amp;T API Platform.">RequestFactory</a> class provides wrapper functions around AT&amp;T Platform services like SMS, MMS, Speech, In App Messaging and Device Capabilities. An application creates an instance of the Request Factory class by passing the API Key, Secret Key, scope (a list of services to address), and a redirect URL. When the wrapper functions in the <a class="el" href="a00081.html" title="The RequestFactory manages the connections and calls to the AT&amp;T API Platform.">RequestFactory</a> are invoked by the application, an instance of the corresponding <a class="el" href="a00084.html" title="Abstract base class for all Response objects.">Response</a> class is returned.  </li>
+<li>
+<b><a class="el" href="a00084.html" title="Abstract base class for all Response objects.">Response</a> class</b> - The <a class="el" href="a00084.html" title="Abstract base class for all Response objects.">Response</a> classes provide wrappers for de-serializing the responses returned by the AT&amp;T Platform services. </li>
+</ul>
+</td></tr>
+</table>
+<table  id="one" style="background-color: #EF9E20; margin: 1em 0px; width: 100%; height: 33px;">
+<tr valign="center">
+<td style="BACKGROUND-COLOR: #EF9E20; font-weight:bold !important; PADDING-LEFT: 10px; WIDTH: 192px; font-family:Verdana, Geneva, Arial, Helvetica, sans-serif; COLOR: white; FONT-SIZE: 12pt"><p class="starttd">SDK and Sample Apps Packaging </p>
+<p class="endtd"></p>
+</td></tr>
+</table>
+<table  style="width: 100%;">
+<tr>
+<td>The AT&amp;T API Platform SDK for Microsoft&reg; package contains the SDK Wrapper library, licensing terms, and the SDK documentation.<br/>
+ The SDK package has the following file and directory structure: <ul>
+<li>
+<em><b>license.txt</b></em> - A file containing the licensing terms for using the SDK Wrapper classes and sample applications. </li>
+<li>
+<em><b>bin</b></em> - A directory containing the SDK Wrapper class library ATT_MSSDK.DLL. </li>
+<li>
+<em><b>docs</b></em> - A directory containing SDK documentation, including the Getting Started guide, Installation guide, and Cookbooks for using the SDK Wrapper library.  </li>
+</ul>
+</td></tr>
+</table>
+<table  style="width: 100%;">
+<tr>
+<td>The Sample Apps package contains sample applications for both the C# and VB.NET languages that showcase the usage of the SDK Wrapper library.<br/>
+ The Sample Apps package has the following directory structure: <ul>
+<li>
+<em><b>csharp</b></em> - C# sample applications. </li>
+<li>
+<em><b>vb</b></em> - VB.NET sample applications. </li>
+</ul>
+</td></tr>
+<tr>
+<td>Sample applications are provided in the following directories: <ul>
+<li>
+<em><b>\sms\app1</b></em>- The SMS sample application. </li>
+<li>
+<em><b>\sms\app2</b></em>- The SMS voting application receiving inbound SMS messages. </li>
+<li>
+<em><b>\mms\app1</b></em>- The MMS sample application. </li>
+<li>
+<em><b>\mms\app2</b></em>- The MMS Coupon application. </li>
+<li>
+<p class="startli"><em><b>\mms\app3</b></em>- The MMS sample application for receiving inbound MMS messages.</p>
+<p class="endli"></p>
+</li>
+<li>
+<em><b>\speech\app1</b></em>- The Speech sample application. </li>
+<li>
+<em><b>\inappmessaging\app1</b></em>- The In-App Messaging sample application. </li>
+<li>
+<em><b>\mim\app1</b></em>- The In App Messaging From Mobile Number, get message (MIM, Message Inbox Management) sample application.. </li>
+<li>
+<em><b>\dc\app1</b></em>- The Device Capabilities sample application. </li>
+<li>
+<em><b>\ads\app1</b></em>- The Advertising sample application. </li>
+<li>
+<em><b>\texttospeech\app1</b></em>- The Text to Speech sample application. </li>
+<li>
+<em><b>\speechCustom\app1</b></em> - The Speech to Text Custom sample application. </li>
+</ul>
+</td></tr>
+</table>
 </div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:10 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

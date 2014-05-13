@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.MMSv3.MmsDeliveryResponse Class Reference</title>
+<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.InAppMessaging.MessageList Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -100,99 +100,139 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#properties">Properties</a>  </div>
   <div class="headertitle">
-<div class="title">ATT_MSSDK.MMSv3.MmsDeliveryResponse Class Reference</div>  </div>
+<div class="title">ATT_MSSDK.InAppMessaging.MessageList Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Contains the results of the MmsDelivery request.  
+<p>Container object for a list of messages.  
  <a href="a00055.html#details">More...</a></p>
-<div class="dynheader">
-Inheritance diagram for ATT_MSSDK.MMSv3.MmsDeliveryResponse:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="a00055.png" usemap="#ATT_MSSDK.MMSv3.MmsDeliveryResponse_map" alt=""/>
-  <map id="ATT_MSSDK.MMSv3.MmsDeliveryResponse_map" name="ATT_MSSDK.MMSv3.MmsDeliveryResponse_map">
-<area href="a00077.html" title="Abstract base class for all Response objects." alt="ATT_MSSDK.Response" shape="rect" coords="0,0,267,24"/>
-</map>
- </div></div>
 
-<p><a href="a00278.html">List of all members.</a></p>
+<p><a href="a00280.html">List of all members.</a></p>
 <table class="memberdecls">
-<tr><td colspan="2"><h2><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><b>DeliveryInfoListRoot</b></td></tr>
-<tr><td colspan="2"><h2><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aa7bcadbbb6993a175f06bc47577e751a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00055.html">MmsDeliveryResponse</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00055.html#aa7bcadbbb6993a175f06bc47577e751a">ParseJSON</a> (string jsonInput)</td></tr>
-<tr class="memdesc:aa7bcadbbb6993a175f06bc47577e751a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a string containing a JSON object to a <a class="el" href="a00055.html" title="Contains the results of the MmsDelivery request.">MmsDeliveryResponse</a> object.  <a href="#aa7bcadbbb6993a175f06bc47577e751a"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:afdf5725a3dbf44ea50b55e1ee3b0ddb9"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00055.html#afdf5725a3dbf44ea50b55e1ee3b0ddb9">ResourceURL</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:afdf5725a3dbf44ea50b55e1ee3b0ddb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the ResourceURL. The endpoint URI that served this request.  <a href="#afdf5725a3dbf44ea50b55e1ee3b0ddb9"></a><br/></td></tr>
-<tr class="memitem:a68a478fa2e37755e5b5c4e7d37d7f503"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="a00027.html">DeliveryInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00055.html#a68a478fa2e37755e5b5c4e7d37d7f503">DeliveryInfo</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a68a478fa2e37755e5b5c4e7d37d7f503"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the <a class="el" href="a00027.html" title="Encapsulates the delivery info returned by the server for MMS messages.">DeliveryInfo</a> list. A list of objects describing how the message was delivered.  <a href="#a68a478fa2e37755e5b5c4e7d37d7f503"></a><br/></td></tr>
+<tr class="memitem:a63f91c2443b7259616f59bf05b2bfdef"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="a00050.html">Message</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00055.html#a63f91c2443b7259616f59bf05b2bfdef">Messages</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a63f91c2443b7259616f59bf05b2bfdef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the list of messages.  <a href="#a63f91c2443b7259616f59bf05b2bfdef"></a><br/></td></tr>
+<tr class="memitem:a477b726c70dbb2d85bb8666a5c4994ee"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00055.html#a477b726c70dbb2d85bb8666a5c4994ee">Offset</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a477b726c70dbb2d85bb8666a5c4994ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of Offset. This parameter defines the offset from the beginning of the ordered set of messages.  <a href="#a477b726c70dbb2d85bb8666a5c4994ee"></a><br/></td></tr>
+<tr class="memitem:ac7439cef7306628abff4cbdca6990d9c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00055.html#ac7439cef7306628abff4cbdca6990d9c">Limit</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ac7439cef7306628abff4cbdca6990d9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of Limit. A number representing the number of messages requested.  <a href="#ac7439cef7306628abff4cbdca6990d9c"></a><br/></td></tr>
+<tr class="memitem:abc4e4da6df5d8586238768609391749d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00055.html#abc4e4da6df5d8586238768609391749d">Total</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:abc4e4da6df5d8586238768609391749d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of Total. This parameter is the total number of messages returned based on filter criteria.  <a href="#abc4e4da6df5d8586238768609391749d"></a><br/></td></tr>
+<tr class="memitem:a5c955c3b6e43192d4f9f2c77e8b48e49"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00055.html#a5c955c3b6e43192d4f9f2c77e8b48e49">State</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a5c955c3b6e43192d4f9f2c77e8b48e49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of State. This is an opaque string that denotes the current state of the mailbox in the platform.  <a href="#a5c955c3b6e43192d4f9f2c77e8b48e49"></a><br/></td></tr>
+<tr class="memitem:ab25c0709eed2caadcdfcf6b3bc2c459d"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00055.html#ab25c0709eed2caadcdfcf6b3bc2c459d">CacheStatus</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ab25c0709eed2caadcdfcf6b3bc2c459d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of CacheStatus. This parameters indicates the status of the message index cache. The following values could be returned: NOT_INITIALIZED, INITIALIZING, INITIALIZED and ERROR.  <a href="#ab25c0709eed2caadcdfcf6b3bc2c459d"></a><br/></td></tr>
+<tr class="memitem:ac59997d3b4439844b3166422145cbd16"><td class="memItemLeft" align="right" valign="top">List&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00055.html#ac59997d3b4439844b3166422145cbd16">FailedMessages</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ac59997d3b4439844b3166422145cbd16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the list of <a class="el" href="a00055.html#ac59997d3b4439844b3166422145cbd16" title="Gets or sets the list of FailedMessages objects.">FailedMessages</a> objects.  <a href="#ac59997d3b4439844b3166422145cbd16"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Contains the results of the MmsDelivery request. </p>
-</div><hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="aa7bcadbbb6993a175f06bc47577e751a"></a>
+<div class="textblock"><p>Container object for a list of messages. </p>
+</div><hr/><h2>Property Documentation</h2>
+<a class="anchor" id="ab25c0709eed2caadcdfcf6b3bc2c459d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="a00055.html">MmsDeliveryResponse</a> <a class="el" href="a00055.html#aa7bcadbbb6993a175f06bc47577e751a">ATT_MSSDK.MMSv3.MmsDeliveryResponse.ParseJSON</a> </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>jsonInput</em></td><td>)</td>
-          <td><code> [static]</code></td>
+          <td class="memname">string <a class="el" href="a00055.html#ab25c0709eed2caadcdfcf6b3bc2c459d">ATT_MSSDK.InAppMessaging.MessageList.CacheStatus</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Converts a string containing a JSON object to a <a class="el" href="a00055.html" title="Contains the results of the MmsDelivery request.">MmsDeliveryResponse</a> object. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">jsonInput</td><td>The string containing the JSON input.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns:</dt><dd>The <a class="el" href="a00055.html" title="Contains the results of the MmsDelivery request.">MmsDeliveryResponse</a> returned by the server.</dd></dl>
+<p>Gets or sets the value of CacheStatus. This parameters indicates the status of the message index cache. The following values could be returned: NOT_INITIALIZED, INITIALIZING, INITIALIZED and ERROR. </p>
 
 </div>
 </div>
-<hr/><h2>Property Documentation</h2>
-<a class="anchor" id="a68a478fa2e37755e5b5c4e7d37d7f503"></a>
+<a class="anchor" id="ac59997d3b4439844b3166422145cbd16"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">List&lt;<a class="el" href="a00027.html">DeliveryInfo</a>&gt; <a class="el" href="a00055.html#a68a478fa2e37755e5b5c4e7d37d7f503">ATT_MSSDK.MMSv3.MmsDeliveryResponse.DeliveryInfo</a><code> [get, set]</code></td>
+          <td class="memname">List&lt;string&gt; <a class="el" href="a00055.html#ac59997d3b4439844b3166422145cbd16">ATT_MSSDK.InAppMessaging.MessageList.FailedMessages</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets the <a class="el" href="a00027.html" title="Encapsulates the delivery info returned by the server for MMS messages.">DeliveryInfo</a> list. A list of objects describing how the message was delivered. </p>
+<p>Gets or sets the list of <a class="el" href="a00055.html#ac59997d3b4439844b3166422145cbd16" title="Gets or sets the list of FailedMessages objects.">FailedMessages</a> objects. </p>
 
 </div>
 </div>
-<a class="anchor" id="afdf5725a3dbf44ea50b55e1ee3b0ddb9"></a>
+<a class="anchor" id="ac7439cef7306628abff4cbdca6990d9c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="a00055.html#afdf5725a3dbf44ea50b55e1ee3b0ddb9">ATT_MSSDK.MMSv3.MmsDeliveryResponse.ResourceURL</a><code> [get, set]</code></td>
+          <td class="memname">int <a class="el" href="a00055.html#ac7439cef7306628abff4cbdca6990d9c">ATT_MSSDK.InAppMessaging.MessageList.Limit</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets the ResourceURL. The endpoint URI that served this request. </p>
+<p>Gets or sets the value of Limit. A number representing the number of messages requested. </p>
+
+</div>
+</div>
+<a class="anchor" id="a63f91c2443b7259616f59bf05b2bfdef"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;<a class="el" href="a00050.html">Message</a>&gt; <a class="el" href="a00055.html#a63f91c2443b7259616f59bf05b2bfdef">ATT_MSSDK.InAppMessaging.MessageList.Messages</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the list of messages. </p>
+
+</div>
+</div>
+<a class="anchor" id="a477b726c70dbb2d85bb8666a5c4994ee"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="a00055.html#a477b726c70dbb2d85bb8666a5c4994ee">ATT_MSSDK.InAppMessaging.MessageList.Offset</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the value of Offset. This parameter defines the offset from the beginning of the ordered set of messages. </p>
+
+</div>
+</div>
+<a class="anchor" id="a5c955c3b6e43192d4f9f2c77e8b48e49"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string <a class="el" href="a00055.html#a5c955c3b6e43192d4f9f2c77e8b48e49">ATT_MSSDK.InAppMessaging.MessageList.State</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the value of State. This is an opaque string that denotes the current state of the mailbox in the platform. </p>
+
+</div>
+</div>
+<a class="anchor" id="abc4e4da6df5d8586238768609391749d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="a00055.html#abc4e4da6df5d8586238768609391749d">ATT_MSSDK.InAppMessaging.MessageList.Total</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the value of Total. This parameter is the total number of messages returned based on filter criteria. </p>
 
 </div>
 </div>
@@ -200,13 +240,14 @@ Properties</h2></td></tr>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="a00201.html">ATT_MSSDK</a>      </li>
-      <li class="navelem"><a class="el" href="a00207.html">MMSv3</a>      </li>
-      <li class="navelem"><a class="el" href="a00055.html">MmsDeliveryResponse</a>      </li>
+      <li class="navelem"><a class="el" href="a00209.html">ATT_MSSDK</a>      </li>
+      <li class="navelem"><a class="el" href="a00213.html">InAppMessaging</a>      </li>
+      <li class="navelem"><a class="el" href="a00055.html">MessageList</a>      </li>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:10 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

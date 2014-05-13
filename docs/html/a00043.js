@@ -1,9 +1,8 @@
 var a00043 =
 [
-    [ "InboundMmsMessage", "a00043.html#aca3ac697ddd6a4e231bf1eaeffc762eb", null ],
-    [ "InboundMmsAttachmentDetailsList", "a00043.html#a4d139cfed6e4446f02d87bf4603b882d", null ],
-    [ "Priority", "a00043.html#a52fd01715d4fd93c7fff592860cdd5a8", null ],
-    [ "ReceivedTimeDate", "a00043.html#a3f4123c8f757d1a068b89c1c209ecc8b", null ],
-    [ "SenderAddress", "a00043.html#a9b08e4e2c0d1d4281c1f67b978524cc6", null ],
-    [ "Subject", "a00043.html#ab050de47627e1d3ee3350af388f44b9c", null ]
+    [ "InboundSmsMessage", "a00043.html#a87b583df0af4cd39823c02a340596b47", null ],
+    [ "ToString", "a00043.html#a4199ef4625be4a1ab06ace6d43986a36", null ],
+    [ "Message", "a00043.html#a7bfe75c0bdf75f88ed441d32a28e9478", null ],
+    [ "MessageId", "a00043.html#af34b694a2cf50d3cbf65074d43e4049d", null ],
+    [ "SenderAddress", "a00043.html#a5362b8d5402b7c95546165e769fe903a", null ]
 ];

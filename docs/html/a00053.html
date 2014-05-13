@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.Speechv3.Metrics Class Reference</title>
+<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.InAppMessaging.MessageIndexInfo Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -102,52 +102,69 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#properties">Properties</a>  </div>
   <div class="headertitle">
-<div class="title">ATT_MSSDK.Speechv3.Metrics Class Reference</div>  </div>
+<div class="title">ATT_MSSDK.InAppMessaging.MessageIndexInfo Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Encapsulates <a class="el" href="a00053.html" title="Encapsulates Metrics data returned in speect to text response.">Metrics</a> data returned in speect to text response.  
+<p>Container for index info.  
  <a href="a00053.html#details">More...</a></p>
 
-<p><a href="a00317.html">List of all members.</a></p>
+<p><a href="a00278.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:ae864d525b9c345132d52706390c89a69"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00053.html#ae864d525b9c345132d52706390c89a69">AudioBytes</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ae864d525b9c345132d52706390c89a69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets audioBytes.  <a href="#ae864d525b9c345132d52706390c89a69"></a><br/></td></tr>
-<tr class="memitem:afd8e7b57b3b3d136be767be2bced5180"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00053.html#afd8e7b57b3b3d136be767be2bced5180">AudioTime</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:afd8e7b57b3b3d136be767be2bced5180"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets audioTime.  <a href="#afd8e7b57b3b3d136be767be2bced5180"></a><br/></td></tr>
+<tr class="memitem:a53a22e168b193d13392afed5241afe1c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00053.html#a53a22e168b193d13392afed5241afe1c">Status</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a53a22e168b193d13392afed5241afe1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of Status. This parameters indicates the status of the message index cache in the orchestration. The following values could be returned: NOT_INITIALIZED, INITIALIZING, INITIALIZED, ERROR.  <a href="#a53a22e168b193d13392afed5241afe1c"></a><br/></td></tr>
+<tr class="memitem:a45fa461d51e2d203237c4ff5ae58f668"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00053.html#a45fa461d51e2d203237c4ff5ae58f668">State</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a45fa461d51e2d203237c4ff5ae58f668"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of State. This is an opaque string that denotes the current state of the mailbox in the platform.  <a href="#a45fa461d51e2d203237c4ff5ae58f668"></a><br/></td></tr>
+<tr class="memitem:a6ae9424a57a8517ebb7d1ce611d6a756"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00053.html#a6ae9424a57a8517ebb7d1ce611d6a756">MessageCount</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a6ae9424a57a8517ebb7d1ce611d6a756"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of MessageCount. Number of message indexes cached for the subscriber.  <a href="#a6ae9424a57a8517ebb7d1ce611d6a756"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Encapsulates <a class="el" href="a00053.html" title="Encapsulates Metrics data returned in speect to text response.">Metrics</a> data returned in speect to text response. </p>
+<div class="textblock"><p>Container for index info. </p>
 </div><hr/><h2>Property Documentation</h2>
-<a class="anchor" id="ae864d525b9c345132d52706390c89a69"></a>
+<a class="anchor" id="a6ae9424a57a8517ebb7d1ce611d6a756"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="a00053.html#ae864d525b9c345132d52706390c89a69">ATT_MSSDK.Speechv3.Metrics.AudioBytes</a><code> [get, set]</code></td>
+          <td class="memname">int <a class="el" href="a00053.html#a6ae9424a57a8517ebb7d1ce611d6a756">ATT_MSSDK.InAppMessaging.MessageIndexInfo.MessageCount</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets audioBytes. </p>
+<p>Gets or sets the value of MessageCount. Number of message indexes cached for the subscriber. </p>
 
 </div>
 </div>
-<a class="anchor" id="afd8e7b57b3b3d136be767be2bced5180"></a>
+<a class="anchor" id="a45fa461d51e2d203237c4ff5ae58f668"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double <a class="el" href="a00053.html#afd8e7b57b3b3d136be767be2bced5180">ATT_MSSDK.Speechv3.Metrics.AudioTime</a><code> [get, set]</code></td>
+          <td class="memname">string <a class="el" href="a00053.html#a45fa461d51e2d203237c4ff5ae58f668">ATT_MSSDK.InAppMessaging.MessageIndexInfo.State</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets audioTime. </p>
+<p>Gets or sets the value of State. This is an opaque string that denotes the current state of the mailbox in the platform. </p>
+
+</div>
+</div>
+<a class="anchor" id="a53a22e168b193d13392afed5241afe1c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string <a class="el" href="a00053.html#a53a22e168b193d13392afed5241afe1c">ATT_MSSDK.InAppMessaging.MessageIndexInfo.Status</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the value of Status. This parameters indicates the status of the message index cache in the orchestration. The following values could be returned: NOT_INITIALIZED, INITIALIZING, INITIALIZED, ERROR. </p>
 
 </div>
 </div>
@@ -155,13 +172,14 @@ Properties</h2></td></tr>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="a00201.html">ATT_MSSDK</a>      </li>
-      <li class="navelem"><a class="el" href="a00212.html">Speechv3</a>      </li>
-      <li class="navelem"><a class="el" href="a00053.html">Metrics</a>      </li>
+      <li class="navelem"><a class="el" href="a00209.html">ATT_MSSDK</a>      </li>
+      <li class="navelem"><a class="el" href="a00213.html">InAppMessaging</a>      </li>
+      <li class="navelem"><a class="el" href="a00053.html">MessageIndexInfo</a>      </li>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:11 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

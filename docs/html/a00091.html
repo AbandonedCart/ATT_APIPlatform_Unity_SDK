@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.Paymentv3.SubscriptionDetails Class Reference</title>
+<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.ServiceExceptionObject Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -100,263 +100,71 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#properties">Properties</a>  </div>
   <div class="headertitle">
-<div class="title">ATT_MSSDK.Paymentv3.SubscriptionDetails Class Reference</div>  </div>
+<div class="title">ATT_MSSDK.ServiceExceptionObject Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Encapsulates return values from the SubscriptionRaw Details API.  
+<p>ServiceExceptionObject is returned as part of error response from platform. These exceptions occur when a service is unable to process a request and retrying of the request will result in a consistent failure.  
  <a href="a00091.html#details">More...</a></p>
 
-<p><a href="a00296.html">List of all members.</a></p>
+<p><a href="a00259.html">List of all members.</a></p>
 <table class="memberdecls">
-<tr><td colspan="2"><h2><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a61f6ba5f68e997a80ed5608cb653b959"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00091.html#a61f6ba5f68e997a80ed5608cb653b959">SubscriptionDetails</a> ()</td></tr>
-<tr class="memdesc:a61f6ba5f68e997a80ed5608cb653b959"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="a00091.html" title="Encapsulates return values from the SubscriptionRaw Details API.">SubscriptionDetails</a> class.  <a href="#a61f6ba5f68e997a80ed5608cb653b959"></a><br/></td></tr>
-<tr><td colspan="2"><h2><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aaa5499983f26ff2a69731c711877f534"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00091.html">SubscriptionDetails</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00091.html#aaa5499983f26ff2a69731c711877f534">ParseXML</a> (string xmlInput)</td></tr>
-<tr class="memdesc:aaa5499983f26ff2a69731c711877f534"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses subscription details response of xml type.  <a href="#aaa5499983f26ff2a69731c711877f534"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a9ad8c9838dd64ab775ae22ab07e67695"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00091.html#a9ad8c9838dd64ab775ae22ab07e67695">CreationDate</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a9ad8c9838dd64ab775ae22ab07e67695"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Date on which the subscription is created, according to UTC.  <a href="#a9ad8c9838dd64ab775ae22ab07e67695"></a><br/></td></tr>
-<tr class="memitem:af8e2dffe4ce053d099533cd9ea22521c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00091.html#af8e2dffe4ce053d099533cd9ea22521c">Currency</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:af8e2dffe4ce053d099533cd9ea22521c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets USD in release R2.  <a href="#af8e2dffe4ce053d099533cd9ea22521c"></a><br/></td></tr>
-<tr class="memitem:aeac7820de59a02ee68a3f9daffbab879"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00091.html#aeac7820de59a02ee68a3f9daffbab879">CurrentEndDate</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aeac7820de59a02ee68a3f9daffbab879"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Date on which the current subscription period ends, according to UTC.  <a href="#aeac7820de59a02ee68a3f9daffbab879"></a><br/></td></tr>
-<tr class="memitem:aec869284ca6ba4023956712f0b291806"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00091.html#aec869284ca6ba4023956712f0b291806">CurrentStartDate</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aec869284ca6ba4023956712f0b291806"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Date on which the current subscription period started in UTC timezone.  <a href="#aec869284ca6ba4023956712f0b291806"></a><br/></td></tr>
-<tr class="memitem:afb19502dae893c37c73ec2e095306d27"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00091.html#afb19502dae893c37c73ec2e095306d27">GrossAmount</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:afb19502dae893c37c73ec2e095306d27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Subscription renewal charge.  <a href="#afb19502dae893c37c73ec2e095306d27"></a><br/></td></tr>
-<tr class="memitem:adaf10b487f4c348822170a2dd9a0ed1a"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00091.html#adaf10b487f4c348822170a2dd9a0ed1a">IsActiveSubscription</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:adaf10b487f4c348822170a2dd9a0ed1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Flag to indicate whether subscription is active and can be consumed. Only active subscriptions should be allowed for consumption. Note that for the JSON output, this field is named.  <a href="#adaf10b487f4c348822170a2dd9a0ed1a"></a><br/></td></tr>
-<tr class="memitem:a8e749492923cd3589d7667c6a66d1661"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00091.html#a8e749492923cd3589d7667c6a66d1661">IsSuccess</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a8e749492923cd3589d7667c6a66d1661"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Boolean indication status of request.  <a href="#a8e749492923cd3589d7667c6a66d1661"></a><br/></td></tr>
-<tr class="memitem:a705307df0a9201eeba0bd1f606a832d5"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00091.html#a705307df0a9201eeba0bd1f606a832d5">Recurrences</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a705307df0a9201eeba0bd1f606a832d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the number of renewals requested when the subscription is created.  <a href="#a705307df0a9201eeba0bd1f606a832d5"></a><br/></td></tr>
-<tr class="memitem:a6243534877f131e028e915eb2b25961e"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00091.html#a6243534877f131e028e915eb2b25961e">RecurrencesLeft</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a6243534877f131e028e915eb2b25961e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the number of times the subscription is renewed after the current period.  <a href="#a6243534877f131e028e915eb2b25961e"></a><br/></td></tr>
-<tr class="memitem:a7baf2503847e4dcb5efddda258b4418b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00091.html#a7baf2503847e4dcb5efddda258b4418b">Status</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a7baf2503847e4dcb5efddda258b4418b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the status used for subscription consumption. ACTIVE is for subscription that is consumed.  <a href="#a7baf2503847e4dcb5efddda258b4418b"></a><br/></td></tr>
-<tr class="memitem:aab655155bc7973b99549b167320a1cc2"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00091.html#aab655155bc7973b99549b167320a1cc2">Version</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aab655155bc7973b99549b167320a1cc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Version of the API signature.  <a href="#aab655155bc7973b99549b167320a1cc2"></a><br/></td></tr>
+<tr class="memitem:a5d3c8c531d622e94fb3d2934e7b80ce5"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00091.html#a5d3c8c531d622e94fb3d2934e7b80ce5">MessageId</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a5d3c8c531d622e94fb3d2934e7b80ce5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of message id Unique message identifier of the format 'ABCnnnn' where 'ABC' is either 'SVC' for Service Exceptions or 'POL' for Policy.  <a href="#a5d3c8c531d622e94fb3d2934e7b80ce5"></a><br/></td></tr>
+<tr class="memitem:abb325005141037a77797067a2848f162"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00091.html#abb325005141037a77797067a2848f162">Text</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:abb325005141037a77797067a2848f162"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of Text Message text, with replacement variables marked with n, where n is an index into the list of variables elements, starting at 1.  <a href="#abb325005141037a77797067a2848f162"></a><br/></td></tr>
+<tr class="memitem:a5c5d08e2bf286e15297cd4bc5cdb9882"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00091.html#a5c5d08e2bf286e15297cd4bc5cdb9882">Variables</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a5c5d08e2bf286e15297cd4bc5cdb9882"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of variables List of zero or more strings that represent the contents of the variables used by the message text.  <a href="#a5c5d08e2bf286e15297cd4bc5cdb9882"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Encapsulates return values from the SubscriptionRaw Details API. </p>
-</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a61f6ba5f68e997a80ed5608cb653b959"></a>
+<div class="textblock"><p>ServiceExceptionObject is returned as part of error response from platform. These exceptions occur when a service is unable to process a request and retrying of the request will result in a consistent failure. </p>
+</div><hr/><h2>Property Documentation</h2>
+<a class="anchor" id="a5d3c8c531d622e94fb3d2934e7b80ce5"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00091.html#a61f6ba5f68e997a80ed5608cb653b959">ATT_MSSDK.Paymentv3.SubscriptionDetails.SubscriptionDetails</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">string <a class="el" href="a00091.html#a5d3c8c531d622e94fb3d2934e7b80ce5">ATT_MSSDK.ServiceExceptionObject.MessageId</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Initializes a new instance of the <a class="el" href="a00091.html" title="Encapsulates return values from the SubscriptionRaw Details API.">SubscriptionDetails</a> class. </p>
+<p>Gets or sets the value of message id Unique message identifier of the format 'ABCnnnn' where 'ABC' is either 'SVC' for Service Exceptions or 'POL' for Policy. </p>
 
 </div>
 </div>
-<hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="aaa5499983f26ff2a69731c711877f534"></a>
+<a class="anchor" id="abb325005141037a77797067a2848f162"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="a00091.html">SubscriptionDetails</a> <a class="el" href="a00091.html#aaa5499983f26ff2a69731c711877f534">ATT_MSSDK.Paymentv3.SubscriptionDetails.ParseXML</a> </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>xmlInput</em></td><td>)</td>
-          <td><code> [static]</code></td>
+          <td class="memname">string <a class="el" href="a00091.html#abb325005141037a77797067a2848f162">ATT_MSSDK.ServiceExceptionObject.Text</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Parses subscription details response of xml type. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">xmlInput</td><td>subscription details response xml data</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns:</dt><dd><a class="el" href="a00091.html" title="Encapsulates return values from the SubscriptionRaw Details API.">SubscriptionDetails</a> values returned.</dd></dl>
+<p>Gets or sets the value of Text Message text, with replacement variables marked with n, where n is an index into the list of variables elements, starting at 1. </p>
 
 </div>
 </div>
-<hr/><h2>Property Documentation</h2>
-<a class="anchor" id="a9ad8c9838dd64ab775ae22ab07e67695"></a>
+<a class="anchor" id="a5c5d08e2bf286e15297cd4bc5cdb9882"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="a00091.html#a9ad8c9838dd64ab775ae22ab07e67695">ATT_MSSDK.Paymentv3.SubscriptionDetails.CreationDate</a><code> [get, set]</code></td>
+          <td class="memname">string <a class="el" href="a00091.html#a5c5d08e2bf286e15297cd4bc5cdb9882">ATT_MSSDK.ServiceExceptionObject.Variables</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets the Date on which the subscription is created, according to UTC. </p>
-
-</div>
-</div>
-<a class="anchor" id="af8e2dffe4ce053d099533cd9ea22521c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00091.html#af8e2dffe4ce053d099533cd9ea22521c">ATT_MSSDK.Paymentv3.SubscriptionDetails.Currency</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets USD in release R2. </p>
-
-</div>
-</div>
-<a class="anchor" id="aeac7820de59a02ee68a3f9daffbab879"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00091.html#aeac7820de59a02ee68a3f9daffbab879">ATT_MSSDK.Paymentv3.SubscriptionDetails.CurrentEndDate</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the Date on which the current subscription period ends, according to UTC. </p>
-
-</div>
-</div>
-<a class="anchor" id="aec869284ca6ba4023956712f0b291806"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00091.html#aec869284ca6ba4023956712f0b291806">ATT_MSSDK.Paymentv3.SubscriptionDetails.CurrentStartDate</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the Date on which the current subscription period started in UTC timezone. </p>
-
-</div>
-</div>
-<a class="anchor" id="afb19502dae893c37c73ec2e095306d27"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00091.html#afb19502dae893c37c73ec2e095306d27">ATT_MSSDK.Paymentv3.SubscriptionDetails.GrossAmount</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the Subscription renewal charge. </p>
-
-</div>
-</div>
-<a class="anchor" id="adaf10b487f4c348822170a2dd9a0ed1a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00091.html#adaf10b487f4c348822170a2dd9a0ed1a">ATT_MSSDK.Paymentv3.SubscriptionDetails.IsActiveSubscription</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the Flag to indicate whether subscription is active and can be consumed. Only active subscriptions should be allowed for consumption. Note that for the JSON output, this field is named. </p>
-
-</div>
-</div>
-<a class="anchor" id="a8e749492923cd3589d7667c6a66d1661"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00091.html#a8e749492923cd3589d7667c6a66d1661">ATT_MSSDK.Paymentv3.SubscriptionDetails.IsSuccess</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the Boolean indication status of request. </p>
-
-</div>
-</div>
-<a class="anchor" id="a705307df0a9201eeba0bd1f606a832d5"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00091.html#a705307df0a9201eeba0bd1f606a832d5">ATT_MSSDK.Paymentv3.SubscriptionDetails.Recurrences</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the number of renewals requested when the subscription is created. </p>
-
-</div>
-</div>
-<a class="anchor" id="a6243534877f131e028e915eb2b25961e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00091.html#a6243534877f131e028e915eb2b25961e">ATT_MSSDK.Paymentv3.SubscriptionDetails.RecurrencesLeft</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the number of times the subscription is renewed after the current period. </p>
-
-</div>
-</div>
-<a class="anchor" id="a7baf2503847e4dcb5efddda258b4418b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00091.html#a7baf2503847e4dcb5efddda258b4418b">ATT_MSSDK.Paymentv3.SubscriptionDetails.Status</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the status used for subscription consumption. ACTIVE is for subscription that is consumed. </p>
-
-</div>
-</div>
-<a class="anchor" id="aab655155bc7973b99549b167320a1cc2"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00091.html#aab655155bc7973b99549b167320a1cc2">ATT_MSSDK.Paymentv3.SubscriptionDetails.Version</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the Version of the API signature. </p>
+<p>Gets or sets the value of variables List of zero or more strings that represent the contents of the variables used by the message text. </p>
 
 </div>
 </div>
@@ -364,13 +172,13 @@ Properties</h2></td></tr>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="a00201.html">ATT_MSSDK</a>      </li>
-      <li class="navelem"><a class="el" href="a00210.html">Paymentv3</a>      </li>
-      <li class="navelem"><a class="el" href="a00091.html">SubscriptionDetails</a>      </li>
+      <li class="navelem"><a class="el" href="a00209.html">ATT_MSSDK</a>      </li>
+      <li class="navelem"><a class="el" href="a00091.html">ServiceExceptionObject</a>      </li>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:11 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

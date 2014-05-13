@@ -1,5 +1,5 @@
 var a00065 =
 [
-    [ "messageId", "a00065.html#af53663048997ea58051a0ba7afc56015", null ],
-    [ "resourceReference", "a00065.html#aac35a2bdfc99b71733e3f528ce150b53", null ]
+    [ "MessageId", "a00065.html#a55e63eedcf52e0daa94306cfbb829641", null ],
+    [ "ResourceURL", "a00065.html#a98d5012713606b3bb34bf07fdf7fe376", null ]
 ];

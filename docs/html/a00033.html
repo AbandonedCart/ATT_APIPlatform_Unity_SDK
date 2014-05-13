@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.DeviceCapabilitiesv2.DeviceCapabilities Class Reference</title>
+<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.InAppMessaging.GetMessageContentResponse Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -103,36 +103,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#properties">Properties</a>  </div>
   <div class="headertitle">
-<div class="title">ATT_MSSDK.DeviceCapabilitiesv2.DeviceCapabilities Class Reference</div>  </div>
+<div class="title">ATT_MSSDK.InAppMessaging.GetMessageContentResponse Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This object is used to return the Device Capabilities details from the network for a particular mobile terminal.  
+<p>Encapsulates the response of get message content.  
  <a href="a00033.html#details">More...</a></p>
 
-<p><a href="a00266.html">List of all members.</a></p>
+<p><a href="a00272.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af99d8098d7d14f3c59f0b49c62119407"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00033.html#af99d8098d7d14f3c59f0b49c62119407">DeviceCapabilities</a> ()</td></tr>
-<tr class="memdesc:af99d8098d7d14f3c59f0b49c62119407"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="a00033.html" title="This object is used to return the Device Capabilities details from the network for a particular mobil...">DeviceCapabilities</a> class.  <a href="#af99d8098d7d14f3c59f0b49c62119407"></a><br/></td></tr>
+<tr class="memitem:a3c26b4b07eb71d64b3f7c5e29d91115d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00033.html#a3c26b4b07eb71d64b3f7c5e29d91115d">GetMessageContentResponse</a> ()</td></tr>
+<tr class="memdesc:a3c26b4b07eb71d64b3f7c5e29d91115d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="a00033.html" title="Encapsulates the response of get message content.">GetMessageContentResponse</a> class.  <a href="#a3c26b4b07eb71d64b3f7c5e29d91115d"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:ac21723d94d6a7d10f3187226252da057"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00024.html">Capabilities</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00033.html#ac21723d94d6a7d10f3187226252da057">capabilities</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ac21723d94d6a7d10f3187226252da057"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets capabilities object.  <a href="#ac21723d94d6a7d10f3187226252da057"></a><br/></td></tr>
-<tr class="memitem:aa12959eea8056a6a7d77f1ae64b084a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00034.html">DeviceId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00033.html#aa12959eea8056a6a7d77f1ae64b084a0">deviceId</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aa12959eea8056a6a7d77f1ae64b084a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets deviceId object.  <a href="#aa12959eea8056a6a7d77f1ae64b084a0"></a><br/></td></tr>
+<tr class="memitem:ac6405d94bd7b850cddc962cae383d635"><td class="memItemLeft" align="right" valign="top">byte[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00033.html#ac6405d94bd7b850cddc962cae383d635">MessageContent</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ac6405d94bd7b850cddc962cae383d635"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the MessageContent. Stream of bytes.  <a href="#ac6405d94bd7b850cddc962cae383d635"></a><br/></td></tr>
+<tr class="memitem:a370028933006ec9ba93a78b5a0602060"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00033.html#a370028933006ec9ba93a78b5a0602060">MessageType</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a370028933006ec9ba93a78b5a0602060"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the MessageType.  <a href="#a370028933006ec9ba93a78b5a0602060"></a><br/></td></tr>
+<tr class="memitem:a1e135ee86bee7d75dc10138aa6cefbb6"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00033.html#a1e135ee86bee7d75dc10138aa6cefbb6">MessageLength</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a1e135ee86bee7d75dc10138aa6cefbb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the MessageLength.  <a href="#a1e135ee86bee7d75dc10138aa6cefbb6"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>This object is used to return the Device Capabilities details from the network for a particular mobile terminal. </p>
-<p>This class returns two categories of data, device ID and a set of capabilities. AT&amp;T's implementation of the Device Capabilities API service provides the user with device information that is specific to AT&amp;T's network and device naming conventions. This method only yields proper results for AT&amp;T supported devices. The results may not be accurate with devices when the subscriber is using an AT&amp;T SIM with a device from other carriers. </p>
+<div class="textblock"><p>Encapsulates the response of get message content. </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="af99d8098d7d14f3c59f0b49c62119407"></a>
+<a class="anchor" id="a3c26b4b07eb71d64b3f7c5e29d91115d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00033.html#af99d8098d7d14f3c59f0b49c62119407">ATT_MSSDK.DeviceCapabilitiesv2.DeviceCapabilities.DeviceCapabilities</a> </td>
+          <td class="memname"><a class="el" href="a00033.html#a3c26b4b07eb71d64b3f7c5e29d91115d">ATT_MSSDK.InAppMessaging.GetMessageContentResponse.GetMessageContentResponse</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -141,38 +142,53 @@ Properties</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Initializes a new instance of the <a class="el" href="a00033.html" title="This object is used to return the Device Capabilities details from the network for a particular mobil...">DeviceCapabilities</a> class. </p>
+<p>Initializes a new instance of the <a class="el" href="a00033.html" title="Encapsulates the response of get message content.">GetMessageContentResponse</a> class. </p>
 
 </div>
 </div>
 <hr/><h2>Property Documentation</h2>
-<a class="anchor" id="ac21723d94d6a7d10f3187226252da057"></a>
+<a class="anchor" id="ac6405d94bd7b850cddc962cae383d635"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00024.html">Capabilities</a> <a class="el" href="a00033.html#ac21723d94d6a7d10f3187226252da057">ATT_MSSDK.DeviceCapabilitiesv2.DeviceCapabilities.capabilities</a><code> [get, set]</code></td>
+          <td class="memname">byte [] <a class="el" href="a00033.html#ac6405d94bd7b850cddc962cae383d635">ATT_MSSDK.InAppMessaging.GetMessageContentResponse.MessageContent</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets capabilities object. </p>
+<p>Gets or sets the MessageContent. Stream of bytes. </p>
 
 </div>
 </div>
-<a class="anchor" id="aa12959eea8056a6a7d77f1ae64b084a0"></a>
+<a class="anchor" id="a1e135ee86bee7d75dc10138aa6cefbb6"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00034.html">DeviceId</a> <a class="el" href="a00033.html#aa12959eea8056a6a7d77f1ae64b084a0">ATT_MSSDK.DeviceCapabilitiesv2.DeviceCapabilities.deviceId</a><code> [get, set]</code></td>
+          <td class="memname">long <a class="el" href="a00033.html#a1e135ee86bee7d75dc10138aa6cefbb6">ATT_MSSDK.InAppMessaging.GetMessageContentResponse.MessageLength</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets deviceId object. </p>
+<p>Gets or sets the MessageLength. </p>
+
+</div>
+</div>
+<a class="anchor" id="a370028933006ec9ba93a78b5a0602060"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string <a class="el" href="a00033.html#a370028933006ec9ba93a78b5a0602060">ATT_MSSDK.InAppMessaging.GetMessageContentResponse.MessageType</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the MessageType. </p>
 
 </div>
 </div>
@@ -180,13 +196,14 @@ Properties</h2></td></tr>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="a00201.html">ATT_MSSDK</a>      </li>
-      <li class="navelem"><a class="el" href="a00204.html">DeviceCapabilitiesv2</a>      </li>
-      <li class="navelem"><a class="el" href="a00033.html">DeviceCapabilities</a>      </li>
+      <li class="navelem"><a class="el" href="a00209.html">ATT_MSSDK</a>      </li>
+      <li class="navelem"><a class="el" href="a00213.html">InAppMessaging</a>      </li>
+      <li class="navelem"><a class="el" href="a00033.html">GetMessageContentResponse</a>      </li>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:10 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

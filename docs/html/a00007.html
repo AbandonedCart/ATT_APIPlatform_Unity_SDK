@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: Payment Service Cookbook</title>
+<title>AT&amp;T API Platform SDK for Microsoft: Cookbooks</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -100,194 +100,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Payment Service Cookbook </div>  </div>
+<div class="title">Cookbooks </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h2><a class="anchor" id="payment_overview"></a>
-Overview</h2>
-<p>This cookbook shows you how to develop a Payment Service application using the Platform SDK for Microsoft. <br/>
- The Platform SDK for Microsoft provides the following methods: </p>
-<ul>
-<li>
-Create a New Transaction (Single pay)  </li>
-<li>
-Get Transaction Status  </li>
-<li>
-Refund a Transaction  </li>
-<li>
-Create a new Subscription  </li>
-<li>
-Get Subscription Status  </li>
-<li>
-Get Subscription Details  </li>
-<li>
-Refund a Subscription  </li>
-<li>
-Get and Acknowledge Notifications from the AT&amp;T Platform  </li>
-</ul>
-<p>To use these methods in an application, perform the following steps: </p>
-<ol type="1">
-<li>Add a reference to the SDK as shown in the <a class="el" href="a00011.html">About the Cookbooks </a> section and import the <a class="el" href="a00210.html" title="Core namespace for Payment Service Version 3.">ATT_MSSDK.Paymentv3</a> and <a class="el" href="a00209.html" title="Core namespace for Notary Service Version 1.">ATT_MSSDK.Notaryv1</a> namespaces. <br/>
-</li>
-<li>Create an instance of <a class="el" href="a00074.html">RequestFactory </a> with the scope type RequestFactory.ScopeTypes.Payment, as shown in the <a class="el" href="a00011.html">About the Cookbooks </a> section. <br/>
-</li>
-<li>Invoke the Payment Service methods using the <a class="el" href="a00074.html">RequestFactory </a> instance. </li>
-</ol>
-<h2><a class="anchor" id="payment_methods"></a>
-Creating a New Transaction (Single Pay)</h2>
-<p>To create a new transaction in your Payment Service application, complete the following steps. </p>
-<h3><a class="anchor" id="nt_step_1"></a>
-Step 1. Notarize and Encrypt the transaction payload</h3>
-<p>To notarize and encrypt the transaction payload, invoke the <a class="el" href="a00240.html#ga454075eddcfc7a11562a6b60caf71e92">GetNotarizedForNewTransaction </a> method using the <a class="el" href="a00074.html">RequestFactory </a> instance by passing the amount, category, description, transactionId, productId, redirectUrl and transactionOperationStatus as arguments as shown in the following code example. The Notary Response returned by this method can be used to initiate a new Transaction Purchase in the next step. </p>
-<div class="fragment"><pre class="fragment"> <span class="keywordtype">double</span> amount = x.xx;
- <span class="keywordtype">string</span> category = <span class="stringliteral">&quot;xxxxxxxxxxxx&quot;</span>;
- <span class="keywordtype">string</span> description = <span class="stringliteral">&quot;xxxxxxxxxx&quot;</span>;
- <span class="keywordtype">string</span> transactionId = <span class="stringliteral">&quot;xxxxxxxxxxxxxxxxxx&quot;</span>;
- <span class="keywordtype">string</span> productId = <span class="stringliteral">&quot;xxxxxxxxxxxx&quot;</span>;
- <span class="keywordtype">string</span> redirectUrl = <span class="stringliteral">&quot;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;</span>;
- <span class="keywordtype">string</span> transactionOperationStatus = <span class="stringliteral">&quot;xxxxxxx&quot;</span>;
- NotaryResponse nr = this.GetNotarizedForNewTransaction(amount, category, description, transactionId, productId, redirectUrl, 
-                                                      transactionOperationStatus);
-</pre></div> <h3><a class="anchor" id="nt_step_2"></a>
-Step 2. Get New Transcation Redirection URL</h3>
-<p>To get the redirect URL that points to AT&amp;T Payment Platform, invoke the <a class="el" href="a00240.html#gad835ba15d510aa88d5c898d51405390e">GetNewTransactionRedirect </a> method using the <a class="el" href="a00074.html">RequestFactory </a> instance by passing the Notary Response that was returned by GetNotarizedForNewTransaction in the previous step. This URL is used by the application to redirect the user to the AT&amp;T payment endpoint which collects user consent for the transaction. </p>
-<div class="fragment"><pre class="fragment"> <span class="keywordtype">string</span> TransactionRedirectUrl = <span class="stringliteral">&quot;&quot;</span>;
- TransactionRedirectUrl = GetNewTransactionRedirect(NotaryResponse notaryResponse);
-</pre></div> <h3><a class="anchor" id="nt_step_3"></a>
-Step 3. Redirect the user to AT&amp;T payment platform</h3>
-<p>Redirect the subscriber's browser to the URL that was returned by the GetNewTransactionRedirect method in the previous step. </p>
-<div class="fragment"><pre class="fragment"> Response.Redirect(transactionRedirectUrl);
-</pre></div> <h3><a class="anchor" id="nt_step_4"></a>
-Step 4. User Authorizes the payment</h3>
-<p>The AT&amp;T Platform displays a login page, authenticates the user's credentials, displays the Advice of Charge page, and requests that the user authorizes the payment transaction.</p>
-<h3><a class="anchor" id="nt_step_5"></a>
-Step 5. Receive Transaction Authenticate Code</h3>
-<p>Once the user authorizes the payment transaction, the AT&amp;T Platform processes the payment transaction and returns control back to application with 'TransactionAuthCode' as a query string. The TransactionAuthCode can then be used to get the status of the transaction. <br/>
- </p>
-<h2><a class="anchor" id="transaction_status"></a>
-Getting the Status of a Transaction</h2>
-<p>To get the status of a previously executed transaction, invoke the <a class="el" href="a00240.html#ga2382ecde7fbdf36a8b4741d6cc6b2ce7">GetTransactionStatus </a> method using the <a class="el" href="a00074.html">RequestFactory </a> instance by passing TransactionAuthCode/TransactionId as shown in the following code example. </p>
-<div class="fragment"><pre class="fragment"> TransactionStatus transactionStatus = null;
- <span class="keywordtype">string</span> keyValue = <span class="stringliteral">&quot;xxxxxxxxxxx&quot;</span>;
- transactionStatus = this.requestFactory.GetTransactionStatus(TransactionIdTypes.MerchantTransactionId, keyValue);
-</pre></div> <h2><a class="anchor" id="refund_transaction"></a>
-Refunding a Transaction</h2>
-<p>To refund a transaction, invoke the <a class="el" href="a00240.html#gab1262fa346de46b83dc348b468031a0e">Refund </a> method using the <a class="el" href="a00074.html">RequestFactory </a> instance by passing the TransactionId as shown in the following code example. </p>
-<div class="fragment"><pre class="fragment"> <span class="keywordtype">string</span> refundResponseId = <span class="keywordtype">string</span>.Empty;
- <span class="keywordtype">string</span> transactionId = <span class="stringliteral">&quot;xxxxxxxxxxxxxxx&quot;</span>;
- refundResponseId = this.requestFactory.Refund(transactionId, 1, <span class="stringliteral">&quot;Customer was not happy&quot;</span>);
-</pre></div> <h2><a class="anchor" id="new_subscription"></a>
-Creating a New Subscription</h2>
-<p>To create a new subscription in your Payment Service application, complete the following steps. </p>
-<h3><a class="anchor" id="ns_step_1"></a>
-Step 1. Get New Subscription Redirection URL</h3>
-<p>To get the redirect URL that points to the AT&amp;T Payment Platform, invoke the <a class="el" href="a00240.html#gaa461d4e4d506dab5412dffe6d228b631">GetNewSubscriptionRedirect </a> method using the <a class="el" href="a00074.html">RequestFactory </a> instance by passing the amount, category, description, transactionId, productId, redirectUrl, and transactionOperationStatus as shown in the following code example. </p>
-<div class="fragment"><pre class="fragment"> <span class="keywordtype">double</span> amount = 1.99;
- <span class="keywordtype">string</span>  description = <span class="stringliteral">&quot;xxxxxxxx&quot;</span>;
- <span class="keywordtype">string</span> merchantTransactionId = <span class="stringliteral">&quot;xxxxxxxxxxxxxxx&quot;</span>;
- <span class="keywordtype">string</span> merchantProductId = <span class="stringliteral">&quot;xxxxxxxxxxxxxxxxxxxxxxxxx&quot;</span>;
- <span class="keywordtype">string</span> merchantRedirectURI = <span class="stringliteral">&quot;xxxxxxxxxxx&quot;</span>;
- <span class="keywordtype">string</span> subscriptionRedirect = requestFactory.GetNewSubscriptionRedirect(amount, PaymentCategories.ApplicationGames, 
-                                  description, merchantTransactionId, merchantProductId, merchantRedirectURI);
-</pre></div> <h3><a class="anchor" id="ns_step_2"></a>
-Step 2. Redirect the user to AT&amp;T payment platform</h3>
-<p>Redirect the subscriber's browser to the URL that was received as a response to the <a class="el" href="a00240.html#gaa461d4e4d506dab5412dffe6d228b631">GetNewSubscriptionRedirect </a> method. </p>
-<div class="fragment"><pre class="fragment"> Response.Redirect(subscriptionRedirect);
-</pre></div> <h3><a class="anchor" id="ns_step_3"></a>
-Step 3. User Authorizes the payment</h3>
-<p>The AT&amp;T Platform displays a login page, authenticates the user's credentials, displays the Advice of Charge page, and requests that the user authorizes the payment transaction.</p>
-<h3><a class="anchor" id="ns_step_4"></a>
-Step 4. Receive Transaction Authenticate Code</h3>
-<p>Once the user authorizes the payment transaction, the AT&amp;T Platform processes the payment transaction and returns control back to the application with 'TransactionAuthCode' as a query string. The TransactionAuthCode can then be used to get the status of the subscription. <br/>
- </p>
-<h2><a class="anchor" id="subscription_status"></a>
-Getting the Status of a Subscription</h2>
-<p>To get the status of a previously executed subscription, invoke the <a class="el" href="a00240.html#ga128894bf85ae2d320dba9c67a78607ad">GetSubscriptionStatus </a> method using the <a class="el" href="a00074.html">RequestFactory </a> instance by passing TransactionAuthCode/TransactionId as shown in the following code example. </p>
-<div class="fragment"><pre class="fragment"> <span class="keywordtype">string</span> subsMerTrId = <span class="stringliteral">&quot;xxxxxxxx&quot;</span>;
- SubscriptionStatus subscriptionStatus = null;
- subscriptionStatus = requestFactory.GetSubscriptionStatus(SubscriptionIdTypes.MerchantTransactionId, subsMerTrId);
-</pre></div> <h2><a class="anchor" id="subscription_details"></a>
-Getting the details of a Subscription</h2>
-<p>To get the details of a subscription, invoke the <a class="el" href="a00240.html#ga9acb0390c5ef865da9ad2d3db2d3022a">GetSubscriptionDetails </a> method using the <a class="el" href="a00074.html">RequestFactory </a> instance by passing the subscription Id and consumer Id as shown in the following code example. </p>
-<div class="fragment"><pre class="fragment"> <span class="keywordtype">string</span> merchantSubscriptionId = <span class="stringliteral">&quot;xxxxxxxxxxxx&quot;</span>;
- <span class="keywordtype">string</span> consumerId = <span class="stringliteral">&quot;xxxxxxxxxxxxxx&quot;</span>;
- SubscriptionDetails subscriptionDetails = null;
- subscriptionDetails = requestFactory.GetSubscriptionDetails(merchantSubscriptionId, consumerId);
-</pre></div> <h2><a class="anchor" id="refund_subscription"></a>
-Refunding a Subscription</h2>
-<h3><a class="anchor" id="rs_step_1"></a>
-Invoke Refund</h3>
-<p>To refund a subscription, invoke the <a class="el" href="a00240.html#gab1262fa346de46b83dc348b468031a0e">Refund </a> method using the <a class="el" href="a00074.html">RequestFactory </a> instance by passing the subscription id, and refund reason as shown in the following code example. </p>
-<div class="fragment"><pre class="fragment"> <span class="keywordtype">string</span> refundResponseId = <span class="keywordtype">string</span>.Empty;
- <span class="keywordtype">string</span> subscriptionId = <span class="stringliteral">&quot;xxxxxxxxxxxxxx&quot;</span>;
- refundResponseId = this.requestFactory.Refund(subscriptionId, 1, <span class="stringliteral">&quot;Customer was not happy&quot;</span>);
-</pre></div> <h2><a class="anchor" id="notifications"></a>
-Getting and Acknowledging Notifications from the AT&amp;T Platform</h2>
-<p>The AT&amp;T Platform sends notifications based on certain events that are relevant to a merchant. For this release of the AT&amp;T API Platform SDK for Microsoft®, these events are: refund, stop subscription, cancel subscription, and restore subscription. The merchant's application must set up a callback listener that will accept these notification requests. This is done by registering a callback listener application URL with the AT&amp;T Developer Program at <a href="https://devconnect-api.att.com">https://devconnect-api.att.com</a>. The notification request message will only contain the notification identifiers. The merchant application should use the notification identifiers that are passed in the notification request message to retrieve the details of the notification using the GetNotification method. When the application has received the notification, it can stop the notification of a particular event by invoking the AcknowledgeNotification method. <br/>
- <br/>
- To get and acknowledge the notifications in the callback listener application, do the following:</p>
-<h3><a class="anchor" id="nsub_step_1"></a>
-Step 1. Add a reference to the SDK</h3>
-<p>Import the <a class="el" href="a00201.html" title="Core namespace for ATT MSSDK.">ATT_MSSDK</a> and ATT_MSSDK.ATT_MSSDK.Paymentv3 namespaces. </p>
-<div class="fragment"><pre class="fragment"> <span class="keyword">using</span> System.Web;
- <span class="keyword">using</span> ATT_MSSDK;
- <span class="keyword">using</span> ATT_MSSDK.Paymentv3;
-</pre></div> <h3><a class="anchor" id="nsub_step_2"></a>
-Step 2. Create an instance of RequestFactory</h3>
-<p>To Create an instance of the <a class="el" href="a00074.html">RequestFactory </a> class that identifies your application and provides access to the Payment Service, pass the API Key and Secret Key values that were assigned to your application when you registered it with AT&amp;T and pass a scope value of RequestFactory.ScopeTypes.Payment, as arguments to the RequestFactory constructor. </p>
-<div class="fragment"><pre class="fragment"> <span class="keywordtype">string</span> endPoint = <span class="stringliteral">&quot;xxxxxx.xxxxx.xxx&quot;</span>;
- <span class="keywordtype">string</span> apiKey = <span class="stringliteral">&quot;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;</span>;  <span class="comment">//API Key of the Payment Service application registered at devconnect.</span>
- <span class="keywordtype">string</span> secretKey = <span class="stringliteral">&quot;xxxxxxxxxxxxxxxx&quot;</span>;  <span class="comment">//Secret Key of the Payment Service application registered at devconnect.</span>
- List&lt;RequestFactory.ScopeTypes&gt; scopes = <span class="keyword">new</span> List&lt;RequestFactory.ScopeTypes&gt;();
- scopes.Add(RequestFactory.ScopeTypes.Payment);
- RequestFactory requestFactory = <span class="keyword">new</span> RequestFactory(endPoint, apiKey, secretKey, scopes, null, null);
-</pre></div> <h3><a class="anchor" id="nsub_step_3"></a>
-Step 3. Invoke GetNotificationIds</h3>
-<p>Invoke the <a class="el" href="a00240.html#ga019abfa71761f6b5924ceeddc1d879da">GetNotificationIds </a> method using the <a class="el" href="a00074.html">RequestFactory </a> instance. This method reads the Input stream and returns a list of notification identifiers that are received from the AT&amp;T Platform. </p>
-<div class="fragment"><pre class="fragment"> List notificationIds = this.requestFactory.GetNotificationIds(Request.InputStream); <span class="comment">//Request.InputStream provided by .Net Framework to get the contents of the incoming http entity body.</span>
-</pre></div> <h3><a class="anchor" id="nsub_step_4"></a>
-Step 4. Invoke GetNotification</h3>
-<p>Invoke the <a class="el" href="a00240.html#ga431dc441d3fefea276903d1ac27f8277">GetNotification </a> method using the <a class="el" href="a00074.html">RequestFactory </a> instance by passing each notification identifier that was received by invoking the GetNotificationIds method in the previous step. The GetNotification method returns Notification Object containing the details of the Notification along with the <a class="el" href="a00210.html#a6096b57cc7acb7fee1ef6df01946d5e6">NotificationType </a> . Based on the NotificationType, Notification Object can be type casted into one of the following types </p>
-<p><a class="el" href="a00022.html">CancelSubscriptionNotificationObject </a> <br/>
- <a class="el" href="a00037.html">FreePeriodConversionNotificationObject </a> <br/>
- <a class="el" href="a00092.html">SubscriptionRecurrenceNotificationObject </a> <br/>
- <a class="el" href="a00090.html">StopSubscriptionNotificationObject </a> <br/>
- <a class="el" href="a00094.html">SuccessfulRefundNotificationObject </a> <br/>
- <a class="el" href="a00078.html">RestoreSubscriptionNotificationObject </a> </p>
-<div class="fragment"><pre class="fragment"> NotificationObject notificationObject;
- <span class="keywordtype">string</span> notificationId = <span class="keywordtype">string</span>.Empty;
- <span class="keywordtype">string</span> notificationType = <span class="keywordtype">string</span>.Empty;
- 
- <span class="keywordflow">foreach</span> (NotificationId notificationIdObject <span class="keywordflow">in</span> notificationIds)
- {
-     notificationId = notificationIdObject.Id;
-     notificationObject = this.requestFactory.GetNotification(notificationId);
-     
-     notificationType = notificationObject.NotificationObjectType.ToString();
-     <span class="keywordflow">if</span> (notificationType.Equals(<a class="code" href="a00210.html#a6096b57cc7acb7fee1ef6df01946d5e6" title="NotificationType, the type of notification returned by the AT&amp;T Platform. The Enum has the values - R...">NotificationType</a>.SubscriptionRecurrence.ToString()))
-     {
-         SubscriptionRecurrenceNotificationObject subscriptionRecurrenceNotificationObject = (SubscriptionRecurrenceNotificationObject)notificationObject;
-     }
-     <span class="keywordflow">if</span>(notificationType.Equals(<a class="code" href="a00210.html#a6096b57cc7acb7fee1ef6df01946d5e6" title="NotificationType, the type of notification returned by the AT&amp;T Platform. The Enum has the values - R...">NotificationType</a>.CancelSubscription.ToString()))
-     {
-          CancelSubscriptionNotificationObject cancelSubscriptionNotificationObject = (CancelSubscriptionNotificationObject)notificationObject;
-     }
- }
-</pre></div><h3><a class="anchor" id="nsub_step_5"></a>
-Step 5. Invoke AcknowledgeNotifications</h3>
-<p>Invoke the <a class="el" href="a00240.html#ga383cfeca09646ed0c6c92c0e4bccd475">AcknowledgeNotifications </a> method using the <a class="el" href="a00074.html">RequestFactory </a> instance by passing a notification identifier. This method acknowledges the notification and requests that the notification be stopped. </p>
-<div class="fragment"><pre class="fragment"> <span class="keywordtype">string</span> notificationId = <span class="stringliteral">&quot;xxxxxxxxxxxxx&quot;</span>;
- AcknowledgeNotificationResponse response = this.requestFactory.AcknowledgeNotifications(notificationId);
-</pre></div><p> <br/>
- </p>
+<div class="textblock"><p><br/>
+ <a class="el" href="a00008.html">About the Cookbooks</a> <br/>
+ <a class="el" href="a00009.html">Getting started with OAuth API Implementation</a> <br/>
+ <a class="el" href="a00012.html">Short Message Service Cookbook</a> <br/>
+ <a class="el" href="a00004.html">Multimedia Messaging Service Cookbook</a> <br/>
+ <a class="el" href="a00002.html">Device Capabilities Service Cookbook</a> <br/>
+ <a class="el" href="a00003.html">In-App Messaging Service Cookbook</a> <br/>
+ <a class="el" href="a00014.html">Speech Service Cookbook</a> <br/>
+ <a class="el" href="a00001.html">Advertising Service Cookbook</a> <br/>
+ <a class="el" href="a00015.html">Text To Speech Service Cookbook</a> <br/>
+ <a class="el" href="a00013.html">Speech To Text Custom Service Cookbook</a> </p>
 </div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:10 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

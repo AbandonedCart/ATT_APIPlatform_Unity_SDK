@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.Speechv3.NBest Class Reference</title>
+<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.InAppMessaging.MessageRequest Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -100,180 +100,105 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#properties">Properties</a>  </div>
   <div class="headertitle">
-<div class="title">ATT_MSSDK.Speechv3.NBest Class Reference</div>  </div>
+<div class="title">ATT_MSSDK.InAppMessaging.MessageRequest Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>NBest returned by speech to text response. NBest is a complex structure that holds the results of the transcription. Supports multiple transcriptions.  
+<p>Container for <a class="el" href="a00050.html" title="Container for message.">Message</a> Request.  
  <a href="a00058.html#details">More...</a></p>
 
-<p><a href="a00318.html">List of all members.</a></p>
+<p><a href="a00283.html">List of all members.</a></p>
 <table class="memberdecls">
-<tr><td colspan="2"><h2><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a6f1d1a292e136b36eeb79df0968e579a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00058.html#a6f1d1a292e136b36eeb79df0968e579a">NBest</a> ()</td></tr>
-<tr class="memdesc:a6f1d1a292e136b36eeb79df0968e579a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="a00058.html" title="NBest returned by speech to text response. NBest is a complex structure that holds the results of the...">NBest</a> class.  <a href="#a6f1d1a292e136b36eeb79df0968e579a"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:aa884a1f73356fec15060496435d1d798"><td class="memItemLeft" align="right" valign="top">decimal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00058.html#aa884a1f73356fec15060496435d1d798">Confidence</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aa884a1f73356fec15060496435d1d798"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Confidence. The confidence value of the Hypothesis, a value between 0.0 and 1.0 inclusive.  <a href="#aa884a1f73356fec15060496435d1d798"></a><br/></td></tr>
-<tr class="memitem:aa94bbabfd40fe6a8461672474beb9779"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00058.html#aa94bbabfd40fe6a8461672474beb9779">Hypothesis</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aa94bbabfd40fe6a8461672474beb9779"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Hypothesis. The transcription of the audio.  <a href="#aa94bbabfd40fe6a8461672474beb9779"></a><br/></td></tr>
-<tr class="memitem:ac03bc03f194281f951f41b127f6abc22"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00058.html#ac03bc03f194281f951f41b127f6abc22">LanguageId</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ac03bc03f194281f951f41b127f6abc22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the LanguageId. The language used to decode the Hypothesis. Represented using the two-letter ISO 639 language code, hyphen, two-letter ISO 3166 country code in lower case, e.g. “en-us”.  <a href="#ac03bc03f194281f951f41b127f6abc22"></a><br/></td></tr>
-<tr class="memitem:a1864511c579b09dded6922d13c14ed18"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00058.html#a1864511c579b09dded6922d13c14ed18">Grade</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a1864511c579b09dded6922d13c14ed18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Grade. A machine-readable string indicating an assessment of utterance/result quality and the recommended treatment of the Hypothesis. The assessment reflects a confidence region based on prior experience with similar results. accept - the hypothesis value has acceptable confidence confirm - the hypothesis should be independently confirmed due to lower confidence reject - the hypothesis should be rejected due to low confidence.  <a href="#a1864511c579b09dded6922d13c14ed18"></a><br/></td></tr>
-<tr class="memitem:a2ba07647b7beaa8428705856bb621449"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00058.html#a2ba07647b7beaa8428705856bb621449">ResultText</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a2ba07647b7beaa8428705856bb621449"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the ResultText. A text string prepared according to the output domain of the application package. The string will generally be a formatted version of the hypothesis, but the words may have been altered through insertions/deletions/substitutions to make the result more readable or usable for the client.  <a href="#a2ba07647b7beaa8428705856bb621449"></a><br/></td></tr>
-<tr class="memitem:a7f7fc21a78b0c0fcf9066d3d4aac2cb0"><td class="memItemLeft" align="right" valign="top">List&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00058.html#a7f7fc21a78b0c0fcf9066d3d4aac2cb0">Words</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a7f7fc21a78b0c0fcf9066d3d4aac2cb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Words. List of strings The words of the Hypothesis split into separate strings. May omit some of the words of the Hypothesis string, and can be empty. Never contains words not in hypothesis string.  <a href="#a7f7fc21a78b0c0fcf9066d3d4aac2cb0"></a><br/></td></tr>
-<tr class="memitem:a7c19c5bacaba07afa1524d50fadeeb9f"><td class="memItemLeft" align="right" valign="top">List&lt; decimal &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00058.html#a7c19c5bacaba07afa1524d50fadeeb9f">WordScores</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a7c19c5bacaba07afa1524d50fadeeb9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Words. List of numbers The confidence scores for each of the strings in the words array. Each value ranges from 0.0 to 1.0 inclusive.  <a href="#a7c19c5bacaba07afa1524d50fadeeb9f"></a><br/></td></tr>
-<tr class="memitem:a4a6d62f42be9b405cec7cc0d18d9c467"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00059.html">NluHypothesis</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00058.html#a4a6d62f42be9b405cec7cc0d18d9c467">NluHypothesis</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a4a6d62f42be9b405cec7cc0d18d9c467"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of <a class="el" href="a00059.html" title="Encapsulates NluHypothesis data retuned in speech to text response.">NluHypothesis</a>.  <a href="#a4a6d62f42be9b405cec7cc0d18d9c467"></a><br/></td></tr>
+<tr class="memitem:a87e24abf1cd339d5e600b1eafd061a0d"><td class="memItemLeft" align="right" valign="top">List&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00058.html#a87e24abf1cd339d5e600b1eafd061a0d">Addresses</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a87e24abf1cd339d5e600b1eafd061a0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the list of addresses to send message. The addresses can be MSISDN, Short Code and Email address.  <a href="#a87e24abf1cd339d5e600b1eafd061a0d"></a><br/></td></tr>
+<tr class="memitem:a33b6f928de8d2ab6f49a676456aa32f7"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00058.html#a33b6f928de8d2ab6f49a676456aa32f7">Text</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a33b6f928de8d2ab6f49a676456aa32f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the message text to be sent.  <a href="#a33b6f928de8d2ab6f49a676456aa32f7"></a><br/></td></tr>
+<tr class="memitem:a6fe02f2b2df834d8e1d3253357be0410"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00058.html#a6fe02f2b2df834d8e1d3253357be0410">Subject</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a6fe02f2b2df834d8e1d3253357be0410"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the subject of the message.  <a href="#a6fe02f2b2df834d8e1d3253357be0410"></a><br/></td></tr>
+<tr class="memitem:a659ea7ada3103513c7f521f5be23d3af"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00058.html#a659ea7ada3103513c7f521f5be23d3af">IsGroup</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a659ea7ada3103513c7f521f5be23d3af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of IsGroup. This value specifies if the message needs to be transmitted as broadcast or group message.  <a href="#a659ea7ada3103513c7f521f5be23d3af"></a><br/></td></tr>
+<tr class="memitem:ae59a6029d734a46d50028f57e4edad5e"><td class="memItemLeft" align="right" valign="top">List&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00058.html#ae59a6029d734a46d50028f57e4edad5e">Attachments</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ae59a6029d734a46d50028f57e4edad5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the list of attachments.  <a href="#ae59a6029d734a46d50028f57e4edad5e"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>NBest returned by speech to text response. NBest is a complex structure that holds the results of the transcription. Supports multiple transcriptions. </p>
-</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a6f1d1a292e136b36eeb79df0968e579a"></a>
+<div class="textblock"><p>Container for <a class="el" href="a00050.html" title="Container for message.">Message</a> Request. </p>
+</div><hr/><h2>Property Documentation</h2>
+<a class="anchor" id="a87e24abf1cd339d5e600b1eafd061a0d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00058.html#a6f1d1a292e136b36eeb79df0968e579a">ATT_MSSDK.Speechv3.NBest.NBest</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">List&lt;string&gt; <a class="el" href="a00058.html#a87e24abf1cd339d5e600b1eafd061a0d">ATT_MSSDK.InAppMessaging.MessageRequest.Addresses</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Initializes a new instance of the <a class="el" href="a00058.html" title="NBest returned by speech to text response. NBest is a complex structure that holds the results of the...">NBest</a> class. </p>
+<p>Gets or sets the list of addresses to send message. The addresses can be MSISDN, Short Code and Email address. </p>
 
 </div>
 </div>
-<hr/><h2>Property Documentation</h2>
-<a class="anchor" id="aa884a1f73356fec15060496435d1d798"></a>
+<a class="anchor" id="ae59a6029d734a46d50028f57e4edad5e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">decimal <a class="el" href="a00058.html#aa884a1f73356fec15060496435d1d798">ATT_MSSDK.Speechv3.NBest.Confidence</a><code> [get, set]</code></td>
+          <td class="memname">List&lt;string&gt; <a class="el" href="a00058.html#ae59a6029d734a46d50028f57e4edad5e">ATT_MSSDK.InAppMessaging.MessageRequest.Attachments</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets the Confidence. The confidence value of the Hypothesis, a value between 0.0 and 1.0 inclusive. </p>
+<p>Gets or sets the list of attachments. </p>
 
 </div>
 </div>
-<a class="anchor" id="a1864511c579b09dded6922d13c14ed18"></a>
+<a class="anchor" id="a659ea7ada3103513c7f521f5be23d3af"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="a00058.html#a1864511c579b09dded6922d13c14ed18">ATT_MSSDK.Speechv3.NBest.Grade</a><code> [get, set]</code></td>
+          <td class="memname">bool <a class="el" href="a00058.html#a659ea7ada3103513c7f521f5be23d3af">ATT_MSSDK.InAppMessaging.MessageRequest.IsGroup</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets the Grade. A machine-readable string indicating an assessment of utterance/result quality and the recommended treatment of the Hypothesis. The assessment reflects a confidence region based on prior experience with similar results. accept - the hypothesis value has acceptable confidence confirm - the hypothesis should be independently confirmed due to lower confidence reject - the hypothesis should be rejected due to low confidence. </p>
+<p>Gets or sets the value of IsGroup. This value specifies if the message needs to be transmitted as broadcast or group message. </p>
 
 </div>
 </div>
-<a class="anchor" id="aa94bbabfd40fe6a8461672474beb9779"></a>
+<a class="anchor" id="a6fe02f2b2df834d8e1d3253357be0410"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="a00058.html#aa94bbabfd40fe6a8461672474beb9779">ATT_MSSDK.Speechv3.NBest.Hypothesis</a><code> [get, set]</code></td>
+          <td class="memname">string <a class="el" href="a00058.html#a6fe02f2b2df834d8e1d3253357be0410">ATT_MSSDK.InAppMessaging.MessageRequest.Subject</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets the Hypothesis. The transcription of the audio. </p>
+<p>Gets or sets the subject of the message. </p>
 
 </div>
 </div>
-<a class="anchor" id="ac03bc03f194281f951f41b127f6abc22"></a>
+<a class="anchor" id="a33b6f928de8d2ab6f49a676456aa32f7"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="a00058.html#ac03bc03f194281f951f41b127f6abc22">ATT_MSSDK.Speechv3.NBest.LanguageId</a><code> [get, set]</code></td>
+          <td class="memname">string <a class="el" href="a00058.html#a33b6f928de8d2ab6f49a676456aa32f7">ATT_MSSDK.InAppMessaging.MessageRequest.Text</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets the LanguageId. The language used to decode the Hypothesis. Represented using the two-letter ISO 639 language code, hyphen, two-letter ISO 3166 country code in lower case, e.g. “en-us”. </p>
-
-</div>
-</div>
-<a class="anchor" id="a4a6d62f42be9b405cec7cc0d18d9c467"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00059.html">NluHypothesis</a> <a class="el" href="a00058.html#a4a6d62f42be9b405cec7cc0d18d9c467">ATT_MSSDK.Speechv3.NBest.NluHypothesis</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the value of <a class="el" href="a00059.html" title="Encapsulates NluHypothesis data retuned in speech to text response.">NluHypothesis</a>. </p>
-
-</div>
-</div>
-<a class="anchor" id="a2ba07647b7beaa8428705856bb621449"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00058.html#a2ba07647b7beaa8428705856bb621449">ATT_MSSDK.Speechv3.NBest.ResultText</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the ResultText. A text string prepared according to the output domain of the application package. The string will generally be a formatted version of the hypothesis, but the words may have been altered through insertions/deletions/substitutions to make the result more readable or usable for the client. </p>
-
-</div>
-</div>
-<a class="anchor" id="a7f7fc21a78b0c0fcf9066d3d4aac2cb0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">List&lt;string&gt; <a class="el" href="a00058.html#a7f7fc21a78b0c0fcf9066d3d4aac2cb0">ATT_MSSDK.Speechv3.NBest.Words</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the Words. List of strings The words of the Hypothesis split into separate strings. May omit some of the words of the Hypothesis string, and can be empty. Never contains words not in hypothesis string. </p>
-
-</div>
-</div>
-<a class="anchor" id="a7c19c5bacaba07afa1524d50fadeeb9f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">List&lt;decimal&gt; <a class="el" href="a00058.html#a7c19c5bacaba07afa1524d50fadeeb9f">ATT_MSSDK.Speechv3.NBest.WordScores</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the Words. List of numbers The confidence scores for each of the strings in the words array. Each value ranges from 0.0 to 1.0 inclusive. </p>
+<p>Gets or sets the message text to be sent. </p>
 
 </div>
 </div>
@@ -281,13 +206,14 @@ Properties</h2></td></tr>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="a00201.html">ATT_MSSDK</a>      </li>
-      <li class="navelem"><a class="el" href="a00212.html">Speechv3</a>      </li>
-      <li class="navelem"><a class="el" href="a00058.html">NBest</a>      </li>
+      <li class="navelem"><a class="el" href="a00209.html">ATT_MSSDK</a>      </li>
+      <li class="navelem"><a class="el" href="a00213.html">InAppMessaging</a>      </li>
+      <li class="navelem"><a class="el" href="a00058.html">MessageRequest</a>      </li>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:11 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

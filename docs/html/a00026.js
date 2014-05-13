@@ -1,6 +1,7 @@
 var a00026 =
 [
-    [ "CreateSessionResponse", "a00026.html#ae4e4b6bb07cd5aef9d8a10a8558273ca", null ],
-    [ "Id", "a00026.html#a45dec08a53cea100495ff58c4b000edf", null ],
-    [ "Success", "a00026.html#ad8f2dbc0c0c3c24503e8d28a3098b96d", null ]
+    [ "Adds", "a00026.html#af995cd0e7e481f3a35028a86095e0973", null ],
+    [ "Deletes", "a00026.html#a2e216d5d7aa266c340969235479cc484", null ],
+    [ "Type", "a00026.html#a9e910771d5659423cff17988314b000e", null ],
+    [ "Updates", "a00026.html#a462582662d54d9b7c23a4239dbb3d9ef", null ]
 ];

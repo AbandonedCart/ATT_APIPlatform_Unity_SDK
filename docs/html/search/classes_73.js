@@ -1,19 +1,16 @@
 var searchData=
 [
-  ['search',['Search',['../a00079.html',1,'ATT_MSSDK::Speechv3']]],
-  ['sendmessageresponse',['SendMessageResponse',['../a00080.html',1,'ATT_MSSDK::MOBOv1']]],
-  ['sendsignalresponse',['SendSignalResponse',['../a00081.html',1,'ATT_MSSDK::CallControlv1']]],
-  ['serviceerrorobject',['ServiceErrorObject',['../a00082.html',1,'ATT_MSSDK']]],
-  ['serviceexceptionobject',['ServiceExceptionObject',['../a00083.html',1,'ATT_MSSDK']]],
-  ['showtime',['Showtime',['../a00084.html',1,'ATT_MSSDK::Speechv3']]],
-  ['smsdeliveryresponse',['SmsDeliveryResponse',['../a00085.html',1,'ATT_MSSDK::SMSv3']]],
-  ['smsdeliverystatus',['SmsDeliveryStatus',['../a00086.html',1,'ATT_MSSDK::SMSv3']]],
-  ['smsresponse',['SmsResponse',['../a00087.html',1,'ATT_MSSDK::SMSv3']]],
-  ['socialmediaxargs',['SocialMediaXArgs',['../a00088.html',1,'ATT_MSSDK::Speechv3']]],
-  ['speechresponse',['SpeechResponse',['../a00089.html',1,'ATT_MSSDK::Speechv3']]],
-  ['stopsubscriptionnotificationobject',['StopSubscriptionNotificationObject',['../a00090.html',1,'ATT_MSSDK::Paymentv3']]],
-  ['subscriptiondetails',['SubscriptionDetails',['../a00091.html',1,'ATT_MSSDK::Paymentv3']]],
-  ['subscriptionrecurrencenotificationobject',['SubscriptionRecurrenceNotificationObject',['../a00092.html',1,'ATT_MSSDK::Paymentv3']]],
-  ['subscriptionstatus',['SubscriptionStatus',['../a00093.html',1,'ATT_MSSDK::Paymentv3']]],
-  ['successfulrefundnotificationobject',['SuccessfulRefundNotificationObject',['../a00094.html',1,'ATT_MSSDK::Paymentv3']]]
+  ['search',['Search',['../a00085.html',1,'ATT_MSSDK::Speechv3']]],
+  ['segmentationdetails',['SegmentationDetails',['../a00086.html',1,'ATT_MSSDK::InAppMessaging']]],
+  ['sendmessageresponse',['SendMessageResponse',['../a00088.html',1,'ATT_MSSDK::IMMNv1']]],
+  ['sendmessageresponse',['SendMessageResponse',['../a00089.html',1,'ATT_MSSDK::MOBOv1']]],
+  ['sendmessageresponse',['SendMessageResponse',['../a00087.html',1,'ATT_MSSDK::InAppMessaging']]],
+  ['serviceerrorobject',['ServiceErrorObject',['../a00090.html',1,'ATT_MSSDK']]],
+  ['serviceexceptionobject',['ServiceExceptionObject',['../a00091.html',1,'ATT_MSSDK']]],
+  ['showtime',['Showtime',['../a00092.html',1,'ATT_MSSDK::Speechv3']]],
+  ['smsdeliveryresponse',['SmsDeliveryResponse',['../a00093.html',1,'ATT_MSSDK::SMSv3']]],
+  ['smsdeliverystatus',['SmsDeliveryStatus',['../a00094.html',1,'ATT_MSSDK::SMSv3']]],
+  ['smsresponse',['SmsResponse',['../a00095.html',1,'ATT_MSSDK::SMSv3']]],
+  ['socialmediaxargs',['SocialMediaXArgs',['../a00096.html',1,'ATT_MSSDK::Speechv3']]],
+  ['speechresponse',['SpeechResponse',['../a00097.html',1,'ATT_MSSDK::Speechv3']]]
 ];

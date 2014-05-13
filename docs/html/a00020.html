@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.Advertisementv1.AdRequest Class Reference</title>
+<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.MMSv3.DeliveryInfo Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -100,326 +100,95 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#properties">Properties</a>  </div>
   <div class="headertitle">
-<div class="title">ATT_MSSDK.Advertisementv1.AdRequest Class Reference</div>  </div>
+<div class="title">ATT_MSSDK.MMSv3.DeliveryInfo Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This class encapsulates the data[Advertisement profile] that need to be passed to the Advertisement service. UDID and Category are mandatory. All other parameters are optional.  
+<p>Encapsulates the delivery info returned by the server for MMS messages.  
  <a href="a00020.html#details">More...</a></p>
 
-<p><a href="a00260.html">List of all members.</a></p>
+<p><a href="a00297.html">List of all members.</a></p>
 <table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ad99772412abf996a508dc290d6376fb5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#ad99772412abf996a508dc290d6376fb5">DeliveryInfo</a> ()</td></tr>
+<tr class="memdesc:ad99772412abf996a508dc290d6376fb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="a00020.html" title="Encapsulates the delivery info returned by the server for MMS messages.">DeliveryInfo</a> class.  <a href="#ad99772412abf996a508dc290d6376fb5"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a38758e68146a16d9ba3798f449e04544"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#a38758e68146a16d9ba3798f449e04544">Udid</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a38758e68146a16d9ba3798f449e04544"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of Udid. UDID is used for <a class="el" href="a00019.html" title="Container structure for the advertisement details.">Ad</a> tracking purpose and should be atleast 30 characters. This is a mandatory parameter to be passed to <a class="el" href="a00019.html" title="Container structure for the advertisement details.">Ad</a> API.  <a href="#a38758e68146a16d9ba3798f449e04544"></a><br/></td></tr>
-<tr class="memitem:a16b138c9dacccede9b8873d5a561b894"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#a16b138c9dacccede9b8873d5a561b894">Category</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a16b138c9dacccede9b8873d5a561b894"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the type of category for the advertisement. This is a mandatory parameter to be passed to <a class="el" href="a00019.html" title="Container structure for the advertisement details.">Ad</a> API.  <a href="#a16b138c9dacccede9b8873d5a561b894"></a><br/></td></tr>
-<tr class="memitem:a0c91d3fa197df202ce3f858eb7b37f4d"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#a0c91d3fa197df202ce3f858eb7b37f4d">Gender</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a0c91d3fa197df202ce3f858eb7b37f4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of Gender.  <a href="#a0c91d3fa197df202ce3f858eb7b37f4d"></a><br/></td></tr>
-<tr class="memitem:abbcb7427381d2785a2801c7afd067645"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#abbcb7427381d2785a2801c7afd067645">ZipCode</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:abbcb7427381d2785a2801c7afd067645"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of Zip/Postal code of a user. For US only.  <a href="#abbcb7427381d2785a2801c7afd067645"></a><br/></td></tr>
-<tr class="memitem:aa6a519ed4b135ec8ea4209c4629f2a0a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#aa6a519ed4b135ec8ea4209c4629f2a0a">AreaCode</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aa6a519ed4b135ec8ea4209c4629f2a0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of Area code of a user. For US only.  <a href="#aa6a519ed4b135ec8ea4209c4629f2a0a"></a><br/></td></tr>
-<tr class="memitem:a12c8a4a03cf6aba5a04acb59b0e3f957"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#a12c8a4a03cf6aba5a04acb59b0e3f957">City</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a12c8a4a03cf6aba5a04acb59b0e3f957"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of city. The City (with state) of the device user. For US only.  <a href="#a12c8a4a03cf6aba5a04acb59b0e3f957"></a><br/></td></tr>
-<tr class="memitem:a9f170d60ddec4e6d27e0f67c967b4b32"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#a9f170d60ddec4e6d27e0f67c967b4b32">Country</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a9f170d60ddec4e6d27e0f67c967b4b32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of country. An ISO 3166 code to be used for specifying a country code.  <a href="#a9f170d60ddec4e6d27e0f67c967b4b32"></a><br/></td></tr>
-<tr class="memitem:a0608c1b897b4e1b702c3a781a182d4ef"><td class="memItemLeft" align="right" valign="top">decimal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#a0608c1b897b4e1b702c3a781a182d4ef">Longitude</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a0608c1b897b4e1b702c3a781a182d4ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of user location longitude value (in degrees).  <a href="#a0608c1b897b4e1b702c3a781a182d4ef"></a><br/></td></tr>
-<tr class="memitem:a6aca037728039fa4a0ec245402aebe38"><td class="memItemLeft" align="right" valign="top">decimal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#a6aca037728039fa4a0ec245402aebe38">Latitude</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a6aca037728039fa4a0ec245402aebe38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of user location latitude value (in degrees).  <a href="#a6aca037728039fa4a0ec245402aebe38"></a><br/></td></tr>
-<tr class="memitem:acdf351f7cb357b19d05b8a0cfa430915"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#acdf351f7cb357b19d05b8a0cfa430915">MaxHeight</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:acdf351f7cb357b19d05b8a0cfa430915"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the maximum height of the ad banner to be shown.  <a href="#acdf351f7cb357b19d05b8a0cfa430915"></a><br/></td></tr>
-<tr class="memitem:a9d695d21161a18854f6ad03fc65fde05"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#a9d695d21161a18854f6ad03fc65fde05">MaxWidth</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a9d695d21161a18854f6ad03fc65fde05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the maximum width of the ad banner to be shown.  <a href="#a9d695d21161a18854f6ad03fc65fde05"></a><br/></td></tr>
-<tr class="memitem:ab81d3093d78be0819e36dcfadad5d14f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#ab81d3093d78be0819e36dcfadad5d14f">MinHeight</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ab81d3093d78be0819e36dcfadad5d14f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the minimum height of the ad banner to be shown.  <a href="#ab81d3093d78be0819e36dcfadad5d14f"></a><br/></td></tr>
-<tr class="memitem:a8487bfcde9dd1a8d05d6c01b0895fa33"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#a8487bfcde9dd1a8d05d6c01b0895fa33">MinWidth</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a8487bfcde9dd1a8d05d6c01b0895fa33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the minimum width of the ad banner to be shown.  <a href="#a8487bfcde9dd1a8d05d6c01b0895fa33"></a><br/></td></tr>
-<tr class="memitem:a7e38cef690ca3802019585688cd4d30b"><td class="memItemLeft" align="right" valign="top">uint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#a7e38cef690ca3802019585688cd4d30b">Type</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a7e38cef690ca3802019585688cd4d30b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the type of ads to be returned.  <a href="#a7e38cef690ca3802019585688cd4d30b"></a><br/></td></tr>
-<tr class="memitem:a7327427e6fc665e1f72645a380cc5083"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#a7327427e6fc665e1f72645a380cc5083">AgeGroup</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a7327427e6fc665e1f72645a380cc5083"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the age group of the demographic audience of the app.  <a href="#a7327427e6fc665e1f72645a380cc5083"></a><br/></td></tr>
-<tr class="memitem:ac6a6bdf483683eefa55949c9d24bb63e"><td class="memItemLeft" align="right" valign="top">uint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#ac6a6bdf483683eefa55949c9d24bb63e">Over18Content</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ac6a6bdf483683eefa55949c9d24bb63e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Over18 content filter.  <a href="#ac6a6bdf483683eefa55949c9d24bb63e"></a><br/></td></tr>
-<tr class="memitem:ad22942975041da3c61337e3c32e2af9c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#ad22942975041da3c61337e3c32e2af9c">Keywords</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ad22942975041da3c61337e3c32e2af9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets keywords filter. (delimited by keywords=music, commas).  <a href="#ad22942975041da3c61337e3c32e2af9c"></a><br/></td></tr>
-<tr class="memitem:ad8702c76a0465c0b4b4ed1be0fe349e1"><td class="memItemLeft" align="right" valign="top">uint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#ad8702c76a0465c0b4b4ed1be0fe349e1">Premium</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ad8702c76a0465c0b4b4ed1be0fe349e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the premium status filter.  <a href="#ad8702c76a0465c0b4b4ed1be0fe349e1"></a><br/></td></tr>
+<tr class="memitem:a58da764e2ada17c8aa1fe037be4c65cf"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#a58da764e2ada17c8aa1fe037be4c65cf">Id</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a58da764e2ada17c8aa1fe037be4c65cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Id of the message.  <a href="#a58da764e2ada17c8aa1fe037be4c65cf"></a><br/></td></tr>
+<tr class="memitem:a46377e3a4ad7a48f19ee41aa65cdd4a9"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#a46377e3a4ad7a48f19ee41aa65cdd4a9">Address</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a46377e3a4ad7a48f19ee41aa65cdd4a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the address of the MMS message.  <a href="#a46377e3a4ad7a48f19ee41aa65cdd4a9"></a><br/></td></tr>
+<tr class="memitem:ad1f5de37d2c10dc8a20809a611188927"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#ad1f5de37d2c10dc8a20809a611188927">DeliveryStatus</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ad1f5de37d2c10dc8a20809a611188927"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the delivery status of the MMS message.  <a href="#ad1f5de37d2c10dc8a20809a611188927"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>This class encapsulates the data[Advertisement profile] that need to be passed to the Advertisement service. UDID and Category are mandatory. All other parameters are optional. </p>
-</div><hr/><h2>Property Documentation</h2>
-<a class="anchor" id="a7327427e6fc665e1f72645a380cc5083"></a>
+<div class="textblock"><p>Encapsulates the delivery info returned by the server for MMS messages. </p>
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ad99772412abf996a508dc290d6376fb5"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="a00020.html#a7327427e6fc665e1f72645a380cc5083">ATT_MSSDK.Advertisementv1.AdRequest.AgeGroup</a><code> [get, set]</code></td>
+          <td class="memname"><a class="el" href="a00020.html#ad99772412abf996a508dc290d6376fb5">ATT_MSSDK.MMSv3.DeliveryInfo.DeliveryInfo</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets the age group of the demographic audience of the app. </p>
+<p>Initializes a new instance of the <a class="el" href="a00020.html" title="Encapsulates the delivery info returned by the server for MMS messages.">DeliveryInfo</a> class. </p>
 
 </div>
 </div>
-<a class="anchor" id="aa6a519ed4b135ec8ea4209c4629f2a0a"></a>
+<hr/><h2>Property Documentation</h2>
+<a class="anchor" id="a46377e3a4ad7a48f19ee41aa65cdd4a9"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="a00020.html#aa6a519ed4b135ec8ea4209c4629f2a0a">ATT_MSSDK.Advertisementv1.AdRequest.AreaCode</a><code> [get, set]</code></td>
+          <td class="memname">string <a class="el" href="a00020.html#a46377e3a4ad7a48f19ee41aa65cdd4a9">ATT_MSSDK.MMSv3.DeliveryInfo.Address</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets the value of Area code of a user. For US only. </p>
+<p>Gets or sets the address of the MMS message. </p>
 
 </div>
 </div>
-<a class="anchor" id="a16b138c9dacccede9b8873d5a561b894"></a>
+<a class="anchor" id="ad1f5de37d2c10dc8a20809a611188927"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="a00020.html#a16b138c9dacccede9b8873d5a561b894">ATT_MSSDK.Advertisementv1.AdRequest.Category</a><code> [get, set]</code></td>
+          <td class="memname">string <a class="el" href="a00020.html#ad1f5de37d2c10dc8a20809a611188927">ATT_MSSDK.MMSv3.DeliveryInfo.DeliveryStatus</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets the type of category for the advertisement. This is a mandatory parameter to be passed to <a class="el" href="a00019.html" title="Container structure for the advertisement details.">Ad</a> API. </p>
+<p>Gets or sets the delivery status of the MMS message. </p>
 
 </div>
 </div>
-<a class="anchor" id="a12c8a4a03cf6aba5a04acb59b0e3f957"></a>
+<a class="anchor" id="a58da764e2ada17c8aa1fe037be4c65cf"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="a00020.html#a12c8a4a03cf6aba5a04acb59b0e3f957">ATT_MSSDK.Advertisementv1.AdRequest.City</a><code> [get, set]</code></td>
+          <td class="memname">string <a class="el" href="a00020.html#a58da764e2ada17c8aa1fe037be4c65cf">ATT_MSSDK.MMSv3.DeliveryInfo.Id</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets the value of city. The City (with state) of the device user. For US only. </p>
-
-</div>
-</div>
-<a class="anchor" id="a9f170d60ddec4e6d27e0f67c967b4b32"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00020.html#a9f170d60ddec4e6d27e0f67c967b4b32">ATT_MSSDK.Advertisementv1.AdRequest.Country</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the value of country. An ISO 3166 code to be used for specifying a country code. </p>
-
-</div>
-</div>
-<a class="anchor" id="a0c91d3fa197df202ce3f858eb7b37f4d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00020.html#a0c91d3fa197df202ce3f858eb7b37f4d">ATT_MSSDK.Advertisementv1.AdRequest.Gender</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the value of Gender. </p>
-
-</div>
-</div>
-<a class="anchor" id="ad22942975041da3c61337e3c32e2af9c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00020.html#ad22942975041da3c61337e3c32e2af9c">ATT_MSSDK.Advertisementv1.AdRequest.Keywords</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets keywords filter. (delimited by keywords=music, commas). </p>
-
-</div>
-</div>
-<a class="anchor" id="a6aca037728039fa4a0ec245402aebe38"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">decimal <a class="el" href="a00020.html#a6aca037728039fa4a0ec245402aebe38">ATT_MSSDK.Advertisementv1.AdRequest.Latitude</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the value of user location latitude value (in degrees). </p>
-
-</div>
-</div>
-<a class="anchor" id="a0608c1b897b4e1b702c3a781a182d4ef"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">decimal <a class="el" href="a00020.html#a0608c1b897b4e1b702c3a781a182d4ef">ATT_MSSDK.Advertisementv1.AdRequest.Longitude</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the value of user location longitude value (in degrees). </p>
-
-</div>
-</div>
-<a class="anchor" id="acdf351f7cb357b19d05b8a0cfa430915"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="a00020.html#acdf351f7cb357b19d05b8a0cfa430915">ATT_MSSDK.Advertisementv1.AdRequest.MaxHeight</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the maximum height of the ad banner to be shown. </p>
-
-</div>
-</div>
-<a class="anchor" id="a9d695d21161a18854f6ad03fc65fde05"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="a00020.html#a9d695d21161a18854f6ad03fc65fde05">ATT_MSSDK.Advertisementv1.AdRequest.MaxWidth</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the maximum width of the ad banner to be shown. </p>
-
-</div>
-</div>
-<a class="anchor" id="ab81d3093d78be0819e36dcfadad5d14f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="a00020.html#ab81d3093d78be0819e36dcfadad5d14f">ATT_MSSDK.Advertisementv1.AdRequest.MinHeight</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the minimum height of the ad banner to be shown. </p>
-
-</div>
-</div>
-<a class="anchor" id="a8487bfcde9dd1a8d05d6c01b0895fa33"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="a00020.html#a8487bfcde9dd1a8d05d6c01b0895fa33">ATT_MSSDK.Advertisementv1.AdRequest.MinWidth</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the minimum width of the ad banner to be shown. </p>
-
-</div>
-</div>
-<a class="anchor" id="ac6a6bdf483683eefa55949c9d24bb63e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint <a class="el" href="a00020.html#ac6a6bdf483683eefa55949c9d24bb63e">ATT_MSSDK.Advertisementv1.AdRequest.Over18Content</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the Over18 content filter. </p>
-
-</div>
-</div>
-<a class="anchor" id="ad8702c76a0465c0b4b4ed1be0fe349e1"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint <a class="el" href="a00020.html#ad8702c76a0465c0b4b4ed1be0fe349e1">ATT_MSSDK.Advertisementv1.AdRequest.Premium</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the premium status filter. </p>
-
-</div>
-</div>
-<a class="anchor" id="a7e38cef690ca3802019585688cd4d30b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint <a class="el" href="a00020.html#a7e38cef690ca3802019585688cd4d30b">ATT_MSSDK.Advertisementv1.AdRequest.Type</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the type of ads to be returned. </p>
-
-</div>
-</div>
-<a class="anchor" id="a38758e68146a16d9ba3798f449e04544"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00020.html#a38758e68146a16d9ba3798f449e04544">ATT_MSSDK.Advertisementv1.AdRequest.Udid</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the value of Udid. UDID is used for <a class="el" href="a00019.html" title="Container structure for the advertisement details.">Ad</a> tracking purpose and should be atleast 30 characters. This is a mandatory parameter to be passed to <a class="el" href="a00019.html" title="Container structure for the advertisement details.">Ad</a> API. </p>
-
-</div>
-</div>
-<a class="anchor" id="abbcb7427381d2785a2801c7afd067645"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="a00020.html#abbcb7427381d2785a2801c7afd067645">ATT_MSSDK.Advertisementv1.AdRequest.ZipCode</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the value of Zip/Postal code of a user. For US only. </p>
+<p>Gets or sets the Id of the message. </p>
 
 </div>
 </div>
@@ -427,13 +196,14 @@ Properties</h2></td></tr>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="a00201.html">ATT_MSSDK</a>      </li>
-      <li class="navelem"><a class="el" href="a00202.html">Advertisementv1</a>      </li>
-      <li class="navelem"><a class="el" href="a00020.html">AdRequest</a>      </li>
+      <li class="navelem"><a class="el" href="a00209.html">ATT_MSSDK</a>      </li>
+      <li class="navelem"><a class="el" href="a00215.html">MMSv3</a>      </li>
+      <li class="navelem"><a class="el" href="a00020.html">DeliveryInfo</a>      </li>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:10 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

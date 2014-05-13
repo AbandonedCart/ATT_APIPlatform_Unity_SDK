@@ -1,5 +1,6 @@
 var a00053 =
 [
-    [ "AudioBytes", "a00053.html#ae864d525b9c345132d52706390c89a69", null ],
-    [ "AudioTime", "a00053.html#afd8e7b57b3b3d136be767be2bced5180", null ]
+    [ "MessageCount", "a00053.html#a6ae9424a57a8517ebb7d1ce611d6a756", null ],
+    [ "State", "a00053.html#a45fa461d51e2d203237c4ff5ae58f668", null ],
+    [ "Status", "a00053.html#a53a22e168b193d13392afed5241afe1c", null ]
 ];

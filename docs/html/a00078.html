@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationObject Class Reference</title>
+<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.SMSv3.ReceivedSMS Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -100,206 +100,105 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#properties">Properties</a>  </div>
   <div class="headertitle">
-<div class="title">ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationObject Class Reference</div>  </div>
+<div class="title">ATT_MSSDK.SMSv3.ReceivedSMS Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Restore Subscription Notification Object.  
+<p>SMS Message structure of callback SMS.  
  <a href="a00078.html#details">More...</a></p>
-<div class="dynheader">
-Inheritance diagram for ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationObject:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="a00078.png" usemap="#ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationObject_map" alt=""/>
-  <map id="ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationObject_map" name="ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationObject_map">
-<area href="a00062.html" title="Base class for all Notification Objects." alt="ATT_MSSDK.Paymentv3.NotificationObject" shape="rect" coords="0,0,369,24"/>
-</map>
- </div></div>
 
-<p><a href="a00294.html">List of all members.</a></p>
+<p><a href="a00316.html">List of all members.</a></p>
 <table class="memberdecls">
-<tr><td colspan="2"><h2><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a41799cdc30b8fb850f99d31e87c9fe00"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00078.html#a41799cdc30b8fb850f99d31e87c9fe00">RestoreSubscriptionNotificationObject</a> ()</td></tr>
-<tr class="memdesc:a41799cdc30b8fb850f99d31e87c9fe00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="a00078.html" title="Restore Subscription Notification Object.">RestoreSubscriptionNotificationObject</a> class.  <a href="#a41799cdc30b8fb850f99d31e87c9fe00"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a225e54b0acb0104f5713dd7311ff9999"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00078.html#a225e54b0acb0104f5713dd7311ff9999">ConsumerId</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a225e54b0acb0104f5713dd7311ff9999"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Unique Consumer Id.  <a href="#a225e54b0acb0104f5713dd7311ff9999"></a><br/></td></tr>
-<tr class="memitem:a6ee19efc82c9fce4ccd909efd431005f"><td class="memItemLeft" align="right" valign="top">DateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00078.html#a6ee19efc82c9fce4ccd909efd431005f">TransactionDate</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a6ee19efc82c9fce4ccd909efd431005f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Date and time the refund transaction occurred.  <a href="#a6ee19efc82c9fce4ccd909efd431005f"></a><br/></td></tr>
-<tr class="memitem:a5fde0b6cb3304fd8a102159fb8bf7e48"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00078.html#a5fde0b6cb3304fd8a102159fb8bf7e48">MerchantSubscriptionId</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a5fde0b6cb3304fd8a102159fb8bf7e48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Merchant subscription identifier.  <a href="#a5fde0b6cb3304fd8a102159fb8bf7e48"></a><br/></td></tr>
-<tr class="memitem:abb3729d16d155543ea323d8ace3d9fda"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00078.html#abb3729d16d155543ea323d8ace3d9fda">SubscriptionPeriod</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:abb3729d16d155543ea323d8ace3d9fda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the subscription period time unit. Valid values are: DAILY, WEEKLY and MONTHLY.  <a href="#abb3729d16d155543ea323d8ace3d9fda"></a><br/></td></tr>
-<tr class="memitem:ace6384367b679f95bda07e2bf9c0ca37"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00078.html#ace6384367b679f95bda07e2bf9c0ca37">SubscriptionPeriodAmount</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ace6384367b679f95bda07e2bf9c0ca37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the number of months – as only the monthly subscription period is supported for this release.  <a href="#ace6384367b679f95bda07e2bf9c0ca37"></a><br/></td></tr>
-<tr class="memitem:a19f84e88a15a859ab55d71d79077395d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00078.html#a19f84e88a15a859ab55d71d79077395d">SubscriptionRecurrences</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a19f84e88a15a859ab55d71d79077395d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the number of recurrences.  <a href="#a19f84e88a15a859ab55d71d79077395d"></a><br/></td></tr>
-<tr class="memitem:aae8c3ff8b197df894d65f4fc5c14667b"><td class="memItemLeft" align="right" valign="top">DateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00078.html#aae8c3ff8b197df894d65f4fc5c14667b">CurrentPeriodStartDate</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aae8c3ff8b197df894d65f4fc5c14667b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the Start date of current subscription period.  <a href="#aae8c3ff8b197df894d65f4fc5c14667b"></a><br/></td></tr>
-<tr class="memitem:ad30d36e3815ef568454812300dd20c93"><td class="memItemLeft" align="right" valign="top">DateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00078.html#ad30d36e3815ef568454812300dd20c93">CurrentPeriodEndDate</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ad30d36e3815ef568454812300dd20c93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the End date of current subscription period.  <a href="#ad30d36e3815ef568454812300dd20c93"></a><br/></td></tr>
-<tr class="memitem:a800bdc4fa27004a5f8dc2fd5972899f6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00078.html#a800bdc4fa27004a5f8dc2fd5972899f6">SubscriptionRemaining</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a800bdc4fa27004a5f8dc2fd5972899f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the remaining number of renewals.  <a href="#a800bdc4fa27004a5f8dc2fd5972899f6"></a><br/></td></tr>
+<tr class="memitem:aeb0cb6fa5fa0646d1365616cbadb654c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00078.html#aeb0cb6fa5fa0646d1365616cbadb654c">DateTime</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:aeb0cb6fa5fa0646d1365616cbadb654c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of DateTime.  <a href="#aeb0cb6fa5fa0646d1365616cbadb654c"></a><br/></td></tr>
+<tr class="memitem:ac4e694726920485b6ae8798920db7416"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00078.html#ac4e694726920485b6ae8798920db7416">MessageId</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ac4e694726920485b6ae8798920db7416"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of MessageId. Unique identifier for the message.  <a href="#ac4e694726920485b6ae8798920db7416"></a><br/></td></tr>
+<tr class="memitem:ad0bef8ecaad6131ad1b5c022de80bbeb"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00078.html#ad0bef8ecaad6131ad1b5c022de80bbeb">Message</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ad0bef8ecaad6131ad1b5c022de80bbeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of Message Text.  <a href="#ad0bef8ecaad6131ad1b5c022de80bbeb"></a><br/></td></tr>
+<tr class="memitem:aa4c6bc2b106ecbb55183af6ea3cb5230"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00078.html#aa4c6bc2b106ecbb55183af6ea3cb5230">SenderAddress</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:aa4c6bc2b106ecbb55183af6ea3cb5230"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of Sender Address. Mobile number of the sender.  <a href="#aa4c6bc2b106ecbb55183af6ea3cb5230"></a><br/></td></tr>
+<tr class="memitem:a709a104d3f38dca4375c758a7068d231"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00078.html#a709a104d3f38dca4375c758a7068d231">DestinationAddress</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a709a104d3f38dca4375c758a7068d231"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of DestinationAddress. Mobile number of the receiver.  <a href="#a709a104d3f38dca4375c758a7068d231"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Restore Subscription Notification Object. </p>
-</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a41799cdc30b8fb850f99d31e87c9fe00"></a>
+<div class="textblock"><p>SMS Message structure of callback SMS. </p>
+</div><hr/><h2>Property Documentation</h2>
+<a class="anchor" id="aeb0cb6fa5fa0646d1365616cbadb654c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00078.html#a41799cdc30b8fb850f99d31e87c9fe00">ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationObject.RestoreSubscriptionNotificationObject</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">string <a class="el" href="a00078.html#aeb0cb6fa5fa0646d1365616cbadb654c">ATT_MSSDK.SMSv3.ReceivedSMS.DateTime</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Initializes a new instance of the <a class="el" href="a00078.html" title="Restore Subscription Notification Object.">RestoreSubscriptionNotificationObject</a> class. </p>
+<p>Gets or sets the value of DateTime. </p>
 
 </div>
 </div>
-<hr/><h2>Property Documentation</h2>
-<a class="anchor" id="a225e54b0acb0104f5713dd7311ff9999"></a>
+<a class="anchor" id="a709a104d3f38dca4375c758a7068d231"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="a00078.html#a225e54b0acb0104f5713dd7311ff9999">ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationObject.ConsumerId</a><code> [get, set]</code></td>
+          <td class="memname">string <a class="el" href="a00078.html#a709a104d3f38dca4375c758a7068d231">ATT_MSSDK.SMSv3.ReceivedSMS.DestinationAddress</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets the Unique Consumer Id. </p>
+<p>Gets or sets the value of DestinationAddress. Mobile number of the receiver. </p>
 
 </div>
 </div>
-<a class="anchor" id="ad30d36e3815ef568454812300dd20c93"></a>
+<a class="anchor" id="ad0bef8ecaad6131ad1b5c022de80bbeb"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">DateTime <a class="el" href="a00078.html#ad30d36e3815ef568454812300dd20c93">ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationObject.CurrentPeriodEndDate</a><code> [get, set]</code></td>
+          <td class="memname">string <a class="el" href="a00078.html#ad0bef8ecaad6131ad1b5c022de80bbeb">ATT_MSSDK.SMSv3.ReceivedSMS.Message</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets the End date of current subscription period. </p>
+<p>Gets or sets the value of Message Text. </p>
 
 </div>
 </div>
-<a class="anchor" id="aae8c3ff8b197df894d65f4fc5c14667b"></a>
+<a class="anchor" id="ac4e694726920485b6ae8798920db7416"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">DateTime <a class="el" href="a00078.html#aae8c3ff8b197df894d65f4fc5c14667b">ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationObject.CurrentPeriodStartDate</a><code> [get, set]</code></td>
+          <td class="memname">string <a class="el" href="a00078.html#ac4e694726920485b6ae8798920db7416">ATT_MSSDK.SMSv3.ReceivedSMS.MessageId</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets the Start date of current subscription period. </p>
+<p>Gets or sets the value of MessageId. Unique identifier for the message. </p>
 
 </div>
 </div>
-<a class="anchor" id="a5fde0b6cb3304fd8a102159fb8bf7e48"></a>
+<a class="anchor" id="aa4c6bc2b106ecbb55183af6ea3cb5230"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="a00078.html#a5fde0b6cb3304fd8a102159fb8bf7e48">ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationObject.MerchantSubscriptionId</a><code> [get, set]</code></td>
+          <td class="memname">string <a class="el" href="a00078.html#aa4c6bc2b106ecbb55183af6ea3cb5230">ATT_MSSDK.SMSv3.ReceivedSMS.SenderAddress</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets the Merchant subscription identifier. </p>
-
-</div>
-</div>
-<a class="anchor" id="abb3729d16d155543ea323d8ace3d9fda"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00078.html#abb3729d16d155543ea323d8ace3d9fda">ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationObject.SubscriptionPeriod</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the subscription period time unit. Valid values are: DAILY, WEEKLY and MONTHLY. </p>
-
-</div>
-</div>
-<a class="anchor" id="ace6384367b679f95bda07e2bf9c0ca37"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00078.html#ace6384367b679f95bda07e2bf9c0ca37">ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationObject.SubscriptionPeriodAmount</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the number of months – as only the monthly subscription period is supported for this release. </p>
-
-</div>
-</div>
-<a class="anchor" id="a19f84e88a15a859ab55d71d79077395d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="a00078.html#a19f84e88a15a859ab55d71d79077395d">ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationObject.SubscriptionRecurrences</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the number of recurrences. </p>
-
-</div>
-</div>
-<a class="anchor" id="a800bdc4fa27004a5f8dc2fd5972899f6"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="a00078.html#a800bdc4fa27004a5f8dc2fd5972899f6">ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationObject.SubscriptionRemaining</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the remaining number of renewals. </p>
-
-</div>
-</div>
-<a class="anchor" id="a6ee19efc82c9fce4ccd909efd431005f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">DateTime <a class="el" href="a00078.html#a6ee19efc82c9fce4ccd909efd431005f">ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationObject.TransactionDate</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the Date and time the refund transaction occurred. </p>
+<p>Gets or sets the value of Sender Address. Mobile number of the sender. </p>
 
 </div>
 </div>
@@ -307,13 +206,14 @@ Properties</h2></td></tr>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="a00201.html">ATT_MSSDK</a>      </li>
-      <li class="navelem"><a class="el" href="a00210.html">Paymentv3</a>      </li>
-      <li class="navelem"><a class="el" href="a00078.html">RestoreSubscriptionNotificationObject</a>      </li>
+      <li class="navelem"><a class="el" href="a00209.html">ATT_MSSDK</a>      </li>
+      <li class="navelem"><a class="el" href="a00217.html">SMSv3</a>      </li>
+      <li class="navelem"><a class="el" href="a00078.html">ReceivedSMS</a>      </li>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:11 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

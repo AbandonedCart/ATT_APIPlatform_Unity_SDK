@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: Location Service Cookbook</title>
+<title>AT&amp;T API Platform SDK for Microsoft: Multimedia Messaging Service Cookbook</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -100,58 +100,75 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Location Service Cookbook </div>  </div>
+<div class="title">Multimedia Messaging Service Cookbook </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h2><a class="anchor" id="tl_overview"></a>
+<div class="textblock"><h2><a class="anchor" id="mms_overview"></a>
 Overview</h2>
-<p>This cookbook shows you how to develop a Device Location application using the Platform SDK for Microsoft. <br/>
+<p>This cookbook shows you how to develop a Multimedia Messaging Service (MMS) application using the Platform SDK for Microsoft. <br/>
  The Platform SDK for Microsoft provides the following methods: </p>
 <ul>
 <li>
-Get TerminalLocation  </li>
+Send MMS Messages  </li>
+<li>
+Get MMS Delivery Response  </li>
+<li>
+Receive MMS Messages  </li>
+<li>
+Receive MMS Delivery Status  </li>
 </ul>
 <p>To use these methods in an application, perform the following steps: </p>
 <ol type="1">
-<li>Add a reference to the SDK as shown in the <a class="el" href="a00011.html">About the Cookbooks </a> section and import the <a class="el" href="a00214.html" title="Core namespace for Terminal Location Service Version 1.">ATT_MSSDK.TLv1</a> namespace. <br/>
+<li>Add a reference to the SDK as shown in the <a class="el" href="a00008.html">About the Cookbooks </a> section and import the <a class="el" href="a00215.html" title="Core namespace for Multimedia Messaging Service Version 3.">ATT_MSSDK.MMSv3</a> namespace. <br/>
 </li>
-<li>Create an instance of <a class="el" href="a00074.html">RequestFactory </a> with the scope type RequestFactory.ScopeTypes.TL, as shown in the <a class="el" href="a00011.html">About the Cookbooks </a> section. <br/>
+<li>Create an instance of RequestFactory with the scope type RequestFactory.ScopeTypes.MMS, as shown in the <a class="el" href="a00008.html">About the Cookbooks </a> section. <br/>
 </li>
-<li>Invoke the Location Service methods using the <a class="el" href="a00074.html">RequestFactory </a> instance. </li>
+<li>Invoke the Multimedia Messaging Service methods using the RequestFactory instance. </li>
 </ol>
-<h2><a class="anchor" id="tl_getterminallocation"></a>
-Getting the location of an AT&amp;T wireless number</h2>
-<p>Before you can invoke the Location Service method (GetTerminalLocation) in your application, you must request authorization from the AT&amp;T Platform and receive an authorization code. The following procedure shows you how to acquire an authorization code and invoke the GetTerminalLocation method. </p>
-<h3><a class="anchor" id="tl_step_1"></a>
-Step 1. Acquire OAuth redirection URL</h3>
-<p>Invoke the <a class="el" href="a00074.html#a4f28685377f3bf97b53090901f9feabf">GetOAuthRedirect </a> method using the <a class="el" href="a00074.html">RequestFactory </a> instance to get a redirectUrl URL. This URL is the authorization endpoint of the AT&amp;T Platform. </p>
-<div class="fragment"><pre class="fragment"> <span class="keywordtype">string</span> redirectUrl = this.requestFactory.GetOAuthRedirect().ToString();
-</pre></div> <h3><a class="anchor" id="tl_step_2"></a>
-Step 2. Redirect the browser to get authorization</h3>
-<p>Redirect the browser to the authorization endpoint of the AT&amp;T Platform that was returned by the GetOAuthRedirect method. When the browser is redirected to this URL, you will be able to request user authentication and authorization. </p>
-<div class="fragment"><pre class="fragment"> Response.Redirect(redirectUrl);
-</pre></div> <h3><a class="anchor" id="tl_step_3"></a>
-Step 3. Parse the Response and acquire Access Token</h3>
-<p>Retrieve the query parameter "code" from the AT&amp;T Platform response. This is the authentication code (or Access Token). Invoke the <a class="el" href="a00074.html#a5ea584b8ef39ab44041ad5ae68a22f01">GetAuthorizeCredentials </a> method using the <a class="el" href="a00074.html">RequestFactory </a> instance, and pass the authentication code as an argument to the method. </p>
-<div class="fragment"><pre class="fragment"> <span class="keywordtype">string</span> authCode = Request[<span class="stringliteral">&quot;code&quot;</span>];
- this.requestFactory.GetAuthorizeCredentials(authCode);
-</pre></div> <h3><a class="anchor" id="tl_step_4"></a>
-Step 4. Get the Location of the device</h3>
-<p>Invoke the <a class="el" href="a00237.html#ga4f7b67c91a6ee123e812570222cda068">GetTerminalLocation </a> method using the <a class="el" href="a00074.html">RequestFactory </a> instance. This method returns device location details (latitude, longitude and accuracy) from the network for an AT&amp;T Wireless Number. </p>
-<div class="fragment"><pre class="fragment"> <span class="keywordtype">int</span> requestedAccuracy = <span class="stringliteral">&quot;100&quot;</span>;
- <a class="code" href="a00214.html#a7d23b309efc32ae07506ff8ec9412f69" title="Terminal Location Tolerance.">TerminalLocationTolerance</a> tolerance = <a class="code" href="a00214.html#a7d23b309efc32ae07506ff8ec9412f69" title="Terminal Location Tolerance.">TerminalLocationTolerance</a>.DelayTolerant;
- <span class="keywordtype">int</span> acceptableAccuracy = <span class="stringliteral">&quot;10000&quot;</span>;
- DeviceLocation deviceLocationRequest = this.requestFactory.GetTerminalLocation(requestedAccuracy, tolerance, acceptableAccuracy);
-</pre></div><p> <br/>
- </p>
-</div></div><!-- contents -->
+<h2><a class="anchor" id="mms_sendmms"></a>
+Sending an MMS Message</h2>
+<p>To send an MMS message, invoke the SendMms method using the RequestFactory instance by passing the destination address (Mobile number), the message, and the list of files as arguments. This method sends an MMS message to the mobile device, as shown in the following code example. </p>
+<div class="fragment"><pre class="fragment"> <span class="keywordtype">string</span> phoneNo = <span class="stringliteral">&quot;xxxxxxxxxx&quot;</span>;
+ <span class="keywordtype">string</span> message = <span class="stringliteral">&quot;xxxxxxxxxxxx xxxxxxxxxxxxx&quot;</span>;
+ <span class="comment">// If true, the application expects a delivery status notification.</span>
+ <span class="comment">// The default value is null.</span>
+ <span class="keywordtype">bool</span> notifyDeliveryStatus = <span class="keyword">true</span>; 
+ List&lt;string&gt; attachments = null;
+ attachments.Add(<span class="stringliteral">&quot;xxxxxxxxxxxxx.jpg&quot;</span>);
+ attachments.Add(<span class="stringliteral">&quot;xxxxxxxxxxxxx.gif&quot;</span>);
+ MmsResponse resp = this.requestFactory.SendMms(phoneNo, message, attachments, null, notifyDeliveryStatus);
+</pre></div> <h2><a class="anchor" id="mms_status"></a>
+Get an MMS Delivery Response</h2>
+<p>To get the status of an MMS delivery request, invoke the GetMmsDeliveryResponse method using the RequestFactory instance, as shown in the following code example. This method enables applications to retrieve the status of a previously submitted MMS delivery request that was accepted by the AT&amp;T Network for delivery to the destination mobile device. The identifier that is returned in the response of the corresponding call to the SendMms method must be provided as a parameter to the GetMmsDeliveryResponse method. </p>
+<div class="fragment"><pre class="fragment"> <span class="keywordtype">string</span> mmsid = <span class="stringliteral">&quot;xxxxxxxxxxxxxxx&quot;</span>;
+ MmsDeliveryResponse resp = this.requestFactory.GetMmsDeliveryResponse(mmsid);
+</pre></div> <h2><a class="anchor" id="mms_receive"></a>
+Receive MMS Messages</h2>
+<p>When you register an application with the AT&amp;T Developer Program at <a href="https://developer.att.com,">https://developer.att.com,</a> you receive a short code that identifies the application on the AT&amp;T Mobile Network. Messages, like MMS, that are sent to your application over the network are sent to this short code. To process these messages in your application, you must retrieve them from the platform using the application short code in a callback listener mechanism. <br/>
+ To receive Mobile Originated MMS messages that were sent to your application short code instantaneously, register a callback listener application URL with the AT&amp;T Developer Program at <a href="https://developer.att.com">https://developer.att.com</a>. The URL that you register is used by the AT&amp;T Platform to forward the received messages to your application. <br/>
+ To receive MMS messages, invoke the GetMms method on the RequestFactory class by passing a System.IO.Stream object and a directory path where received MMS attachments must be saved as the arguments to the method, as shown in the following code example. This method retrieves the MMS content from the input stream. </p>
+<div class="fragment"><pre class="fragment"> <span class="comment">// .NET Framework Request.InputStream </span>
+ <span class="comment">// gets the contents of the incoming http entity body.</span>
+ System.IO.Stream inputStream = Request.InputStream;
+ <span class="keywordtype">string</span> directoryPath = <span class="stringliteral">&quot;xxxx\\xxxx\\xxxx\\&quot;</span>;
+ InboundMmsMessage inboundMmsMessage = RequestFactory.GetMms(inputStream, directoryPath);
+</pre></div> <h2><a class="anchor" id="mms_receive_status"></a>
+Getting the Delivery Status of a Sent MMS Message</h2>
+<p>To get the final delivery status of the MMS messages sent by your application, register a listener endpoint with the AT&amp;T system during the application registration process or add a listener endpoint to the application profile during an update of the application. The endpoint is then associated with the short code assigned to the application. Your application must set the <b>notifyDeliveryStatus</b> parameter to true in the sendMms call to get delivery notifications. <br/>
+ To receive MMS Delivery Status, invoke the GetMMSDeliveryStatus method using the RequestFactory class by passing a System.IO.Stream object as an argument to the method, as shown in the following code example. </p>
+<div class="fragment"><pre class="fragment"> <span class="comment">// .NET Framework Request.InputStream </span>
+ <span class="comment">// gets the contents of the incoming http entity body.</span>
+ System.IO.Stream stream = Request.InputStream;
+ MmsDeliveryStatus mmsDeliveryStatus = RequestFactory.GetMMSDeliveryStatus(stream);
+</pre></div> </div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:10 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

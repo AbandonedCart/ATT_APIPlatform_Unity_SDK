@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.CallControlv1.CreateSessionResponse Class Reference</title>
+<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.InAppMessaging.Delta Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -100,78 +100,88 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#properties">Properties</a>  </div>
   <div class="headertitle">
-<div class="title">ATT_MSSDK.CallControlv1.CreateSessionResponse Class Reference</div>  </div>
+<div class="title">ATT_MSSDK.InAppMessaging.Delta Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Encapsulates the response from Create Session API.  
+<p>A container that lists the updates based on message type TEXT, MMS.  
  <a href="a00026.html#details">More...</a></p>
 
-<p><a href="a00263.html">List of all members.</a></p>
+<p><a href="a00270.html">List of all members.</a></p>
 <table class="memberdecls">
-<tr><td colspan="2"><h2><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:ae4e4b6bb07cd5aef9d8a10a8558273ca"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026.html#ae4e4b6bb07cd5aef9d8a10a8558273ca">CreateSessionResponse</a> ()</td></tr>
-<tr class="memdesc:ae4e4b6bb07cd5aef9d8a10a8558273ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="a00026.html" title="Encapsulates the response from Create Session API.">CreateSessionResponse</a> class.  <a href="#ae4e4b6bb07cd5aef9d8a10a8558273ca"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a45dec08a53cea100495ff58c4b000edf"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026.html#a45dec08a53cea100495ff58c4b000edf">Id</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a45dec08a53cea100495ff58c4b000edf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of id. The SessionID for the newly created session.  <a href="#a45dec08a53cea100495ff58c4b000edf"></a><br/></td></tr>
-<tr class="memitem:ad8f2dbc0c0c3c24503e8d28a3098b96d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026.html#ad8f2dbc0c0c3c24503e8d28a3098b96d">Success</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ad8f2dbc0c0c3c24503e8d28a3098b96d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets a value indicating whether or not the token launch was successful.  <a href="#ad8f2dbc0c0c3c24503e8d28a3098b96d"></a><br/></td></tr>
+<tr class="memitem:af995cd0e7e481f3a35028a86095e0973"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="a00057.html">MessageMetadata</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026.html#af995cd0e7e481f3a35028a86095e0973">Adds</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:af995cd0e7e481f3a35028a86095e0973"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of Adds. Objects that lists the messages that have been added.  <a href="#af995cd0e7e481f3a35028a86095e0973"></a><br/></td></tr>
+<tr class="memitem:a2e216d5d7aa266c340969235479cc484"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="a00057.html">MessageMetadata</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026.html#a2e216d5d7aa266c340969235479cc484">Deletes</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a2e216d5d7aa266c340969235479cc484"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of Deletes. Objects that lists the messages that have been deleted.  <a href="#a2e216d5d7aa266c340969235479cc484"></a><br/></td></tr>
+<tr class="memitem:a462582662d54d9b7c23a4239dbb3d9ef"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="a00057.html">MessageMetadata</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026.html#a462582662d54d9b7c23a4239dbb3d9ef">Updates</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a462582662d54d9b7c23a4239dbb3d9ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of Updates. Objects that lists the messages that have been updated.  <a href="#a462582662d54d9b7c23a4239dbb3d9ef"></a><br/></td></tr>
+<tr class="memitem:a9e910771d5659423cff17988314b000e"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026.html#a9e910771d5659423cff17988314b000e">Type</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a9e910771d5659423cff17988314b000e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the message type of the listed update.  <a href="#a9e910771d5659423cff17988314b000e"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Encapsulates the response from Create Session API. </p>
-</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ae4e4b6bb07cd5aef9d8a10a8558273ca"></a>
+<div class="textblock"><p>A container that lists the updates based on message type TEXT, MMS. </p>
+</div><hr/><h2>Property Documentation</h2>
+<a class="anchor" id="af995cd0e7e481f3a35028a86095e0973"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00026.html#ae4e4b6bb07cd5aef9d8a10a8558273ca">ATT_MSSDK.CallControlv1.CreateSessionResponse.CreateSessionResponse</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">List&lt;<a class="el" href="a00057.html">MessageMetadata</a>&gt; <a class="el" href="a00026.html#af995cd0e7e481f3a35028a86095e0973">ATT_MSSDK.InAppMessaging.Delta.Adds</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Initializes a new instance of the <a class="el" href="a00026.html" title="Encapsulates the response from Create Session API.">CreateSessionResponse</a> class. </p>
+<p>Gets or sets the value of Adds. Objects that lists the messages that have been added. </p>
 
 </div>
 </div>
-<hr/><h2>Property Documentation</h2>
-<a class="anchor" id="a45dec08a53cea100495ff58c4b000edf"></a>
+<a class="anchor" id="a2e216d5d7aa266c340969235479cc484"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="a00026.html#a45dec08a53cea100495ff58c4b000edf">ATT_MSSDK.CallControlv1.CreateSessionResponse.Id</a><code> [get, set]</code></td>
+          <td class="memname">List&lt;<a class="el" href="a00057.html">MessageMetadata</a>&gt; <a class="el" href="a00026.html#a2e216d5d7aa266c340969235479cc484">ATT_MSSDK.InAppMessaging.Delta.Deletes</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets the value of id. The SessionID for the newly created session. </p>
+<p>Gets or sets the value of Deletes. Objects that lists the messages that have been deleted. </p>
 
 </div>
 </div>
-<a class="anchor" id="ad8f2dbc0c0c3c24503e8d28a3098b96d"></a>
+<a class="anchor" id="a9e910771d5659423cff17988314b000e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="a00026.html#ad8f2dbc0c0c3c24503e8d28a3098b96d">ATT_MSSDK.CallControlv1.CreateSessionResponse.Success</a><code> [get, set]</code></td>
+          <td class="memname">string <a class="el" href="a00026.html#a9e910771d5659423cff17988314b000e">ATT_MSSDK.InAppMessaging.Delta.Type</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets a value indicating whether or not the token launch was successful. </p>
+<p>Gets or sets the message type of the listed update. </p>
+
+</div>
+</div>
+<a class="anchor" id="a462582662d54d9b7c23a4239dbb3d9ef"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;<a class="el" href="a00057.html">MessageMetadata</a>&gt; <a class="el" href="a00026.html#a462582662d54d9b7c23a4239dbb3d9ef">ATT_MSSDK.InAppMessaging.Delta.Updates</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the value of Updates. Objects that lists the messages that have been updated. </p>
 
 </div>
 </div>
@@ -179,13 +189,14 @@ Properties</h2></td></tr>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="a00201.html">ATT_MSSDK</a>      </li>
-      <li class="navelem"><a class="el" href="a00203.html">CallControlv1</a>      </li>
-      <li class="navelem"><a class="el" href="a00026.html">CreateSessionResponse</a>      </li>
+      <li class="navelem"><a class="el" href="a00209.html">ATT_MSSDK</a>      </li>
+      <li class="navelem"><a class="el" href="a00213.html">InAppMessaging</a>      </li>
+      <li class="navelem"><a class="el" href="a00026.html">Delta</a>      </li>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:10 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

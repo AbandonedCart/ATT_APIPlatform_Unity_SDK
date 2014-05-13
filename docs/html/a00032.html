@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.SMSv3.DeliveryInfoNotification Class Reference</title>
+<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.MIMv1.GetMessageContentResponse Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -103,35 +103,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#properties">Properties</a>  </div>
   <div class="headertitle">
-<div class="title">ATT_MSSDK.SMSv3.DeliveryInfoNotification Class Reference</div>  </div>
+<div class="title">ATT_MSSDK.MIMv1.GetMessageContentResponse Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Encapsulates the delivery status for a given destination address.  
+<p>Encapsulates the response of get message content.  
  <a href="a00032.html#details">More...</a></p>
 
-<p><a href="a00303.html">List of all members.</a></p>
+<p><a href="a00292.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3c5385bb4dd8f5cb877622a2c2fc38a0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00032.html#a3c5385bb4dd8f5cb877622a2c2fc38a0">DeliveryInfoNotification</a> ()</td></tr>
-<tr class="memdesc:a3c5385bb4dd8f5cb877622a2c2fc38a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of DeliveryInfoNotification.  <a href="#a3c5385bb4dd8f5cb877622a2c2fc38a0"></a><br/></td></tr>
+<tr class="memitem:abdc8aff98317d3653d7f7490b2f5fed8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00032.html#abdc8aff98317d3653d7f7490b2f5fed8">GetMessageContentResponse</a> ()</td></tr>
+<tr class="memdesc:abdc8aff98317d3653d7f7490b2f5fed8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="a00032.html" title="Encapsulates the response of get message content.">GetMessageContentResponse</a> class.  <a href="#abdc8aff98317d3653d7f7490b2f5fed8"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a5bf55d0a688294e3342467c1752b138d"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00032.html#a5bf55d0a688294e3342467c1752b138d">MessageId</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a5bf55d0a688294e3342467c1752b138d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets MessageId This is the unique Id of the message returned by the AT&amp;T API Gateway in response to the SendSMS method request.  <a href="#a5bf55d0a688294e3342467c1752b138d"></a><br/></td></tr>
-<tr class="memitem:a015e5d892b80a87dad3f5f747f11177f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00028.html">DeliveryInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00032.html#a015e5d892b80a87dad3f5f747f11177f">DeliveryInfo</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a015e5d892b80a87dad3f5f747f11177f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets DeliveryInfo object. Object that contain the delivery status pair that indicates the delivery status for the given destination address.  <a href="#a015e5d892b80a87dad3f5f747f11177f"></a><br/></td></tr>
+<tr class="memitem:afa2107fc6dadbb4326e34b9a9fccc417"><td class="memItemLeft" align="right" valign="top">byte[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00032.html#afa2107fc6dadbb4326e34b9a9fccc417">MessageContent</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:afa2107fc6dadbb4326e34b9a9fccc417"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the MessageContent. Stream of bytes.  <a href="#afa2107fc6dadbb4326e34b9a9fccc417"></a><br/></td></tr>
+<tr class="memitem:a36e1c8e1f11c16a949e4e72ff2ac2bf9"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00032.html#a36e1c8e1f11c16a949e4e72ff2ac2bf9">MessageType</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a36e1c8e1f11c16a949e4e72ff2ac2bf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the MessageType.  <a href="#a36e1c8e1f11c16a949e4e72ff2ac2bf9"></a><br/></td></tr>
+<tr class="memitem:a21aefb11d0f1f365f7de7f721b78fc1c"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00032.html#a21aefb11d0f1f365f7de7f721b78fc1c">MessageLength</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a21aefb11d0f1f365f7de7f721b78fc1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the MessageLength.  <a href="#a21aefb11d0f1f365f7de7f721b78fc1c"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Encapsulates the delivery status for a given destination address. </p>
+<div class="textblock"><p>Encapsulates the response of get message content. </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a3c5385bb4dd8f5cb877622a2c2fc38a0"></a>
+<a class="anchor" id="abdc8aff98317d3653d7f7490b2f5fed8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00032.html#a3c5385bb4dd8f5cb877622a2c2fc38a0">ATT_MSSDK.SMSv3.DeliveryInfoNotification.DeliveryInfoNotification</a> </td>
+          <td class="memname"><a class="el" href="a00032.html#abdc8aff98317d3653d7f7490b2f5fed8">ATT_MSSDK.MIMv1.GetMessageContentResponse.GetMessageContentResponse</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -140,38 +142,53 @@ Properties</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Initializes a new instance of DeliveryInfoNotification. </p>
+<p>Initializes a new instance of the <a class="el" href="a00032.html" title="Encapsulates the response of get message content.">GetMessageContentResponse</a> class. </p>
 
 </div>
 </div>
 <hr/><h2>Property Documentation</h2>
-<a class="anchor" id="a015e5d892b80a87dad3f5f747f11177f"></a>
+<a class="anchor" id="afa2107fc6dadbb4326e34b9a9fccc417"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00028.html">DeliveryInfo</a> <a class="el" href="a00032.html#a015e5d892b80a87dad3f5f747f11177f">ATT_MSSDK.SMSv3.DeliveryInfoNotification.DeliveryInfo</a><code> [get, set]</code></td>
+          <td class="memname">byte [] <a class="el" href="a00032.html#afa2107fc6dadbb4326e34b9a9fccc417">ATT_MSSDK.MIMv1.GetMessageContentResponse.MessageContent</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets DeliveryInfo object. Object that contain the delivery status pair that indicates the delivery status for the given destination address. </p>
+<p>Gets or sets the MessageContent. Stream of bytes. </p>
 
 </div>
 </div>
-<a class="anchor" id="a5bf55d0a688294e3342467c1752b138d"></a>
+<a class="anchor" id="a21aefb11d0f1f365f7de7f721b78fc1c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="a00032.html#a5bf55d0a688294e3342467c1752b138d">ATT_MSSDK.SMSv3.DeliveryInfoNotification.MessageId</a><code> [get, set]</code></td>
+          <td class="memname">long <a class="el" href="a00032.html#a21aefb11d0f1f365f7de7f721b78fc1c">ATT_MSSDK.MIMv1.GetMessageContentResponse.MessageLength</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets MessageId This is the unique Id of the message returned by the AT&amp;T API Gateway in response to the SendSMS method request. </p>
+<p>Gets or sets the MessageLength. </p>
+
+</div>
+</div>
+<a class="anchor" id="a36e1c8e1f11c16a949e4e72ff2ac2bf9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string <a class="el" href="a00032.html#a36e1c8e1f11c16a949e4e72ff2ac2bf9">ATT_MSSDK.MIMv1.GetMessageContentResponse.MessageType</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets or sets the MessageType. </p>
 
 </div>
 </div>
@@ -179,13 +196,14 @@ Properties</h2></td></tr>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="a00201.html">ATT_MSSDK</a>      </li>
-      <li class="navelem"><a class="el" href="a00211.html">SMSv3</a>      </li>
-      <li class="navelem"><a class="el" href="a00032.html">DeliveryInfoNotification</a>      </li>
+      <li class="navelem"><a class="el" href="a00209.html">ATT_MSSDK</a>      </li>
+      <li class="navelem"><a class="el" href="a00214.html">MIMv1</a>      </li>
+      <li class="navelem"><a class="el" href="a00032.html">GetMessageContentResponse</a>      </li>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:11 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

@@ -1,12 +1,6 @@
 var a00098 =
 [
-    [ "TVXArgs", "a00098.html#a0d21908ed4d47f316cb740a6b114a415", null ],
-    [ "ToString", "a00098.html#a4fc67e86da4baf6d5ba300af5593c2a7", null ],
-    [ "DeviceId", "a00098.html#aea7a6f6a30ad025a3dac5532067418d8", null ],
-    [ "FirstResultKey", "a00098.html#a16fea868985503e86d2474fae20070b0", null ],
-    [ "LastResultKey", "a00098.html#ab943f6a0eb08d5b9ebf1fedb786a67e5", null ],
-    [ "Lineup", "a00098.html#aea360ef23990a03555f89f34b979d4f3", null ],
-    [ "NumResults", "a00098.html#ae7d8ded17b74c62bcc3cb6aad07a831b", null ],
-    [ "PageRequest", "a00098.html#adfe657930bb795369f40a8acef89945c", null ],
-    [ "Search", "a00098.html#a14feba75b09589248fae01bcdf496ffd", null ]
+    [ "ContentLength", "a00098.html#ac7ccf22bb0f41c8f9fcfb1a8e89ecaa2", null ],
+    [ "ContentType", "a00098.html#a519cd2631316bba46c63a342dd12608b", null ],
+    [ "SpeechContent", "a00098.html#a24aa6f593efb6f532539258b37f19f7d", null ]
 ];

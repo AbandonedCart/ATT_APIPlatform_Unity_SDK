@@ -1,5 +1,5 @@
 var a00036 =
 [
-    [ "ErrorObject", "a00036.html#a68369c6f2a4b81453c4fbe3277204f67", null ],
-    [ "ErrorType", "a00036.html#a9623fb7149977b0143691a4a4d5ca993", null ]
+    [ "ParseJSON", "a00036.html#af0fcca2689e89f77afc1d77b6e0b0611", null ],
+    [ "MessageList", "a00036.html#ab764b32bda16f96ba397a06d115fc007", null ]
 ];

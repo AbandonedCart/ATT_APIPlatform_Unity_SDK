@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.Speechv3.TVXArgs Class Reference</title>
+<title>AT&amp;T API Platform SDK for Microsoft: ATT_MSSDK.TextToSpeechv1.TextToSpeechResponse Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="customdoxygen.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
   
   <td style="padding-left:0">
    <div id="projectname"> AT&amp;T API Platform SDK for Microsoft&reg;
-   &#160;<span id="projectnumber">2.3.3</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Wrapper classes that allow developers to build robust applications using .NET</div>
   </td>
@@ -100,185 +100,80 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#properties">Properties</a>  </div>
   <div class="headertitle">
-<div class="title">ATT_MSSDK.Speechv3.TVXArgs Class Reference</div>  </div>
+<div class="title">ATT_MSSDK.TextToSpeechv1.TextToSpeechResponse Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This class contains the parameters specific to TV Context.  
+<p>Encapsulates the response of TextToSpeech API.  
  <a href="a00098.html#details">More...</a></p>
+<div class="dynheader">
+Inheritance diagram for ATT_MSSDK.TextToSpeechv1.TextToSpeechResponse:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="a00098.png" usemap="#ATT_MSSDK.TextToSpeechv1.TextToSpeechResponse_map" alt=""/>
+  <map id="ATT_MSSDK.TextToSpeechv1.TextToSpeechResponse_map" name="ATT_MSSDK.TextToSpeechv1.TextToSpeechResponse_map">
+<area href="a00084.html" title="Abstract base class for all Response objects." alt="ATT_MSSDK.Response" shape="rect" coords="0,0,323,24"/>
+</map>
+ </div></div>
 
-<p><a href="a00327.html">List of all members.</a></p>
+<p><a href="a00336.html">List of all members.</a></p>
 <table class="memberdecls">
-<tr><td colspan="2"><h2><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a0d21908ed4d47f316cb740a6b114a415"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098.html#a0d21908ed4d47f316cb740a6b114a415">TVXArgs</a> ()</td></tr>
-<tr class="memdesc:a0d21908ed4d47f316cb740a6b114a415"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of <a class="el" href="a00098.html" title="This class contains the parameters specific to TV Context.">TVXArgs</a>.  <a href="#a0d21908ed4d47f316cb740a6b114a415"></a><br/></td></tr>
-<tr class="memitem:a4fc67e86da4baf6d5ba300af5593c2a7"><td class="memItemLeft" align="right" valign="top">override string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098.html#a4fc67e86da4baf6d5ba300af5593c2a7">ToString</a> ()</td></tr>
-<tr class="memdesc:a4fc67e86da4baf6d5ba300af5593c2a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the string format of the properties.  <a href="#a4fc67e86da4baf6d5ba300af5593c2a7"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a14feba75b09589248fae01bcdf496ffd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098.html#a14feba75b09589248fae01bcdf496ffd">Search</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a14feba75b09589248fae01bcdf496ffd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of <a class="el" href="a00079.html" title="Encapsulates Search data returned in speech to text response.">Search</a>.  <a href="#a14feba75b09589248fae01bcdf496ffd"></a><br/></td></tr>
-<tr class="memitem:aea360ef23990a03555f89f34b979d4f3"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098.html#aea360ef23990a03555f89f34b979d4f3">Lineup</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aea360ef23990a03555f89f34b979d4f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of Lineup. The Lineup is a 5 digit code identifying one of 66 U-Verse market lineups.  <a href="#aea360ef23990a03555f89f34b979d4f3"></a><br/></td></tr>
-<tr class="memitem:aea7a6f6a30ad025a3dac5532067418d8"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098.html#aea7a6f6a30ad025a3dac5532067418d8">DeviceId</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aea7a6f6a30ad025a3dac5532067418d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of DeviceId. The device identifier should be an anonymized hash string identifying the device with a high likelihood of uniqueness while not providing any identifiable string or algorithmic method of recovering the original unique device identifier (UDID).  <a href="#aea7a6f6a30ad025a3dac5532067418d8"></a><br/></td></tr>
-<tr class="memitem:ae7d8ded17b74c62bcc3cb6aad07a831b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098.html#ae7d8ded17b74c62bcc3cb6aad07a831b">NumResults</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ae7d8ded17b74c62bcc3cb6aad07a831b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the vlaue of NumResults. The size of the results returned is capped by this number. Use this parameter to limit the size of the returned program list.  <a href="#ae7d8ded17b74c62bcc3cb6aad07a831b"></a><br/></td></tr>
-<tr class="memitem:adfe657930bb795369f40a8acef89945c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098.html#adfe657930bb795369f40a8acef89945c">PageRequest</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:adfe657930bb795369f40a8acef89945c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of PageRequest. Used to guide response messages and select next or previous page of partial search results. Use with “ResultKeys - FirstResultKey and LastResultKey” to get next or previous results. Valid values are: next or prev.  <a href="#adfe657930bb795369f40a8acef89945c"></a><br/></td></tr>
-<tr class="memitem:a16fea868985503e86d2474fae20070b0"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098.html#a16fea868985503e86d2474fae20070b0">FirstResultKey</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a16fea868985503e86d2474fae20070b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of FirstResultKey. Used with “prev” option to identify the first result from the previous response. The response will include search items from before this response.  <a href="#a16fea868985503e86d2474fae20070b0"></a><br/></td></tr>
-<tr class="memitem:ab943f6a0eb08d5b9ebf1fedb786a67e5"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098.html#ab943f6a0eb08d5b9ebf1fedb786a67e5">LastResultKey</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ab943f6a0eb08d5b9ebf1fedb786a67e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value of LastResultKey. Used with “next” Page-Request option to get next results. This string identifies the last result the user saw in the previous response.  <a href="#ab943f6a0eb08d5b9ebf1fedb786a67e5"></a><br/></td></tr>
+<tr class="memitem:ac7ccf22bb0f41c8f9fcfb1a8e89ecaa2"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098.html#ac7ccf22bb0f41c8f9fcfb1a8e89ecaa2">ContentLength</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ac7ccf22bb0f41c8f9fcfb1a8e89ecaa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets Content Length of speech data.  <a href="#ac7ccf22bb0f41c8f9fcfb1a8e89ecaa2"></a><br/></td></tr>
+<tr class="memitem:a519cd2631316bba46c63a342dd12608b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098.html#a519cd2631316bba46c63a342dd12608b">ContentType</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a519cd2631316bba46c63a342dd12608b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets Audio Content Type.  <a href="#a519cd2631316bba46c63a342dd12608b"></a><br/></td></tr>
+<tr class="memitem:a24aa6f593efb6f532539258b37f19f7d"><td class="memItemLeft" align="right" valign="top">byte[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098.html#a24aa6f593efb6f532539258b37f19f7d">SpeechContent</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a24aa6f593efb6f532539258b37f19f7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets converted Speech Content.  <a href="#a24aa6f593efb6f532539258b37f19f7d"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>This class contains the parameters specific to TV Context. </p>
-</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a0d21908ed4d47f316cb740a6b114a415"></a>
+<div class="textblock"><p>Encapsulates the response of TextToSpeech API. </p>
+</div><hr/><h2>Property Documentation</h2>
+<a class="anchor" id="ac7ccf22bb0f41c8f9fcfb1a8e89ecaa2"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00098.html#a0d21908ed4d47f316cb740a6b114a415">ATT_MSSDK.Speechv3.TVXArgs.TVXArgs</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">long <a class="el" href="a00098.html#ac7ccf22bb0f41c8f9fcfb1a8e89ecaa2">ATT_MSSDK.TextToSpeechv1.TextToSpeechResponse.ContentLength</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Initializes a new instance of <a class="el" href="a00098.html" title="This class contains the parameters specific to TV Context.">TVXArgs</a>. </p>
+<p>Gets or sets Content Length of speech data. </p>
 
 </div>
 </div>
-<hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a4fc67e86da4baf6d5ba300af5593c2a7"></a>
+<a class="anchor" id="a519cd2631316bba46c63a342dd12608b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">override string <a class="el" href="a00098.html#a4fc67e86da4baf6d5ba300af5593c2a7">ATT_MSSDK.Speechv3.TVXArgs.ToString</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">string <a class="el" href="a00098.html#a519cd2631316bba46c63a342dd12608b">ATT_MSSDK.TextToSpeechv1.TextToSpeechResponse.ContentType</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Returns the string format of the properties. </p>
-<dl class="section return"><dt>Returns:</dt><dd>Returns the string format of the properties.</dd></dl>
+<p>Gets or sets Audio Content Type. </p>
 
 </div>
 </div>
-<hr/><h2>Property Documentation</h2>
-<a class="anchor" id="aea7a6f6a30ad025a3dac5532067418d8"></a>
+<a class="anchor" id="a24aa6f593efb6f532539258b37f19f7d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="a00098.html#aea7a6f6a30ad025a3dac5532067418d8">ATT_MSSDK.Speechv3.TVXArgs.DeviceId</a><code> [get, set]</code></td>
+          <td class="memname">byte [] <a class="el" href="a00098.html#a24aa6f593efb6f532539258b37f19f7d">ATT_MSSDK.TextToSpeechv1.TextToSpeechResponse.SpeechContent</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets the value of DeviceId. The device identifier should be an anonymized hash string identifying the device with a high likelihood of uniqueness while not providing any identifiable string or algorithmic method of recovering the original unique device identifier (UDID). </p>
-
-</div>
-</div>
-<a class="anchor" id="a16fea868985503e86d2474fae20070b0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00098.html#a16fea868985503e86d2474fae20070b0">ATT_MSSDK.Speechv3.TVXArgs.FirstResultKey</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the value of FirstResultKey. Used with “prev” option to identify the first result from the previous response. The response will include search items from before this response. </p>
-
-</div>
-</div>
-<a class="anchor" id="ab943f6a0eb08d5b9ebf1fedb786a67e5"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00098.html#ab943f6a0eb08d5b9ebf1fedb786a67e5">ATT_MSSDK.Speechv3.TVXArgs.LastResultKey</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the value of LastResultKey. Used with “next” Page-Request option to get next results. This string identifies the last result the user saw in the previous response. </p>
-
-</div>
-</div>
-<a class="anchor" id="aea360ef23990a03555f89f34b979d4f3"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00098.html#aea360ef23990a03555f89f34b979d4f3">ATT_MSSDK.Speechv3.TVXArgs.Lineup</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the value of Lineup. The Lineup is a 5 digit code identifying one of 66 U-Verse market lineups. </p>
-
-</div>
-</div>
-<a class="anchor" id="ae7d8ded17b74c62bcc3cb6aad07a831b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="a00098.html#ae7d8ded17b74c62bcc3cb6aad07a831b">ATT_MSSDK.Speechv3.TVXArgs.NumResults</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the vlaue of NumResults. The size of the results returned is capped by this number. Use this parameter to limit the size of the returned program list. </p>
-
-</div>
-</div>
-<a class="anchor" id="adfe657930bb795369f40a8acef89945c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="a00098.html#adfe657930bb795369f40a8acef89945c">ATT_MSSDK.Speechv3.TVXArgs.PageRequest</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the value of PageRequest. Used to guide response messages and select next or previous page of partial search results. Use with “ResultKeys - FirstResultKey and LastResultKey” to get next or previous results. Valid values are: next or prev. </p>
-
-</div>
-</div>
-<a class="anchor" id="a14feba75b09589248fae01bcdf496ffd"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="a00098.html#a14feba75b09589248fae01bcdf496ffd">ATT_MSSDK.Speechv3.TVXArgs.Search</a><code> [get, set]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets or sets the value of <a class="el" href="a00079.html" title="Encapsulates Search data returned in speech to text response.">Search</a>. </p>
+<p>Gets or sets converted Speech Content. </p>
 
 </div>
 </div>
@@ -286,13 +181,14 @@ Properties</h2></td></tr>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="a00201.html">ATT_MSSDK</a>      </li>
-      <li class="navelem"><a class="el" href="a00212.html">Speechv3</a>      </li>
-      <li class="navelem"><a class="el" href="a00098.html">TVXArgs</a>      </li>
+      <li class="navelem"><a class="el" href="a00209.html">ATT_MSSDK</a>      </li>
+      <li class="navelem"><a class="el" href="a00219.html">TextToSpeechv1</a>      </li>
+      <li class="navelem"><a class="el" href="a00098.html">TextToSpeechResponse</a>      </li>
+<!-- HTML footer for doxygen 1.8.5-->
+<!-- start footer part -->
 
-    <li class="footer">Generated on Thu Jun 20 2013 11:52:11 for AT&amp;T API Platform SDK for Microsoft </li>
-   </ul>
- </div>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+</div>
 
 
 </body>

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['questionandanswer',['QuestionAndAnswer',['../a00244.html#a0819fd63a02e491c703c42c89f4e797aadb2bf48338b0b0c75731134bc74641db',1,'ATT_MSSDK']]]
+  ['queues',['Queues',['../a00077.html',1,'ATT_MSSDK::InAppMessaging']]],
+  ['queues',['Queues',['../a00068.html#a2d2b709eb4529a1962e60d10f70e4d87',1,'ATT_MSSDK::InAppMessaging::NotificationConnectionDetails']]]
 ];
