@@ -124,7 +124,7 @@ class Main : MonoBehaviour
                     factory.ClientCredential = clientToken;
                 }
 
-                SpeechResponse response = factory.SpeechToText(filename, XSpeechContext.Generic);
+                ATT_MSSDK.Speechv1.SpeechResponse response = factory.SpeechToText(filename, XSpeechContext.Generic);
                 speechOutput = response.Recognition.NBest[0].ResultText;
                 if (clientToken == null)
                 {
