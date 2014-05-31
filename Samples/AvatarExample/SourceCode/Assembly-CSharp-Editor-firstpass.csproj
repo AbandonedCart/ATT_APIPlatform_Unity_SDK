@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{2DF2B14C-05AC-B577-530E-EC6553C5D048}</ProjectGuid>
+	<ProjectGuid>{F6735831-3B17-A7A5-A4FE-FE7C78CF9221}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -37,10 +37,10 @@
     <Reference Include="System.XML" />
 	<Reference Include="System.Core" />
 	<Reference Include="UnityEngine">
-	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -51,18 +51,22 @@
      <Compile Include="Assets\Plugins\Editor\MassMaterialEditor.cs" />
      <Compile Include="Assets\Plugins\Editor\UpdateCharacterElementDatabase.cs" />
      <None Include="Assets\token.txt" />
+     <None Include="Assets\token-old.txt" />
      <None Include="Assets\CharacterCustomization\DressingroomExample\Glow\GlowEffectDownsample.shader" />
      <None Include="Assets\CharacterCustomization\DressingroomExample\MirrorReflection\MirrorReflection.shader" />
- <Reference Include="Assets\CharacterCustomization\DressingroomExample\Plugins\ATT_MSSDK">
+ <Reference Include="ATTSpeechSDK">
+ <HintPath>Assets\CharacterCustomization\DressingroomExample\Plugins\ATTSpeechSDK.dll</HintPath>
+ </Reference>
+ <Reference Include="ATT_MSSDK">
  <HintPath>Assets\CharacterCustomization\DressingroomExample\Plugins\ATT_MSSDK.dll</HintPath>
  </Reference>
- <Reference Include="\Applications\Unity\Unity.app\Contents\Frameworks\Managed\UnityEditor.Graphs">
- <HintPath>\Applications\Unity\Unity.app\Contents\Frameworks\Managed\UnityEditor.Graphs.dll</HintPath>
+ <Reference Include="UnityEditor.Graphs">
+ <HintPath>C:\Program Files (x86)\Unity\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{3C48015D-1481-1C60-8ABF-3D3517C0F2B8}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+      <Project>{1A4D8640-7A90-4B9D-7C78-935E8FD478C7}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

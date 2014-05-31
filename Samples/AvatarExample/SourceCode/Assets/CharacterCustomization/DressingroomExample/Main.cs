@@ -6,7 +6,7 @@ using System.Net;
 using System.Security.Cryptography.X509Certificates;
 using System.Net.Security;
 using ATT_MSSDK;
-using ATT_MSSDK.Speechv1;
+using ATT_MSSDK.Speechv3;
 using System.IO;
 using System;
 
@@ -43,6 +43,7 @@ class Main : MonoBehaviour
 	const int fontSize = 20;
 	const int buttonHeight = 45;
 
+    RequestFactory requestFactory = null;
     OAuthToken clientToken = null;
     string accessTokenFilePath = string.Empty;
 
@@ -56,7 +57,7 @@ class Main : MonoBehaviour
             generator = CharacterGenerator.CreateWithRandomConfig("Female");
 
         // Replace apiKey & secretKey with the keys generated for your app on http://developer.att.com/
-        Setup("https://api.att.com", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", "xxxxxxxxxxxxxxxx");
+        Setup("https://api.att.com", "XXXXXXXXXXXXXXXXXXXX", "XXXXXXXXXXXXXXXXXXXXXXXXXX");
 
         //Set up propertyTitles
         propertyTitles.Add("face", "Head");
@@ -101,49 +102,112 @@ class Main : MonoBehaviour
         audio.GetData(clipData, 0);
         WaveGen.WaveFormatChunk format = new WaveGen().MakeFormat(audio);
         
-        new Thread((ThreadStart)delegate
+        try
         {
-            try
+            string filename = GetTempFileName() + ".wav";
+            FileStream stream = File.OpenWrite(filename);
+            new WaveGen().Write(clipData, format, stream);
+            stream.Close();
+
+            Debug.Log("Request Start time: " + DateTime.Now.ToLongTimeString());
+
+            requestFactory = BuildRequestFactory(RequestFactory.ScopeTypes.Speech);
+
+            if (clientToken ==  null)
             {
-                string filename = GetTempFileName() + ".wav";
-                FileStream stream = File.OpenWrite(filename);
-                new WaveGen().Write(clipData, format, stream);
-                stream.Close();
-
-                Debug.Log("Request Start time: " + DateTime.Now.ToLongTimeString());
-
-                RequestFactory factory = BuildRequestFactory(RequestFactory.ScopeTypes.Speech);
-
-                if (clientToken ==  null)
-                {
-                    clientToken = GetAccessToken();
-                }
-
-                if (null != clientToken)
-                {
-                    factory.ClientCredential = clientToken;
-                }
-
-                ATT_MSSDK.Speechv1.SpeechResponse response = factory.SpeechToText(filename, XSpeechContext.Generic);
-                speechOutput = response.Recognition.NBest[0].ResultText;
-                if (clientToken == null)
-                {
-                    clientToken = factory.ClientCredential;
-                    SaveAccessToken();
-                }
-
-                Debug.Log("Response received time: " + DateTime.Now.ToLongTimeString());
-                showProcess = false;
-                Debug.Log("response: " + speechResult);
-                File.Delete(filename);
+                clientToken = GetAccessToken();
             }
-            catch (System.Exception e)
+
+            if (null != clientToken)
             {
-                Debug.LogError(e);
+                requestFactory.ClientCredential = clientToken;
             }
-        }).Start();
+
+            ATT_MSSDK.Speechv3.SpeechResponse response = SpeechToTextService(filename, "Generic", "audio/wav");
+            string speechOutput = response.Recognition.NBest[0].ResultText;
+            if (clientToken == null)
+            {
+                clientToken = requestFactory.ClientCredential;
+                SaveAccessToken();
+            }
+
+            Debug.Log("Response received time: " + DateTime.Now.ToLongTimeString());
+            showProcess = false;
+            Debug.Log("response: " + speechOutput);
+            File.Delete(filename);
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError(e);
+        }
     }
 
+    /// <summary>
+    /// Method that calls SpeechToText method of RequestFactory to transcribe to text
+    /// </summary>
+    /// <param name="FileName">Wave file to transcribe</param>
+    private ATT_MSSDK.Speechv3.SpeechResponse SpeechToTextService(String FileName, String SpeechContext, String AudioContentType)
+    {
+        ATT_MSSDK.Speechv3.SpeechResponse response = null;
+
+        try
+        {
+            if (string.IsNullOrEmpty(FileName))
+            {
+                Debug.Log("No sound file specified");
+                return null;
+            }
+
+            XSpeechContext speechContext = XSpeechContext.Generic;
+            string contentLanguage = string.Empty;
+            string xArgData = "ClientApp=SpeechApp";
+            switch (SpeechContext)
+            {
+                case "Generic": speechContext = XSpeechContext.Generic; contentLanguage = "en-US"; break;
+                case "BusinessSearch": speechContext = XSpeechContext.BusinessSearch; break;
+                case "TV": speechContext = XSpeechContext.TV; xArgData = "Search=True,Lineup=91983"; break;
+                case "Gaming": speechContext = XSpeechContext.Gaming; break;
+                case "SocialMedia": speechContext = XSpeechContext.SocialMedia; xArgData = "ClientApp=SpeechApps"; break;
+                case "WebSearch": speechContext = XSpeechContext.WebSearch; break;
+                case "SMS": speechContext = XSpeechContext.SMS; break;
+                case "VoiceMail": speechContext = XSpeechContext.VoiceMail; break;
+                case "QuestionAndAnswer": speechContext = XSpeechContext.QuestionAndAnswer; break;
+            }
+
+            string subContext = string.Empty;
+
+            response = this.requestFactory.SpeechToText(FileName, speechContext, xArgData, contentLanguage, subContext, AudioContentType);
+
+            if (null != response)
+            {
+                return response;
+            }
+
+        }
+        catch (InvalidScopeException invalidscope)
+        {
+            Debug.Log(invalidscope.Message);
+        }
+        catch (ArgumentException argex)
+        {
+            Debug.Log(argex.Message);
+        }
+        catch (InvalidResponseException ie)
+        {
+            Debug.Log(ie.Body);
+        }
+        catch (Exception ex)
+        {
+            Debug.Log(ex.Message);
+        }
+        finally
+        {
+            Debug.Log("SpeechToTextService completed.");
+        }
+
+        return response;
+    }
+	
     private void SaveAccessToken()
     {
         FileStream fileStream = null;

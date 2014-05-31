@@ -1,8 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\..\..\Public\Documents\Unity Projects\Tips_and_SourceCode\SourceCode\Assets\CharacterCustomization\DressingroomExample\Plugins\AT&amp;T SDK\WaveGen.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="..\..\..\..\..\Public\Documents\Unity Projects\Tips_and_SourceCode\SourceCode\Assets\CharacterCustomization\DressingroomExample\Plugins\AT&amp;T SDK\WaveGen.cs" Line="6" Column="2" />
+      <File FileName="Assets\CharacterCustomization\DressingroomExample\Main.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
