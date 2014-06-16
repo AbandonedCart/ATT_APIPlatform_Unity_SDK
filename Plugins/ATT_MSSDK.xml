@@ -7,7 +7,7 @@
         <member name="T:ATT_MSSDK.RequestFactory">
             \addtogroup Advertisement Advertisement Methods
             @{
-            \addtogroup CallControl Call Management Methods (Beta)
+            \addtogroup IAM In-App Messaging Methods
             @{
             \addtogroup SpeechToTextCustom SpeechToTextCustom Methods
             @{
@@ -21,17 +21,75 @@
             @{
             \addtogroup MMS MMS Methods
             @{
-            \addtogroup Payments Payment Methods
-            @{
             \addtogroup SMS SMS Methods
             @{
             <summary>
             The %RequestFactory manages the connections and calls to the AT&amp;T API Platform.
             </summary>
-            \addtogroup DL Device Location Methods
-            @{
             \addtogroup Speech Speech Methods
             @{
+        </member>
+        <member name="F:ATT_MSSDK.RequestFactory.sendMessageUrl">
+            <summary>
+            POST - Send Message
+            </summary>
+        </member>
+        <member name="F:ATT_MSSDK.RequestFactory.getMessageListUrl">
+            <summary>
+            GET - Get Message List
+            </summary>
+        </member>
+        <member name="F:ATT_MSSDK.RequestFactory.getMessageUrl">
+            <summary>
+            GET - Get Message - /myMessages/v2/messages/{messageId}
+            </summary>
+        </member>
+        <member name="F:ATT_MSSDK.RequestFactory.getMessageContentUrl">
+            <summary>
+            GET - Get Message Content - /myMessages/v2/messages/{ messageId}/parts/{partId}
+            </summary>
+        </member>
+        <member name="F:ATT_MSSDK.RequestFactory.getMessagesDeltaUrl">
+            <summary>
+            GET - Get Messages Delta
+            </summary>
+        </member>
+        <member name="F:ATT_MSSDK.RequestFactory.updateMessagesUrl">
+            <summary>
+            PUT - Update messages
+            </summary>
+        </member>
+        <member name="F:ATT_MSSDK.RequestFactory.updateMessageUrl">
+            <summary>
+            PUT - Update message
+            /myMessages/v2/messages/{messageId}
+            </summary>
+        </member>
+        <member name="F:ATT_MSSDK.RequestFactory.deleteMessagesUrl">
+            <summary>
+            DELETE - Delete Messages
+            </summary>
+        </member>
+        <member name="F:ATT_MSSDK.RequestFactory.deleteMessageUrl">
+            <summary>
+            DELETE - Delete message
+            /myMessages/v2/messages/{messageId}
+            </summary>
+        </member>
+        <member name="F:ATT_MSSDK.RequestFactory.createMessageIndexUrl">
+            <summary>
+            POST - Create Message Index
+            </summary>
+        </member>
+        <member name="F:ATT_MSSDK.RequestFactory.getMessageIndexInfoUrl">
+            <summary>
+            GET - Get Message Index Info
+            </summary>
+        </member>
+        <member name="F:ATT_MSSDK.RequestFactory.getNotificationConnectionDetailsUrl">
+            <summary>
+            GET - Get Notification Connection Details
+            </summary>
         </member>
         <member name="M:ATT_MSSDK.RequestFactory.GetAdvertisement(ATT_MSSDK.Advertisementv1.AdRequest,System.String)">
             <summary>
@@ -46,23 +104,132 @@
             <exception cref="T:ATT_MSSDK.InvalidResponseException">Thrown if the server returns an error.</exception>
             <returns><see cref="T:ATT_MSSDK.Advertisementv1.AdResponse"/> An AdResponse object containing the results.</returns>        
         </member>
-        <member name="M:ATT_MSSDK.RequestFactory.CreateSession(System.Collections.Specialized.NameValueCollection)">
+        <member name="M:ATT_MSSDK.RequestFactory.SendMessage(ATT_MSSDK.IAM.MessageRequest,System.Int32)">
             <summary>
-            This method creates a Session for an outgoing call or message.
+            Send SMS or MMS to maximum of ten recipients. 
+            The recipients can be email address, short code or mobile numbers or combination of email address, short code or/and mobile numbers. 
+            Sending MMS messages to short codes is not supported.
             </summary>
-            <param name="parameters">Developer-defined parameters for communicating data such as the phone number to dial or the message to send. 
-            There is no limit to the number of parameters defined here, but the request should be 1024 bytes or less. </param>
-            <returns>The <see cref="T:ATT_MSSDK.CallControlv1.CreateSessionResponse"/> object.</returns>
-            <exception cref="T:ATT_MSSDK.InvalidScopeException">Thrown if the Request Factory scope does not include Call Control.</exception>
-            <exception cref="T:ATT_MSSDK.InvalidResponseException">Thrown if the server returns an error or there is a connection failure.</exception>
+            <param name="messageRequest">Message Parameters. An instance of <see cref="!:IMMNv2.MessageRequest"/> class.</param>
+            <param name="maxAddressCount">Maximum number of addresses.  Its default to 10, but, if APIPlatform changes the value, use the new value as argument</param>
+            <returns>An instance of <see cref="!:IMMNv2.SendMessageResponse"/> class.</returns>
         </member>
-        <member name="M:ATT_MSSDK.RequestFactory.SendSignal(System.String,System.String)">
+        <!-- Badly formed XML comment ignored for member "M:ATT_MSSDK.RequestFactory.GetMessageList(ATT_MSSDK.IAM.MessageListRequest)" -->
+        <!-- Badly formed XML comment ignored for member "M:ATT_MSSDK.RequestFactory.GetMessageDetails(System.String)" -->
+        <member name="M:ATT_MSSDK.RequestFactory.GetMessageContent(System.String,System.String)">
             <summary>
-            This method sends a Signal to an active Session.
+            This method gets one or more subscriber messages from the AT&amp;T Messages environment.
             </summary>
-            <param name="sessionId">Id of Session to send signal to.</param>
-            <param name="signal">Developer-defined parameter for communicating data to active sessions.</param>
-            <returns>The <see cref="T:ATT_MSSDK.CallControlv1.SendSignalResponse"/> object.</returns>
+            <param name="messageId">A MessageId representing a Subscriber Message in the AT&amp;T Messages environment.</param>
+            <param name="partNumber">A content identifier representing an attachment in the referenced Subscriber Message.</param>
+            <returns><see cref="T:ATT_MSSDK.IAM.GetMessageContentResponse"/> object.</returns>
+        </member>
+        <member name="M:ATT_MSSDK.RequestFactory.GetMessageDelta(System.String)">
+            <summary>
+            This method provides capability to check for updates by passing in a client state.
+            This is typically used when a client goes from being offline to becoming online.
+            If the subscriber’s mailbox index cache does not exist an error (MESSAGES.MESSAGES-4019) 
+            would be returned to the client and the client would have to re-initialize the cache by calling CreateMessageIndex method.
+            </summary>
+            <param name="state">The state of the client which was obtained from a either the Get Message Index request, or from the Get Message List request.</param>
+            <returns><see cref="T:ATT_MSSDK.IAM.GetMessageDeltaResponse"/> object.</returns>
+        </member>
+        <member name="M:ATT_MSSDK.RequestFactory.UpdateMessages(System.Collections.Generic.List{ATT_MSSDK.IAM.MessageMetadata})">
+            <summary>
+            This operation allows the developer to update the flags that are associated with a collection of messages. 
+            The developer can pass in any number of messages.
+            </summary>
+            <param name="messages">Container for the messages and the flags that need updating.</param>
+            <returns>true; if the operation is successful, else false.</returns>
+        </member>
+        <member name="M:ATT_MSSDK.RequestFactory.UpdateMessage(System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean})">
+            <summary>
+            This method allows the developer to update the flags that are associated with a specific message.
+            </summary>
+            <param name="messageId">Id of the message that is intended to get updated.</param>
+            <param name="isUnread">This flag provides capability to set a message unread or read status.</param>
+            <param name="isFavorite">Sets the a message to favorite or to unset the favorite.</param>
+            <returns>true; if the operation is successful, else false.</returns>
+        </member>
+        <member name="M:ATT_MSSDK.RequestFactory.DeleteMessages(System.Collections.Generic.List{System.String})">
+            <summary>
+            This methods gives the developer the ability to delete messages in an inbox. 
+            </summary>
+            <param name="messageIds">List of message Ids to be deleted.</param>
+            <returns>true; if the messages are deleted successfully, else false.</returns>
+        </member>
+        <member name="M:ATT_MSSDK.RequestFactory.DeleteMessage(System.String)">
+            <summary>
+            This methods gives the developer the ability to delete specific message in an inbox. 
+            </summary>
+            <param name="messageId">Message Id to be deleted.</param>
+            <returns>true; if the message is deleted successfully, else false.</returns>
+        </member>
+        <member name="M:ATT_MSSDK.RequestFactory.CreateMessageIndex">
+            <summary>
+            This method allows the developer to create an index cache for the subscriber’s inbox.
+            </summary>
+            <returns>true if the index cache is created successfully, else false.</returns>
+        </member>
+        <member name="M:ATT_MSSDK.RequestFactory.GetMessageIndexInfo">
+            <summary>
+            This method allows the developer to get the state, status and message count of the index cache for the subscriber’s inbox.
+            </summary>
+            <returns>An instance of <see cref="T:ATT_MSSDK.IAM.MessageIndexInfoResponse"/> class.</returns>
+        </member>
+        <member name="M:ATT_MSSDK.RequestFactory.GetNotificationConnectionDetails(System.String)">
+            <summary>
+            This method provides capability to retrieve details about the credentials, endpoint and resource information to setup a notification connection.  
+            This method needs to be invoked before a STOMP a connection is established to subscribe for notifications. 
+            The user credentials provided in the response is valid for a period of 30 seconds and STOMP connection needs to be established within this period.  
+            If the credentials expire, this method would needs to be invoked again. 
+            </summary>
+            <param name="queues">The name of the resource the client is interested in subscribing for notifications. Currently supported resource is 
+            TEXT  – Subscription to this resource will provide notification related to messages stored as TEXT in the cloud inbox.
+            MMS   – Subscription to this resource will provide notification related to messages stored as MMS in the cloud inbox.</param>
+            <returns>An instance of <see cref="T:ATT_MSSDK.IAM.NotificationConnectionResponse"/> class.</returns>
+        </member>
+        <member name="M:ATT_MSSDK.RequestFactory.GetJsonString(System.Collections.Generic.List{ATT_MSSDK.IAM.MessageMetadata})">
+            <summary>
+            Converts the list of messages to Json format.
+            </summary>
+            <param name="messages">List of messages</param>
+            <returns>Json string</returns>
+        </member>
+        <member name="M:ATT_MSSDK.RequestFactory.ValidateMessageRequest(ATT_MSSDK.IAM.MessageRequest@,System.Int32)">
+            <summary>
+            Validate the message request.
+            </summary>
+            <param name="messageRequest">Message Parameters. An instance of <see cref="!:IMMNv2.MessageRequest"/> class.</param>
+            <param name="maxAddressCount">Maximum number of addresses.  Its default to 10, but, if APIPlatform changes the value, use the new value as argument</param>
+        </member>
+        <member name="M:ATT_MSSDK.RequestFactory.ValidateAttachments(System.Collections.Generic.List{System.String})">
+            <summary>
+            Validate the attachments.
+            </summary>
+            <param name="attachments">List of attachments</param>
+        </member>
+        <member name="M:ATT_MSSDK.RequestFactory.SendImmnMessage(ATT_MSSDK.IAM.MessageRequest)">
+            <summary>
+            Send Multimedia message.
+            </summary>
+            <param name="messageRequest">Message Parameters. An instance of <see cref="!:IMMNv2.MessageRequest"/> class.</param>
+            <returns>An instance of <see cref="!:IMMNv2.SendMessageResponse"/> class.</returns>
+        </member>
+        <member name="M:ATT_MSSDK.RequestFactory.SendImmnMessageAttachment(ATT_MSSDK.IAM.MessageRequest,System.Boolean)">
+            <summary>
+            Send Multimedia message with attachments in binary format or encoded in Base64.
+            </summary>
+            <param name="messageRequest">Message Parameters. An instance of <see cref="!:IMMNv2.MessageRequest"/> class.</param>
+            <param name="Base64Encoding">Attachment Encoding. Set to true if attachments need to be encoded in Base64.</param>
+            <returns>An instance of <see cref="!:IMMNv2.SendMessageResponse"/> class.</returns>
+        </member>
+        <member name="M:ATT_MSSDK.RequestFactory.SendPlainMessage(ATT_MSSDK.IAM.MessageRequest)">
+            <summary>
+            Send SMS message.
+            </summary>
+            <param name="messageRequest">Message Parameters. An instance of <see cref="!:IMMNv2.MessageRequest"/> class.</param>
+            <returns>An instance of <see cref="!:IMMNv2.SendMessageResponse"/> class.</returns>
         </member>
         <member name="M:ATT_MSSDK.RequestFactory.SpeechToTextCustom(System.String,System.String,System.String,ATT_MSSDK.XSpeechCustomContext,System.String,System.String)">
             <summary>
@@ -74,7 +241,7 @@
             <param name="grammarFilePath">Inline grammar file path</param>
             <param name="speechCustomContext"> XSpeechCustomContext </param>
             <param name="xArgs"> String having name/value pairs separated by comma, used to populate X-Arg header field is a meta parameter </param>
-            <param name="contentLanguage">Specifies the language of the submitted audio</param>
+            <param name="audioContentType">Specifies the content type of the audio submitted.</param>
             <returns><see cref="T:ATT_MSSDK.Speechv3.SpeechResponse"/> An Speech response object containing the results.</returns>
             <exception cref="T:System.ArgumentException">Thrown if an argument is invalid.</exception>
             <exception cref="T:ATT_MSSDK.InvalidScopeException">Thrown if the Request Factory scope does not include SMS.</exception>
@@ -294,178 +461,6 @@
             <exception cref="T:ATT_MSSDK.InvalidScopeException">Thrown if the Request Factory scope does not include MMS.</exception>
             <exception cref="T:ATT_MSSDK.InvalidResponseException">Thrown if the server returns an error or there is a connection failure.</exception>
         </member>
-        <member name="M:ATT_MSSDK.RequestFactory.GetNewTransactionRedirect(ATT_MSSDK.Notaryv1.NotaryResponse)">
-            <summary>
-            Get the redirect url pointing to AT&amp;T Platform payment endpoint. 
-            This url can be used by the application to redirect the user to AT&amp;T payment endpoint which collects user consent for the transaction.
-            </summary>
-            <param name="notaryResponse"><see cref="T:ATT_MSSDK.Notaryv1.NotaryResponse"/> used to create new transaction. Notarized %Response received from GetNotarizedForNewTransaction() </param>
-            <returns>New transaction redirect url.</returns>
-        </member>
-        <member name="M:ATT_MSSDK.RequestFactory.GetNewTransactionRedirect(System.Double,ATT_MSSDK.Paymentv3.PaymentCategories,System.String,System.String,System.String,System.String,ATT_MSSDK.Paymentv3.TransactionOperationStatus)">
-            <summary>
-            Get the redirect url pointing to AT&amp;T Platform payment endpoint. 
-            This url can be used by the application to redirect the user to AT&amp;T payment endpoint which collects user consent for the transaction.
-            </summary>
-            <param name="amount">Amount of the charge</param>
-            <param name="category">Category id</param>
-            <param name="description">Description that will show up on the Advice of Charge page</param>
-            <param name="transactionId">The unique merchant transaction id</param>
-            <param name="productId">The product identifier</param>
-            <param name="redirectUrl">The URL that the browser will redirect to</param>
-            <param name="transactionOperationStatus">Transaction operation status</param>
-            <returns>New transaction redirect url.</returns>
-        </member>
-        <member name="M:ATT_MSSDK.RequestFactory.GetNotarizedForNewTransaction(System.Double,ATT_MSSDK.Paymentv3.PaymentCategories,System.String,System.String,System.String,System.String,ATT_MSSDK.Paymentv3.TransactionOperationStatus)">
-            <summary>
-            This method notarizes/encrypts the transaction payload.
-            The Notary Response can be used to initiate a new Transaction Purchase
-            </summary>
-            <param name="amount">Amount of the charge</param>
-            <param name="category">Category id</param>
-            <param name="description">Description that will show up on the Advice of Charge page</param>
-            <param name="transactionId">The unique merchant transaction id</param>
-            <param name="productId">The product identifier</param>
-            <param name="redirectUrl">The URL that the browser will redirect to</param>
-            <param name="transactionOperationStatus">Transaction operation status</param>
-            <returns>The <see cref="T:ATT_MSSDK.Notaryv1.NotaryResponse"/> object</returns>
-        </member>
-        <member name="M:ATT_MSSDK.RequestFactory.GetNotarizedForNewSubscription(System.Double,ATT_MSSDK.Paymentv3.PaymentCategories,System.String,System.String,System.String,System.String,ATT_MSSDK.Paymentv3.TransactionOperationStatus)">
-            <summary>
-            This method notarizes/encrypts the subscription payload.
-            The Notary Response can be used to initiate a new subscription Purchase
-            </summary>
-            <param name="amount">Dollar amount of the purchase</param>
-            <param name="category">Product category of the purchase.  <seealso cref="T:ATT_MSSDK.Paymentv3.PaymentCategories"/></param>
-            <param name="description">Text description of the purchase that will be displayed on the Advice of Charge page</param>
-            <param name="transactionId">Unique transaction id assigned by the developer to this transaction</param>
-            <param name="productId">A value the developer uses to describe the purchase</param>
-            <param name="redirectUrl">The URL where the users's browser will be redirected after the purchase.</param>
-            <param name="transactionOperationStatus">Transaction operation status</param>
-            <returns>The <see cref="T:ATT_MSSDK.Notaryv1.NotaryResponse"/> object</returns>
-        </member>
-        <member name="M:ATT_MSSDK.RequestFactory.GetNotaryResponse(System.String)">
-            <summary>
-            Get the Notary %Response for given payload.
-            </summary>
-            <param name="payload">payload to notarize. Example- transaction/subscription payload</param>
-            <returns>The <see cref="T:ATT_MSSDK.Notaryv1.NotaryResponse"/> object</returns>
-        </member>
-        <member name="M:ATT_MSSDK.RequestFactory.GetNewSubscriptionRedirect(System.Double,ATT_MSSDK.Paymentv3.PaymentCategories,System.String,System.String,System.String,System.String,ATT_MSSDK.Paymentv3.TransactionOperationStatus)">
-            <summary>
-            Get the redirect url pointing to AT&amp;T Platform payment endpoint. 
-            This url can be used by the application to redirect the user to AT&amp;T payment endpoint which collects user consent for the subscription.
-            </summary>
-            <param name="amount">Dollar amount of the purchase</param>
-            <param name="category">Product category of the purchase.  <seealso cref="T:ATT_MSSDK.Paymentv3.PaymentCategories"/></param>
-            <param name="description">Text description of the purchase that will be displayed on the Advice of Charge page</param>
-            <param name="transactionId">Unique transaction id assigned by the developer to this transaction</param>
-            <param name="productId">A value the developer uses to describe the purchase</param>
-            <param name="redirectUrl">The URL where the users's browser will be redirected after the purchase.</param>
-            <param name="transactionOperationStatus">Transaction operation status</param>
-            <returns>The URL that the browser should be redirected to.</returns>
-        </member>
-        <member name="M:ATT_MSSDK.RequestFactory.GetNewSubscriptionRedirect(ATT_MSSDK.Notaryv1.NotaryResponse)">
-            <summary>
-            Get the redirect url pointing to AT&amp;T Platform payment endpoint. 
-            This url can be used by the application to redirect the user to AT&amp;T payment endpoint which collects user consent for the subscription.
-            </summary>
-            <param name="notaryResponse">Notary reponse used to create new subscription</param>
-            <returns>The URL that the browser should be redirected to.</returns>
-        </member>
-        <member name="M:ATT_MSSDK.RequestFactory.GetTransactionStatus(ATT_MSSDK.Paymentv3.TransactionIdTypes,System.String)">
-            <summary>
-            This method retrieves the status of an existing transaction.
-            </summary>
-            <param name="idType">The type of id.  <seealso cref="T:ATT_MSSDK.Paymentv3.TransactionIdTypes"/></param>
-            <param name="id">The id value.</param>
-            <returns>The <see cref="T:ATT_MSSDK.Paymentv3.TransactionStatus"/> containing the transaction status.</returns>
-        </member>
-        <member name="M:ATT_MSSDK.RequestFactory.GetSubscriptionDetails(System.String,System.String)">
-            <summary>
-            Get the Subscription Details for a given subscription Id and consumer Id.
-            </summary>
-            <param name="merchantSubscriptionId">The id of merchant subscription product.</param>
-            <param name="consumerId">Id of the consumer</param>
-            <returns>The <see cref="T:ATT_MSSDK.Paymentv3.SubscriptionDetails"/> containing the subscription details.</returns>
-        </member>
-        <member name="M:ATT_MSSDK.RequestFactory.GetSubscriptionStatus(ATT_MSSDK.Paymentv3.SubscriptionIdTypes,System.String)">
-            <summary>
-            Get the Subscription Status for a given subscription Id.
-            </summary>
-            <param name="idType">The type of id.  <seealso cref="T:ATT_MSSDK.Paymentv3.SubscriptionIdTypes"/></param>
-            <param name="id">The id value.</param>
-            <returns>The <see cref="T:ATT_MSSDK.Paymentv3.SubscriptionStatus"/> object containing the subscription status.</returns>
-        </member>
-        <member name="M:ATT_MSSDK.RequestFactory.Refund(System.String,System.Int32,System.String)">
-            <summary>
-            Refunds a transaction for a given transaction Id.
-            </summary>
-            <param name="id">The id of the transaction to refund.</param>
-            <param name="reasonCode">The integer refund reason code.</param>
-            <param name="reasonText">The text reason field.</param>
-            <returns>The <see cref="T:ATT_MSSDK.Paymentv3.RefundResponseObject"/>.</returns>
-        </member>
-        <member name="M:ATT_MSSDK.RequestFactory.CancelSubscription(System.String,System.Int32,System.String)">
-            <summary>
-            Cancels a given subscription.
-            </summary>
-            <param name="id">The id of the subscription to cancel.</param>
-            <param name="reasonCode">The integer cancel subscription reason code.</param>
-            <param name="reasonText">The text reason field.</param>
-            <returns>The <see cref="T:ATT_MSSDK.Paymentv3.CancelSubscriptionResponse"/> object.</returns>
-        </member>
-        <member name="M:ATT_MSSDK.RequestFactory.CommitTransaction(System.Decimal,System.String,ATT_MSSDK.Paymentv3.TransactionOperationStatus)">
-            <summary>
-            Commit Transaction
-            </summary>
-            <param name="amount">Amount to commit for the transaction</param>
-            <param name="transactionId">Transaction Id to commit</param>
-            <param name="transactionOperationStatus">Transaction operation status</param>
-            <returns>The <see cref="T:ATT_MSSDK.Paymentv3.CommitTransactionResponse"/> containing the commit transaction response</returns>
-        </member>
-        <member name="M:ATT_MSSDK.RequestFactory.GetNotificationIds(System.IO.Stream)">
-            <summary>
-            Method fetches notification ids from the stream.
-            </summary>
-            <param name="stream">Input stream received from listener</param>
-            <returns>The <see cref="T:ATT_MSSDK.Paymentv3.NotificationId"/>List of Notification Ids</returns>
-        </member>
-        <member name="M:ATT_MSSDK.RequestFactory.AcknowledgeNotifications(System.IO.Stream)">
-            <summary>
-            Method fetches notification ids, and get the notification data and acknowledge the nofitication.
-            </summary>
-            <param name="stream">Input stream received from listener</param>
-            <returns>The <see cref="T:ATT_MSSDK.Paymentv3.NotificationObject"/> List of Notification Data</returns>
-        </member>
-        <member name="M:ATT_MSSDK.RequestFactory.GetNotification(System.String)">
-            <summary>
-            Method fetches notification data for the given notification Id.
-            </summary>
-            <param name="notificationId">Notification Id</param>
-            <returns>The <see cref="T:ATT_MSSDK.Paymentv3.NotificationObject"/>Notificaiton Data</returns>
-        </member>
-        <member name="M:ATT_MSSDK.RequestFactory.GetNotification(System.Collections.Generic.List{System.String})">
-            <summary>
-            Method fetches notification data for the given list of notification Ids.
-            </summary>
-            <param name="notificationIds">List of Notification Ids</param>
-            <returns>The <see cref="T:ATT_MSSDK.Paymentv3.NotificationObject"/>List of Notificaiton Data</returns>
-        </member>
-        <member name="M:ATT_MSSDK.RequestFactory.AcknowledgeNotifications(System.Collections.Generic.List{System.String})">
-            <summary>
-            This method acknowledges notifications, and requests that the notifications be stopped for a list of NotificationIds.
-            </summary>
-            <param name="notificationIds">Input stream received from listener</param>
-            <returns>The <see cref="T:ATT_MSSDK.Paymentv3.AcknowledgeNotificationResponse"/> List of Acknowledgement Notification responses </returns>
-        </member>
-        <member name="M:ATT_MSSDK.RequestFactory.AcknowledgeNotifications(System.String)">
-            <summary>
-            Method acknowledges notification and requests that the notifications be stopped for a particular NotificationId.
-            </summary>
-            <param name="notificationId">Input stream received from listener</param>
-            <returns>The <see cref="T:ATT_MSSDK.Paymentv3.AcknowledgeNotificationResponse"/> response of Acknowledgement Notification </returns>
-        </member>
         <member name="M:ATT_MSSDK.RequestFactory.SendSms(System.String,System.String,System.Nullable{System.Boolean})">
             <summary>
             This method sends an SMS message to one Mobile Network device.
@@ -537,10 +532,33 @@
             <param name="endPoint">The End Point URL.  This defaults to https://api.att.com.</param>
             <param name="clientId">The client id of your application.</param>
             <param name="clientSecret">The client secret of your application.</param>
-            <param name="scopes">One or more values from Payment, SMS, MMS, DeviceLocation, WAPPush.</param>
+            <param name="scopes">One or more values from  SMS, MMS, SPEECH etc.</param>
             <param name="redirectUri">The URL for the OAuth redirect.  Required if scopes include Terminal Location or Device Capabilities</param>
             <param name="proxyAddress">The URL and Port number of your proxy, if you have one.  For example: http://proxy:8888.</param>
             <exception cref="T:System.ArgumentException">Thrown if the arguments are incorrect.</exception>
+        </member>
+        <member name="M:ATT_MSSDK.RequestFactory.#ctor(System.String,System.String,System.String,System.Collections.Generic.List{ATT_MSSDK.RequestFactory.ScopeTypes},System.String,System.String,System.Int32)">
+            <summary>
+            Initializes a new instance of the RequestFactory class. Takes an additional parameter 'timeout'. 
+            This overloaded constructor can be used by the application, if the application wants to set 'HttpWebRequest.Timeout' property for WebRequests to be done by RequestFactory. 
+            In this case, timeout value in milliseconds passed through constructor will be used by RequestFactory to set 'HttpWebRequest.Timeout' property when RequestFactory creates WebRequest.
+            If this constructor is not used then RequestFactory will not set 'HttpWebRequest.Timeout' property during creation of WebRequest, resulting in default behaviour of 'HttpWebRequest.Timeout' property.
+            </summary>
+            <param name="endPoint">The End Point URL.  This defaults to https://api.att.com.</param>
+            <param name="clientId">The client id of your application.</param>
+            <param name="clientSecret">The client secret of your application.</param>
+            <param name="scopes">One or more values from  SMS, MMS, SPEECH etc.</param>
+            <param name="redirectUri">The URL for the OAuth redirect.  Required if scopes include Terminal Location or Device Capabilities</param>
+            <param name="proxyAddress">The URL and Port number of your proxy, if you have one.  For example: http://proxy:8888.</param>
+            <param name="timeout">Timeout value in milliseconds to be used by request factory for setting HttpWebRequest.timeout property while invoking HttpWebRequest  For example:5000.</param>
+            <exception cref="T:System.ArgumentException">Thrown if the arguments are incorrect.</exception>
+        </member>
+        <member name="F:ATT_MSSDK.RequestFactory.ClientSdk">
+            <summary>
+            ClientSdk value to be hardcoded in XArgs for UnitySDK.     
+            While building MSSDK dll for UnitySDK package, comment the above line defining the value as "att.mssdk.3.7" 
+            and uncomment the below line .
+            </summary>
         </member>
         <member name="M:ATT_MSSDK.RequestFactory.ResetCredentials">
             <summary>
@@ -558,6 +576,11 @@
             Get the Access Token associated with an Authorization Code
             </summary>
             <param name="authorizationCode">The Authorization Code returned by the OAuth Process.</param>
+        </member>
+        <member name="M:ATT_MSSDK.RequestFactory.GetAuthorizeCredentials">
+            <summary>
+            Gets the access token
+            </summary>
         </member>
         <member name="M:ATT_MSSDK.RequestFactory.GetOAuthRedirect">
             <summary>
@@ -654,6 +677,14 @@
             <param name="accept">MIME Type of the returned value, e.g., application/json or application/xml</param>
             <exception cref="T:ATT_MSSDK.InvalidResponseException">Thrown if the server returns an error or there is a connection failure.</exception>
             <returns>The response to the API call.</returns>
+        </member>
+        <member name="M:ATT_MSSDK.RequestFactory.CheckForClientSdkInXArgs(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Checks if header contains ClientSdk name value pair. 
+            If ClientSdk name value pair is present in XArgs it is overwritten else ClientSdk name value Pair is added to XArgs header
+            </summary>
+            <param name="headers">headers to be added to WebRequest</param>
+            <returns>Header with ClientSdk name value pair added/overwritten in XArgs.</returns>
         </member>
         <member name="M:ATT_MSSDK.RequestFactory.DoPost(System.String,System.Collections.Specialized.NameValueCollection)">
             <summary>
@@ -752,16 +783,6 @@
             <summary>
             If the current credentials have expired or have never been set then get them from the OAuth endpoint.
             </summary>
-        </member>
-        <member name="M:ATT_MSSDK.RequestFactory.GetTerminalLocation(System.Int32,ATT_MSSDK.TLv1.TerminalLocationTolerance,System.Int32)">
-            <summary>
-            This methods returns Device Location details from the network for an AT&amp;T Wireless Number. It returns latitude, longitude and accuracy of the coordinates.
-            This version 2.1 is latest.
-            </summary>
-            <param name="requestedAccuracy">the requested accuracy, the default value used is 100 meters</param>
-            <param name="tolerance">This parameter defines the application's priority of response time versus accuracy, the default value used is LowDelay</param>
-            <param name="acceptableAccuracy">Acceptable Accuracy level, the default value used is 10000 meters</param>
-            <returns>The <see cref="T:ATT_MSSDK.TLv1.DeviceLocation"/> A DeviceLocation object containing the results.</returns>
         </member>
         <member name="M:ATT_MSSDK.RequestFactory.SpeechToText(System.String)">
             <summary>
@@ -949,6 +970,12 @@
             The URL and Port number of your proxy
             </summary>
         </member>
+        <member name="P:ATT_MSSDK.RequestFactory.RequestTimeout">
+            <summary>
+            Gets or sets the RequestTimeout for this RequestFactory. 
+            RequestFactory uses RequestTimeout value in milliseconds to set HttpWebRequest.timeout property while invoking HttpWebRequest
+            </summary>
+        </member>
         <member name="P:ATT_MSSDK.RequestFactory.ClientCredential">
             <summary>
             Gets or sets the ClientCredential for this RequestFactory.
@@ -967,11 +994,6 @@
         <member name="F:ATT_MSSDK.RequestFactory.ScopeTypes.DeviceCapability">
             <summary>
             Device Capability scope
-            </summary>
-        </member>
-        <member name="F:ATT_MSSDK.RequestFactory.ScopeTypes.Payment">
-            <summary>
-            Payment scope
             </summary>
         </member>
         <member name="F:ATT_MSSDK.RequestFactory.ScopeTypes.SMS">
@@ -1019,11 +1041,6 @@
             ADS scope
             </summary>
         </member>
-        <member name="F:ATT_MSSDK.RequestFactory.ScopeTypes.CallControl">
-            <summary>
-            Call Control scope
-            </summary>
-        </member>
         <member name="F:ATT_MSSDK.RequestFactory.ScopeTypes.TTS">
             <summary>
             Text To Speech scope
@@ -1052,6 +1069,11 @@
         <member name="F:ATT_MSSDK.RequestFactory.HTTPMethods.GET">
             <summary>
             HTTP GET
+            </summary>
+        </member>
+        <member name="F:ATT_MSSDK.RequestFactory.HTTPMethods.DELETE">
+            <summary>
+            HTTP DELETE
             </summary>
         </member>
         <member name="T:ATT_MSSDK.Advertisementv1.Ad">
@@ -1283,105 +1305,577 @@
             This parameter contains the pixel tracking URL.
             </summary>
         </member>
-        <member name="T:ATT_MSSDK.CallControlv1.CreateSessionResponse">
-            <summary>
-            Encapsulates the response from Create Session API.
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.CallControlv1.CreateSessionResponse.#ctor">
-            <summary>
-            Initializes a new instance of the CreateSessionResponse class.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.CallControlv1.CreateSessionResponse.Id">
-            <summary>
-            Gets or sets the value of id.
-            The SessionID for the newly created session.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.CallControlv1.CreateSessionResponse.Success">
-            <summary>
-            Gets or sets a value indicating whether or not the token launch was successful.
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.CallControlv1.CreateSessionResponseRaw">
-            @internal
-            <summary>
-            Internal class for JSON parsing of Create Session response from the API.
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.CallControlv1.CreateSessionResponseRaw.#ctor">
-            <summary>
-            Initializes a new instance of the CreateSessionResponseRaw class.
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.CallControlv1.CreateSessionResponseRaw.ParseJson(System.String)">
-            <summary>
-            Parses a JSON response and returns a CreateSessionResponse object
-            </summary>
-            <param name="jsonInput">The JSON input value</param>
-            <returns>The <see cref="T:ATT_MSSDK.CallControlv1.CreateSessionResponse"/> returned by the server.</returns>
-        </member>
-        <member name="P:ATT_MSSDK.CallControlv1.CreateSessionResponseRaw.id">
-            <summary>
-            Gets or sets the value of id.
-            The SessionID for the newly created session.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.CallControlv1.CreateSessionResponseRaw.success">
-            <summary>
-            Gets or sets a value indicating whether or not the token launch was successful.
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.CallControlv1.SendSignalResponseRaw">
-            @internal
-            <summary>
-            Internal class for JSON parsing of Send Signal response from the API.
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.CallControlv1.SendSignalResponseRaw.#ctor">
-            <summary>
-            Initializes a new instance of the SendSignalResponseRaw class.
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.CallControlv1.SendSignalResponseRaw.ParseJson(System.String)">
-            <summary>
-            Parses a JSON response and returns a SendSignalResponse object
-            </summary>
-            <param name="jsonInput">The JSON input value</param>
-            <returns>The <see cref="T:ATT_MSSDK.CallControlv1.SendSignalResponse"/> returned by the server.</returns>
-        </member>
-        <member name="P:ATT_MSSDK.CallControlv1.SendSignalResponseRaw.status">
-            <summary>
-            Gets or sets the value of status.
-            Returns the status of the request. Possible values are:
-            QUEUED - The event delivered successfully to the event queue of the target.
-            NOTFOUND - The target session could not be found.
-            FAILED - Some other failure occurred.
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.CallControlv1.SendSignalResponse">
-            <summary>
-            Encapsulates the response from Send Signal API.
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.CallControlv1.SendSignalResponse.#ctor">
-            <summary>
-            Initializes a new instance of the SendSignalResponse class.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.CallControlv1.SendSignalResponse.Status">
-            <summary>
-            Gets or sets the value of status.
-            Returns the status of the request. Possible values are:
-            QUEUED - The event delivered successfully to the event queue of the target.
-            NOTFOUND - The target session could not be found.
-            FAILED - Some other failure occurred.
-            </summary>
-        </member>
         <member name="T:ATT_MSSDK.ErrorObjectRaw">
             <summary>
             Base class for all Error objects
+            </summary>
+        </member>
+        <member name="T:ATT_MSSDK.IAM.Delta">
+            <summary>
+            A container that lists the updates based on message type TEXT, MMS
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.Delta.Adds">
+            <summary>
+            Gets or sets the value of Adds.
+            Objects that lists the messages that have been added
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.Delta.Deletes">
+            <summary>
+            Gets or sets the value of Deletes.
+            Objects that lists the messages that have been deleted.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.Delta.Updates">
+            <summary>
+            Gets or sets the value of Updates.
+            Objects that lists the messages that have been updated.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.Delta.Type">
+            <summary>
+            Gets or sets the message type of the listed update.
+            </summary>
+        </member>
+        <member name="T:ATT_MSSDK.IAM.From">
+            <summary>
+            Container class specifying message sender.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.From.Value">
+            <summary>
+            Gets or sets the value which specifies the message sender. 
+            </summary>
+        </member>
+        <member name="T:ATT_MSSDK.IAM.GetMessageContentResponse">
+            <summary>
+            Encapsulates the response of get message content.
+            </summary>
+        </member>
+        <member name="M:ATT_MSSDK.IAM.GetMessageContentResponse.#ctor">
+            <summary>
+            Initializes a new instance of the GetMessageContentResponse class.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.GetMessageContentResponse.MessageContent">
+            <summary>
+            Gets or sets the MessageContent. Stream of bytes.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.GetMessageContentResponse.MessageType">
+            <summary>
+            Gets or sets the MessageType.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.GetMessageContentResponse.MessageLength">
+            <summary>
+            Gets or sets the MessageLength.
+            </summary>
+        </member>
+        <member name="T:ATT_MSSDK.IAM.GetMessageDeltaResponse">
+            <summary>
+            The response to Get Message Delta request.
+            </summary>
+        </member>
+        <member name="M:ATT_MSSDK.IAM.GetMessageDeltaResponse.#ctor">
+            <summary>
+            Instance of GetMessageDeltaResponse
+            </summary>
+        </member>
+        <member name="M:ATT_MSSDK.IAM.GetMessageDeltaResponse.ParseJson(System.String)">
+            <summary>
+            Creates an GetMessageDeltaResponse object by parsing the JSON input.
+            </summary>
+            <param name="jsonInput">The JSON input string to parse.</param>
+            <returns>The <see cref="T:ATT_MSSDK.IAM.GetMessageDeltaResponse"/> object returned by the server.</returns>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.GetMessageDeltaResponse.DeltaResponse">
+            <summary>
+            Gets or sets the value of DeltaResponse. An object containing the delta details of message.
+            </summary>
+        </member>
+        <member name="T:ATT_MSSDK.IAM.GetMessageListResponse">
+            <summary>
+            Container class for a list of messages.
+            </summary>
+        </member>
+        <member name="M:ATT_MSSDK.IAM.GetMessageListResponse.ParseJSON(System.String)">
+            <summary>
+            Converts a string containing a JSON object to a GetMessageListResponse object.
+            </summary>
+            <param name="jsonInput">The string containing the JSON input.</param>
+            <returns>The <see cref="T:ATT_MSSDK.IAM.GetMessageListResponse"/> returned by the server.</returns>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.GetMessageListResponse.MessageList">
+            <summary>
+            Object containing a list of messages.
+            </summary>
+        </member>
+        <member name="T:ATT_MSSDK.IAM.GetMessageResponse">
+            <summary>
+            Container for Get Message Response.
+            </summary>
+        </member>
+        <member name="M:ATT_MSSDK.IAM.GetMessageResponse.#ctor">
+            <summary>
+            Initializes a new instance of <see cref="T:ATT_MSSDK.IAM.GetMessageResponse"/>.
+            </summary>
+        </member>
+        <member name="M:ATT_MSSDK.IAM.GetMessageResponse.ParseJSON(System.String)">
+            <summary>
+            Converts a string containing a JSON object to a GetMessageResponse object.
+            </summary>
+            <param name="jsonInput">The string containing the JSON input.</param>
+            <returns>The <see cref="T:ATT_MSSDK.IAM.GetMessageResponse"/> returned by the server.</returns>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.GetMessageResponse.Message">
+            <summary>
+            Gets or sets the message details.
+            </summary>
+        </member>
+        <member name="T:ATT_MSSDK.IAM.Message">
+            <summary>
+            Container for message
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.Message.MessageId">
+            <summary>
+            Gets or sets the value of Unique Message Identifier.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.Message.From">
+            <summary>
+            Gets or sets the value of message sender.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.Message.Recipients">
+            <summary>
+            Gets or sets the value of recipients. If group message, this will contain muliple addresses.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.Message.TimeStamp">
+            <summary>
+            Gets or sets the value of time when the message was stored in the cloud.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.Message.Text">
+            <summary>
+            Gets or sets the value of message text.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.Message.IsFavorite">
+            <summary>
+            Gets or sets the value if the message is a favorite.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.Message.IsUnread">
+            <summary>
+            Gets or sets the value if message is unread.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.Message.Type">
+            <summary>
+            Gets or sets the type of message. TEXT or MMS.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.Message.TypeMetaData">
+            <summary>
+            Gets or sets the value of <see cref="P:ATT_MSSDK.IAM.Message.TypeMetaData"/>.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.Message.IsIncoming">
+            <summary>
+            Gets or sets the value if the message is incoming or outgoing. The possible values are true or false.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.Message.Subject">
+            <summary>
+            Gets or sets the value of message subject.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.Message.MmsContent">
+            <summary>
+            Gets or sest the value of message part description.
+            </summary>
+        </member>
+        <member name="T:ATT_MSSDK.IAM.MessageDelta">
+            <summary>
+            Container for Message Delta Response.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.MessageDelta.State">
+            <summary>
+            Gets or sets the value of State.
+            This is a opaque string that denotes the current state of the mailbox in the platform.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.MessageDelta.Delta">
+            <summary>
+            Gets or sets the value of Delta.
+            A container that lists the updates based on message type TEXT, MMS.
+            </summary>
+        </member>
+        <member name="T:ATT_MSSDK.IAM.MessageIndexInfo">
+            <summary>
+            Container for index info.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.MessageIndexInfo.Status">
+            <summary>
+            Gets or sets the value of Status.
+            This parameters indicates the status of the message index cache in the orchestration. 
+            The following values could be returned: NOT_INITIALIZED, INITIALIZING, INITIALIZED, ERROR
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.MessageIndexInfo.State">
+            <summary>
+            Gets or sets the value of State.
+            This is an opaque string that denotes the current state of the mailbox in the platform.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.MessageIndexInfo.MessageCount">
+            <summary>
+            Gets or sets the value of MessageCount.
+            Number of message indexes cached for the subscriber.
+            </summary>
+        </member>
+        <member name="T:ATT_MSSDK.IAM.MessageIndexInfoResponse">
+            <summary>
+            Container for MessageIndexInfoResponse
+            </summary>
+        </member>
+        <member name="M:ATT_MSSDK.IAM.MessageIndexInfoResponse.#ctor">
+            <summary>
+            Creates an instance of MessageIndexInfoResponse.
+            </summary>
+        </member>
+        <member name="M:ATT_MSSDK.IAM.MessageIndexInfoResponse.ParseJSON(System.String)">
+            <summary>
+            Converts a string containing a JSON object to a MessageIndexInfoResponse object.
+            </summary>
+            <param name="jsonInput">The string containing the JSON input.</param>
+            <returns>The <see cref="T:ATT_MSSDK.IAM.MessageIndexInfoResponse"/> returned by the server.</returns>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.MessageIndexInfoResponse.MessageIndexInfo">
+            <summary>
+            Gets or sets the message index info.
+            </summary>
+        </member>
+        <member name="T:ATT_MSSDK.IAM.MessageList">
+            <summary>
+            Container object for a list of messages.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.MessageList.Messages">
+            <summary>
+            Gets or sets the list of messages.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.MessageList.Offset">
+            <summary>
+            Gets or sets the value of Offset.
+            This parameter defines the offset from the beginning of the ordered set of messages.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.MessageList.Limit">
+            <summary>
+            Gets or sets the value of Limit.
+            A number representing the number of messages requested.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.MessageList.Total">
+            <summary>
+            Gets or sets the value of Total.
+            This parameter is the total number of messages returned based on filter criteria.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.MessageList.State">
+            <summary>
+            Gets or sets the value of State.
+            This is an opaque string that denotes the current state of the mailbox in the platform.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.MessageList.CacheStatus">
+            <summary>
+            Gets or sets the value of CacheStatus.
+            This parameters indicates the status of the message index cache. 
+            The following values could be returned:	NOT_INITIALIZED, INITIALIZING, INITIALIZED and ERROR
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.MessageList.FailedMessages">
+            <summary>
+            Gets or sets the list of <see cref="P:ATT_MSSDK.IAM.MessageList.FailedMessages"/> objects.
+            </summary>
+        </member>
+        <member name="T:ATT_MSSDK.IAM.MessageListRequest">
+            <summary>
+            Container for Get Message List Operation Request parameters.
+            </summary>
+        </member>
+        <member name="M:ATT_MSSDK.IAM.MessageListRequest.ToString">
+            <summary>
+            Get the query string of all the parameters.
+            </summary>
+            <returns>string of query string parameters.</returns>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.MessageListRequest.MessageIds">
+            <summary>
+            Gets or sets the list of message Ids.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.MessageListRequest.Limit">
+            <summary>
+            Gets or sets the upper limit of the number of returned messages.
+            Maximum value is 500.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.MessageListRequest.Offset">
+            <summary>
+            Gets or sets the value of the Offset from the beginning of the ordered set of messages.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.MessageListRequest.IsUnread">
+            <summary>
+            Gets or sets the value of this filter to specify if the API need to fetch Unread or Read messages.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.MessageListRequest.Type">
+            <summary>
+            Gets or sets the value of Message Type Filter.
+            Possible values are: SMS, MMS
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.MessageListRequest.Keyword">
+            <summary>
+            Gets or sets the value of Keyword.
+            Retrieve message by passing end-point as a filter criteria.  Currently supports only a single endpoint to be passed.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.MessageListRequest.IsIncoming">
+            <summary>
+            Gets or sets the value of this filter to specify if the API need to filter messages based on Incoming or Outgoing.
+            </summary>
+        </member>
+        <member name="T:ATT_MSSDK.IAM.MessageMetadata">
+            <summary>
+            Container for objects that lists the messages that have been added/deleted/updated.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.MessageMetadata.IsFavorite">
+            <summary>
+            Gets or sets the value of IsFavorite.
+            Favorite indicator.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.MessageMetadata.MessageId">
+            <summary>
+            Gets or sets the id of the message that has either been added, deleted or updated
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.MessageMetadata.IsUnread">
+            <summary>
+            Gets or sets the value of IsUnread.
+            Indicates if message is unread.
+            </summary>
+        </member>
+        <member name="T:ATT_MSSDK.IAM.MessageRequest">
+            <summary>
+            Container for Message Request. 
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.MessageRequest.Addresses">
+            <summary>
+            Gets or sets the list of addresses to send message. The addresses can be MSISDN, Short Code and Email address.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.MessageRequest.Text">
+            <summary>
+            Gets or sets the message text to be sent.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.MessageRequest.Subject">
+            <summary>
+            Gets or sets the subject of the message.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.MessageRequest.IsGroup">
+            <summary>
+            Gets or sets the value of IsGroup.
+            This value specifies if the message needs to be transmitted as broadcast or group message.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.MessageRequest.Attachments">
+            <summary>
+            Gets or sets the list of attachments.
+            </summary>
+        </member>
+        <member name="T:ATT_MSSDK.IAM.MmsContent">
+            <summary>
+            Container for MMS Content.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.MmsContent.ContentType">
+            <summary>
+            Gets or sets the value of content type.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.MmsContent.ContentName">
+            <summary>
+            Gets or sets the value of content name.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.MmsContent.ContentUrl">
+            <summary>
+            Gets or sets the value of relative URL to content.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.MmsContent.Type">
+            <summary>
+            Gets or sets the type of message content.
+            Possible values: Text, Audio, Image and Video
+            </summary>
+        </member>
+        <member name="T:ATT_MSSDK.IAM.NotificationConnectionDetails">
+            <summary>
+            Container for Notification Connection Details.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.NotificationConnectionDetails.Username">
+            <summary>
+            Gets or sets the value of username.
+            This is the username that needs to be passed to establish the STOMP connection.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.NotificationConnectionDetails.Password">
+            <summary>
+            Gets or sets the value of password.
+            This is the password that needs to be passed to establish the STOMP connection.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.NotificationConnectionDetails.HttpsUrl">
+            <summary>
+            Gets or sets the value of httpsUrl.
+            The https endpoint to which the STOMP connection should be established. 
+            A client that need to initiate a http connection and then upgrade to websocket shall use this endpoint
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.NotificationConnectionDetails.WssUrl">
+            <summary>
+            Gets or sets the value of WssUrl.
+            The wss endpoint to which the STOMP connection should be established.
+            A client that can establish a websocket connection directly shall use this endpoint.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.NotificationConnectionDetails.Queues">
+            <summary>
+            Gets or sets the value of queues.
+            A JSON object containing the name of the queue at which the requested resource can be subscribed at.
+            </summary>
+        </member>
+        <member name="T:ATT_MSSDK.IAM.NotificationConnectionResponse">
+            <summary>
+            Notification Connection Details.
+            </summary>
+        </member>
+        <member name="M:ATT_MSSDK.IAM.NotificationConnectionResponse.#ctor">
+            <summary>
+            Creates an instance of NotificationConnectionResponse.
+            </summary>
+        </member>
+        <member name="M:ATT_MSSDK.IAM.NotificationConnectionResponse.ParseJSON(System.String)">
+            <summary>
+            Converts a string containing a JSON object to a NotificationConnectionResponse object.
+            </summary>
+            <param name="jsonInput">The string containing the JSON input.</param>
+            <returns>The <see cref="T:ATT_MSSDK.IAM.NotificationConnectionResponse"/> returned by the server.</returns>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.NotificationConnectionResponse.NotificationConnectionDetails">
+            <summary>
+            Gets or sets the notification connection details.
+            </summary>
+        </member>
+        <member name="T:ATT_MSSDK.IAM.Queues">
+            <summary>
+            Container for Queues.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.Queues.Text">
+            <summary>
+            Gets or sets the value of text.
+            A JSON object containing the name of the queue at which the requested resource can be subscribed at.
+            </summary>
+        </member>
+        <member name="T:ATT_MSSDK.IAM.Recipient">
+            <summary>
+            Container for list of recipients.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.Recipient.Value">
+            <summary>
+            Gets or sets the value of recipient.
+            </summary>
+        </member>
+        <member name="T:ATT_MSSDK.IAM.SegmentationDetails">
+            <summary>
+            Container for Segmentation Details.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.SegmentationDetails.SegmentationMsgRefNumber">
+            <summary>
+            Gets or sets the value of reference number for message that are part of the same segments SMS message.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.SegmentationDetails.TotalNumberOfParts">
+            <summary>
+            Gets or sets the value of total number for segments for this segmented SMS message.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.SegmentationDetails.ThisPartNumber">
+            <summary>
+            Gets or sets the value of segmentation part number for this particular message.
+            </summary>
+        </member>
+        <member name="T:ATT_MSSDK.IAM.SendMessageResponse">
+            <summary>
+            The response to a Send Message request.
+            </summary>
+        </member>
+        <member name="M:ATT_MSSDK.IAM.SendMessageResponse.#ctor">
+            <summary>
+            Initializes a new instance of the SendMessageResponse class.
+            </summary>
+        </member>
+        <member name="M:ATT_MSSDK.IAM.SendMessageResponse.Parse(System.String)">
+            <summary>
+            Creates an SendMessageResponse object by parsing the JSON input.
+            </summary>
+            <param name="jsonInput">The JSON input string to parse.</param>
+            <returns>The <see cref="T:ATT_MSSDK.IAM.SendMessageResponse"/> object returned by the server.</returns>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.SendMessageResponse.Id">
+            <summary>
+            Gets or sets the Id value returned by the server.
+            </summary>
+        </member>
+        <member name="T:ATT_MSSDK.IAM.TypeMetaData">
+            <summary>
+            Container for message specific data fields.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.TypeMetaData.IsSegmented">
+            <summary>
+            Gets or sets the value to specify if the message if part of a segmented message.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.TypeMetaData.SegmentationDetails">
+            <summary>
+            Gets or sets the message segmentation details.
+            </summary>
+        </member>
+        <member name="P:ATT_MSSDK.IAM.TypeMetaData.Subject">
+            <summary>
+            Gets or sets the value of message subject.
             </summary>
         </member>
         <member name="T:ATT_MSSDK.MMSv3.DeliveryInfo">
@@ -1669,63 +2163,6 @@
             The URL that can be used to provide network delivery status of the sent message.
             </summary>
         </member>
-        <member name="T:ATT_MSSDK.Paymentv3.CancelSubscriptionResponse">
-            <summary>
-            Encapsulates response from cancel subscription.
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.CancelSubscriptionResponse.#ctor">
-            <summary>
-            Initializes a new instance of the CancelSubscriptionResponse class.
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.CancelSubscriptionResponse.ParseJson(System.String)">
-            <summary>
-            Parse an JSON document and return a CancelSubscriptionResponse
-            </summary>
-            <param name="jsonInput">The JSON document to be parsed.</param>
-            <returns>The parsed <see cref="T:ATT_MSSDK.Paymentv3.CancelSubscriptionResponse"/> object.</returns>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.CancelSubscriptionResponse.ParseXML(System.String)">
-            <summary>
-            Parse an XML document and return a CancelSubscriptionResponse
-            </summary>
-            <param name="xmlInput">The XML document to be parsed.</param>
-            <returns>The parsed <see cref="T:ATT_MSSDK.Paymentv3.CancelSubscriptionResponse"/> object.</returns>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.CancelSubscriptionResponse.GetElement(System.String,System.String)">
-            <summary>
-            Basic method for getting values out of an XML document
-            </summary>
-            <param name="xmlInput">The XML document to search</param>
-            <param name="element">The element to get</param>
-            <returns>A string containing the element text</returns>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.CancelSubscriptionResponse.IsSuccess">
-            <summary>
-            Gets or sets a value indicating whether the request was successful; False if a service error is encountered.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.CancelSubscriptionResponse.TransactionId">
-            <summary>
-            Gets or sets the transaction id of the newly created 'cancel subscription' request.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.CancelSubscriptionResponse.TransactionStatus">
-            <summary>
-            Gets or sets the status of this transaction, that requested cancellation of subscription.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.CancelSubscriptionResponse.OriginalPurchaseAmount">
-            <summary>
-            Gets or sets the value of OriginalPurchaseAmount
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.CancelSubscriptionResponse.Version">
-            <summary>
-            Gets or sets the value of Version
-            </summary>
-        </member>
         <member name="T:ATT_MSSDK.PolicyExceptionObject">
             <summary>
             %PolicyExceptionObject is returned as part of error response from platform.
@@ -1783,240 +2220,6 @@
         <member name="P:ATT_MSSDK.ErrorResponse.ErrorObject">
             <summary>
             Gets or sets the value of error object, which contains the error information.
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationDataRaw">
-            <summary>
-            SuccessfulRefundNotificationDataRaw Object
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationDataRaw.#ctor">
-            <summary>
-            Initializes a new instance of the SuccessfulRefundNotificationDataRaw class.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationDataRaw.ConsumerId">
-            <summary>
-            Gets or sets the Unique Consumer Id.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationDataRaw.RefundTransactionId">
-            <summary>
-            Gets or sets the TransactionId of the refund.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationDataRaw.OriginalTransactionId">
-            <summary>
-            Gets or sets the TransactionId of the original transaction that was refunded.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationDataRaw.RefundCurrency">
-            <summary>
-            Gets or sets the refund currency as USD for this release.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationDataRaw.RefundFreeText">
-            <summary>
-            Gets or sets the Text description of the reason for the refund.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationDataRaw.OriginalPriceAmount">
-            <summary>
-            Gets or sets the Amount of the original purchase.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationDataRaw.RefundPriceAmount">
-            <summary>
-            Gets or sets the price of the refund.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationDataRaw.TransactionDate">
-            <summary>
-            Gets or sets the Date and time the refund transaction occurred.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationDataRaw.MerchantSubscriptionId">
-            <summary>
-            Gets or sets the If the refunded item was a subscription, this contains the SubscriptionId 
-            specified when the subscription was created.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationDataRaw.SubscriptionPeriod">
-            <summary>
-            Gets or sets the Subscription Period which is currently empty.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationDataRaw.SubscriptionPeriodAmount">
-            <summary>
-            Gets or sets the Subscription Period Amount which is currently empty.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationDataRaw.SubscriptionRecurrences">
-            <summary>
-            Gets or sets the Subscription Recurrences which is currently empty.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationDataRaw.CurrentPeriodStartDate">
-            <summary>
-            Gets or sets the Current Period Start Date which is currently empty.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationDataRaw.CurrentPeriodEndDate">
-            <summary>
-            Gets or sets the Current Period End Date which is currently empty.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationDataRaw.SubscriptionRemaining">
-            <summary>
-            Gets or sets the Subscription Remaining which is currently empty.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationDataRaw.NotificationType">
-            <summary>
-            Gets or sets to SuccessfulRefund.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationDataRaw.RefundReasonId">
-            <summary>
-            Gets or sets RefundReasonId
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationObject">
-            <summary>
-            SuccessfulRefund Notification Object
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.Paymentv3.NotificationObject">
-            <summary>
-            Base class for all Notification Objects
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.NotificationObject.#ctor">
-            <summary>
-            Initializes a new instance of the NotificationObject class.
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.NotificationObject.ParseJSON(System.String)">
-            <summary>
-            Parses Notification Response of json type
-            </summary>
-            <param name="jsonInput">notification response json data</param>
-            <returns><see cref="T:ATT_MSSDK.Paymentv3.NotificationObject"/> values returned.</returns>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.NotificationObject.NotificationObjectType">
-            <summary>
-            Gets or sets the Notification type.
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationObject.#ctor">
-            <summary>
-            Initializes a new instance of the SuccessfulRefundNotificationObject class.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationObject.ConsumerId">
-            <summary>
-            Gets or sets the Unique Consumer Id.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationObject.RefundTransactionId">
-            <summary>
-            Gets or sets the TransactionId of the refund.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationObject.OriginalTransactionId">
-            <summary>
-            Gets or sets the TransactionId of the original transaction that was refunded.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationObject.RefundCurrency">
-            <summary>
-            Gets or sets the refund currency as USD for this release.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationObject.RefundFreeText">
-            <summary>
-            Gets or sets the Text description of the reason for the refund.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationObject.OriginalPriceAmount">
-            <summary>
-            Gets or sets the Amount of the original purchase.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationObject.RefundPriceAmount">
-            <summary>
-            Gets or sets the price of the refund.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationObject.TransactionDate">
-            <summary>
-            Gets or sets the Date and time the refund transaction occurred.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationObject.MerchantSubscriptionId">
-            <summary>
-            Gets or sets the If the refunded item was a subscription, this contains the SubscriptionId 
-            specified when the subscription was created.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationObject.SubscriptionPeriod">
-            <summary>
-            Gets or sets the Subscription Period which is currently empty.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationObject.SubscriptionPeriodAmount">
-            <summary>
-            Gets or sets the Subscription Period Amount which is currently empty.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationObject.SubscriptionRecurrences">
-            <summary>
-            Gets or sets the Subscription Recurrences which is currently empty.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationObject.CurrentPeriodStartDate">
-            <summary>
-            Gets or sets the Current Period Start Date which is currently empty.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationObject.CurrentPeriodEndDate">
-            <summary>
-            Gets or sets the Current Period End Date which is currently empty.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationObject.SubscriptionRemaining">
-            <summary>
-            Gets or sets the Subscription Remaining which is currently empty.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationObject.RefundReasonId">
-            <summary>
-            Gets or sets RefundReasonId
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationRaw">
-            <summary>
-            Refund Notification Object
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationRaw.#ctor">
-            <summary>
-            Initializes a new instance of the SuccessfulRefundNotificationRaw class.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationRaw.GetNotificationResponse">
-            <summary>
-            Gets or sets the GetNotificationResponse.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationRaw.Version">
-            <summary>
-            Gets or sets the Version of the API signature.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SuccessfulRefundNotificationRaw.IsSuccess">
-            <summary>
-            Gets or sets a value indicating whether the request was successful; False if a service error is encountered.
             </summary>
         </member>
         <member name="T:ATT_MSSDK.ServiceErrorObject">
@@ -3396,1922 +3599,6 @@
             Gets or sets th Id value returned by the server.
             </summary>
         </member>
-        <member name="T:ATT_MSSDK.Paymentv3.AcknowledgeNotificationResponse">
-            <summary>
-            Represents the List of Notification Ids
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.AcknowledgeNotificationResponse.ParseXML(System.String)">
-            <summary>
-            Parses Acknowledge Notificaiton response of xml type
-            </summary>
-            <param name="xmlInput">acknowledge notification response xml data</param>
-            <returns><see cref="T:ATT_MSSDK.Paymentv3.AcknowledgeNotificationResponse"/> values returned.</returns>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.AcknowledgeNotificationResponse.IsSuccess">
-            <summary>
-            Gets or sets a value indicating whether the request was successful; False if a service error is encountered.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.AcknowledgeNotificationResponse.Version">
-            <summary>
-            Gets or sets the Version of the API signature.
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.Paymentv3.CancelSubscriptionNotificationDataRaw">
-            <summary>
-            Cancel Subscription Notification Object
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.CancelSubscriptionNotificationDataRaw.#ctor">
-            <summary>
-            Initializes a new instance of the CancelSubscriptionNotificationDataRaw class.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.CancelSubscriptionNotificationDataRaw.NotificationType">
-            <summary>
-            Gets or sets to Cancel Subscription.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.CancelSubscriptionNotificationDataRaw.ConsumerId">
-            <summary>
-            Gets or sets the Unique Consumer Id.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.CancelSubscriptionNotificationDataRaw.OriginalTransactionId">
-            <summary>
-            Gets or sets the Original Transaction Id which is always empty.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.CancelSubscriptionNotificationDataRaw.TransactionDate">
-            <summary>
-            Gets or sets the Date and time of refund transaction occurred.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.CancelSubscriptionNotificationDataRaw.MerchantSubscriptionId">
-            <summary>
-            Gets or sets the Merchant subscription identifier.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.CancelSubscriptionNotificationDataRaw.SubscriptionPeriod">
-            <summary>
-            Gets or sets the subscription period time unit. Valid values are: DAILY, WEEKLY and MONTHLY
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.CancelSubscriptionNotificationDataRaw.SubscriptionPeriodAmount">
-            <summary>
-            Gets or sets the number of months – as only the monthly subscription period is supported for this release.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.CancelSubscriptionNotificationDataRaw.SubscriptionRecurrences">
-            <summary>
-            Gets or sets the number of recurrences remaining.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.CancelSubscriptionNotificationDataRaw.CurrentPeriodStartDate">
-            <summary>
-            Gets or sets the start date of current subscription period.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.CancelSubscriptionNotificationDataRaw.CurrentPeriodEndDate">
-            <summary>
-            Gets or sets the end date of current subscription period.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.CancelSubscriptionNotificationDataRaw.SubscriptionRemaining">
-            <summary>
-            Gets or sets the remaining number of renewals.
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.Paymentv3.CancelSubscriptionNotificationObject">
-            <summary>
-            Cancel Subscription Notification Object
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.CancelSubscriptionNotificationObject.#ctor">
-            <summary>
-            Initializes a new instance of the CancelSubscriptionNotificationObject class.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.CancelSubscriptionNotificationObject.ConsumerId">
-            <summary>
-            Gets or sets the Unique Consumer Id.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.CancelSubscriptionNotificationObject.OriginalTransactionId">
-            <summary>
-            Gets or sets the Original Transaction Id which is always empty.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.CancelSubscriptionNotificationObject.TransactionDate">
-            <summary>
-            Gets or sets the Date and time the refund transaction occurred.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.CancelSubscriptionNotificationObject.MerchantSubscriptionId">
-            <summary>
-            Gets or sets the Merchant subscription identifier.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.CancelSubscriptionNotificationObject.SubscriptionPeriod">
-            <summary>
-            Gets or sets the subscription period time unit. Valid values are: DAILY, WEEKLY and MONTHLY
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.CancelSubscriptionNotificationObject.SubscriptionPeriodAmount">
-            <summary>
-            Gets or sets the number of months – as only the monthly subscription period is supported for this release.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.CancelSubscriptionNotificationObject.SubscriptionRecurrences">
-            <summary>
-            Gets or sets the number of recurrences remaining.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.CancelSubscriptionNotificationObject.CurrentPeriodStartDate">
-            <summary>
-            Gets or sets the start date of current subscription period.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.CancelSubscriptionNotificationObject.CurrentPeriodEndDate">
-            <summary>
-            Gets or sets the end date of current subscription period.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.CancelSubscriptionNotificationObject.SubscriptionRemaining">
-            <summary>
-            Gets or sets the remaining number of renewals.
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.Paymentv3.CancelSubscriptionNotificationRaw">
-            <summary>
-            Cancel Subscription Notification Object
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.CancelSubscriptionNotificationRaw.#ctor">
-            <summary>
-            Initializes a new instance of the CancelSubscriptionNotificationRaw class.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.CancelSubscriptionNotificationRaw.GetNotificationResponse">
-            <summary>
-            Gets or sets the GetNotificationResponse.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.CancelSubscriptionNotificationRaw.Version">
-            <summary>
-            Gets or sets the Version of the API signature.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.CancelSubscriptionNotificationRaw.IsSuccess">
-            <summary>
-            Gets or sets a value indicating whether the request was successful; False if a service error is encountered.
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.Paymentv3.CommitTransactionResponse">
-            <summary>
-            Encapsulates the values returned by the CommitTransaction API
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.CommitTransactionResponse.#ctor">
-            <summary>
-            Initializes a new instance of the CommitTransactionResponse class.
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.CommitTransactionResponse.ParseXML(System.String)">
-            <summary>
-            Parses commit transaction response of xml type
-            </summary>
-            <param name="xmlInput">commit transaction response xml data</param>
-            <returns><see cref="T:ATT_MSSDK.Paymentv3.CommitTransactionResponse"/> values returned.</returns>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.CommitTransactionResponse.TransactionId">
-            <summary>
-            Gets or sets the transaction ID for the refund.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.CommitTransactionResponse.TransactionStatus">
-            <summary>
-            Gets or sets the Current status of the transaction. Only transactions with status as “SUCCESSFUL” are 
-            completed successfully. All other statuses indicate that the transaction is not successful.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.CommitTransactionResponse.IsSuccess">
-            <summary>
-            Gets or sets the Boolean indicating the status of request.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.CommitTransactionResponse.Version">
-            <summary>
-            Gets or sets the Version of API signature.
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.Paymentv3.FreePeriodConversionNotificationDataRaw">
-            <summary>
-            Free Period Conversion Notification Object
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.FreePeriodConversionNotificationDataRaw.#ctor">
-            <summary>
-            Initializes a new instance of the FreePeriodConversionNotificationDataRaw class.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.FreePeriodConversionNotificationDataRaw.ConsumerId">
-            <summary>
-            Gets or sets the Unique Consumer Id.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.FreePeriodConversionNotificationDataRaw.NotificationType">
-            <summary>
-            Gets or sets to FreePeriodConversion.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.FreePeriodConversionNotificationDataRaw.TransactionType">
-            <summary>
-            Gets or sets the transaction type as SINGLEPAY or SUBSCRIPTION.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.FreePeriodConversionNotificationDataRaw.OriginalTransactionId">
-            <summary>
-            Gets or sets the TransactionId of the original transaction that was refunded.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.FreePeriodConversionNotificationDataRaw.TransactionDate">
-            <summary>
-            Gets or sets the Date and time the refund transaction occurred.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.FreePeriodConversionNotificationDataRaw.MerchantSubscriptionId">
-            <summary>
-            Gets or sets if the refunded item was a subscription, this contains the SubscriptionId 
-            specified when the subscription was created.
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.Paymentv3.FreePeriodConversionNotificationObject">
-            <summary>
-            Free Period Conversion Notification Object
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.FreePeriodConversionNotificationObject.#ctor">
-            <summary>
-            Initializes a new instance of the FreePeriodConversionNotificationObject class.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.FreePeriodConversionNotificationObject.ConsumerId">
-            <summary>
-            Gets or sets the Unique Consumer Id.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.FreePeriodConversionNotificationObject.TransactionType">
-            <summary>
-            Gets or sets  the transaction type as SINGLEPAY or SUBSCRIPTION.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.FreePeriodConversionNotificationObject.OriginalTransactionId">
-            <summary>
-            Gets or sets the TransactionId of the original transaction that was refunded.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.FreePeriodConversionNotificationObject.TransactionDate">
-            <summary>
-            Gets or sets the Date and time the refund transaction occurred.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.FreePeriodConversionNotificationObject.MerchantSubscriptionId">
-            <summary>
-            Gets or sets if the refunded item was a subscription, this contains the SubscriptionId 
-            specified when the subscription was created.
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.Paymentv3.FreePeriodConversionNotificationRaw">
-            <summary>
-            Free Period Conversion Notification Object
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.FreePeriodConversionNotificationRaw.#ctor">
-            <summary>
-            Initializes a new instance of the FreePeriodConversionNotificationRaw class.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.FreePeriodConversionNotificationRaw.GetNotificationResponse">
-            <summary>
-            Gets or sets the GetNotificationResponse.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.FreePeriodConversionNotificationRaw.Version">
-            <summary>
-            Gets or sets the Version of the API signature.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.FreePeriodConversionNotificationRaw.IsSuccess">
-            <summary>
-            Gets or sets a value indicating whether the request was successful; False if a service error is encountered.
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.Paymentv3.NotificationId">
-            <summary>
-            Represents the Notification Ids
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.NotificationId.Id">
-            <summary>
-            Gets or sets the notification id.
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.Paymentv3.NotificationType">
-            <summary>
-            NotificationType, the type of notification returned by the AT&amp;T Platform. The Enum has the values - 
-            Refund, 
-            FreePeriodConversion, 
-            SubscriptionRecurrence, 
-            StopSubscription, 
-            RestoreSubscription, 
-            SuccesfulRefund, 
-            CancelSubscription.
-            </summary>
-        </member>
-        <member name="F:ATT_MSSDK.Paymentv3.NotificationType.Refund">
-            <summary>
-            Refund Notification Type
-            </summary>
-        </member>
-        <member name="F:ATT_MSSDK.Paymentv3.NotificationType.FreePeriodConversion">
-            <summary>
-            Free Period Conversion Notification Type
-            </summary>
-        </member>
-        <member name="F:ATT_MSSDK.Paymentv3.NotificationType.SubscriptionRecurrence">
-            <summary>
-            Subscription Recurrence Notification Type
-            </summary>
-        </member>
-        <member name="F:ATT_MSSDK.Paymentv3.NotificationType.StopSubscription">
-            <summary>
-            Stop Subscription Notification Type
-            </summary>
-        </member>
-        <member name="F:ATT_MSSDK.Paymentv3.NotificationType.RestoreSubscription">
-            <summary>
-            Restore Subscription Notification Type
-            </summary>
-        </member>
-        <member name="F:ATT_MSSDK.Paymentv3.NotificationType.SuccesfulRefund">
-            <summary>
-            Successful refund notification
-            </summary>
-        </member>
-        <member name="F:ATT_MSSDK.Paymentv3.NotificationType.CancelSubscription">
-            <summary>
-            Cancel Subscription Notification
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.Paymentv3.Notifications">
-            <summary>
-            Represents the List of Notification Ids
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.Notifications.Notificationid">
-            <summary>
-            Gets or sets the list of Notificationids.
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.Paymentv3.RefundNotificationDataRaw">
-            <summary>
-            Refund Notification Object
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.RefundNotificationDataRaw.#ctor">
-            <summary>
-            Initializes a new instance of the RefundNotificationDataRaw class.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RefundNotificationDataRaw.ConsumerId">
-            <summary>
-            Gets or sets the Unique Consumer Id.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RefundNotificationDataRaw.RefundTransactionId">
-            <summary>
-            Gets or sets the TransactionId of the refund.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RefundNotificationDataRaw.OriginalTransactionId">
-            <summary>
-            Gets or sets the TransactionId of the original transaction that was refunded.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RefundNotificationDataRaw.RefundCurrency">
-            <summary>
-            Gets or sets the refund currency as USD for this release.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RefundNotificationDataRaw.RefundFreeText">
-            <summary>
-            Gets or sets the Text description of the reason for the refund.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RefundNotificationDataRaw.OriginalPriceAmount">
-            <summary>
-            Gets or sets the Amount of the original purchase.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RefundNotificationDataRaw.RefundPriceAmount">
-            <summary>
-            Gets or sets the price of the refund.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RefundNotificationDataRaw.TransactionDate">
-            <summary>
-            Gets or sets the Date and time the refund transaction occurred.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RefundNotificationDataRaw.MerchantSubscriptionId">
-            <summary>
-            Gets or sets the If the refunded item was a subscription, this contains the SubscriptionId 
-            specified when the subscription was created.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RefundNotificationDataRaw.SubscriptionPeriod">
-            <summary>
-            Gets or sets the Subscription Period which is currently empty.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RefundNotificationDataRaw.SubscriptionPeriodAmount">
-            <summary>
-            Gets or sets the Subscription Period Amount which is currently empty.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RefundNotificationDataRaw.SubscriptionRecurrences">
-            <summary>
-            Gets or sets the Subscription Recurrences which is currently empty.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RefundNotificationDataRaw.CurrentPeriodStartDate">
-            <summary>
-            Gets or sets the Current Period Start Date which is currently empty.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RefundNotificationDataRaw.CurrentPeriodEndDate">
-            <summary>
-            Gets or sets the Current Period End Date which is currently empty.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RefundNotificationDataRaw.SubscriptionRemaining">
-            <summary>
-            Gets or sets the Subscription Remaining which is currently empty.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RefundNotificationDataRaw.NotificationType">
-            <summary>
-            Gets or sets to SuccessfulRefund.
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.Paymentv3.RefundNotificationObject">
-            <summary>
-            Refund Notification Object
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.RefundNotificationObject.#ctor">
-            <summary>
-            Initializes a new instance of the RefundNotificationObject class.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RefundNotificationObject.ConsumerId">
-            <summary>
-            Gets or sets the Unique Consumer Id.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RefundNotificationObject.RefundTransactionId">
-            <summary>
-            Gets or sets the TransactionId of the refund.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RefundNotificationObject.OriginalTransactionId">
-            <summary>
-            Gets or sets the TransactionId of the original transaction that was refunded.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RefundNotificationObject.RefundCurrency">
-            <summary>
-            Gets or sets the refund currency as USD for this release.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RefundNotificationObject.RefundFreeText">
-            <summary>
-            Gets or sets the Text description of the reason for the refund.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RefundNotificationObject.OriginalPriceAmount">
-            <summary>
-            Gets or sets the Amount of the original purchase.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RefundNotificationObject.RefundPriceAmount">
-            <summary>
-            Gets or sets the price of the refund.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RefundNotificationObject.TransactionDate">
-            <summary>
-            Gets or sets the Date and time the refund transaction occurred.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RefundNotificationObject.MerchantSubscriptionId">
-            <summary>
-            Gets or sets the If the refunded item was a subscription, this contains the SubscriptionId 
-            specified when the subscription was created.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RefundNotificationObject.SubscriptionPeriod">
-            <summary>
-            Gets or sets the Subscription Period which is currently empty.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RefundNotificationObject.SubscriptionPeriodAmount">
-            <summary>
-            Gets or sets the Subscription Period Amount which is currently empty.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RefundNotificationObject.SubscriptionRecurrences">
-            <summary>
-            Gets or sets the Subscription Recurrences which is currently empty.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RefundNotificationObject.CurrentPeriodStartDate">
-            <summary>
-            Gets or sets the Current Period Start Date which is currently empty.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RefundNotificationObject.CurrentPeriodEndDate">
-            <summary>
-            Gets or sets the Current Period End Date which is currently empty.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RefundNotificationObject.SubscriptionRemaining">
-            <summary>
-            Gets or sets the Subscription Remaining which is currently empty.
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.Paymentv3.RefundNotificationRaw">
-            <summary>
-            Refund Notification Object
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.RefundNotificationRaw.#ctor">
-            <summary>
-            Initializes a new instance of the FreePeriodConversionNotificationObject class.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RefundNotificationRaw.GetNotificationResponse">
-            <summary>
-            Gets or sets the GetNotificationResponse.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RefundNotificationRaw.Version">
-            <summary>
-            Gets or sets the Version of the API signature.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RefundNotificationRaw.IsSuccess">
-            <summary>
-            Gets or sets a value indicating whether the request was successful; False if a service error is encountered.
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.Paymentv3.RefundResponseObject">
-            <summary>
-            Encapsulates response from refunds
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.RefundResponseObject.#ctor">
-            <summary>
-            Initializes a new instance of the RefundResponseRaw class.
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.RefundResponseObject.ParseXML(System.String)">
-            <summary>
-            Parse an XML document and return a RefundResponseRaw
-            </summary>
-            <param name="xmlInput">The XML document to be parsed.</param>
-            <returns>The parsed <see cref="T:ATT_MSSDK.Paymentv3.RefundResponseObject"/> object.</returns>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.RefundResponseObject.GetElement(System.String,System.String)">
-            <summary>
-            Basic method for getting values out of an XML document
-            </summary>
-            <param name="xmlInput">The XML document to search</param>
-            <param name="element">The element to get</param>
-            <returns>A string containing the element text</returns>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RefundResponseObject.IsSuccess">
-            <summary>
-            Gets or sets a value indicating whether the request was successful; False if a service error is encountered.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RefundResponseObject.TransactionId">
-            <summary>
-            Gets or sets the transaction id of the newly created refund.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RefundResponseObject.TransactionStatus">
-            <summary>
-            Gets or sets the status of the transaction that was refunded.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RefundResponseObject.OriginalPurchaseAmount">
-            <summary>
-            Gets or sets the value of OriginalPurchaseAmount
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RefundResponseObject.Version">
-            <summary>
-            Gets or sets the value of Version
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationDataRaw">
-            <summary>
-            Restore Subscription Notification Object
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationDataRaw.#ctor">
-            <summary>
-            Initializes a new instance of the RestoreSubscriptionNotificationDataRaw class.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationDataRaw.NotificationType">
-            <summary>
-            Gets or sets to RestoreSubscription.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationDataRaw.ConsumerId">
-            <summary>
-            Gets or sets the Unique Consumer Id.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationDataRaw.TransactionDate">
-            <summary>
-            Gets or sets the Date and time the refund transaction occurred.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationDataRaw.MerchantSubscriptionId">
-            <summary>
-            Gets or sets the Merchant subscription identifier.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationDataRaw.SubscriptionPeriod">
-            <summary>
-            Gets or sets the subscription period time unit. Valid values are: DAILY, WEEKLY and MONTHLY.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationDataRaw.SubscriptionPeriodAmount">
-            <summary>
-            Gets or sets the number of months – as only the monthly subscription period is supported for this release.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationDataRaw.SubscriptionRecurrences">
-            <summary>
-            Gets or sets the number of recurrences.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationDataRaw.CurrentPeriodStartDate">
-            <summary>
-            Gets or sets the Start date of current subscription period.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationDataRaw.CurrentPeriodEndDate">
-            <summary>
-            Gets or sets the End date of current subscription period.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationDataRaw.SubscriptionRemaining">
-            <summary>
-            Gets or sets the remaining number of renewals.
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationObject">
-            <summary>
-            Restore Subscription Notification Object
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationObject.#ctor">
-            <summary>
-            Initializes a new instance of the RestoreSubscriptionNotificationObject class.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationObject.ConsumerId">
-            <summary>
-            Gets or sets the Unique Consumer Id.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationObject.TransactionDate">
-            <summary>
-            Gets or sets the Date and time the refund transaction occurred.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationObject.MerchantSubscriptionId">
-            <summary>
-            Gets or sets the Merchant subscription identifier.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationObject.SubscriptionPeriod">
-            <summary>
-            Gets or sets the subscription period time unit. Valid values are: DAILY, WEEKLY and MONTHLY.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationObject.SubscriptionPeriodAmount">
-            <summary>
-            Gets or sets the number of months – as only the monthly subscription period is supported for this release.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationObject.SubscriptionRecurrences">
-            <summary>
-            Gets or sets the number of recurrences.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationObject.CurrentPeriodStartDate">
-            <summary>
-            Gets or sets the Start date of current subscription period.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationObject.CurrentPeriodEndDate">
-            <summary>
-            Gets or sets the End date of current subscription period.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationObject.SubscriptionRemaining">
-            <summary>
-            Gets or sets the remaining number of renewals.
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationRaw">
-            <summary>
-            Restore Subscription Notification Object
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationRaw.#ctor">
-            <summary>
-            Initializes a new instance of the RestoreSubscriptionNotificationRaw class.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationRaw.GetNotificationResponse">
-            <summary>
-            Gets or sets the GetNotificationResponse.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationRaw.Version">
-            <summary>
-            Gets or sets the Version of the API signature.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.RestoreSubscriptionNotificationRaw.IsSuccess">
-            <summary>
-            Gets or sets a value indicating whether the request was successful; False if a service error is encountered.
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.Paymentv3.StopSubscriptionNotificationDataRaw">
-            <summary>
-            Stop Subscription Notification Object
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.StopSubscriptionNotificationDataRaw.#ctor">
-            <summary>
-            Initializes a new instance of the StopSubscriptionNotificationDataRaw class.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.StopSubscriptionNotificationDataRaw.NotificationType">
-            <summary>
-            Gets or sets to StopSubscription.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.StopSubscriptionNotificationDataRaw.ConsumerId">
-            <summary>
-            Gets or sets the Unique Consumer Id.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.StopSubscriptionNotificationDataRaw.OriginalTransactionId">
-            <summary>
-            Gets or sets the Original Transaction Id which is always empty.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.StopSubscriptionNotificationDataRaw.TransactionDate">
-            <summary>
-            Gets or sets the Date and time the refund transaction occurred.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.StopSubscriptionNotificationDataRaw.MerchantSubscriptionId">
-            <summary>
-            Gets or sets the Merchant subscription identifier.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.StopSubscriptionNotificationDataRaw.SubscriptionPeriod">
-            <summary>
-            Gets or sets the subscription period time unit. Valid values are: DAILY, WEEKLY and MONTHLY.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.StopSubscriptionNotificationDataRaw.SubscriptionPeriodAmount">
-            <summary>
-            Gets or sets the number of months – as only the monthly subscription period is supported for this release.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.StopSubscriptionNotificationDataRaw.SubscriptionRecurrences">
-            <summary>
-            Gets or sets the number of recurrences.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.StopSubscriptionNotificationDataRaw.CurrentPeriodStartDate">
-            <summary>
-            Gets or sets the Start date of current subscription period.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.StopSubscriptionNotificationDataRaw.CurrentPeriodEndDate">
-            <summary>
-            Gets or sets the End date of current subscription period.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.StopSubscriptionNotificationDataRaw.SubscriptionRemaining">
-            <summary>
-            Gets or sets the remaining number of renewals.
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.Paymentv3.StopSubscriptionNotificationObject">
-            <summary>
-            Stop Subscription Notification Object
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.StopSubscriptionNotificationObject.#ctor">
-            <summary>
-            Initializes a new instance of the StopSubscriptionNotificationObject class.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.StopSubscriptionNotificationObject.ConsumerId">
-            <summary>
-            Gets or sets the Unique Consumer Id.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.StopSubscriptionNotificationObject.OriginalTransactionId">
-            <summary>
-            Gets or sets the Original Transaction Id which is always empty.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.StopSubscriptionNotificationObject.TransactionDate">
-            <summary>
-            Gets or sets the Date and time the refund transaction occurred.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.StopSubscriptionNotificationObject.MerchantSubscriptionId">
-            <summary>
-            Gets or sets the Merchant subscription identifier.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.StopSubscriptionNotificationObject.SubscriptionPeriod">
-            <summary>
-            Gets or sets the subscription period time unit. Valid values are: DAILY, WEEKLY and MONTHLY.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.StopSubscriptionNotificationObject.SubscriptionPeriodAmount">
-            <summary>
-            Gets or sets the number of months – as only the monthly subscription period is supported for this release.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.StopSubscriptionNotificationObject.SubscriptionRecurrences">
-            <summary>
-            Gets or sets the number of recurrences.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.StopSubscriptionNotificationObject.CurrentPeriodStartDate">
-            <summary>
-            Gets or sets the Start date of current subscription period.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.StopSubscriptionNotificationObject.CurrentPeriodEndDate">
-            <summary>
-            Gets or sets the End date of current subscription period.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.StopSubscriptionNotificationObject.SubscriptionRemaining">
-            <summary>
-            Gets or sets the remaining number of renewals.
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.Paymentv3.StopSubscriptionNotificationRaw">
-            <summary>
-            Stop Subscription Notification Object
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.StopSubscriptionNotificationRaw.#ctor">
-            <summary>
-            Initializes a new instance of the StopSubscriptionNotificationRaw class.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.StopSubscriptionNotificationRaw.GetNotificationResponse">
-            <summary>
-            Gets or sets the GetNotificationResponse.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.StopSubscriptionNotificationRaw.Version">
-            <summary>
-            Gets or sets the Version of the API signature.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.StopSubscriptionNotificationRaw.IsSuccess">
-            <summary>
-            Gets or sets a value indicating whether the request was successful; False if a service error is encountered.
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.Paymentv3.SubscriptionDetails">
-            <summary>
-            Encapsulates return values from the SubscriptionRaw Details API
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.SubscriptionDetails.#ctor">
-            <summary>
-            Initializes a new instance of the SubscriptionDetails class.
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.SubscriptionDetails.ParseXML(System.String)">
-            <summary>
-            Parses subscription details response of xml type
-            </summary>
-            <param name="xmlInput">subscription details response xml data</param>
-            <returns><see cref="T:ATT_MSSDK.Paymentv3.SubscriptionDetails"/> values returned.</returns>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionDetails.CreationDate">
-            <summary>
-            Gets or sets the Date on which the subscription is created, according to UTC.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionDetails.Currency">
-            <summary>
-            Gets or sets USD in release R2.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionDetails.CurrentEndDate">
-            <summary>
-            Gets or sets the Date on which the current subscription period ends, according to UTC.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionDetails.CurrentStartDate">
-            <summary>
-            Gets or sets the Date on which the current subscription period started in UTC timezone.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionDetails.GrossAmount">
-            <summary>
-            Gets or sets the Subscription renewal charge.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionDetails.IsActiveSubscription">
-            <summary>
-            Gets or sets the Flag to indicate whether subscription is active and can be consumed.
-            Only active subscriptions should be allowed for consumption.
-            Note that for the JSON output, this field is named.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionDetails.IsSuccess">
-            <summary>
-            Gets or sets the Boolean indication status of request.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionDetails.Recurrences">
-            <summary>
-            Gets or sets the number of renewals requested when the subscription is created
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionDetails.RecurrencesLeft">
-            <summary>
-            Gets or sets the number of times the subscription is renewed after the current period
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionDetails.Status">
-            <summary>
-            Gets or sets the status used for subscription consumption. 
-            ACTIVE is for subscription that is consumed.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionDetails.Version">
-            <summary>
-            Gets or sets the Version of the API signature.
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.Paymentv3.SubscriptionDetailsResponseRaw">
-            \internal
-            <summary>
-            Internal class for XML deserialization
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionDetailsResponseRaw.IsSuccess">
-            <summary>
-            Gets or sets the Boolean indication status of request.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionDetailsResponseRaw.Version">
-            <summary>
-            Gets or sets the version of the API Signature.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionDetailsResponseRaw.Status">
-            <summary>
-            Gets or sets the status used for subscription consumption. 
-            ACTIVE is for subscription that is consumed.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionDetailsResponseRaw.CreationDate">
-            <summary>
-            Gets or sets the Date on which the subscription is created, according to UTC.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionDetailsResponseRaw.CurrentStartDate">
-            <summary>
-            Gets or sets the Date on which the current subscription period started, according to UTC.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionDetailsResponseRaw.CurrentEndDate">
-            <summary>
-            Gets or sets the Date on which the current subscription period ends, according to UTC.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionDetailsResponseRaw.RecurrencesLeft">
-            <summary>
-            Gets or sets the number of times the subscription is renewed after the current period
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionDetailsResponseRaw.Recurrences">
-            <summary>
-            Gets or sets the number of renewals requested when the subscription is created
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionDetailsResponseRaw.GrossAmount">
-            <summary>
-            Gets or sets the subscription renewal charge.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionDetailsResponseRaw.Currency">
-            <summary>
-            Gets or sets the USD in release R2.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionDetailsResponseRaw.IsActiveSubscription">
-            <summary>
-            Gets or sets the Flag to indicate whether subscription is active and can be consumed.
-            Only active subscriptions should be allowed for consumption.
-            Note that for the JSON output, this field is named.
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.Paymentv3.SubscriptionRaw">
-            \internal
-            <summary>
-            Internal class for JSON serialization
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.SubscriptionRaw.#ctor">
-            <summary>
-            Initializes a new instance of the SubscriptionRaw class.
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.SubscriptionRaw.#ctor(System.Double,ATT_MSSDK.Paymentv3.PaymentCategories,System.String,System.String,System.String,System.String,System.String,ATT_MSSDK.Paymentv3.TransactionOperationStatus)">
-            <summary>
-            Initializes a new instance of the SubscriptionRaw class.
-            </summary>
-            <param name="amount">Dollar amount of the purchase.</param>
-            <param name="category">Category used for tax calculations in the range of 1 to 5.</param>
-            <param name="channel">Always "MOBILE_WEB".</param>
-            <param name="description">Description of the transaction shown to the consumer during the Advice of Charge process.</param>
-            <param name="merchantTransactionId">Unique Id assigned by the Merchant to this transaction.</param>
-            <param name="merchantProductId">Product Id assigned by the Merchant to this transaction.</param>
-            <param name="merchantPaymentRedirectUrl">Url that the browser will be redirected to at the end of the Advice of Charge process.</param>
-            <param name="transactionOperationStatus">Transaction operation status</param>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.SubscriptionRaw.JSONSerialize">
-            <summary>
-            Serialize the TransactionRaw object into JSON.
-            </summary>
-            <returns>JSON-serialized version of the TransactionRaw.</returns>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionRaw.Amount">
-            <summary>
-            Gets or sets the Amount of transaction with a maximum of 2 decimal places. Examples: 0.99 to 2.99.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionRaw.Category">
-            <summary>
-            Gets or sets the Category used for tax calculations in the range of 1 to 5.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionRaw.Channel">
-            <summary>
-            Gets or sets the Only value supported i.e. “MOBILE_WEB”.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionRaw.Description">
-            <summary>
-            Gets or sets the Short description of the entire purchase. This will be displayed on the Advice of Charge page.  
-            All descriptions must pass an Obscenity Filter before displaying the Advice of Charge to the purchaser.
-            Maximum 128 characters.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionRaw.MerchantTransactionId">
-            <summary>
-            Gets or sets the transaction ID in merchant's system which must be unique on every purchase request 
-            for this merchant.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionRaw.MerchantProductId">
-            <summary>
-            Gets or sets the Product Id assigned by the Merchant to this transaction.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionRaw.MerchantPaymentRedirectUrl">
-            <summary>
-            Gets or sets the URL that will be used when the transaction is completed and AT&amp;T needs to return control the application.
-            The merchant will be required to listen at this URL for redirects from the Subscriber's browser.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionRaw.TransactionOperationStatus">
-            <summary>
-            Gets or sets transaction operation status
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionRaw.MerchantSubscriptionIdList">
-            <summary>
-            Gets the MerchantSubscriptionIdList value - fixed to the same as MerchantTransactionId
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionRaw.IsPurchaseOnNoActiveSubscription">
-            <summary>
-            Gets or sets the IsPurchaseOnNoActiveSubscription value - fixed to "false"
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionRaw.SubscriptionRecurrences">
-            <summary>
-            Gets or sets the SubscriptionRecurrences value - fixed to 99999
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionRaw.SubscriptionPeriod">
-            <summary>
-            Gets or sets the SubscriptionPeriod value - fixed to "MONTHLY"
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionRaw.SubscriptionPeriodAmount">
-            <summary>
-            Gets or sets the SubscriptionPeriodAmount value - fixed to 1
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.Paymentv3.SubscriptionRecurrenceNotificationDataRaw">
-            <summary>
-            Subscription Recurrence Notification Object
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.SubscriptionRecurrenceNotificationDataRaw.#ctor">
-            <summary>
-            Initializes a new instance of the SubscriptionRecurrenceNotificationDataRaw class.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionRecurrenceNotificationDataRaw.NotificationType">
-            <summary>
-            Gets or sets to SubscriptionRecurrence.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionRecurrenceNotificationDataRaw.ConsumerId">
-            <summary>
-            Gets or sets the Unique Consumer Id.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionRecurrenceNotificationDataRaw.OriginalTransactionId">
-            <summary>
-            Gets or sets the Original Transaction Id which is always empty.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionRecurrenceNotificationDataRaw.TransactionDate">
-            <summary>
-            Gets or sets the Date and time the refund transaction occurred.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionRecurrenceNotificationDataRaw.MerchantSubscriptionId">
-            <summary>
-            Gets or sets the Merchant subscription identifier.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionRecurrenceNotificationDataRaw.SubscriptionPeriod">
-            <summary>
-            Gets or sets the subscription period time unit. Valid values are: DAILY, WEEKLY and MONTHLY.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionRecurrenceNotificationDataRaw.SubscriptionPeriodAmount">
-            <summary>
-            Gets or sets the number of months – as only the monthly subscription period is supported for this release.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionRecurrenceNotificationDataRaw.SubscriptionRecurrences">
-            <summary>
-            Gets or sets the number of recurrences.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionRecurrenceNotificationDataRaw.CurrentPeriodStartDate">
-            <summary>
-            Gets or sets the Start date of current subscription period.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionRecurrenceNotificationDataRaw.CurrentPeriodEndDate">
-            <summary>
-            Gets or sets the End date of current subscription period.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionRecurrenceNotificationDataRaw.SubscriptionRemaining">
-            <summary>
-            Gets or sets the remaining number of renewals.
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.Paymentv3.SubscriptionRecurrenceNotificationObject">
-            <summary>
-            Subscription Recurrence Notification Object
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.SubscriptionRecurrenceNotificationObject.#ctor">
-            <summary>
-            Initializes a new instance of the SubscriptionRecurrenceNotificationObject class.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionRecurrenceNotificationObject.ConsumerId">
-            <summary>
-            Gets or sets the Unique Consumer Id.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionRecurrenceNotificationObject.OriginalTransactionId">
-            <summary>
-            Gets or sets the Original Transaction Id which is always empty.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionRecurrenceNotificationObject.TransactionDate">
-            <summary>
-            Gets or sets the Date and time the refund transaction occurred.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionRecurrenceNotificationObject.MerchantSubscriptionId">
-            <summary>
-            Gets or sets the Merchant subscription identifier.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionRecurrenceNotificationObject.SubscriptionPeriod">
-            <summary>
-            Gets or sets the subscription period time unit. Valid values are: DAILY, WEEKLY and MONTHLY.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionRecurrenceNotificationObject.SubscriptionPeriodAmount">
-            <summary>
-            Gets or sets the number of months – as only the monthly subscription period is supported for this release.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionRecurrenceNotificationObject.SubscriptionRecurrences">
-            <summary>
-            Gets or sets the number of recurrences.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionRecurrenceNotificationObject.CurrentPeriodStartDate">
-            <summary>
-            Gets or sets the Current Period Start Date.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionRecurrenceNotificationObject.CurrentPeriodEndDate">
-            <summary>
-            Gets or sets the End date of current subscription period.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionRecurrenceNotificationObject.SubscriptionRemaining">
-            <summary>
-            Gets or sets the remaining number of renewals.
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.Paymentv3.SubscriptionRecurrenceNotificationRaw">
-            <summary>
-            Subscription Recurrence Notification Object
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.SubscriptionRecurrenceNotificationRaw.#ctor">
-            <summary>
-            Initializes a new instance of the SubscriptionRecurrenceNotificationRaw class.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionRecurrenceNotificationRaw.GetNotificationResponse">
-            <summary>
-            Gets or sets the GetNotificationResponse.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionRecurrenceNotificationRaw.Version">
-            <summary>
-            Gets or sets the Version of the API signature.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionRecurrenceNotificationRaw.IsSuccess">
-            <summary>
-            Gets or sets a value indicating whether the request was successful; False if a service error is encountered.
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.Paymentv3.SubscriptionStatus">
-            <summary>
-            Encapsulates return values from the SubscriptionRaw Status API
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.SubscriptionStatus.#ctor">
-            <summary>
-            Initializes a new instance of the SubscriptionStatus class.
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.SubscriptionStatus.ParseXML(System.String)">
-            <summary>
-            Parse an XML document and create a SubscriptionStatus object
-            </summary>
-            <param name="xmlInput">The XML document to parse</param>
-            <returns>The <see cref="T:ATT_MSSDK.Paymentv3.SubscriptionStatus"/> values returned.</returns>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatus.Id">
-            <summary>
-            Gets or sets the Id of the SubscriptionStatus object
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatus.Status">
-            <summary>
-            Gets or sets the Status of the SubscriptionStatus object
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatus.Type">
-            <summary>
-            Gets or sets the Type of the SubscriptionStatus object
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatus.ConsumerId">
-            <summary>
-            Gets or sets the Unique Consumer Id.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatus.MerchantTransactionId">
-            <summary>
-            Gets or sets the MerchantTransactionId of the SubscriptionStatus object
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatus.MerchantSubscriptionId">
-            <summary>
-            Gets or sets the Subscription ID that is being created/used, if transaction was a subscription.
-            This field will only appear after the transaction has been authorized (status = AUTHORIZED).
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatus.Description">
-            <summary>
-            Gets or sets the Short description of the product that is being sold.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatus.Amount">
-            <summary>
-            Gets or sets the Amount of transaction with a maximum of 2 decimal places.
-            Examples: 0.99 to 2.99
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatus.ContentCategory">
-            <summary>
-            Gets or sets the Content Category from a predefined list.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatus.MerchantProductId">
-            <summary>
-            Gets or sets the Purchased Product ID in the merchant's system
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatus.MerchantApplicationId">
-            <summary>
-            Gets or sets the Merchant application identifier that initiated the payment transaction.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatus.MerchantId">
-            <summary>
-            Gets or sets the Merchant identifier in the external system
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatus.IsSuccess">
-            <summary>
-            Gets or sets a Boolean flag indicating the status of the request.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatus.Version">
-            <summary>
-            Gets or sets the Version of the API signature.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatus.IsAutoCommitted">
-            <summary>
-            Gets or sets the True in R2. Read only parameter.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatus.Channel">
-            <summary>
-            Gets or sets the Merchant UI channel. Must be set to MOBILE_WEB in Release R1.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatus.Currency">
-            <summary>
-            Gets or sets as USD
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatus.SubscriptionPeriod">
-            <summary>
-            Gets or sets the value of period. The interval at which the subscription will be charged. 
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatus.PeriodAmount">
-            <summary>
-            Gets or sets the number of periods that pass between the renewals
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatus.Recurrences">
-            <summary>
-            Gets or sets the number of times the subscription will be renewed
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.Paymentv3.SubscriptionStatusResponseRaw">
-            @internal
-            <summary>
-            Internal class for XML deserialization
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatusResponseRaw.IsSuccess">
-            <summary>
-            Gets or sets a Boolean flag indicating the status of the request.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatusResponseRaw.Version">
-            <summary>
-            Gets or sets the Version of the API signature.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatusResponseRaw.SubscriptionId">
-            <summary>
-            Gets or sets the SubscriptionID for the purchase. This is used for future request transaction.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatusResponseRaw.SubscriptionStatus">
-            <summary>
-            Gets or sets the Current status of the Subscription. Valid states are: 
-            NEW                 - Transaction context is created. Merchant details were validated. 
-            AUTHENTICATED       - Consumer details were authenticated. 
-            NOT_AUTHENTICATED   - Consumer details were not authenticated. 
-            AUTHORIZED          - Consumer approved the transaction charge. Limits were updated. 
-            NOT_AUTHORIZED      - Consumer limits could not be updated for the transaction charge. 
-            ACCEPTED            - Consumer approve the charge of the transaction.
-            DECLINED            - Consumer did not approve the charge of the transaction. 
-            SUCCESSFUL          - Transaction was charged successfully.
-            FAILED              - Transaction charge failed.
-            UNRESOLVED          - Internal error.
-            CANCELLED           - Transaction was cancelled by merchant.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatusResponseRaw.SubscriptionType">
-            <summary>
-            Gets or sets the The type of the payment, which is:
-            SUBSCRIPTION    – Purchasing a subscription.
-            CONSUMPTION     – Use of an existing active subscription.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatusResponseRaw.ConsumerId">
-            <summary>
-            Gets or sets the Unique Consumer Id
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatusResponseRaw.MerchantTransactionId">
-            <summary>
-            Gets or sets the transaction id assigned by the Merchant
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatusResponseRaw.MerchantSubscriptionId">
-            <summary>
-            Gets or sets the Subscription ID that is being created/used, if transaction was a subscription.
-            This field will only appear after the transaction has been authorized (status = AUTHORIZED).
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatusResponseRaw.Description">
-            <summary>
-            Gets or sets the Short description of the product that is being sold.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatusResponseRaw.Currency">
-            <summary>
-            Gets or sets as USD
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatusResponseRaw.Amount">
-            <summary>
-            Gets or sets the Amount of transaction with a maximum of 2 decimal places
-            Examples: 0.99 to 2.99
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatusResponseRaw.ContentCategory">
-            <summary>
-            Gets or sets the Content Category from a predefined list.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatusResponseRaw.MerchantProductId">
-            <summary>
-            Gets or sets the Purchased Product ID in the merchant's system.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatusResponseRaw.MerchantApplicationId">
-            <summary>
-            Gets or sets the Merchant application identifier that initiated the payment transaction.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatusResponseRaw.Channel">
-            <summary>
-            Gets or sets the Merchant UI channel. Must be set to MOBILE_WEB in Release R1.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatusResponseRaw.MerchantId">
-            <summary>
-            Gets or sets the Merchant identifier in the external system.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatusResponseRaw.IsAutoCommitted">
-            <summary>
-            Gets or sets the True in R2. Read only parameter.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatusResponseRaw.SubscriptionPeriod">
-            <summary>
-            Gets or sets the value of period. The interval at which the subscription will be charged. 
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatusResponseRaw.PeriodAmount">
-            <summary>
-            Gets or sets the number of periods that pass between the renewals
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.SubscriptionStatusResponseRaw.Recurrences">
-            <summary>
-            Gets or sets the number of times the subscription will be renewed
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.Paymentv3.TransactionOperationStatus">
-            <summary>
-            Transaction Operation Status
-            </summary>
-        </member>
-        <member name="F:ATT_MSSDK.Paymentv3.TransactionOperationStatus.Charged">
-            <summary>
-            Default.  Transaction is completed automatically and is committed immediately
-            </summary>
-        </member>
-        <member name="F:ATT_MSSDK.Paymentv3.TransactionOperationStatus.Reserved">
-            <summary>
-            Amount + tax is reserved against subscriber's account 
-            until the transaction is committed via the CommitTransaction call,
-            transaction is in the AUTHORIZED state until committed 
-            or the transaction is CANCELLED after a period of time 
-            controlled by the platform.
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.Paymentv3.TransactionIdTypes">
-            <summary>
-            Set of TransactionIdTypes
-            </summary>
-        </member>
-        <member name="F:ATT_MSSDK.Paymentv3.TransactionIdTypes.TransactionId">
-            <summary>
-            TransactionRaw Id
-            </summary>
-        </member>
-        <member name="F:ATT_MSSDK.Paymentv3.TransactionIdTypes.MerchantTransactionId">
-            <summary>
-            Merchant TransactionRaw Id
-            </summary>
-        </member>
-        <member name="F:ATT_MSSDK.Paymentv3.TransactionIdTypes.TransactionAuthCode">
-            <summary>
-            TransactionRaw Auth Code
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.Paymentv3.SubscriptionIdTypes">
-            <summary>
-            Set of SubscriptionIdTypes
-            </summary>
-        </member>
-        <member name="F:ATT_MSSDK.Paymentv3.SubscriptionIdTypes.SubscriptionId">
-            <summary>
-            TransactionRaw Id
-            </summary>
-        </member>
-        <member name="F:ATT_MSSDK.Paymentv3.SubscriptionIdTypes.MerchantTransactionId">
-            <summary>
-            Merchant TransactionRaw Id
-            </summary>
-        </member>
-        <member name="F:ATT_MSSDK.Paymentv3.SubscriptionIdTypes.SubscriptionAuthCode">
-            <summary>
-            TransactionRaw Auth Code
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.Paymentv3.PaymentCategories">
-            <summary>
-            All payment transactions must have category for proper tax calculations and display on the bill.
-            </summary>
-        </member>
-        <member name="F:ATT_MSSDK.Paymentv3.PaymentCategories.InAppGames">
-            <summary>
-            In Application Games
-            </summary>
-            <value>Payment category for In Application Games.</value>
-        </member>
-        <member name="F:ATT_MSSDK.Paymentv3.PaymentCategories.InAppVirtualGoods">
-            <summary>In Application Virtual Goods</summary>
-            <value>Payment category for In Application Virtual Goods.  <b>Not allowed for Subscriptions.</b></value>
-        </member>
-        <member name="F:ATT_MSSDK.Paymentv3.PaymentCategories.InAppOther">
-            <summary>In Application Other</summary>
-            <value>Payment category for In Application Other.</value>
-        </member>
-        <member name="F:ATT_MSSDK.Paymentv3.PaymentCategories.ApplicationGames">
-            <summary>Application Games</summary>
-            <value>Payment category for In Application Games.</value>
-        </member>
-        <member name="F:ATT_MSSDK.Paymentv3.PaymentCategories.ApplicationOther">
-            <summary>Application Other</summary>
-            <value>Payment category for Application Other.</value>
-        </member>
-        <member name="T:ATT_MSSDK.Paymentv3.TransactionRaw">
-            \internal
-            <summary>
-            Internal class for JSON serialization
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.TransactionRaw.#ctor">
-            <summary>
-            Initializes a new instance of the TransactionRaw class.
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.TransactionRaw.#ctor(System.Double,ATT_MSSDK.Paymentv3.PaymentCategories,System.String,System.String,System.String,System.String,System.String,ATT_MSSDK.Paymentv3.TransactionOperationStatus)">
-            <summary>
-            Initializes a new instance of the TransactionRaw class.
-            </summary>
-            <param name="amount">Dollar amount of the purchase.</param>
-            <param name="category">Category used for tax calculations in the range of 1 to 5.</param>
-            <param name="channel">Always "MOBILE_WEB".</param>
-            <param name="description">Description of the transaction shown to the consumer during the Advice of Charge process.</param>
-            <param name="merchantTransactionId">Unique Id assigned by the Merchant to this transaction.</param>
-            <param name="merchantProductId">Product Id assigned by the Merchant to this transaction.</param>
-            <param name="merchantPaymentRedirectUrl">Url that the browser will be redirected to at the end of the Advice of Charge process.</param>
-            <param name="transactionOperationStatus">Transaction Operation Status</param>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.TransactionRaw.JSONSerialize">
-            <summary>
-            Serialize the TransactionRaw object into JSON.
-            </summary>
-            <returns>JSON-serialized version of the TransactionRaw.</returns>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionRaw.Amount">
-            <summary>
-            Gets or sets the Dollar amount of the purchase.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionRaw.Category">
-            <summary>
-            Gets or sets the Category used for tax calculations in the range of 1 to 5.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionRaw.Channel">
-            <summary>
-            Gets or sets the Channel, Always "MOBILE_WEB".
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionRaw.Description">
-            <summary>
-            Gets or sets the Description of the transaction shown to the consumer during the Advice of Charge process.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionRaw.MerchantTransactionId">
-            <summary>
-            Gets or sets the Unique Id assigned by the Merchant to this transaction.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionRaw.MerchantProductId">
-            <summary>
-            Gets or sets the Product Id assigned by the Merchant to this transaction.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionRaw.MerchantPaymentRedirectUrl">
-            <summary>
-            Gets or sets the Url that the browser will be redirected to at the end of the Advice of Charge process
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionRaw.TransactionOperationStatus">
-            <summary>
-            Gets or sets transaction operation status
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.Paymentv3.TransactionStatus">
-            <summary>
-            Encapsulates return values from the TransactionRaw Status API
-            </summary>
-            <example>
-            &lt;?xml version='1.0' encoding='UTF-8'?&gt;
-            &lt;TransactionStatusResponseRaw&gt;
-               &lt;IsSuccess&gt;true&lt;/IsSuccess&gt;
-               &lt;Version&gt;1&lt;/Version&gt;
-               &lt;Id&gt;3555156591302139&lt;/Id&gt;
-               &lt;Status&gt;SUCCESSFUL&lt;/Status&gt;
-               &lt;Type&gt;SINGLEPAY&lt;/Type&gt;
-               &lt;ConsumerId&gt;d2ca3d8b-df6b-49b0-a00d-e8b6336e62cb&lt;/ConsumerId&gt;
-               &lt;MerchantTransactionId&gt;T20120212185841359&lt;/MerchantTransactionId&gt;
-               &lt;Description&gt;WordFinder 6&lt;/Description&gt;
-               &lt;Currency&gt;USD&lt;/Currency&gt;
-               &lt;Amount&gt;1.41&lt;/Amount&gt;
-               &lt;ContentCategory&gt;1&lt;/ContentCategory&gt;
-               &lt;MerchantProductId&gt;P20120212185841359&lt;/MerchantProductId&gt;
-               &lt;MerchantApplicationId&gt;1a8064bc9b9ef2e8d2d734e7aad01dd3&lt;/MerchantApplicationId&gt;
-               &lt;Channel&gt;MOBILE_WEB&lt;/Channel&gt;
-               &lt;MerchantId&gt;a75ad884-cf58-4398-ae2trd&gt;
-            &lt;/TransactionStatusResponseRaw&gt;
-            </example>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.TransactionStatus.#ctor">
-            <summary>
-            Prevents a default instance of the TransactionStatus class from being created.
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.TransactionStatus.ParseXML(System.String)">
-            <summary>
-            Parse an XML document and return a TransactionStatus object
-            </summary>
-            <param name="xmlInput">The XML document to parse</param>
-            <returns>The <see cref="T:ATT_MSSDK.Paymentv3.TransactionStatus"/> values returned.</returns>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionStatus.IsSuccess">
-            <summary>
-            Gets or sets a Boolean flag indicating the status of the request.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionStatus.Version">
-            <summary>
-            Gets or sets the Version of the API signature.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionStatus.Amount">
-            <summary>
-            Gets or sets the amount of transaction with a maximum of 2 decimal places
-            Examples: 0.99 to 2.99
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionStatus.Channel">
-            <summary>
-            Gets or sets the Merchant UI channel. Must be set to MOBILE_WEB in Release R1.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionStatus.Id">
-            <summary>
-            Gets or sets the Id value returned by the server.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionStatus.Status">
-            <summary>
-            Gets or sets the Status value.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionStatus.Type">
-            <summary>
-            Gets or sets the Type value.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionStatus.ConsumerId">
-            <summary>
-            Gets or sets the Unique consumer identifier.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionStatus.MerchantTransactionId">
-            <summary>
-            Gets or sets the MerchantTransactionId assigned by the merchant.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionStatus.Currency">
-            <summary>
-            Gets or sets the Currency, Always USD
-            </summary>        
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionStatus.Description">
-            <summary>
-            Gets or sets the short description of the product that is being sold.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionStatus.ContentCategory">
-            <summary>
-            Gets or sets the Content Category from a predefined list.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionStatus.MerchantProductId">
-            <summary>
-            Gets or sets the Purchased Product ID in the merchant's system.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionStatus.MerchantApplicationId">
-            <summary>
-            Gets or sets the Merchant application identifier that initiated the payment transaction.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionStatus.MerchantId">
-            <summary>
-            Gets or sets the Merchant identifier in the external system.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionStatus.IsAutoCommitted">
-            <summary>
-            Gets or sets the True in R2. Read only parameter.
-            </summary>        
-        </member>
-        <member name="T:ATT_MSSDK.Paymentv3.TransactionStatusResponseRaw">
-            @internal
-            <summary>
-            Internal class for XML deserialization
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Paymentv3.TransactionStatusResponseRaw.#ctor">
-            <summary>
-            Initializes a new instance of the TransactionStatusResponseRaw class.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionStatusResponseRaw.IsSuccess">
-            <summary>
-            Gets or sets a Boolean flag indicating the status of the request.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionStatusResponseRaw.Version">
-            <summary>
-            Gets or sets the Version of the API signature.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionStatusResponseRaw.TransactionId">
-            <summary>
-            Gets or sets the transaction ID generated by AT&amp;T Payment processing system for a purchase.
-            This is used for future transaction requests.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionStatusResponseRaw.TransactionStatus">
-            <summary>
-            Gets or sets the additional information on the status in case of a failure.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionStatusResponseRaw.TransactionType">
-            <summary>
-            Gets or sets one of these values. SINGLEPAY, SUBSCRIPTION, REFUND, CONSUMPTION - Deprecated, RENEWAL.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionStatusResponseRaw.ConsumerId">
-            <summary>
-            Gets or sets the Unique consumer identifier.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionStatusResponseRaw.MerchantTransactionId">
-            <summary>
-            Gets or sets the MerchantTransactionId assigned by the merchant.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionStatusResponseRaw.Description">
-            <summary>
-            Gets or sets the short description of the product that is being sold.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionStatusResponseRaw.Currency">
-            <summary>
-            Gets or sets the Currency, Always USD
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionStatusResponseRaw.Amount">
-            <summary>
-            Gets or sets the amount of transaction with a maximum of 2 decimal places
-            Examples: 0.99 to 2.99
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionStatusResponseRaw.ContentCategory">
-            <summary>
-            Gets or sets the Content Category from a predefined list.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionStatusResponseRaw.MerchantProductId">
-            <summary>
-            Gets or sets the Purchased Product ID in the merchant's system.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionStatusResponseRaw.MerchantApplicationId">
-            <summary>
-            Gets or sets the Merchant application identifier that initiated the payment transaction.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionStatusResponseRaw.Channel">
-            <summary>
-            Gets or sets the Merchant UI channel. Must be set to MOBILE_WEB in Release R1.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionStatusResponseRaw.MerchantId">
-            <summary>
-            Gets or sets the Merchant identifier in the external system.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Paymentv3.TransactionStatusResponseRaw.IsAutoCommitted">
-            <summary>
-            Gets or sets the True in R2. Read only parameter.
-            </summary>
-        </member>
         <member name="T:ATT_MSSDK.DeviceCapabilitiesv2.Capabilities">
             <summary>
             Capabilities object is returned as part of Device %Capabilities AT&amp;T's API
@@ -5582,236 +3869,6 @@
             The first 8 digits of the International Mobile Equipment Identity of the mobile device
             </summary>
         </member>
-        <member name="T:ATT_MSSDK.DeviceCapabilitiesv1.Capabilities">
-            <summary>
-            The Device Capabilities attributes, which include Age Verification status, 
-            Advice of Charge status, Content Filtering, and Terminal Type allow developers
-            to deliver applications that are tailored to a specific customer device.
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.DeviceCapabilitiesv1.Capabilities.#ctor">
-            <summary>
-            Initializes a new instance of the Capabilities class.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.DeviceCapabilitiesv1.Capabilities.AgeVerification">
-            <summary>
-            Gets or sets a value indicating if Age Verification is enabled on the subscriber's device.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.DeviceCapabilitiesv1.Capabilities.AdviceOfCharge">
-            <summary>
-            Gets or sets a value indicating the Advice of Charge status on the subscriber's device.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.DeviceCapabilitiesv1.Capabilities.ContentFiltering">
-            <summary>
-            Gets or sets the Content Filtering setting configured on the subscriber's device.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.DeviceCapabilitiesv1.Capabilities.TerminalType">
-            <summary>
-            Gets or sets the type of the subscriber's terminal or device.
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.DeviceCapabilitiesv1.DeviceCapabilities">
-            <summary>
-            This object is used to return the Device Capabilities details from the network for a particular mobile terminal.
-            </summary>
-            <remarks>
-            This class returns two categories of data, device ID and a set of capabilities.
-            AT&amp;T's implementation of the Device Capabilities API service provides the user with device information that 
-            is specific to AT&amp;T's network and device naming conventions. This method only yields proper results for AT&amp;T 
-            supported devices. The results may not be accurate with devices when the subscriber is using an AT&amp;T SIM with a device
-            from other carriers.
-            </remarks>
-        </member>
-        <member name="M:ATT_MSSDK.DeviceCapabilitiesv1.DeviceCapabilities.#ctor">
-            <summary>
-            Initializes a new instance of the DeviceCapabilities class.
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.DeviceCapabilitiesv1.DeviceCapabilities.ParseJSON(System.String)">
-            <summary>
-            Parses a JSON response and returns a DeviceCapabilities object
-            \section capssection Capabilities Sample 
-            \include GetDeviceCapabilities.cs
-            </summary>
-            <param name="jsonInput">The JSON input value</param>
-            <returns>The <see cref="T:ATT_MSSDK.DeviceCapabilitiesv1.DeviceCapabilities"/> returned by the server.</returns>
-        </member>
-        <member name="P:ATT_MSSDK.DeviceCapabilitiesv1.DeviceCapabilities.capabilities">
-            <summary>
-            Gets or sets capabilities class.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.DeviceCapabilitiesv1.DeviceCapabilities.deviceId">
-            <summary>
-            Gets or sets deviceId class.
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.DeviceCapabilitiesv1.DeviceCapabilitiesRaw">
-            @internal
-            <summary>
-            Internal class for JSON parsing of Device Capabilities response from the API.
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.DeviceCapabilitiesv1.DeviceCapabilitiesRaw.#ctor">
-            <summary>
-            Initializes a new instance of the DeviceCapabilitiesRaw class.
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.DeviceCapabilitiesv1.DeviceCapabilitiesRaw.ParseJSON(System.String)">
-            <summary>
-            Parses a JSON response and returns a DeviceCapabilities object
-            </summary>
-            <param name="jsonInput">The JSON input value</param>
-            <returns>The <see cref="T:ATT_MSSDK.DeviceCapabilitiesv1.DeviceCapabilitiesRaw"/> returned by the server.</returns>
-        </member>
-        <member name="P:ATT_MSSDK.DeviceCapabilitiesv1.DeviceCapabilitiesRaw.Capabilities">
-            <summary>
-            Gets or sets the Capabilities value
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.DeviceCapabilitiesv1.DeviceCapabilitiesRaw.DeviceId">
-            <summary>
-            Gets or sets the DeviceId
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.DeviceCapabilitiesv1.DeviceCapabilitiesRaw.CapabilitiesRaw">
-            @internal
-            <summary>
-            Internal class for JSON parsing
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.DeviceCapabilitiesv1.DeviceCapabilitiesRaw.CapabilitiesRaw.#ctor">
-            <summary>
-            Initializes a new instance of the CapabilitiesRaw class.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.DeviceCapabilitiesv1.DeviceCapabilitiesRaw.CapabilitiesRaw.Acwav">
-            <summary>
-            Gets or sets the yes/no flag to indicate if the age verification is enabled on the subscriber's device.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.DeviceCapabilitiesv1.DeviceCapabilitiesRaw.CapabilitiesRaw.Acwaocr">
-            <summary>
-            Gets or sets the yes/no flag to indicate advice of charge status on the subscriber's device.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.DeviceCapabilitiesv1.DeviceCapabilitiesRaw.CapabilitiesRaw.Acwcf">
-            <summary>
-            Gets or sets the content filtering setting configured on the subscriber's device.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.DeviceCapabilitiesv1.DeviceCapabilitiesRaw.CapabilitiesRaw.Acwtermtype">
-            <summary>
-            Gets or sets the type of the terminal/device. 
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.DeviceCapabilitiesv1.DeviceCapabilitiesRaw.DeviceIdRaw">
-            @internal
-            <summary>
-            Internal class for JSON parsing
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.DeviceCapabilitiesv1.DeviceCapabilitiesRaw.DeviceIdRaw.#ctor">
-            <summary>
-            Initializes a new instance of the DeviceIdRaw class.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.DeviceCapabilitiesv1.DeviceCapabilitiesRaw.DeviceIdRaw.Acwdevcert">
-            <summary>
-            Gets or sets the internal device certification standard.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.DeviceCapabilitiesv1.DeviceCapabilitiesRaw.DeviceIdRaw.Acwrel">
-            <summary>
-            Gets or sets the firmware release number (if available).
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.DeviceCapabilitiesv1.DeviceCapabilitiesRaw.DeviceIdRaw.Acwmodel">
-            <summary>
-            Gets or sets the model number for the device. 
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.DeviceCapabilitiesv1.DeviceCapabilitiesRaw.DeviceIdRaw.Acwvendor">
-            <summary>
-            Gets or sets the abbreviated code for the device manufacturer. 
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.DeviceCapabilitiesv1.DeviceId">
-            <summary>
-            A set of properties that enumerate certain hardware and software attributes
-            of the customer's device.
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.DeviceCapabilitiesv1.DeviceId.#ctor">
-            <summary>
-            Initializes a new instance of the DeviceId class.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.DeviceCapabilitiesv1.DeviceId.CertificationStandard">
-            <summary>
-            Gets or sets the internal device certification standard.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.DeviceCapabilitiesv1.DeviceId.FirmwareRelease">
-            <summary>
-            Gets or sets the firmware release number (if available).
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.DeviceCapabilitiesv1.DeviceId.ModelNumber">
-            <summary>
-            Gets or sets the model number for the device.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.DeviceCapabilitiesv1.DeviceId.Vendor">
-            <summary>
-            Gets or sets the abbreviated code for the device manufacturer.
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.Notaryv1.NotaryResponse">
-            <summary>
-            Contains the response from a Notary Request - the SignedDocument and the Signature.
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Notaryv1.NotaryResponse.#ctor">
-            @internal
-            <summary>
-            Initializes a new instance of the NotaryResponse class.
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.Notaryv1.NotaryResponse.#ctor(System.String,System.String)">
-            <summary>
-            Initializes a new instance of the NotaryResponse class. 
-            </summary>
-            <param name="signedDocument">The SignedDocument returned by the Notary.</param>
-            <param name="signature">The Signature returned by the Notary.</param>
-        </member>
-        <member name="M:ATT_MSSDK.Notaryv1.NotaryResponse.ParseJSON(System.String)">
-            <summary>
-            Create a NotaryResponse object by parsing the JSON returned by the server
-            </summary>
-            <param name="jsonInput">The JSON input value</param>
-            <returns>The NotaryResponse object created from the parsed JSON.</returns>
-        </member>
-        <member name="M:ATT_MSSDK.Notaryv1.NotaryResponse.RedirectUri">
-            <summary>
-            Generates the first part of the URI that will redirect the user's browser to the Advice of Charge process, the AccessToken is added later
-            </summary>
-            <returns>The redirect uri.</returns>
-        </member>
-        <member name="P:ATT_MSSDK.Notaryv1.NotaryResponse.SignedDocument">
-            <summary>
-            Gets or sets the SignedDocument value returned by the Notary.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.Notaryv1.NotaryResponse.Signature">
-            <summary>
-            Gets or sets the Signature value returned by the Notary.
-            </summary>
-        </member>
         <member name="T:ATT_MSSDK.InvalidResponseException">
             <summary>
             Exception returned if there is an error returned by the server or a connection failure.
@@ -5917,13 +3974,14 @@
             Initializes a new instance of the OAuthToken class.
             </summary>
         </member>
-        <member name="M:ATT_MSSDK.OAuthToken.#ctor(System.String,System.String,System.String)">
+        <member name="M:ATT_MSSDK.OAuthToken.#ctor(System.String,System.String,System.String,System.String)">
             <summary>
             Initializes a new instance of the OAuthToken class.
             </summary>
             <param name="accessToken">Access token value returned by the server.</param>
             <param name="refreshToken">Refresh token value returned by the server.</param>
             <param name="expiresIn">Number of seconds until the access token expires.</param>
+            <param name="createdTime">The initial creation time of access token in earlier requests.</param>
             <exception cref="T:System.ArgumentException">Thrown if headers are null, empty, or invalid.</exception>
         </member>
         <member name="M:ATT_MSSDK.OAuthToken.ParseJSON(System.String)">
@@ -5937,7 +3995,7 @@
             <summary>
             Returns the string version of the OAuthToken object
             </summary>
-            <returns>Formated AuthToken</returns>
+            <returns>Formatted AuthToken</returns>
         </member>
         <member name="M:ATT_MSSDK.OAuthToken.IsExpired">
             <summary>
@@ -5972,7 +4030,7 @@
         </member>
         <member name="T:ATT_MSSDK.OAuthToken.OAuthTokenRaw">
             <summary>
-            Internal class used for JSON deserialization.
+            Internal class used for JSON de-serialization.
             </summary>
         </member>
         <member name="M:ATT_MSSDK.OAuthToken.OAuthTokenRaw.#ctor">
@@ -6061,106 +4119,6 @@
         <member name="F:ATT_MSSDK.XSpeechContext.SocialMedia">
             <summary>
             X-Speech Context: SocialMedia
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.TLv1.DeviceLocation">
-            <summary>
-            Contains the Device Location attributes, which include accuracy, 
-            latitude, longitude, and the time stamp.
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.TLv1.DeviceLocation.#ctor">
-            <summary>
-            Prevents a default instance of the DeviceLocation class from being created.
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.TLv1.DeviceLocation.#ctor(System.String,System.String,System.String,System.String)">
-            <summary>
-            Initializes a new instance of the DeviceLocation class.
-            </summary>
-            <param name="accuracy">The accuracy of the returned location specified in meters.</param>
-            <param name="latitude">The current latitude of the device's geo-position.</param>
-            <param name="longitude">The current longitude of the device geo-position.</param>
-            <param name="timestamp">Timestamp of the location data.</param>
-        </member>
-        <member name="M:ATT_MSSDK.TLv1.DeviceLocation.ParseJSON(System.String)">
-            <summary>
-            Convert a JSON value returned from the API into the DeviceLocation object.
-            </summary>
-            <param name="jsonInput">The string to parse</param>
-            <returns>The <see cref="T:ATT_MSSDK.TLv1.DeviceLocation"/> returned by the server.</returns>
-        </member>
-        <member name="P:ATT_MSSDK.TLv1.DeviceLocation.Accuracy">
-            <summary>
-            Gets or sets the Accuracy of the Terminal in meters of the Latitude/Longitude specified
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.TLv1.DeviceLocation.Latitude">
-            <summary>
-            Gets or sets the latitude of the center of the circle that contains the terminal
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.TLv1.DeviceLocation.Longitude">
-            <summary>
-            Gets or sets the longitude of the center of the circle that contains the terminal
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.TLv1.DeviceLocation.TimeStamp">
-            <summary>
-            Gets or sets the date and time when the location was received
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.TLv1.DeviceLocationRaw">
-            @internal
-            <summary>
-            Response from the DeviceLocation request.
-            </summary>
-        </member>
-        <member name="M:ATT_MSSDK.TLv1.DeviceLocationRaw.#ctor">
-            <summary>
-            Initializes a new instance of the DeviceLocationRaw class.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.TLv1.DeviceLocationRaw.Accuracy">
-            <summary>
-            Gets or sets the Accuracy returned by the server.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.TLv1.DeviceLocationRaw.Latitude">
-            <summary>
-            Gets or sets the Latitude returned by the server.
-            The current latitude of the device's geo-position.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.TLv1.DeviceLocationRaw.Longitude">
-            <summary>
-            Gets or sets the Longitude returned by the server.
-            The current longitude of the device geo-position.
-            </summary>
-        </member>
-        <member name="P:ATT_MSSDK.TLv1.DeviceLocationRaw.Timestamp">
-            <summary>
-            Gets or sets the Timestamp  of the location data.
-            </summary>
-        </member>
-        <member name="T:ATT_MSSDK.TLv1.TerminalLocationTolerance">
-            <summary>
-            Terminal Location Tolerance
-            </summary>
-        </member>
-        <member name="F:ATT_MSSDK.TLv1.TerminalLocationTolerance.NoDelay">
-            <summary>
-            No compromise on the priority of the response time over accuracy
-            </summary>
-        </member>
-        <member name="F:ATT_MSSDK.TLv1.TerminalLocationTolerance.LowDelay">
-            <summary>
-            The response time could have a minimum delay for a better accuracy
-            </summary>
-        </member>
-        <member name="F:ATT_MSSDK.TLv1.TerminalLocationTolerance.DelayTolerant">
-            <summary>
-            Response time could be compromised to have high delay for better accuracy
             </summary>
         </member>
         <member name="T:ATT_MSSDK.TokenExpiredException">
