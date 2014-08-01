@@ -111,7 +111,10 @@ class Main : MonoBehaviour
 
             Debug.Log("Request Start time: " + DateTime.Now.ToLongTimeString());
 
-            requestFactory = BuildRequestFactory(RequestFactory.ScopeTypes.Speech);
+            if (requestFactory == null)
+            {
+                requestFactory = BuildRequestFactory(RequestFactory.ScopeTypes.Speech);
+            }
 
             if (clientToken ==  null)
             {
