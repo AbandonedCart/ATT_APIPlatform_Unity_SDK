@@ -26,17 +26,17 @@ public class Main : MonoBehaviour {
 		string endPoint = "https://api.att.com";
 		
 		// Application key registered at developer portal.
-		string apiKey = "895610308e6400c200add4820a535e87";   
+		string apiKey = "37yi0iupaiqoaoxwypfff2td6poatmg8";   
 		
 		//Secret Key of the application as registered at developer portal.
-		string secretKey = "b71e400f2211a424";
+		string secretKey = "y6rvmheod0jc9yfaymrvxfxhdpr06npo";
 		
 		// OAuth redirect URL configured at developer portal. This is required only for apps having Authorization credential model.
 		string redirectURI = null;
 		
 		// Scopes the application is granted.
 		List<RequestFactory.ScopeTypes> scopes = new List<RequestFactory.ScopeTypes>();
-		scopes.Add(RequestFactory.ScopeTypes.Speech);
+		scopes.Add (RequestFactory.ScopeTypes.STTC);
 		
 		ServicePointManager.ServerCertificateValidationCallback = Validator;
 		requestFactory = new RequestFactory(endPoint, apiKey, secretKey, scopes, redirectURI, null);
@@ -63,7 +63,7 @@ public class Main : MonoBehaviour {
 		new WaveGen().Write(clipData, format, stream);
 		stream.Close();
 
-        ATT_MSSDK.Speechv3.SpeechResponse response = SpeechToTextService(filename, "Generic", "audio/wav");
+		ATT_MSSDK.Speechv3.SpeechResponse response = SpeechToTextService(filename, "audio/wav", "RGB.srgs");
         string speechOutput = response.Recognition.NBest[0].ResultText;
         Debug.Log(speechOutput);
 
@@ -89,43 +89,20 @@ public class Main : MonoBehaviour {
     /// Method that calls SpeechToText method of RequestFactory to transcribe to text
     /// </summary>
     /// <param name="FileName">Wave file to transcribe</param>
-    private ATT_MSSDK.Speechv3.SpeechResponse SpeechToTextService(String FileName, String SpeechContext, String AudioContentType)
+	private ATT_MSSDK.Speechv3.SpeechResponse SpeechToTextService(String AudioFileName, String AudioContentType, String GrammarFileName)
     {
-        ATT_MSSDK.Speechv3.SpeechResponse response = null;
-
         try
         {
-            if (string.IsNullOrEmpty(FileName))
+            if (string.IsNullOrEmpty(AudioFileName))
             {
                 Debug.Log("No sound file specified");
                 return null;
             }
 
-            XSpeechContext speechContext = XSpeechContext.Generic;
-            string contentLanguage = string.Empty;
+            XSpeechCustomContext speechContext = XSpeechCustomContext.GrammarList;
             string xArgData = "ClientApp=SpeechApp";
-            switch (SpeechContext)
-            {
-                case "Generic": speechContext = XSpeechContext.Generic; contentLanguage = "en-US"; break;
-                case "BusinessSearch": speechContext = XSpeechContext.BusinessSearch; break;
-                case "TV": speechContext = XSpeechContext.TV; xArgData = "Search=True,Lineup=91983"; break;
-                case "Gaming": speechContext = XSpeechContext.Gaming; break;
-                case "SocialMedia": speechContext = XSpeechContext.SocialMedia; xArgData = "ClientApp=SpeechApps"; break;
-                case "WebSearch": speechContext = XSpeechContext.WebSearch; break;
-                case "SMS": speechContext = XSpeechContext.SMS; break;
-                case "VoiceMail": speechContext = XSpeechContext.VoiceMail; break;
-                case "QuestionAndAnswer": speechContext = XSpeechContext.QuestionAndAnswer; break;
-            }
 
-            string subContext = string.Empty;
-
-            response = this.requestFactory.SpeechToText(FileName, speechContext, xArgData, contentLanguage, subContext, AudioContentType);
-
-            if (null != response)
-            {
-                return response;
-            }
-
+            return this.requestFactory.SpeechToTextCustom(AudioFileName, null, GrammarFileName, speechContext, xArgData, AudioContentType);
         }
         catch (InvalidScopeException invalidscope)
         {
@@ -147,8 +124,7 @@ public class Main : MonoBehaviour {
         {
             Debug.Log("SpeechToTextService completed.");
         }
-
-        return response;
+		return null;
     }
 	
 	// Update is called once per frame
