@@ -1,0 +1,18 @@
+# Unity generated files
+*.meta
+*.dwlt
+*.bin
+*.db
+*.log
+*.userprefs
+metadata/
+Temp/
+ScriptAssemblies/
+AssetServerCacheV3
+ScriptMapper
+assetDatabase3
+guidmapper
+
+# Sample generated files
+auth_token.dat
+recordedSpeech.wav
