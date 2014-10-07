@@ -64,8 +64,8 @@ public class Main : MonoBehaviour {
 		stream.Close();
 
 		ATT_MSSDK.Speechv3.SpeechResponse response = SpeechToTextService(filename, "audio/wav", "RGB.srgs");
-        string speechOutput = response.Recognition.NBest[0].ResultText;
-        Debug.Log(speechOutput);
+		string speechOutput = response.Recognition.NBest[0].ResultText;
+		Debug.Log(speechOutput);
 
 		string text = speechOutput.ToLower();
 		
@@ -85,47 +85,47 @@ public class Main : MonoBehaviour {
 		}
 	}
 
-    /// <summary>
-    /// Method that calls SpeechToText method of RequestFactory to transcribe to text
-    /// </summary>
-    /// <param name="FileName">Wave file to transcribe</param>
+	/// <summary>
+	/// Method that calls SpeechToText method of RequestFactory to transcribe to text
+	/// </summary>
+	/// <param name="FileName">Wave file to transcribe</param>
 	private ATT_MSSDK.Speechv3.SpeechResponse SpeechToTextService(String AudioFileName, String AudioContentType, String GrammarFileName)
-    {
-        try
-        {
-            if (string.IsNullOrEmpty(AudioFileName))
-            {
-                Debug.Log("No sound file specified");
-                return null;
-            }
+	{
+		try
+		{
+			if (string.IsNullOrEmpty(AudioFileName))
+			{
+				Debug.Log("No sound file specified");
+				return null;
+			}
 
-            XSpeechCustomContext speechContext = XSpeechCustomContext.GrammarList;
-            string xArgData = "ClientApp=SpeechApp";
+			XSpeechCustomContext speechContext = XSpeechCustomContext.GrammarList;
+			string xArgData = "ClientApp=SpeechApp";
 
-            return this.requestFactory.SpeechToTextCustom(AudioFileName, null, GrammarFileName, speechContext, xArgData, AudioContentType);
-        }
-        catch (InvalidScopeException invalidscope)
-        {
-            Debug.Log(invalidscope.Message);
-        }
-        catch (ArgumentException argex)
-        {
-            Debug.Log(argex.Message);
-        }
-        catch (InvalidResponseException ie)
-        {
-            Debug.Log(ie.Body);
-        }
-        catch (Exception ex)
-        {
-            Debug.Log(ex.Message);
-        }
-        finally
-        {
-            Debug.Log("SpeechToTextService completed.");
-        }
+			return this.requestFactory.SpeechToTextCustom(AudioFileName, null, GrammarFileName, speechContext, xArgData, AudioContentType);
+		}
+		catch (InvalidScopeException invalidscope)
+		{
+			Debug.Log(invalidscope.Message);
+		}
+		catch (ArgumentException argex)
+		{
+			Debug.Log(argex.Message);
+		}
+		catch (InvalidResponseException ie)
+		{
+			Debug.Log(ie.Body);
+		}
+		catch (Exception ex)
+		{
+			Debug.Log(ex.Message);
+		}
+		finally
+		{
+			Debug.Log("SpeechToTextService completed.");
+		}
 		return null;
-    }
+	}
 	
 	// Update is called once per frame
 	void Update () {
