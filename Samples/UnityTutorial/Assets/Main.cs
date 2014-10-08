@@ -12,8 +12,14 @@ using ATT_MSSDK.Speechv3;
 
 public class Main : MonoBehaviour {
 
+	static String pleasePrompt = "Please hold down the 's' key to record a color (red, green, or blue)";
+	static String releasePrompt = "Release the 's' key to stop recording";
+	static String waitPrompt = "Please wait...";
+
 	RequestFactory requestFactory;
-	
+	String prompt = pleasePrompt;
+	int timeRecordingStarted;
+
 	public static bool Validator(object sender, X509Certificate certificate, X509Chain chain,
 	                             SslPolicyErrors sslPolicyErrors)
 	{
@@ -42,14 +48,29 @@ public class Main : MonoBehaviour {
 		requestFactory = new RequestFactory(endPoint, apiKey, secretKey, scopes, redirectURI, null);
 	}
 	
-	IEnumerator DoRecording()
+	IEnumerator EndRecording()
 	{
-		Debug.Log("Recording");
-		audio.clip = Microphone.Start(null, false, 5, 8000);
-		yield return new WaitForSeconds(5);
-		Debug.Log("Playing");
-		audio.Play();
 		Microphone.End(null);
+
+		// if the user presses and quickly releases the 's' button, without enough
+		// time to record a color, just display a message and ignore it. We'll assume
+		// half a second is too short.
+		int audioDurationInMilliseconds = (Environment.TickCount - timeRecordingStarted);
+		if (audioDurationInMilliseconds < 500) {
+			Debug.Log ("'s' key pressed and released too quickly");
+			prompt = pleasePrompt;
+			yield break;
+		}
+
+		prompt = waitPrompt;
+
+		audio.Play();
+		float audioDurationInSeconds = ((float)audioDurationInMilliseconds) / 1000f;
+		Debug.Log("Playing audio for " + audioDurationInSeconds.ToString () + " seconds");
+		yield return new WaitForSeconds (audioDurationInSeconds);
+		audio.Stop ();
+
+		Debug.Log("Constructing audio file");
 
 		float[] clipData = new float[audio.clip.samples * audio.clip.channels];
 		audio.clip.GetData(clipData, 0);
@@ -59,13 +80,21 @@ public class Main : MonoBehaviour {
 		
 		string filename = "recordedSpeech.wav";
 		FileStream stream = File.OpenWrite(filename);
-		
+
 		new WaveGen().Write(clipData, format, stream);
 		stream.Close();
 
+		Debug.Log ("Calling speech-to-text webservice");
+
+		int webserviceStartTimeInMilliseconds = Environment.TickCount;
 		ATT_MSSDK.Speechv3.SpeechResponse response = SpeechToTextService(filename, "audio/wav", "RGB.srgs");
+		Debug.Log ("Speech-to-text webservice call completed in " + (Environment.TickCount - webserviceStartTimeInMilliseconds).ToString() + " milliseconds");
+
+		Debug.Log ("Setting cube color");
+
 		string speechOutput = response.Recognition.NBest[0].ResultText;
 		Debug.Log(speechOutput);
+		prompt = pleasePrompt;
 
 		string text = speechOutput.ToLower();
 		
@@ -138,8 +167,18 @@ public class Main : MonoBehaviour {
 		if(Input.GetKeyDown(KeyCode.B)) {
 			gameObject.renderer.material.color = Color.blue;
 		}
-		if(Input.GetKeyDown(KeyCode.S)) {
-			StartCoroutine(DoRecording());
+		if (Microphone.IsRecording(null) && Input.GetKeyUp(KeyCode.S)) {
+			StartCoroutine(EndRecording());
+		} else if (!Microphone.IsRecording(null) && !audio.isPlaying && Input.GetKeyDown (KeyCode.S)) {
+			Debug.Log("Recording");
+			audio.clip = Microphone.Start(null, false, 5, 8000);
+			timeRecordingStarted = Environment.TickCount;
+			prompt = releasePrompt;
 		}
+	}
+
+	void OnGUI () {
+		// Display useful instructions
+		GUI.Box(new Rect(10,10,500,40), prompt);
 	}
 }
