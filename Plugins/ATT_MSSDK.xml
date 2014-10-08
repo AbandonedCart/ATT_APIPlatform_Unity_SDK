@@ -244,7 +244,7 @@
             <param name="audioContentType">Specifies the content type of the audio submitted.</param>
             <returns><see cref="T:ATT_MSSDK.Speechv3.SpeechResponse"/> An Speech response object containing the results.</returns>
             <exception cref="T:System.ArgumentException">Thrown if an argument is invalid.</exception>
-            <exception cref="T:ATT_MSSDK.InvalidScopeException">Thrown if the Request Factory scope does not include SMS.</exception>
+            <exception cref="T:ATT_MSSDK.InvalidScopeException">Thrown if the Request Factory scope does not include STTC.</exception>
             <exception cref="T:ATT_MSSDK.InvalidResponseException">Thrown if the server returns an error or there is a connection failure.</exception>
         </member>
         <member name="M:ATT_MSSDK.RequestFactory.TextToSpeech(System.String,System.String,System.String,System.String,System.String)">
@@ -298,7 +298,7 @@
             <param name="maxAddressCount">Maximum number of addresses.  Its default to 10, but, if APIPlatform changes the value, use the new value as argument</param>
             <returns><see cref="T:ATT_MSSDK.MOBOv1.SendMessageResponse"/>An SmsResponse object containing the results.</returns>
             <exception cref="T:System.ArgumentException">Thrown if an argument is invalid.</exception>
-            <exception cref="T:ATT_MSSDK.InvalidScopeException">Thrown if the Request Factory scope does not include SMS.</exception>
+            <exception cref="T:ATT_MSSDK.InvalidScopeException">Thrown if the Request Factory scope does not include IMMN.</exception>
             <exception cref="T:ATT_MSSDK.InvalidResponseException">Thrown if the server returns an error or there is a connection failure.</exception>
         </member>
         <member name="M:ATT_MSSDK.RequestFactory.SendMessage(System.Collections.Generic.List{System.String},System.String,System.String,System.Boolean,System.Int32)">
@@ -312,7 +312,7 @@
             <param name="maxAddressCount">Maximum number of addresses.  Its default to 10, but, if APIPlatform changes the value, use the new value as argument</param>
             <returns><see cref="T:ATT_MSSDK.MOBOv1.SendMessageResponse"/>An SmsResponse object containing the results.</returns>
             <exception cref="T:System.ArgumentException">Thrown if an argument is invalid.</exception>
-            <exception cref="T:ATT_MSSDK.InvalidScopeException">Thrown if the Request Factory scope does not include SMS.</exception>
+            <exception cref="T:ATT_MSSDK.InvalidScopeException">Thrown if the Request Factory scope does not include IMMN.</exception>
             <exception cref="T:ATT_MSSDK.InvalidResponseException">Thrown if the server returns an error or there is a connection failure.</exception>
         </member>
         <member name="M:ATT_MSSDK.RequestFactory.SendMessage(System.String,System.Collections.Generic.List{System.String},System.String,System.String,System.Boolean,System.Int32)">
@@ -327,7 +327,7 @@
             <param name="maxAddressCount">Maximum number of addresses.  Its default to 10, but, if APIPlatform changes the value, use the new value as argument</param>
             <returns><see cref="T:ATT_MSSDK.MOBOv1.SendMessageResponse"/>An SmsResponse object containing the results.</returns>
             <exception cref="T:System.ArgumentException">Thrown if an argument is invalid.</exception>
-            <exception cref="T:ATT_MSSDK.InvalidScopeException">Thrown if the Request Factory scope does not include SMS.</exception>
+            <exception cref="T:ATT_MSSDK.InvalidScopeException">Thrown if the Request Factory scope does not include IMMN.</exception>
             <exception cref="T:ATT_MSSDK.InvalidResponseException">Thrown if the server returns an error or there is a connection failure.</exception>
         </member>
         <member name="M:ATT_MSSDK.RequestFactory.SendMessage(System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.String,System.String,System.Boolean,System.Int32)">
@@ -342,7 +342,7 @@
             <param name="maxAddressCount">Maximum number of addresses.  Its default to 10, but, if APIPlatform changes the value, use the new value as argument</param>
             <returns><see cref="T:ATT_MSSDK.MOBOv1.SendMessageResponse"/>An SmsResponse object containing the results.</returns>
             <exception cref="T:System.ArgumentException">Thrown if an argument is invalid.</exception>
-            <exception cref="T:ATT_MSSDK.InvalidScopeException">Thrown if the Request Factory scope does not include SMS.</exception>
+            <exception cref="T:ATT_MSSDK.InvalidScopeException">Thrown if the Request Factory scope does not include IMMN.</exception>
             <exception cref="T:ATT_MSSDK.InvalidResponseException">Thrown if the server returns an error or there is a connection failure.</exception>
         </member>
         <member name="M:ATT_MSSDK.RequestFactory.GetDeviceCapabilities">
@@ -802,7 +802,7 @@
             <param name="speechContext">X-Speech Context</param>
             <returns><see cref="T:ATT_MSSDK.Speechv3.SpeechResponse"/> An Speech response object containing the results.</returns>
             <exception cref="T:System.ArgumentException">Thrown if an argument is invalid.</exception>
-            <exception cref="T:ATT_MSSDK.InvalidScopeException">Thrown if the Request Factory scope does not include SMS.</exception>
+            <exception cref="T:ATT_MSSDK.InvalidScopeException">Thrown if the Request Factory scope does not include SPEECH.</exception>
             <exception cref="T:ATT_MSSDK.InvalidResponseException">Thrown if the server returns an error or there is a connection failure.</exception>
         </member>
         <member name="M:ATT_MSSDK.RequestFactory.SpeechToText(System.String,System.Collections.Specialized.NameValueCollection)">
@@ -816,7 +816,7 @@
             X-Arg: param1=value1,param2=value2,param3=value3</param>
             <returns><see cref="T:ATT_MSSDK.Speechv3.SpeechResponse"/> An Speech response object containing the results.</returns>
             <exception cref="T:System.ArgumentException">Thrown if an argument is invalid.</exception>
-            <exception cref="T:ATT_MSSDK.InvalidScopeException">Thrown if the Request Factory scope does not include SMS.</exception>
+            <exception cref="T:ATT_MSSDK.InvalidScopeException">Thrown if the Request Factory scope does not include SPEECH.</exception>
             <exception cref="T:ATT_MSSDK.InvalidResponseException">Thrown if the server returns an error or there is a connection failure.</exception>
         </member>
         <member name="M:ATT_MSSDK.RequestFactory.SpeechToText(System.String,ATT_MSSDK.XSpeechContext,System.Collections.Specialized.NameValueCollection)">
@@ -831,7 +831,7 @@
             X-Arg: param1=value1,param2=value2,param3=value3</param>
             <returns><see cref="T:ATT_MSSDK.Speechv3.SpeechResponse"/> An Speech response object containing the results.</returns>
             <exception cref="T:System.ArgumentException">Thrown if an argument is invalid.</exception>
-            <exception cref="T:ATT_MSSDK.InvalidScopeException">Thrown if the Request Factory scope does not include SMS.</exception>
+            <exception cref="T:ATT_MSSDK.InvalidScopeException">Thrown if the Request Factory scope does not include SPEECH.</exception>
             <exception cref="T:ATT_MSSDK.InvalidResponseException">Thrown if the server returns an error or there is a connection failure.</exception>
         </member>
         <member name="M:ATT_MSSDK.RequestFactory.SpeechToText(System.String,ATT_MSSDK.XSpeechContext,System.String,System.String,System.String,System.String)">
@@ -849,7 +849,7 @@
             <param name="audioContentType">Custom audio content type. e.g. audio/wav</param>
             <returns><see cref="T:ATT_MSSDK.Speechv3.SpeechResponse"/> An Speech response object containing the results.</returns>
             <exception cref="T:System.ArgumentException">Thrown if an argument is invalid.</exception>
-            <exception cref="T:ATT_MSSDK.InvalidScopeException">Thrown if the Request Factory scope does not include SMS.</exception>
+            <exception cref="T:ATT_MSSDK.InvalidScopeException">Thrown if the Request Factory scope does not include SPEECH.</exception>
             <exception cref="T:ATT_MSSDK.InvalidResponseException">Thrown if the server returns an error or there is a connection failure.</exception>
         </member>
         <member name="M:ATT_MSSDK.RequestFactory.SpeechToText(System.String,ATT_MSSDK.Speechv3.XArgs)">
@@ -863,7 +863,7 @@
             X-Arg: param1=value1,param2=value2,param3=value3</param>
             <returns><see cref="T:ATT_MSSDK.Speechv3.SpeechResponse"/> An Speech response object containing the results.</returns>
             <exception cref="T:System.ArgumentException">Thrown if an argument is invalid.</exception>
-            <exception cref="T:ATT_MSSDK.InvalidScopeException">Thrown if the Request Factory scope does not include SMS.</exception>
+            <exception cref="T:ATT_MSSDK.InvalidScopeException">Thrown if the Request Factory scope does not include SPEECH.</exception>
             <exception cref="T:ATT_MSSDK.InvalidResponseException">Thrown if the server returns an error or there is a connection failure.</exception>
         </member>
         <member name="M:ATT_MSSDK.RequestFactory.SpeechToText(System.String,ATT_MSSDK.XSpeechContext,ATT_MSSDK.Speechv3.XArgs)">
@@ -878,7 +878,7 @@
             X-Arg: param1=value1,param2=value2,param3=value3</param>
             <returns><see cref="T:ATT_MSSDK.Speechv3.SpeechResponse"/> An Speech response object containing the results.</returns>
             <exception cref="T:System.ArgumentException">Thrown if an argument is invalid.</exception>
-            <exception cref="T:ATT_MSSDK.InvalidScopeException">Thrown if the Request Factory scope does not include SMS.</exception>
+            <exception cref="T:ATT_MSSDK.InvalidScopeException">Thrown if the Request Factory scope does not include SPEECH.</exception>
             <exception cref="T:ATT_MSSDK.InvalidResponseException">Thrown if the server returns an error or there is a connection failure.</exception>
         </member>
         <member name="M:ATT_MSSDK.RequestFactory.SpeechToText(System.String,ATT_MSSDK.XSpeechContext,ATT_MSSDK.Speechv3.XArgs,System.String,System.String)">
@@ -895,7 +895,7 @@
             <param name="audioContentType">Custom audio content type. e.g. audio/wav</param>
             <returns><see cref="T:ATT_MSSDK.Speechv3.SpeechResponse"/> An Speech response object containing the results.</returns>
             <exception cref="T:System.ArgumentException">Thrown if an argument is invalid.</exception>
-            <exception cref="T:ATT_MSSDK.InvalidScopeException">Thrown if the Request Factory scope does not include SMS.</exception>
+            <exception cref="T:ATT_MSSDK.InvalidScopeException">Thrown if the Request Factory scope does not include SPEECH.</exception>
             <exception cref="T:ATT_MSSDK.InvalidResponseException">Thrown if the server returns an error or there is a connection failure.</exception>
         </member>
         <member name="M:ATT_MSSDK.RequestFactory.SpeechToText(System.String,System.String)">
@@ -906,7 +906,7 @@
             <param name="speechContext">Speech Context</param>
             <returns><see cref="T:ATT_MSSDK.Speechv3.SpeechResponse"/> An Speech response object containing the results.</returns>
             <exception cref="T:System.ArgumentException">Thrown if an argument is invalid.</exception>
-            <exception cref="T:ATT_MSSDK.InvalidScopeException">Thrown if the Request Factory scope does not include SMS.</exception>
+            <exception cref="T:ATT_MSSDK.InvalidScopeException">Thrown if the Request Factory scope does not include SPEECH.</exception>
             <exception cref="T:ATT_MSSDK.InvalidResponseException">Thrown if the server returns an error or there is a connection failure.</exception>
         </member>
         <member name="M:ATT_MSSDK.RequestFactory.SpeechToText(System.String,System.String,System.String)">
@@ -921,7 +921,7 @@
             X-Arg: param1=value1,param2=value2,param3=value3</param>
             <returns><see cref="T:ATT_MSSDK.Speechv3.SpeechResponse"/> An Speech response object containing the results.</returns>
             <exception cref="T:System.ArgumentException">Thrown if an argument is invalid.</exception>
-            <exception cref="T:ATT_MSSDK.InvalidScopeException">Thrown if the Request Factory scope does not include SMS.</exception>
+            <exception cref="T:ATT_MSSDK.InvalidScopeException">Thrown if the Request Factory scope does not include SPEECH.</exception>
             <exception cref="T:ATT_MSSDK.InvalidResponseException">Thrown if the server returns an error or there is a connection failure.</exception>
         </member>
         <member name="M:ATT_MSSDK.RequestFactory.ConvertToText(System.String,System.String,System.Nullable{ATT_MSSDK.XSpeechContext},System.String,System.Collections.Specialized.NameValueCollection,ATT_MSSDK.Speechv3.XArgs)">
