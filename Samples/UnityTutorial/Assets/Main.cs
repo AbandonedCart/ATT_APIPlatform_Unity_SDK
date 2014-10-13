@@ -45,7 +45,8 @@ public class Main : MonoBehaviour {
 		scopes.Add (RequestFactory.ScopeTypes.STTC);
 		
 		ServicePointManager.ServerCertificateValidationCallback = Validator;
-		requestFactory = new RequestFactory(endPoint, apiKey, secretKey, scopes, redirectURI, null);
+		string authTokenFile = Path.Combine (Directory.GetCurrentDirectory (), "auth_token.dat");
+		requestFactory = new RequestFactory(endPoint, apiKey, secretKey, scopes, redirectURI, null, authTokenFile);
 	}
 	
 	IEnumerator EndRecording()
