@@ -7,6 +7,11 @@
 *.userprefs
 metadata/
 Temp/
+ScriptAssemblies/
+AssetServerCacheV3
+ScriptMapper
+assetDatabase3
+guidmapper
 
 # Sample generated files
 auth_token.dat
