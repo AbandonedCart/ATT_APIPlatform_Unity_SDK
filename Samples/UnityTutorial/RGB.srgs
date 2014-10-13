@@ -1,0 +1,9 @@
+<grammar root="top" xml:lang="en-US"> 
+  <rule id="top" scope="public"> 
+    <one-of> 
+      <item>red</item> 
+      <item>green</item> 
+      <item>blue</item> 
+    </one-of> 
+  </rule> 
+</grammar> 

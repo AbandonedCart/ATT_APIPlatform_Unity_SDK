@@ -1110,48 +1110,6 @@
             <param name="transactionOperationStatus">Transaction operation status</param>
             <returns>The <see cref="T:ATT_MSSDK.Paymentv3.CommitTransactionResponse"/> containing the commit transaction response</returns>
         </member>
-        <member name="M:ATT_MSSDK.RequestFactory.GetNotificationIds(System.IO.Stream)">
-            <summary>
-            Method fetches notification ids from the stream.
-            </summary>
-            <param name="stream">Input stream received from listener</param>
-            <returns>The <see cref="T:ATT_MSSDK.Paymentv3.NotificationId"/>List of Notification Ids</returns>
-        </member>
-        <member name="M:ATT_MSSDK.RequestFactory.AcknowledgeNotifications(System.IO.Stream)">
-            <summary>
-            Method fetches notification ids, and get the notification data and acknowledge the nofitication.
-            </summary>
-            <param name="stream">Input stream received from listener</param>
-            <returns>The <see cref="T:ATT_MSSDK.Paymentv3.NotificationObject"/> List of Notification Data</returns>
-        </member>
-        <member name="M:ATT_MSSDK.RequestFactory.GetNotification(System.String)">
-            <summary>
-            Method fetches notification data for the given notification Id.
-            </summary>
-            <param name="notificationId">Notification Id</param>
-            <returns>The <see cref="T:ATT_MSSDK.Paymentv3.NotificationObject"/>Notificaiton Data</returns>
-        </member>
-        <member name="M:ATT_MSSDK.RequestFactory.GetNotification(System.Collections.Generic.List{System.String})">
-            <summary>
-            Method fetches notification data for the given list of notification Ids.
-            </summary>
-            <param name="notificationIds">List of Notification Ids</param>
-            <returns>The <see cref="T:ATT_MSSDK.Paymentv3.NotificationObject"/>List of Notificaiton Data</returns>
-        </member>
-        <member name="M:ATT_MSSDK.RequestFactory.AcknowledgeNotifications(System.Collections.Generic.List{System.String})">
-            <summary>
-            This method acknowledges notifications, and requests that the notifications be stopped for a list of NotificationIds.
-            </summary>
-            <param name="notificationIds">Input stream received from listener</param>
-            <returns>The <see cref="T:ATT_MSSDK.Paymentv3.AcknowledgeNotificationResponse"/> List of Acknowledgement Notification responses </returns>
-        </member>
-        <member name="M:ATT_MSSDK.RequestFactory.AcknowledgeNotifications(System.String)">
-            <summary>
-            Method acknowledges notification and requests that the notifications be stopped for a particular NotificationId.
-            </summary>
-            <param name="notificationId">Input stream received from listener</param>
-            <returns>The <see cref="T:ATT_MSSDK.Paymentv3.AcknowledgeNotificationResponse"/> response of Acknowledgement Notification </returns>
-        </member>
         <member name="P:ATT_MSSDK.RequestFactory.EndPoint">
             <summary>
             Gets or sets the EndPoint for this RequestFactory.

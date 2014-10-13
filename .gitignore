@@ -4,4 +4,10 @@
 *.bin
 *.db
 *.log
+*.userprefs
 metadata/
+Temp/
+
+# Sample generated files
+auth_token.dat
+recordedSpeech.wav

@@ -42,8 +42,9 @@ public class Main : MonoBehaviour {
 		
 		// Scopes the application is granted.
 		List<RequestFactory.ScopeTypes> scopes = new List<RequestFactory.ScopeTypes>();
+		scopes.Add (RequestFactory.ScopeTypes.Speech);
 		scopes.Add (RequestFactory.ScopeTypes.STTC);
-		
+
 		ServicePointManager.ServerCertificateValidationCallback = Validator;
 		string authTokenFile = Path.Combine (Directory.GetCurrentDirectory (), "auth_token.dat");
 		requestFactory = new RequestFactory(endPoint, apiKey, secretKey, scopes, redirectURI, null, authTokenFile);
@@ -91,27 +92,26 @@ public class Main : MonoBehaviour {
 		ATT_MSSDK.Speechv3.SpeechResponse response = SpeechToTextService(filename, "audio/wav", "RGB.srgs");
 		Debug.Log ("Speech-to-text webservice call completed in " + (Environment.TickCount - webserviceStartTimeInMilliseconds).ToString() + " milliseconds");
 
-		Debug.Log ("Setting cube color");
+		if (response != null) {
+			Debug.Log ("Setting cube color");
 
-		string speechOutput = response.Recognition.NBest[0].ResultText;
-		Debug.Log(speechOutput);
-		prompt = pleasePrompt;
+			string speechOutput = response.Recognition.NBest [0].ResultText;
+			Debug.Log (speechOutput);
+			prompt = pleasePrompt;
 
-		string text = speechOutput.ToLower();
-		
-		if (text.Contains("red"))
-		{
-			gameObject.renderer.material.color = Color.red;
-		}
-		
-		if (text.Contains("green"))
-		{
-			gameObject.renderer.material.color = Color.green;
-		}
-		
-		if (text.Contains("blue"))
-		{
-			gameObject.renderer.material.color = Color.blue;
+			string text = speechOutput.ToLower ();
+
+			if (text.Contains ("red")) {
+				gameObject.renderer.material.color = Color.red;
+			}
+
+			if (text.Contains ("green")) {
+				gameObject.renderer.material.color = Color.green;
+			}
+
+			if (text.Contains ("blue")) {
+				gameObject.renderer.material.color = Color.blue;
+			}
 		}
 	}
 
