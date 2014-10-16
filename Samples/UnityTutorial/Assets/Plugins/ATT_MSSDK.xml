@@ -539,6 +539,22 @@
             <exception cref="T:System.ArgumentNullException">Thrown when inputStream is null</exception>
             <exception cref="T:ATT_MSSDK.InvalidResponseException">Thrown when unable to parse given stream</exception>
         </member>
+        <member name="M:ATT_MSSDK.RequestFactory.#ctor(System.String,System.String,System.String,System.Collections.Generic.List{ATT_MSSDK.RequestFactory.ScopeTypes},System.String,System.String,ATT_MSSDK.ITokenCache,ATT_MSSDK.ISender)">
+            <summary>
+            Initializes a new instance of the RequestFactory class. If application creates and uses multiple instances of Request Factory, then aplication should use this constructor to create Request Factory instance.
+            This constructor takes the filepath passed as parameter to store/load the access token. So instead of each RequestFactory instance getting its own access token,  access token saved/loaded from the file will be reused.
+            </summary>
+            <param name="endPoint">The End Point URL.  This defaults to https://api.att.com.</param>
+            <param name="clientId">The client id of your application.</param>
+            <param name="clientSecret">The client secret of your application.</param>
+            <param name="scopes">One or more values from  SMS, MMS, SPEECH etc.</param>
+            <param name="redirectUri">The URL for the OAuth redirect.  Required if scopes include Terminal Location or Device Capabilities</param>
+            <param name="proxyAddress">The URL and Port number of your proxy, if you have one.  For example: http://proxy:8888.</param>
+            <param name="tokenCache">Object responsible for persisting the authorization token.</param>
+            <param name="sender">Object responsible for sending AT&amp;T API network requests.</param>
+            <exception cref="T:System.ArgumentException">Thrown if an argument is incorrect.</exception> 
+            <exception cref="T:System.ArgumentNullException">Thrown if an argument is unexpectedly null.</exception> 
+        </member>
         <member name="M:ATT_MSSDK.RequestFactory.#ctor(System.String,System.String,System.String,System.Collections.Generic.List{ATT_MSSDK.RequestFactory.ScopeTypes},System.String,System.String,System.String)">
             <summary>
             Initializes a new instance of the RequestFactory class. If application creates and uses multiple instances of Request Factory, then aplication should use this constructor to create Request Factory instance.
@@ -552,6 +568,7 @@
             <param name="proxyAddress">The URL and Port number of your proxy, if you have one.  For example: http://proxy:8888.</param>
             <param name="tokenFilePath">The filepath for saving/loading the access token. RequestFactory instance loads and saves the access token in this file.</param>
             <exception cref="T:System.ArgumentException">Thrown if the arguments are incorrect.</exception> 
+            <exception cref="T:System.ArgumentNullException">Thrown if an argument is unexpectedly null.</exception> 
         </member>
         <member name="M:ATT_MSSDK.RequestFactory.#ctor(System.String,System.String,System.String,System.Collections.Generic.List{ATT_MSSDK.RequestFactory.ScopeTypes},System.String,System.String)">
             <summary>
@@ -564,6 +581,7 @@
             <param name="redirectUri">The URL for the OAuth redirect.  Required if scopes include Terminal Location or Device Capabilities</param>
             <param name="proxyAddress">The URL and Port number of your proxy, if you have one.  For example: http://proxy:8888.</param>
             <exception cref="T:System.ArgumentException">Thrown if the arguments are incorrect.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown if an argument is unexpectedly null.</exception> 
         </member>
         <member name="M:ATT_MSSDK.RequestFactory.#ctor(System.String,System.String,System.String,System.Collections.Generic.List{ATT_MSSDK.RequestFactory.ScopeTypes},System.String,System.String,System.Int32)">
             <summary>
@@ -580,11 +598,7 @@
             <param name="proxyAddress">The URL and Port number of your proxy, if you have one.  For example: http://proxy:8888.</param>
             <param name="timeout">Timeout value in milliseconds to be used by request factory for setting HttpWebRequest.timeout property while invoking HttpWebRequest  For example:5000.</param>
             <exception cref="T:System.ArgumentException">Thrown if the arguments are incorrect.</exception>
-        </member>
-        <member name="F:ATT_MSSDK.RequestFactory.ClientSdk">
-            <summary>
-            ClientSdk value to be hardcoded in XArgs for MSSDK .
-            </summary>
+            <exception cref="T:System.ArgumentNullException">Thrown if an argument is unexpectedly null.</exception> 
         </member>
         <member name="M:ATT_MSSDK.RequestFactory.ResetCredentials">
             <summary>
@@ -681,40 +695,6 @@
             <exception cref="T:ATT_MSSDK.InvalidResponseException">Thrown if the server returns an error or there is a connection failure.</exception>
             <returns>The response to the API call.</returns>
         </member>
-        <member name="M:ATT_MSSDK.RequestFactory.Send(ATT_MSSDK.RequestFactory.HTTPMethods,System.String,System.Collections.Specialized.NameValueCollection,System.Byte[],System.String,System.String,System.Boolean)">
-            <summary>
-            Sends a message to the endpoint specified for this RequestFactory.
-            </summary>
-            <param name="method">The HTTP Method to use</param>
-            <param name="relativeUri">Uri to concatenate with EndPoint</param>
-            <param name="headers">HTTP Headers to include in the request</param>
-            <param name="bodyBytes">Bytes to put into the body</param>
-            <param name="contentType">MIME Type of the request, e.g., application/json or application/xml</param>
-            <param name="accept">MIME Type of the returned value, e.g., application/json or application/xml</param>
-            <param name="returnWebResponse">boolean value to indicate if the raw web response has to be returned</param>
-            <exception cref="T:ATT_MSSDK.InvalidResponseException">Thrown if the server returns an error or there is a connection failure.</exception>
-            <returns>The response to the API call.</returns>
-        </member>
-        <member name="M:ATT_MSSDK.RequestFactory.Send(System.String,System.Collections.Specialized.NameValueCollection,System.Byte[],System.String,System.String)">
-            <summary>
-            Sends a message to the endpoint specified for this RequestFactory.
-            </summary>
-            <param name="relativeUri">Uri to concatenate with EndPoint</param>
-            <param name="headers">HTTP Headers to include in the request</param>
-            <param name="body">byte data to POST</param>
-            <param name="contentType">MIME Type of the request, e.g., application/json or application/xml</param>
-            <param name="accept">MIME Type of the returned value, e.g., application/json or application/xml</param>
-            <exception cref="T:ATT_MSSDK.InvalidResponseException">Thrown if the server returns an error or there is a connection failure.</exception>
-            <returns>The response to the API call.</returns>
-        </member>
-        <member name="M:ATT_MSSDK.RequestFactory.CheckForClientSdkInXArgs(System.Collections.Specialized.NameValueCollection)">
-            <summary>
-            Checks if header contains ClientSdk name value pair. 
-            If ClientSdk name value pair is present in XArgs it is overwritten else ClientSdk name value Pair is added to XArgs header
-            </summary>
-            <param name="headers">headers to be added to WebRequest</param>
-            <returns>Header with ClientSdk name value pair added/overwritten in XArgs.</returns>
-        </member>
         <member name="M:ATT_MSSDK.RequestFactory.DoPost(System.String,System.Collections.Specialized.NameValueCollection)">
             <summary>
             HTTP POSTs the Parameters to the specified URI
@@ -796,21 +776,6 @@
             </summary>
             <returns>The <see cref="T:ATT_MSSDK.OAuthToken"/> returned by the server.</returns>
         </member>
-        <member name="M:ATT_MSSDK.RequestFactory.GetNewClientCredential(System.String)">
-            <summary>
-            Get New client credential and save it in tokefile.
-            </summary>
-            <returns>OAuthToken.</returns>
-            <exception cref="T:ATT_MSSDK.InvalidResponseException">Thrown if the server returns an error or there is a connection failure.</exception>
-            <exception cref="T:System.ArgumentException">Thrown tokenFilePath is invalid.</exception>
-        </member>
-        <member name="M:ATT_MSSDK.RequestFactory.loadClientCredentialToken(System.String)">
-            <summary>
-            Load client credential from tokefile.
-            </summary>
-            <returns>OAuthToken.</returns>
-            <exception cref="T:ATT_MSSDK.InvalidResponseException">Thrown if the server returns an error or there is a connection failure.</exception>
-        </member>
         <member name="M:ATT_MSSDK.RequestFactory.GetRefreshedClientCredential">
             <summary>
             Contact the OAuth endpoint to refresh existing client credentials.
@@ -825,7 +790,7 @@
         </member>
         <member name="M:ATT_MSSDK.RequestFactory.GetClientCredentials">
             <summary>
-            If the current credentials have expired or have never been set then get them from the OAuth endpoint.
+            Get valid client credentials from the best available source
             </summary>
         </member>
         <member name="M:ATT_MSSDK.RequestFactory.SpeechToText(System.String)">
@@ -1489,6 +1454,34 @@
             Base class for all Error objects
             </summary>
         </member>
+        <member name="T:ATT_MSSDK.ITokenCache">
+            <summary>
+            methods for accessing any type of token cache.
+            </summary>
+        </member>
+        <member name="M:ATT_MSSDK.ITokenCache.LoadToken">
+            <summary>
+            Get a client auth token from some kind of storage.
+            </summary>
+            <returns>client auth token</returns>
+        </member>
+        <member name="M:ATT_MSSDK.ITokenCache.SaveToken(ATT_MSSDK.OAuthToken)">
+            <summary>
+            Store a client auth token in some kind of storage.
+            </summary>
+            <param name="token">client auth token</param>
+        </member>
+        <member name="M:ATT_MSSDK.FileTokenCache.LoadToken">
+            <summary>
+            Get an authorization token from a file
+            </summary>
+        </member>
+        <member name="M:ATT_MSSDK.FileTokenCache.SaveToken(ATT_MSSDK.OAuthToken)">
+            <summary>
+            Store an authorization token in a file
+            </summary>
+            <param name="token"></param>
+        </member>
         <member name="T:ATT_MSSDK.IAM.Delta">
             <summary>
             A container that lists the updates based on message type TEXT, MMS
@@ -2057,6 +2050,35 @@
             Gets or sets the value of message subject.
             </summary>
         </member>
+        <member name="T:ATT_MSSDK.ISender">
+            <summary>
+            Methods for sending AT&amp;T API network requests for the MS SDK.
+            </summary>
+        </member>
+        <member name="M:ATT_MSSDK.ISender.Send(ATT_MSSDK.RequestFactory.HTTPMethods,System.String,System.Collections.Specialized.NameValueCollection,System.Byte[],System.String,System.String,System.Boolean)">
+            <summary>
+            Send an AT&amp;T API request.
+            </summary>
+            <param name="method">HTTP verb</param>
+            <param name="relativeUri">URL path</param>
+            <param name="headers">HTTP headers</param>
+            <param name="bodyBytes">HTTP body content</param>
+            <param name="contentType">HTTP body content type</param>
+            <param name="accept">Acceptable response types</param>
+            <param name="returnWebResponse">should the WebResponse object be returned?</param>
+            <returns>WebResponse object, or null</returns>
+        </member>
+        <member name="M:ATT_MSSDK.ISender.Send(System.String,System.Collections.Specialized.NameValueCollection,System.Byte[],System.String,System.String)">
+            <summary>
+            Send an AT&amp;T API request.
+            </summary>
+            <param name="relativeUri">URL path</param>
+            <param name="headers">HTTP headers</param>
+            <param name="body">HTTP body content</param>
+            <param name="contentType">HTTP body content type</param>
+            <param name="accept">Acceptable response types</param>
+            <returns>response body</returns>
+        </member>
         <member name="T:ATT_MSSDK.MMSv3.DeliveryInfo">
             <summary>
             Encapsulates the delivery info returned by the server for MMS messages.
@@ -2400,6 +2422,58 @@
             <summary>
             Gets or sets the value of error object, which contains the error information.
             </summary>
+        </member>
+        <member name="T:ATT_MSSDK.Sender">
+            <summary>
+            Methods for sending AT&amp;T API network requests for the MS SDK.
+            </summary>
+        </member>
+        <member name="F:ATT_MSSDK.Sender.ClientSdk">
+            <summary>
+            ClientSdk value to be hardcoded in XArgs for MSSDK .
+            </summary>
+        </member>
+        <member name="M:ATT_MSSDK.Sender.#ctor(System.Uri,System.Collections.Generic.List{ATT_MSSDK.RequestFactory.ScopeTypes},System.Int32,System.Uri)">
+            <summary>
+            Construct an object for sending AT&amp;T API requests.
+            </summary>
+            <param name="endPoint">AT&amp;T API host</param>
+            <param name="requestTimeout">request timeout</param>
+            <param name="proxyAddress">proxy server</param>
+        </member>
+        <member name="M:ATT_MSSDK.Sender.Send(ATT_MSSDK.RequestFactory.HTTPMethods,System.String,System.Collections.Specialized.NameValueCollection,System.Byte[],System.String,System.String,System.Boolean)">
+            <summary>
+            Sends a message to the endpoint specified for this RequestFactory.
+            </summary>
+            <param name="method">The HTTP Method to use</param>
+            <param name="relativeUri">Uri to concatenate with EndPoint</param>
+            <param name="headers">HTTP Headers to include in the request</param>
+            <param name="bodyBytes">Bytes to put into the body</param>
+            <param name="contentType">MIME Type of the request, e.g., application/json or application/xml</param>
+            <param name="accept">MIME Type of the returned value, e.g., application/json or application/xml</param>
+            <param name="returnWebResponse">boolean value to indicate if the raw web response has to be returned, or just the response body content as a string.</param>
+            <exception cref="T:ATT_MSSDK.InvalidResponseException">Thrown if the server returns an error or there is a connection failure.</exception>
+            <returns>The response to the API call.</returns>
+        </member>
+        <member name="M:ATT_MSSDK.Sender.Send(System.String,System.Collections.Specialized.NameValueCollection,System.Byte[],System.String,System.String)">
+            <summary>
+            Sends a message to the endpoint specified for this RequestFactory.
+            </summary>
+            <param name="relativeUri">Uri to concatenate with EndPoint</param>
+            <param name="headers">HTTP Headers to include in the request</param>
+            <param name="body">byte data to POST</param>
+            <param name="contentType">MIME Type of the request, e.g., application/json or application/xml</param>
+            <param name="accept">MIME Type of the returned value, e.g., application/json or application/xml</param>
+            <exception cref="T:ATT_MSSDK.InvalidResponseException">Thrown if the server returns an error or there is a connection failure.</exception>
+            <returns>The response to the API call.</returns>
+        </member>
+        <member name="M:ATT_MSSDK.Sender.CheckForClientSdkInXArgs(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Checks if header contains ClientSdk name value pair. 
+            If ClientSdk name value pair is present in XArgs it is overwritten else ClientSdk name value Pair is added to XArgs header
+            </summary>
+            <param name="headers">headers to be added to WebRequest</param>
+            <returns>Header with ClientSdk name value pair added/overwritten in XArgs.</returns>
         </member>
         <member name="T:ATT_MSSDK.ServiceErrorObject">
             <summary>
@@ -3574,6 +3648,25 @@
             0 is the default rate of word output.
             Lower (negative) values produce fewer words per second, higher values produce more words per second. This parameter is not related to the output audio sample rate 
             </summary>
+        </member>
+        <member name="T:ATT_MSSDK.InvalidTokenCacheException">
+            <summary>
+            An exception representing any failure in an implementation
+            of ITokenCache.
+            </summary>
+        </member>
+        <member name="M:ATT_MSSDK.InvalidTokenCacheException.#ctor(System.String)">
+            <summary>
+            Construct an exception indicating a token cache error.
+            </summary>
+            <param name="message">exception details</param>
+        </member>
+        <member name="M:ATT_MSSDK.InvalidTokenCacheException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct an exception indicating a token cache error.
+            </summary>
+            <param name="message">exception details</param>
+            <param name="ex">inner exception</param>
         </member>
         <member name="T:ATT_MSSDK.TokenConstants">
             <summary>
