@@ -31,23 +31,26 @@ public class Main : MonoBehaviour {
 		// API Gateway Endpoint. https://api.att.com
 		string endPoint = "https://api.att.com";
 		
-		// Application key registered at developer portal.
-		string apiKey = "37yi0iupaiqoaoxwypfff2td6poatmg8";   
+		// Application key and secret. These are generated when you create a new
+		// application registration at https://developer.att.com. Please ensure
+		// your application is authorized to use the SPEECH and STTC scopes.
+		string apiKey = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";   
+		string secretKey = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
 		
-		//Secret Key of the application as registered at developer portal.
-		string secretKey = "y6rvmheod0jc9yfaymrvxfxhdpr06npo";
-		
-		// OAuth redirect URL configured at developer portal. This is required only for apps having Authorization credential model.
-		string redirectURI = null;
-		
-		// Scopes the application is granted.
+		// Scopes the application is granted. 'Speech' scope is required to use
+		// the RequestFactory.SpeechToText methods, and 'STTC' scope is required
+		// to use the RequestFactory.SpeechToTextCustom methods.
 		List<RequestFactory.ScopeTypes> scopes = new List<RequestFactory.ScopeTypes>();
 		scopes.Add (RequestFactory.ScopeTypes.Speech);
 		scopes.Add (RequestFactory.ScopeTypes.STTC);
 
 		ServicePointManager.ServerCertificateValidationCallback = Validator;
 		string authTokenFile = Path.Combine (Directory.GetCurrentDirectory (), "auth_token.dat");
-		requestFactory = new RequestFactory(endPoint, apiKey, secretKey, scopes, redirectURI, null, authTokenFile);
+
+		// The requestFactory is the single access point for all AT&T SDK APIs.
+		// Using this constructor will attempt to re-use an existing authorization
+		// token from a file, and only generate a new one if necessary.
+		requestFactory = new RequestFactory(endPoint, apiKey, secretKey, scopes, null, null, authTokenFile);
 	}
 	
 	IEnumerator EndRecording()
@@ -101,7 +104,11 @@ public class Main : MonoBehaviour {
 
 			string text = speechOutput.ToLower ();
 
-			if (text.Contains ("red")) {
+			// when a standard text-to-speech call is used, the spoken
+			// word 'red' can be interpreted as 'read'. If the custom
+			// grammar file is used, with the TextToSpeechCustom API,
+			// then it will always return 'red'.
+			if (text.Contains ("red") || text.Contains("read")) {
 				gameObject.renderer.material.color = Color.red;
 			}
 
