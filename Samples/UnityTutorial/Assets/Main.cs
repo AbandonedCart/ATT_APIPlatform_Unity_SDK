@@ -9,6 +9,9 @@ using System.Net.Security;
 
 using ATT_MSSDK;
 using ATT_MSSDK.Speechv3;
+using NLog.Config;
+using NLog.Targets;
+using NLog;
 
 public class Main : MonoBehaviour {
 
@@ -28,14 +31,16 @@ public class Main : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		InitLogging ();
+
 		// API Gateway Endpoint. https://api.att.com
 		string endPoint = "https://api.att.com";
 		
 		// Application key and secret. These are generated when you create a new
 		// application registration at https://developer.att.com. Please ensure
 		// your application is authorized to use the SPEECH and STTC scopes.
-		string apiKey = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";   
-		string secretKey = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+		string apiKey = "37yi0iupaiqoaoxwypfff2td6poatmg8";
+		string secretKey = "y6rvmheod0jc9yfaymrvxfxhdpr06npo";
 		
 		// Scopes the application is granted. 'Speech' scope is required to use
 		// the RequestFactory.SpeechToText methods, and 'STTC' scope is required
@@ -175,7 +180,7 @@ public class Main : MonoBehaviour {
 		if(Input.GetKeyDown(KeyCode.B)) {
 			gameObject.renderer.material.color = Color.blue;
 		}
-		if (Microphone.IsRecording(null) && Input.GetKeyUp(KeyCode.S)) {
+		if (Input.GetKeyUp(KeyCode.S)) {
 			StartCoroutine(EndRecording());
 		} else if (!Microphone.IsRecording(null) && !audio.isPlaying && Input.GetKeyDown (KeyCode.S)) {
 			Debug.Log("Recording");
@@ -188,5 +193,21 @@ public class Main : MonoBehaviour {
 	void OnGUI () {
 		// Display useful instructions
 		GUI.Box(new Rect(10,10,500,40), prompt);
+	}
+
+	// Let the internal logging of ATT_MSSDK.dll go out to the file mssdk.debug
+	void InitLogging ()
+	{
+		// magic incantations necessary to properly set up NLog
+		var config = new LoggingConfiguration();
+		var target = new FileTarget();
+		target.FileName = "mssdk.debug";
+		target.Layout = "${level}: ${message}";
+		target.AutoFlush = true;
+		target.ForceManaged = true; // required for Mono/Unity compatibility
+		config.AddTarget("file", target);
+		var rule = new LoggingRule("*", LogLevel.Trace, target);
+		config.LoggingRules.Add(rule);
+		LogManager.Configuration = config;
 	}
 }

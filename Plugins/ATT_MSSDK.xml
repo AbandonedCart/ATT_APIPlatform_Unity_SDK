@@ -106,6 +106,21 @@
             <exception cref="T:ATT_MSSDK.InvalidResponseException">Thrown if the server returns an error.</exception>
             <returns><see cref="T:ATT_MSSDK.Advertisementv1.AdResponse"/> An AdResponse object containing the results.</returns>        
         </member>
+        <member name="M:ATT_MSSDK.RequestFactory.GetNewClientCredential(System.String)">
+            <summary>
+            Get New client credential and save it in tokefile.
+            </summary>
+            <returns>OAuthToken.</returns>
+            <exception cref="T:ATT_MSSDK.InvalidResponseException">Thrown if the server returns an error or there is a connection failure.</exception>
+            <exception cref="T:System.ArgumentException">Thrown tokenFilePath is invalid.</exception>
+        </member>
+        <member name="M:ATT_MSSDK.RequestFactory.loadClientCredentialToken(System.String)">
+            <summary>
+            Load client credential from tokefile.
+            </summary>
+            <returns>OAuthToken.</returns>
+            <exception cref="T:System.ArgumentException">Thrown if tokenFilePath is null or empty.</exception>
+        </member>
         <member name="M:ATT_MSSDK.RequestFactory.SendMessage(ATT_MSSDK.IAM.MessageRequest,System.Int32)">
             <summary>
             Send SMS or MMS to maximum of ten recipients. 
@@ -599,6 +614,11 @@
             <param name="timeout">Timeout value in milliseconds to be used by request factory for setting HttpWebRequest.timeout property while invoking HttpWebRequest  For example:5000.</param>
             <exception cref="T:System.ArgumentException">Thrown if the arguments are incorrect.</exception>
             <exception cref="T:System.ArgumentNullException">Thrown if an argument is unexpectedly null.</exception> 
+        </member>
+        <member name="F:ATT_MSSDK.RequestFactory.logger">
+            <summary>
+            Global logging method
+            </summary>
         </member>
         <member name="M:ATT_MSSDK.RequestFactory.ResetCredentials">
             <summary>
@@ -1136,9 +1156,9 @@
             </summary>
         </member>
         <member name="F:ATT_MSSDK.RequestFactory.ScopeTypes.Payment">
-            <summary>		
-            Payment scope		
-            </summary>		
+            <summary>
+            Payment scope
+            </summary>
         </member>
         <member name="F:ATT_MSSDK.RequestFactory.ScopeTypes.SMS">
             <summary>

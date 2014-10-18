@@ -48,8 +48,12 @@
   <ItemGroup>
      <Compile Include="Assets\Plugins\AT&amp;T SDK\WaveGen.cs" />
      <None Include="Assets\Plugins\ATT_MSSDK.xml" />
+     <None Include="Assets\Plugins\NLog.xml" />
  <Reference Include="ATT_MSSDK">
- <HintPath>C:/Users/Bruce/Documents/GitHub/ATT_APIPlatform_Unity_SDK/Samples/UnityTutorial/Assets/Plugins/ATT_MSSDK.dll</HintPath>
+ <HintPath>Assets/Plugins/ATT_MSSDK.dll</HintPath>
+ </Reference>
+ <Reference Include="NLog">
+ <HintPath>Assets/Plugins/NLog.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

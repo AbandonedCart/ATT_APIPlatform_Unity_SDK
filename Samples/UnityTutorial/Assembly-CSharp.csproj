@@ -48,9 +48,13 @@
   <ItemGroup>
      <Compile Include="Assets\Main.cs" />
      <None Include="Assets\Plugins\ATT_MSSDK.xml" />
- <Reference Include="ATT_MSSDK">
- <HintPath>C:/Users/Bruce/Documents/GitHub/ATT_APIPlatform_Unity_SDK/Samples/UnityTutorial/Assets/Plugins/ATT_MSSDK.dll</HintPath>
- </Reference>
+     <None Include="Assets\Plugins\NLog.xml" />
+  <Reference Include="ATT_MSSDK">
+    <HintPath>Assets/Plugins/ATT_MSSDK.dll</HintPath>
+  </Reference>
+  <Reference Include="NLog">
+    <HintPath>Assets/Plugins/NLog.dll</HintPath>
+  </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
