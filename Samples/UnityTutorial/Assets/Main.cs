@@ -7,8 +7,8 @@ using System.Net;
 using System.Security.Cryptography.X509Certificates;
 using System.Net.Security;
 
-using ATT_UNITY_SDK;
-using ATT_UNITY_SDK.Speechv3;
+using ATT_MSSDK;
+using ATT_MSSDK.Speechv3;
 
 public class Main : MonoBehaviour {
 
@@ -92,7 +92,7 @@ public class Main : MonoBehaviour {
 		Debug.Log ("Calling speech-to-text webservice");
 
 		int webserviceStartTimeInMilliseconds = Environment.TickCount;
-		ATT_UNITY_SDK.Speechv3.SpeechResponse response = SpeechToTextService(filename, "audio/wav", "RGB.srgs");
+		ATT_MSSDK.Speechv3.SpeechResponse response = SpeechToTextService(filename, "audio/wav", "RGB.srgs");
 		Debug.Log ("Speech-to-text webservice call completed in " + (Environment.TickCount - webserviceStartTimeInMilliseconds).ToString() + " milliseconds");
 
 		if (response != null) {
@@ -126,7 +126,7 @@ public class Main : MonoBehaviour {
 	/// Method that calls SpeechToText method of RequestFactory to transcribe to text
 	/// </summary>
 	/// <param name="FileName">Wave file to transcribe</param>
-	private ATT_UNITY_SDK.Speechv3.SpeechResponse SpeechToTextService(String AudioFileName, String AudioContentType, String GrammarFileName)
+	private ATT_MSSDK.Speechv3.SpeechResponse SpeechToTextService(String AudioFileName, String AudioContentType, String GrammarFileName)
 	{
 		try
 		{
