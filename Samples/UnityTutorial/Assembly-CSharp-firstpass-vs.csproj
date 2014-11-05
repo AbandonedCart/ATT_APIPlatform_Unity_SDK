@@ -47,9 +47,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Plugins\AT&amp;T SDK\WaveGen.cs" />
-     <None Include="Assets\Plugins\ATT_MSSDK.xml" />
- <Reference Include="ATT_MSSDK">
- <HintPath>C:/Users/Bruce/Documents/GitHub/ATT_APIPlatform_Unity_SDK/Samples/UnityTutorial/Assets/Plugins/ATT_MSSDK.dll</HintPath>
+ <Reference Include="ATT_UNITY_SDK">
+ <HintPath>C:/Users/Bruce/Documents/GitHub/ATT_APIPlatform_Unity_SDK/Samples/UnityTutorial/Assets/Plugins/ATT_UNITY_SDK.dll</HintPath>
+ </Reference>
+ <Reference Include="Newtonsoft.Json">
+ <HintPath>C:/Users/Bruce/Documents/GitHub/ATT_APIPlatform_Unity_SDK/Samples/UnityTutorial/Assets/Plugins/Newtonsoft.Json.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

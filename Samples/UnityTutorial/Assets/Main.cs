@@ -7,11 +7,8 @@ using System.Net;
 using System.Security.Cryptography.X509Certificates;
 using System.Net.Security;
 
-using ATT_MSSDK;
-using ATT_MSSDK.Speechv3;
-using NLog.Config;
-using NLog.Targets;
-using NLog;
+using ATT_UNITY_SDK;
+using ATT_UNITY_SDK.Speechv3;
 
 public class Main : MonoBehaviour {
 
@@ -31,8 +28,6 @@ public class Main : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		InitLogging ();
-
 		// API Gateway Endpoint. https://api.att.com
 		string endPoint = "https://api.att.com";
 		
@@ -97,7 +92,7 @@ public class Main : MonoBehaviour {
 		Debug.Log ("Calling speech-to-text webservice");
 
 		int webserviceStartTimeInMilliseconds = Environment.TickCount;
-		ATT_MSSDK.Speechv3.SpeechResponse response = SpeechToTextService(filename, "audio/wav", "RGB.srgs");
+		ATT_UNITY_SDK.Speechv3.SpeechResponse response = SpeechToTextService(filename, "audio/wav", "RGB.srgs");
 		Debug.Log ("Speech-to-text webservice call completed in " + (Environment.TickCount - webserviceStartTimeInMilliseconds).ToString() + " milliseconds");
 
 		if (response != null) {
@@ -131,7 +126,7 @@ public class Main : MonoBehaviour {
 	/// Method that calls SpeechToText method of RequestFactory to transcribe to text
 	/// </summary>
 	/// <param name="FileName">Wave file to transcribe</param>
-	private ATT_MSSDK.Speechv3.SpeechResponse SpeechToTextService(String AudioFileName, String AudioContentType, String GrammarFileName)
+	private ATT_UNITY_SDK.Speechv3.SpeechResponse SpeechToTextService(String AudioFileName, String AudioContentType, String GrammarFileName)
 	{
 		try
 		{
@@ -165,6 +160,7 @@ public class Main : MonoBehaviour {
 		finally
 		{
 			Debug.Log("SpeechToTextService completed.");
+			prompt = pleasePrompt;
 		}
 		return null;
 	}
@@ -180,6 +176,23 @@ public class Main : MonoBehaviour {
 		if(Input.GetKeyDown(KeyCode.B)) {
 			gameObject.renderer.material.color = Color.blue;
 		}
+		if(Input.GetKeyDown(KeyCode.N)) {
+			Debug.Log ("Getting new client token...");
+			requestFactory.ClientCredential = requestFactory.GetNewClientCredential();
+			Debug.Log ("New client token obtained.");
+			prompt = pleasePrompt;
+		}
+		if(Input.GetKeyDown(KeyCode.V)) {
+			Debug.Log ("Revoking client token...");
+			requestFactory.RevokeToken(requestFactory.ClientCredential.RefreshToken);
+			requestFactory.ClientCredential = null;
+			Debug.Log ("Client token revoked.");
+			prompt = "access_token: revoked";
+		}
+		if(Input.GetKeyDown(KeyCode.T)) {
+			Debug.Log ("Showing client token: " + requestFactory.ClientCredential.AccessToken);
+			prompt = "access_token: " + requestFactory.ClientCredential.AccessToken;
+		}
 		if (Input.GetKeyUp(KeyCode.S)) {
 			StartCoroutine(EndRecording());
 		} else if (!Microphone.IsRecording(null) && !audio.isPlaying && Input.GetKeyDown (KeyCode.S)) {
@@ -193,21 +206,5 @@ public class Main : MonoBehaviour {
 	void OnGUI () {
 		// Display useful instructions
 		GUI.Box(new Rect(10,10,500,40), prompt);
-	}
-
-	// Let the internal logging of ATT_MSSDK.dll go out to the file mssdk.debug
-	void InitLogging ()
-	{
-		// magic incantations necessary to properly set up NLog
-		var config = new LoggingConfiguration();
-		var target = new FileTarget();
-		target.FileName = "mssdk.debug";
-		target.Layout = "${level}: ${message}";
-		target.AutoFlush = true;
-		target.ForceManaged = true; // required for Mono/Unity compatibility
-		config.AddTarget("file", target);
-		var rule = new LoggingRule("*", LogLevel.Trace, target);
-		config.LoggingRules.Add(rule);
-		LogManager.Configuration = config;
 	}
 }

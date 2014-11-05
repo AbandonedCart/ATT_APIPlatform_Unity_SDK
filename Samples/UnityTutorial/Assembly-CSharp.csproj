@@ -47,14 +47,12 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Main.cs" />
-     <None Include="Assets\Plugins\ATT_MSSDK.xml" />
-     <None Include="Assets\Plugins\NLog.xml" />
-  <Reference Include="ATT_MSSDK">
-    <HintPath>Assets/Plugins/ATT_MSSDK.dll</HintPath>
-  </Reference>
-  <Reference Include="NLog">
-    <HintPath>Assets/Plugins/NLog.dll</HintPath>
-  </Reference>
+ <Reference Include="ATT_UNITY_SDK">
+ <HintPath>C:/Users/Bruce/Documents/GitHub/ATT_APIPlatform_Unity_SDK/Samples/UnityTutorial/Assets/Plugins/ATT_UNITY_SDK.dll</HintPath>
+ </Reference>
+ <Reference Include="Newtonsoft.Json">
+ <HintPath>C:/Users/Bruce/Documents/GitHub/ATT_APIPlatform_Unity_SDK/Samples/UnityTutorial/Assets/Plugins/Newtonsoft.Json.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
