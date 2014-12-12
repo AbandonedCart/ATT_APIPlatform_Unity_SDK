@@ -8,14 +8,6 @@ The SDK Wrapper library provides access to the following AT&T API Platform APIs:
 Speech To Text
 Speech To Text Custom
 Text To Speech
-SMS 
-MMS 
-Location 
-Notary 
-Payment 
-Call Management Beta)
-In-application Messaging From Mobile Number
-Advertisement
 
 The complete documentation for the AT&T API Platform can be found at http://developer.att.com
 
